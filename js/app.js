@@ -7,21 +7,30 @@ function fmt(d){var a=d.split("-");return["January","February","March","April","
 function getJSON(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)throw Error(u);return r.json()})}
 function pr(t,x){return '<div class="prayer"><h4>'+esc(t)+'</h4><p>'+esc(x)+'</p></div>'}
 function testDate(){var m=location.search.match(/[?&]date=(\d{4}-\d\d-\d\d)/);return m?m[1]:L.todayNY()}
-function imgCheck(el,src,cls,fallback){var i=new Image();i.onload=function(){el.style.backgroundImage="url("+src+")";el.innerHTML=""};i.onerror=function(){el.classList.add(cls);if(fallback)fallback()};i.src=src}
+function imgCheck(el,src,cls,fallback){var i=new Image();i.onload=function(){el.style.backgroundImage="url("+src+")";if(el.id!=="header")el.innerHTML=""};i.onerror=function(){el.classList.add(cls);if(fallback)fallback()};i.src=src}
 function chapLink(r){return '#read/'+r.book+'/'+r.chapter}
 function intention(){return (S.intention||"").trim()||"the favor I place in your hands"}
 function myst(){return C.prayers.mysteries[T.mystery]}
 
 function side(){
   var m=T.mystery;
-  document.getElementById("side-myst").innerHTML='<div class="myst-img fb-'+m+' m-'+m+'" id="mimg">'+ICON[m]+'</div><b class="m-'+m+'">The '+MN[m]+' Mysteries</b><ol style="padding-left:18px;margin:4px 0;font-size:12px">'+
+  document.getElementById("side-myst").innerHTML='<div class="myst-img m-'+m+'" id="mimg">'+ICON[m]+'</div><b class="m-'+m+'">The '+MN[m]+' Mysteries</b><ol style="padding-left:18px;margin:4px 0;font-size:12px">'+
     myst().decades.map(function(d){return '<li>'+esc(d.title.replace(/^The \w+ \w+ Mystery - /,""))+'</li>'}).join("")+'</ol><a class="gbtn gold" href="#pray">Pray today &raquo;</a>';
   imgCheck(document.getElementById("mimg"),"images/"+m+".jpg","fb-"+m);
   var r=T.reading;document.getElementById("side-read").innerHTML=r?'<p style="margin:0 0 6px"><a href="'+chapLink(r)+'"><b>'+esc(r.name)+' '+r.chapter+'</b></a></p><a class="gbtn" href="'+chapLink(r)+'">Read in CPDV</a> <a href="'+L.nabreLink(bookById[r.book],r.chapter).url+'" target="_blank" rel="noopener">NABRE &rarr;</a>':'';
 }
 
+function hud(){var r=T.reading,bk=r&&bookById[r.book],pct=function(a,b){return Math.max(0,Math.min(100,a/b*100)).toFixed(1)+"%"};
+  var phDay=T.phase==="petition"?T.prayerDay:T.prayerDay-27;
+  return '<div class="hud"><div class="hud-stats">'+
+   '<div class="hud-row"><span class="hud-lbl">Novena</span><div class="bar b-red"><i style="width:'+pct(T.prayerDay,54)+'"></i></div><span class="hud-num n-red">'+T.prayerDay+'/54</span></div>'+
+   '<div class="hud-row"><span class="hud-lbl">'+(T.phase==="petition"?"Petition":"Thanks")+'</span><div class="bar b-gray"><i style="width:'+pct(phDay,27)+'"></i></div><span class="hud-num n-gray">'+phDay+'/27</span></div>'+
+   (bk?'<div class="hud-row"><span class="hud-lbl">'+esc(bk.abbr)+'</span><div class="bar b-blue"><i style="width:'+pct(r.chapter,bk.chapters)+'"></i></div><span class="hud-num n-blue">'+r.chapter+'/'+bk.chapters+'</span></div>':'')+
+   '<div class="hud-row"><span class="hud-lbl">Surrender</span><div class="bar b-gold"><i style="width:'+pct(T.surrenderDay,9)+'"></i></div><span class="hud-num n-gold">'+T.surrenderDay+'/9</span></div>'+
+   '</div><div class="hud-map" id="hmap" style="background-image:url(images/'+T.mystery+'.jpg)"><b>'+MN[T.mystery].toUpperCase()+'</b></div></div>'+
+   (r?'<div class="mission"><span class="ex">!</span><div style="flex:1"><b style="color:#ffc04d">TODAY\'S MISSION</b><br>Read <a href="'+chapLink(r)+'">'+esc(r.name)+' '+r.chapter+'</a> and pray the '+MN[T.mystery]+' Mysteries</div><a class="arr" href="#pray">&#9654;</a></div>':'');}
 function vToday(){
-  var r=T.reading,ph=T.phase==="petition"?"Prayer in Petition":"Prayer in Thanksgiving",h='<div class="box"><h2>Today &middot; '+fmt(T.date)+'</h2>';
+  var r=T.reading,ph=T.phase==="petition"?"Prayer in Petition":"Prayer in Thanksgiving",h=hud()+'<div class="box"><h2>Today &middot; '+fmt(T.date)+'</h2>';
   if(T.status==="waiting")h+='<p>The novena begins '+fmt(T.startDate)+'.</p>';
   else if(T.status==="done")h+='<p class="big">These fifty-four days are finished. Deo gratias!</p>';
   h+='<div class="stat"><div><b>'+(T.status==="active"?"Day "+T.day:"&mdash;")+'</b><span>of 54</span></div><div><b>'+(T.phase==="petition"?"Petition":"Thanksgiving")+'</b><span>'+ph+'</span></div><div><b class="m-'+T.mystery+'">'+MN[T.mystery]+'</b><span>Mysteries</span></div></div>';

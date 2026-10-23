@@ -57,3 +57,75 @@ details{border:1px solid #e3d6b4;border-radius:8px;padding:6px 10px;margin:6px 0
 .nav{display:flex;justify-content:space-between;margin:10px 0}
 #footer{text-align:center;color:#6a5a3a;font-size:11px;margin-top:12px;font-family:Georgia,serif}
 @media (max-width:760px){#cols{flex-direction:column;padding:10px}#side{width:auto}#header{height:150px}#header h1{font-size:26px}#tabs a{padding:6px 10px}.daygrid{grid-template-columns:repeat(6,1fr)}}
+
+/* ===== Dark sci-fi "Imagination vs. Maelstrom" theme (own branding) ===== */
+html{background:#05060f}
+body{color:#dfe6f5;background:#05060f;background-image:
+ radial-gradient(1px 1px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 10%,#fff6,transparent),radial-gradient(1.5px 1.5px at 85% 60%,#bfe8ff9,transparent),radial-gradient(1px 1px at 40% 80%,#fff5,transparent),
+ radial-gradient(ellipse at 15% 20%,rgba(40,140,255,.22),transparent 45%),radial-gradient(ellipse at 85% 75%,rgba(120,30,160,.30),transparent 50%),radial-gradient(ellipse at 50% 110%,rgba(60,0,80,.5),transparent 60%),linear-gradient(#070b1d,#05060f);
+ background-attachment:fixed;background-size:200px 200px,300px 300px,250px 250px,180px 180px,auto,auto,auto,auto}
+a{color:#6fd3ff}a:hover{color:#ffc04d}
+h1,h2,h3{font-family:"Trebuchet MS",Verdana,sans-serif;font-weight:bold;color:#ffc04d;text-shadow:0 0 8px rgba(255,160,40,.45)}
+#header{height:240px;border:2px solid #6a7894;border-radius:14px 14px 0 0;background-color:#0a1030;background-position:center 30%;
+ box-shadow:0 0 0 1px #000,inset 0 0 0 1px #c5d3ee55,0 0 24px rgba(60,170,255,.45)}
+#header:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(5,6,20,.85))}
+#header.noimg{background:radial-gradient(ellipse at 30% 40%,#1f5fb0,#0b1440 55%,#2a0838)}
+#header .htext{z-index:3}#header h1{font:bold 40px "Trebuchet MS",sans-serif;color:#fff;text-shadow:0 0 12px #3cb4ff,0 2px 3px #000}
+#header .kicker{color:#ffc04d}#header .tag{color:#bfe6ff}
+#tabs{background:linear-gradient(#3a4458,#1a2030 50%,#10141f 51%,#232a3a);border:2px solid #6a7894;border-top:0;padding:8px 10px;gap:6px}
+#tabs a{border-radius:20px;border:1px solid #0b2a52;color:#e6f6ff;background:linear-gradient(#3f86d8,#1b4f9a 50%,#123e80 51%,#2a62ad);box-shadow:inset 0 1px 0 #9fd4ff88,0 1px 3px #000}
+#tabs a:hover{background:linear-gradient(#5fb8ff,#2a77d0 50%,#1d63b8 51%,#3b8ae0);box-shadow:0 0 12px #3cc0ff,inset 0 1px 0 #cfeaff}
+#tabs a.on{background:linear-gradient(#ffd47a,#e8962a 50%,#d27e14 51%,#f0a840);color:#2a1400;border-color:#7a4a00;box-shadow:0 0 12px rgba(255,170,50,.7)}
+#cols{background:rgba(10,14,32,.82);border:2px solid #6a7894;border-top:0;box-shadow:0 0 20px rgba(110,40,170,.35),inset 0 0 40px rgba(0,0,0,.6)}
+.box{position:relative;color:#dfe6f5;background:linear-gradient(rgba(28,36,62,.92),rgba(14,18,36,.94));border:1px solid #56647f;
+ box-shadow:inset 0 1px 0 #a9b9da55,inset 0 0 0 1px #000a,0 0 12px rgba(50,150,255,.18),0 3px 8px #000}
+.box:before,.box:after{content:"";position:absolute;top:7px;width:6px;height:6px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e8eefc,#6a7894 60%,#2a3040)}
+.box:before{left:7px}.box:after{right:7px}
+.box h2{border-bottom:1px solid #ffc04d55}
+.side-box h3{color:#2a1400;text-shadow:0 1px 0 #ffe2a8;background:linear-gradient(#ffd47a,#e8962a 50%,#d27e14 51%,#f0a840);border-bottom:2px solid #7a4a00;
+ background-image:radial-gradient(circle at 50% 45%,#ffe6b0 0 3px,transparent 4px),linear-gradient(#ffd47a,#e8962a 50%,#d27e14 51%,#f0a840);background-size:16px 100%,auto;background-repeat:repeat-x,no-repeat;background-position:right 6px center,0 0;padding-right:70px}
+.side-box:before,.side-box:after{display:none}
+.stat div{background:linear-gradient(#18305e,#0c1838);border:1px solid #3a8ad8;box-shadow:0 0 8px rgba(60,180,255,.35)}
+.stat b{color:#8fe0ff;text-shadow:0 0 8px #2fa8ff}.stat span{color:#a9b8d6}
+.muted{color:#9fb0cf}.prayer h4{color:#ffc04d}.prayer p,.verses{color:#eef2fa}.verses sup{color:#ffc04d}
+.sec{color:#6fd3ff;border-bottom-color:#2a4a7a}.grp{color:#ffc04d}
+details{background:rgba(8,12,28,.7);border-color:#3a4a6a}summary{color:#e6f0ff}
+.note{background:rgba(40,20,70,.55);border:1px solid #7a4ab0;color:#efe8ff;box-shadow:inset 0 0 12px rgba(120,40,190,.35)}
+.myst-img{border:2px solid #5fc8ff;box-shadow:0 0 14px #2fa8ff,inset 0 0 10px #000}
+.chgrid a{background:linear-gradient(#26467e,#122650);border-color:#3a6ab0;color:#dff3ff}.chgrid a:hover{box-shadow:0 0 8px #3cc0ff}
+.daygrid div{background:#101a36;border-color:#33456a}.daygrid .past{background:#1a1430;color:#7f74a8}
+.daygrid .now{background:linear-gradient(#ffd47a,#d27e14);color:#2a1400;box-shadow:0 0 10px #ffa830}
+.gbtn{border-radius:20px;background:linear-gradient(#5fb8ff,#2a77d0 50%,#1d63b8 51%,#3b8ae0);border-color:#0b2a52}.gbtn:hover{box-shadow:0 0 12px #3cc0ff}
+.gbtn.gold{background:linear-gradient(#ffd47a,#e8962a 50%,#d27e14 51%,#f0a840);color:#2a1400!important;border-color:#7a4a00}
+.gbtn.red{box-shadow:0 0 10px rgba(255,80,80,.5)}
+.m-joyful{color:#7fc4ff}.m-sorrowful{color:#ff7a7a}.m-glorious{color:#d2a6ff}.m-luminous{color:#ffd35a}
+.fb-joyful,.fb-sorrowful,.fb-glorious,.fb-luminous{background:radial-gradient(#1f3a70,#0a1030)!important}
+table tr{border-color:#33456a!important}
+#footer{color:#8fa2c8}
+#header .shine{z-index:1}#header .htext{z-index:3}
+#header:before{z-index:1}
+.side-box h3{padding-right:12px;background-position:right -400px center,0 0}
+.side-box h3{background-image:linear-gradient(#ffd47a,#e8962a 50%,#d27e14 51%,#f0a840)}
+.side-box h3:after{content:"";float:right;width:44px;height:10px;margin-top:4px;background:radial-gradient(circle,#ffe6b0 0 3px,transparent 4px) 0 0/11px 10px repeat-x}
+
+/* ===== HUD layer: inspired by the 2010-11 MMO in-game interface (stats panel, colored bars, mission recap, round minimap). Original branding. ===== */
+h1,h2,.side-box h3,#tabs a,.hud-lbl{font-family:"Arial Black","Trebuchet MS",Verdana,sans-serif;letter-spacing:.5px}
+.box h2{text-transform:uppercase;font-size:19px}
+#header{border:3px solid #8a96ad;border-radius:18px 18px 0 0;box-shadow:inset 0 0 0 2px #1a2030,0 0 0 2px #0a0d16,0 0 26px rgba(150,60,220,.45)}
+#header:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,transparent 33%,rgba(10,14,30,.9) 33.2%,transparent 33.6%,transparent 66.4%,rgba(10,14,30,.9) 66.6%,transparent 67%)}
+.hud{display:flex;gap:12px;align-items:stretch;margin:0 0 14px;flex-wrap:wrap}
+.hud-stats{flex:1;min-width:260px;background:linear-gradient(#3a4256,#1b2131 48%,#121724 52%,#20283a);border:2px solid #9aa6bd;border-radius:14px 30px 14px 14px;padding:10px 14px;box-shadow:inset 0 1px 0 #d8e2f5,0 0 0 2px #05070d,0 4px 10px #000}
+.hud-row{display:flex;align-items:center;gap:8px;margin:5px 0}
+.hud-lbl{width:96px;font-size:10px;color:#cfd8ea;text-transform:uppercase}
+.hud-num{width:52px;text-align:right;font:bold 13px "Arial Black",sans-serif}
+.bar{flex:1;height:13px;border-radius:7px;background:#06080f;border:1px solid #000;box-shadow:inset 0 2px 3px #000,0 1px 0 #ffffff22;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:7px;box-shadow:inset 0 1px 0 #ffffff99}
+.b-red i{background:linear-gradient(#ff8a7a,#d81e1e 55%,#a00)}.n-red{color:#ff5a4a}
+.b-blue i{background:linear-gradient(#bff2ff,#33c6ff 55%,#0a7fd0)}.n-blue{color:#7fe3ff;text-shadow:0 0 6px #2fb8ff}
+.b-gold i{background:linear-gradient(#fff3a0,#f2c21a 55%,#c08a00)}.n-gold{color:#ffd23a}
+.b-gray i{background:linear-gradient(#f2f4f8,#a9b0bd 55%,#6b7280)}.n-gray{color:#c9cfdb}
+.hud-map{width:118px;height:118px;border-radius:50%;flex-shrink:0;border:4px solid #9aa6bd;box-shadow:0 0 0 3px #05070d,0 0 16px #33c6ff,inset 0 0 18px #000;background:#0a1030 center/cover;position:relative}
+.hud-map b{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);white-space:nowrap;font:bold 10px "Arial Black",sans-serif;background:linear-gradient(#ffd47a,#d27e14);color:#2a1400;padding:2px 9px;border-radius:9px;border:1px solid #7a4a00}
+.mission{display:flex;align-items:center;gap:10px;background:linear-gradient(rgba(60,20,90,.85),rgba(20,8,36,.9));border:2px solid #b07ae0;border-radius:12px;padding:8px 12px;margin-bottom:12px;box-shadow:0 0 12px rgba(170,90,255,.4)}
+.mission .ex{width:30px;height:30px;border-radius:50%;background:radial-gradient(#ffd47a,#e8862a);color:#2a1400;font:bold 20px/30px "Arial Black";text-align:center;box-shadow:0 0 10px #ffa830;flex-shrink:0}
+.mission .arr{font:bold 18px Arial;color:#ffc04d;text-decoration:none}
