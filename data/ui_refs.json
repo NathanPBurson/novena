@@ -1,0 +1,11 @@
+{"_comment":"Real references studied for the HUD/menu styling (no assets copied). Original branding only.",
+"ui":[
+{"url":"https://thelegouniverse.com/media/LegoUniverseOfficialGameGuidePC.pdf","what":"Prima official guide: annotated HUD (stats top-left, mission recap, mini-map, chat, Imagination/action bar, backpack, passport/map/news/help/options)"},
+{"url":"https://seasidecorgi.wordpress.com/2011/11/13/lego-universe-main-interface/","what":"UI designer's post with final in-game HUD screenshot and level/U-score bar iteration (late 2011)"},
+{"url":"https://www.camifarley.com/lego-universe","what":"Senior UI designer case study: contrast fixes, solid panel backgrounds"},
+{"url":"https://legouniverse.fandom.com/wiki/Crux_Prime","what":"Crux Prime / Ninjago Monastery Ruins (Feb 2011 update) screenshots"},
+{"url":"https://legouniverse.fandom.com/wiki/Loading_Screens","what":"Loading-screen gallery incl. 'Battle In Crux Prime', 'Fly to the Ninjago Monastery', 'Master The Ways of Spinjitzu'"},
+{"url":"https://www.mobygames.com/game/50009/lego-universe/","what":"Credits (UI team) and screenshot gallery"}],
+"fonts":[
+{"lu":"Arial Rounded MT Bold (HUD, menus, buttons, body/mission text)","source":"Client log line 'File missing [fonts\\ArialRoundedMTBold_A_14.nff]' and '_A_35.nff' posted publicly at http://zenhax.com/viewtopic.php@t=2823.html; matches rounded terminals in guide-PDF screenshots","license":"Commercial (Monotype). Bundled with MS Office, not redistributable as a webfont. Arial Pro Rounded Bold from $43.99 USD desktop (https://www.myfonts.com/products/rounded-bold-arial-344740/); webfont licence is annual, priced separately","standin":"Nunito (OFL) for body/HUD, Varela Round (OFL) for buttons/nav"},
+{"lu":"Title / logo lettering","source":"Not identified: appears to be custom display lettering in the logo and loading-screen headlines; no public font ID found","license":"Unknown / likely proprietary artwork","standin":"Lilita One (OFL)"}]}

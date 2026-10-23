@@ -1,5 +1,5 @@
 (function(){
-var L=window.NovenaLogic, S, C, T, bookById={};
+var R=window.SITE_ROOT||"",L=window.NovenaLogic, S, C, T, bookById={};
 var MN={joyful:"Joyful",sorrowful:"Sorrowful",glorious:"Glorious",luminous:"Luminous"};
 var ICON={joyful:"\u2605",sorrowful:"\u271D",glorious:"\u2600",luminous:"\u2726"};
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -16,7 +16,7 @@ function side(){
   var m=T.mystery;
   document.getElementById("side-myst").innerHTML='<div class="myst-img m-'+m+'" id="mimg">'+ICON[m]+'</div><b class="m-'+m+'">The '+MN[m]+' Mysteries</b><ol style="padding-left:18px;margin:4px 0;font-size:12px">'+
     myst().decades.map(function(d){return '<li>'+esc(d.title.replace(/^The \w+ \w+ Mystery - /,""))+'</li>'}).join("")+'</ol><a class="gbtn gold" href="#pray">Pray today &raquo;</a>';
-  imgCheck(document.getElementById("mimg"),"images/"+m+".jpg","fb-"+m);
+  imgCheck(document.getElementById("mimg"),R+"images/"+m+".jpg","fb-"+m);
   var r=T.reading;document.getElementById("side-read").innerHTML=r?'<p style="margin:0 0 6px"><a href="'+chapLink(r)+'"><b>'+esc(r.name)+' '+r.chapter+'</b></a></p><a class="gbtn" href="'+chapLink(r)+'">Read in CPDV</a> <a href="'+L.nabreLink(bookById[r.book],r.chapter).url+'" target="_blank" rel="noopener">NABRE &rarr;</a>':'';
 }
 
@@ -85,7 +85,7 @@ function vChapter(b,ch,main){
   var nl=L.nabreLink(b,ch),idx=C.books.indexOf(b),prev=ch>1?[b,ch-1]:idx>0?[C.books[idx-1],C.books[idx-1].chapters]:null,next=ch<b.chapters?[b,ch+1]:idx<72?[C.books[idx+1],1]:null;
   var nav='<div class="nav">'+(prev?'<a href="#read/'+prev[0].id+'/'+prev[1]+'">&laquo; '+esc(prev[0].name)+' '+prev[1]+'</a>':'<span></span>')+(next?'<a href="#read/'+next[0].id+'/'+next[1]+'">'+esc(next[0].name)+' '+next[1]+' &raquo;</a>':'')+'</div>';
   main.innerHTML='<div class="box"><p class="muted"><a href="#read">All books</a> &rsaquo; <a href="#read/'+b.id+'">'+esc(b.name)+'</a></p><h2>'+esc(b.name)+' '+ch+'</h2><p><a href="'+nl.url+'" target="_blank" rel="noopener">Read '+esc(b.name)+' '+ch+' in the NABRE &rarr;</a></p>'+(nl.note?'<p class="muted">'+esc(nl.note)+'</p>':'')+nav+'<div class="verses" id="vv">Loading&hellip;</div>'+nav+'</div>';
-  getJSON("bible/cpdv/"+b.id+".json").then(function(j){var vs=j.chapters[ch-1]||[];var rf=C.chapterReflections[b.id+":"+ch];
+  getJSON(R+"bible/cpdv/"+b.id+".json").then(function(j){var vs=j.chapters[ch-1]||[];var rf=C.chapterReflections[b.id+":"+ch];
     document.getElementById("vv").innerHTML=vs.map(function(v,i){return'<span id="v'+(i+1)+'"><sup>'+(i+1)+'</sup>'+esc(v)+' </span>'}).join("")+(rf?'<div class="note"><b>Reflection</b><p>'+esc(rf.reflection)+'</p><ol class="muted">'+rf.questions.map(function(q){return'<li>'+esc(q)+'</li>'}).join("")+'</ol></div>':'');
   }).catch(function(){document.getElementById("vv").innerHTML='This chapter could not be opened. <a href="'+nl.url+'">Read it in the NABRE</a>.'});
 }
@@ -106,11 +106,11 @@ function route(){
   else main.innerHTML=({pray:vPray,days:vDays,feasts:vFeasts}[tab]||vToday)();
   window.scrollTo(0,0);
 }
-Promise.all([getJSON("data/site.json"),getJSON("data/content.json")]).then(function(a){
+Promise.all([getJSON(R+"data/site.json"),getJSON(R+"data/content.json")]).then(function(a){
   S=a[0];C=a[1];C.books.forEach(function(b){bookById[b.id]=b});T=L.compute(testDate(),S,C.books);
   var ln=S.links||{};if(ln.live)document.getElementById("l-live").href=ln.live;
   document.getElementById("upd").textContent="Updated "+(S.updated||"");
-  imgCheck(document.getElementById("header"),"images/header.jpg","noimg");
+  imgCheck(document.getElementById("header"),R+"images/header.jpg","noimg");
   side();route();window.addEventListener("hashchange",route);
 }).catch(function(e){document.getElementById("main").innerHTML='<div class="box">Could not load the novena data. Please refresh.</div>'});
 })();
