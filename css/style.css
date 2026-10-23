@@ -1,0 +1,59 @@
+/* Late-2000s devotional look */
+*{box-sizing:border-box}
+html{background:#e9e2d0}
+body{margin:0;padding:18px 10px 30px;font:13px/1.6 Verdana,Geneva,sans-serif;color:#2b2620;
+ background:#e9e2d0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M0 8L8 0' stroke='%23d9cfb6' stroke-width='1'/%3E%3C/svg%3E");
+ background-attachment:fixed}
+#wrap{max-width:960px;margin:0 auto}
+a{color:#1f4e8c}a:hover{color:#8c1c1c}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:normal;color:#3a2a14}
+#header{position:relative;height:200px;border-radius:12px 12px 0 0;overflow:hidden;border:1px solid #2a3d66;
+ background:#1d3263 url(../images/header.jpg) center/cover no-repeat;box-shadow:0 3px 10px rgba(0,0,0,.35)}
+#header.noimg{background:linear-gradient(#3d5c9e,#1d3263 60%,#14244a)}
+#header.noimg:after{content:"\271D";position:absolute;right:40px;top:30px;font:130px/1 Georgia,serif;color:rgba(255,230,160,.22)}
+#header .shine{position:absolute;left:0;right:0;top:0;height:50%;background:linear-gradient(rgba(255,255,255,.38),rgba(255,255,255,.05));border-radius:12px 12px 50% 50%/12px 12px 30px 30px}
+#header .htext{position:absolute;left:28px;bottom:22px;right:28px;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.7)}
+#header .kicker{font:bold 11px "Trebuchet MS",sans-serif;letter-spacing:3px;text-transform:uppercase;color:#f3dc9a}
+#header h1{color:#fff;margin:2px 0;font-size:38px}
+#header .tag{font:italic 14px Georgia,serif;color:#e8e4f4}
+#tabs{list-style:none;margin:0;padding:8px 10px 0;background:linear-gradient(#5a4628,#3a2c18);border:1px solid #2b2010;border-top:0;display:flex;flex-wrap:wrap;gap:4px}
+#tabs a{display:block;padding:7px 18px;font:bold 13px "Trebuchet MS",sans-serif;color:#fff;text-decoration:none;border-radius:7px 7px 0 0;
+ background:linear-gradient(#b89a5e,#8a6c34 50%,#7a5c26 51%,#93743c);border:1px solid #5c4318;border-bottom:0;text-shadow:0 -1px 0 rgba(0,0,0,.4)}
+#tabs a:hover{background:linear-gradient(#d1b376,#a5853f 50%,#94742f 51%,#ad8c48)}
+#tabs a.on{background:linear-gradient(#fffdf6,#f7f1e1);color:#3a2a14;text-shadow:none}
+#cols{display:flex;gap:16px;background:#f7f1e1;border:1px solid #c9b88f;border-top:0;padding:16px;border-radius:0 0 12px 12px;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+#main{flex:1;min-width:0}#side{width:250px;flex-shrink:0}
+.box{background:#fff;border:1px solid #d8c9a3;border-radius:10px;padding:14px 18px;margin-bottom:14px;box-shadow:0 2px 6px rgba(80,60,20,.15)}
+.box h2{margin:0 0 8px;font-size:22px;border-bottom:1px dotted #c9b88f;padding-bottom:4px}
+.side-box{padding:0 0 10px;overflow:hidden}
+.side-box h3{margin:0 0 8px;padding:6px 12px;font:bold 13px "Trebuchet MS",sans-serif;color:#fff;background:linear-gradient(#5f7fbf,#2f4f8f 50%,#24427f 51%,#3a5a9a);text-shadow:0 -1px 0 rgba(0,0,0,.4)}
+.side-box > div,.side-box ul{padding:0 12px}
+.links{list-style:none;margin:0}.links li{margin:0 0 8px;font-size:12px;word-break:break-word}
+.gbtn{display:inline-block;padding:6px 14px;border-radius:14px;color:#fff!important;text-decoration:none;font:bold 12px "Trebuchet MS",sans-serif;
+ background:linear-gradient(#7d9bd6,#3d5fa3 50%,#2f5096 51%,#4566a8);border:1px solid #23407a;box-shadow:0 1px 2px rgba(0,0,0,.3);cursor:pointer}
+.gbtn.red{background:linear-gradient(#e46b6b,#b52323 50%,#a01818 51%,#b83030);border-color:#7a1010}
+.gbtn.gold{background:linear-gradient(#e9cf86,#b8902f 50%,#a8801f 51%,#c09a3c);border-color:#7c5c12}
+.big{font:30px Georgia,serif;color:#3a2a14}
+.stat{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.stat div{flex:1;min-width:120px;text-align:center;background:linear-gradient(#fffdf6,#f1e7cc);border:1px solid #dccb9e;border-radius:8px;padding:8px}
+.stat b{display:block;font:24px Georgia,serif;color:#5a1414}
+.stat span{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#7a6a4a}
+.myst-img{width:100%;aspect-ratio:1/1;border-radius:8px;border:1px solid #d8c9a3;background:#eee center/cover;margin-bottom:6px;display:flex;align-items:center;justify-content:center;font:60px Georgia,serif}
+.m-joyful{color:#2b5f9e}.m-sorrowful{color:#8c1c1c}.m-glorious{color:#6a3d8c}.m-luminous{color:#a8801f}
+.fb-joyful{background:linear-gradient(#f4f7fc,#cfdcf0)!important}.fb-sorrowful{background:linear-gradient(#fbeeee,#e6c3c3)!important}.fb-glorious{background:linear-gradient(#f5eefa,#dccbea)!important}.fb-luminous{background:linear-gradient(#fdf8e8,#efe0ad)!important}
+.prayer{margin:0 0 12px}.prayer h4{margin:0 0 2px;font:bold 13px "Trebuchet MS",sans-serif;color:#5a4628}
+.prayer p{margin:0;white-space:pre-line;font:15px/1.7 Georgia,serif}
+.sec{font:bold 11px "Trebuchet MS",sans-serif;letter-spacing:2px;text-transform:uppercase;color:#8a6c34;margin:18px 0 6px;border-bottom:1px solid #eadfc2}
+details{border:1px solid #e3d6b4;border-radius:8px;padding:6px 10px;margin:6px 0;background:#fffdf6}summary{cursor:pointer;font-weight:bold;color:#3a2a14}
+.verses{font:16px/1.8 Georgia,serif}.verses sup{color:#8a6c34;font:bold 10px Verdana;margin-right:2px}
+.booklist{columns:3 180px;list-style:none;padding:0}.booklist li{break-inside:avoid;margin:2px 0}
+.grp{font:bold 12px "Trebuchet MS",sans-serif;color:#8a6c34;margin-top:10px}
+.chgrid{display:flex;flex-wrap:wrap;gap:5px}.chgrid a{width:40px;text-align:center;padding:5px 0;border:1px solid #d8c9a3;border-radius:5px;background:linear-gradient(#fff,#f1e7cc);text-decoration:none}
+.daygrid{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;margin:6px 0 14px}
+.daygrid div{text-align:center;padding:6px 0;border-radius:5px;border:1px solid #d8c9a3;background:#fffdf6;font-size:12px}
+.daygrid .past{background:#efe6cd;color:#8a7a5a}.daygrid .now{background:linear-gradient(#e46b6b,#a01818);color:#fff;font-weight:bold}
+.note{background:#fff8d8;border:1px solid #e8d48a;border-radius:6px;padding:8px 10px;margin:8px 0}
+.muted{color:#7a6a4a;font-size:12px}
+.nav{display:flex;justify-content:space-between;margin:10px 0}
+#footer{text-align:center;color:#6a5a3a;font-size:11px;margin-top:12px;font-family:Georgia,serif}
+@media (max-width:760px){#cols{flex-direction:column;padding:10px}#side{width:auto}#header{height:150px}#header h1{font-size:26px}#tabs a{padding:6px 10px}.daygrid{grid-template-columns:repeat(6,1fr)}}

@@ -1,0 +1,1884 @@
+{
+ "books": [
+  {
+   "id": "gen",
+   "name": "Genesis",
+   "abbr": "Gen",
+   "testament": "ot",
+   "group": "The Law",
+   "usccb": "genesis",
+   "chapters": 50,
+   "aliases": [
+    "genesis",
+    "gen",
+    "gn"
+   ]
+  },
+  {
+   "id": "exo",
+   "name": "Exodus",
+   "abbr": "Exod",
+   "testament": "ot",
+   "group": "The Law",
+   "usccb": "exodus",
+   "chapters": 40,
+   "aliases": [
+    "exodus",
+    "exod",
+    "ex"
+   ]
+  },
+  {
+   "id": "lev",
+   "name": "Leviticus",
+   "abbr": "Lev",
+   "testament": "ot",
+   "group": "The Law",
+   "usccb": "leviticus",
+   "chapters": 27,
+   "aliases": [
+    "leviticus",
+    "lev",
+    "lv"
+   ]
+  },
+  {
+   "id": "num",
+   "name": "Numbers",
+   "abbr": "Num",
+   "testament": "ot",
+   "group": "The Law",
+   "usccb": "numbers",
+   "chapters": 36,
+   "aliases": [
+    "numbers",
+    "num",
+    "nm",
+    "nb"
+   ]
+  },
+  {
+   "id": "deu",
+   "name": "Deuteronomy",
+   "abbr": "Deut",
+   "testament": "ot",
+   "group": "The Law",
+   "usccb": "deuteronomy",
+   "chapters": 34,
+   "aliases": [
+    "deuteronomy",
+    "deut",
+    "dt"
+   ]
+  },
+  {
+   "id": "jos",
+   "name": "Joshua",
+   "abbr": "Josh",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "joshua",
+   "chapters": 24,
+   "aliases": [
+    "joshua",
+    "josh"
+   ]
+  },
+  {
+   "id": "jdg",
+   "name": "Judges",
+   "abbr": "Judg",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "judges",
+   "chapters": 21,
+   "aliases": [
+    "judges",
+    "judg",
+    "jdg",
+    "jg"
+   ]
+  },
+  {
+   "id": "rut",
+   "name": "Ruth",
+   "abbr": "Ruth",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "ruth",
+   "chapters": 4,
+   "aliases": [
+    "ruth",
+    "ru"
+   ]
+  },
+  {
+   "id": "1sa",
+   "name": "1 Samuel",
+   "abbr": "1 Sam",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "1samuel",
+   "chapters": 31,
+   "aliases": [
+    "1 samuel",
+    "1 sam",
+    "i samuel",
+    "1 sa",
+    "1samuel",
+    "first samuel"
+   ]
+  },
+  {
+   "id": "2sa",
+   "name": "2 Samuel",
+   "abbr": "2 Sam",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "2samuel",
+   "chapters": 24,
+   "aliases": [
+    "2 samuel",
+    "2 sam",
+    "ii samuel",
+    "2 sa",
+    "2samuel",
+    "second samuel"
+   ]
+  },
+  {
+   "id": "1ki",
+   "name": "1 Kings",
+   "abbr": "1 Kgs",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "1kings",
+   "chapters": 22,
+   "aliases": [
+    "1 kings",
+    "1 kgs",
+    "i kings",
+    "1 ki",
+    "1kgs",
+    "1king",
+    "first kings",
+    "1kings"
+   ]
+  },
+  {
+   "id": "2ki",
+   "name": "2 Kings",
+   "abbr": "2 Kgs",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "2kings",
+   "chapters": 25,
+   "aliases": [
+    "2 kings",
+    "2 kgs",
+    "ii kings",
+    "2 ki",
+    "2kgs",
+    "second kings",
+    "2kings"
+   ]
+  },
+  {
+   "id": "1ch",
+   "name": "1 Chronicles",
+   "abbr": "1 Chr",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "1chronicles",
+   "chapters": 29,
+   "aliases": [
+    "1 chronicles",
+    "1 chr",
+    "i chronicles",
+    "1chron",
+    "first chronicles",
+    "1chronicles"
+   ]
+  },
+  {
+   "id": "2ch",
+   "name": "2 Chronicles",
+   "abbr": "2 Chr",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "2chronicles",
+   "chapters": 36,
+   "aliases": [
+    "2 chronicles",
+    "2 chr",
+    "ii chronicles",
+    "2chron",
+    "second chronicles",
+    "2chronicles"
+   ]
+  },
+  {
+   "id": "ezr",
+   "name": "Ezra",
+   "abbr": "Ezra",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "ezra",
+   "chapters": 10,
+   "aliases": [
+    "ezra"
+   ]
+  },
+  {
+   "id": "neh",
+   "name": "Nehemiah",
+   "abbr": "Neh",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "nehemiah",
+   "chapters": 13,
+   "aliases": [
+    "nehemiah",
+    "neh",
+    "ne"
+   ]
+  },
+  {
+   "id": "tob",
+   "name": "Tobit",
+   "abbr": "Tob",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "tobit",
+   "chapters": 14,
+   "aliases": [
+    "tobit",
+    "tob",
+    "tb",
+    "tobias"
+   ]
+  },
+  {
+   "id": "jdt",
+   "name": "Judith",
+   "abbr": "Jdt",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "judith",
+   "chapters": 16,
+   "aliases": [
+    "judith",
+    "jdt",
+    "jth"
+   ]
+  },
+  {
+   "id": "est",
+   "name": "Esther",
+   "abbr": "Esth",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "esther",
+   "chapters": 16,
+   "aliases": [
+    "esther",
+    "esth",
+    "es"
+   ]
+  },
+  {
+   "id": "1ma",
+   "name": "1 Maccabees",
+   "abbr": "1 Macc",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "1maccabees",
+   "chapters": 16,
+   "aliases": [
+    "1 maccabees",
+    "1 macc",
+    "i maccabees",
+    "1 mac",
+    "1macc",
+    "first maccabees",
+    "1maccabees"
+   ]
+  },
+  {
+   "id": "2ma",
+   "name": "2 Maccabees",
+   "abbr": "2 Macc",
+   "testament": "ot",
+   "group": "History",
+   "usccb": "2maccabees",
+   "chapters": 15,
+   "aliases": [
+    "2 maccabees",
+    "2 macc",
+    "ii maccabees",
+    "2 mac",
+    "2macc",
+    "second maccabees",
+    "2maccabees"
+   ]
+  },
+  {
+   "id": "job",
+   "name": "Job",
+   "abbr": "Job",
+   "testament": "ot",
+   "group": "Wisdom",
+   "usccb": "job",
+   "chapters": 42,
+   "aliases": [
+    "job",
+    "jb"
+   ]
+  },
+  {
+   "id": "psa",
+   "name": "Psalms",
+   "abbr": "Ps",
+   "testament": "ot",
+   "group": "Wisdom",
+   "usccb": "psalms",
+   "chapters": 150,
+   "aliases": [
+    "psalms",
+    "ps",
+    "psa",
+    "psalm"
+   ]
+  },
+  {
+   "id": "pro",
+   "name": "Proverbs",
+   "abbr": "Prov",
+   "testament": "ot",
+   "group": "Wisdom",
+   "usccb": "proverbs",
+   "chapters": 31,
+   "aliases": [
+    "proverbs",
+    "prov",
+    "pr"
+   ]
+  },
+  {
+   "id": "ecc",
+   "name": "Ecclesiastes",
+   "abbr": "Eccl",
+   "testament": "ot",
+   "group": "Wisdom",
+   "usccb": "ecclesiastes",
+   "chapters": 12,
+   "aliases": [
+    "ecclesiastes",
+    "eccl",
+    "ec",
+    "qoh",
+    "qoheleth"
+   ]
+  },
+  {
+   "id": "sng",
+   "name": "Song of Songs",
+   "abbr": "Song",
+   "testament": "ot",
+   "group": "Wisdom",
+   "usccb": "songofsongs",
+   "chapters": 8,
+   "aliases": [
+    "song of songs",
+    "song",
+    "song of solomon",
+    "canticle of canticles",
+    "songs",
+    "cant",
+    "canticles",
+    "canticle",
+    "sg"
+   ],
+   "also": "Canticle of Canticles"
+  },
+  {
+   "id": "wis",
+   "name": "Wisdom",
+   "abbr": "Wis",
+   "testament": "ot",
+   "group": "Wisdom",
+   "usccb": "wisdom",
+   "chapters": 19,
+   "aliases": [
+    "wisdom",
+    "wis",
+    "ws"
+   ]
+  },
+  {
+   "id": "sir",
+   "name": "Sirach",
+   "abbr": "Sir",
+   "testament": "ot",
+   "group": "Wisdom",
+   "usccb": "sirach",
+   "chapters": 51,
+   "aliases": [
+    "sirach",
+    "sir",
+    "ecclesiasticus",
+    "ecclus"
+   ],
+   "also": "Ecclesiasticus"
+  },
+  {
+   "id": "isa",
+   "name": "Isaiah",
+   "abbr": "Isa",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "isaiah",
+   "chapters": 66,
+   "aliases": [
+    "isaiah",
+    "isa",
+    "is"
+   ]
+  },
+  {
+   "id": "jer",
+   "name": "Jeremiah",
+   "abbr": "Jer",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "jeremiah",
+   "chapters": 52,
+   "aliases": [
+    "jeremiah",
+    "jer",
+    "je"
+   ]
+  },
+  {
+   "id": "lam",
+   "name": "Lamentations",
+   "abbr": "Lam",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "lamentations",
+   "chapters": 5,
+   "aliases": [
+    "lamentations",
+    "lam",
+    "la"
+   ]
+  },
+  {
+   "id": "bar",
+   "name": "Baruch",
+   "abbr": "Bar",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "baruch",
+   "chapters": 6,
+   "aliases": [
+    "baruch",
+    "bar",
+    "ba"
+   ]
+  },
+  {
+   "id": "ezk",
+   "name": "Ezekiel",
+   "abbr": "Ezek",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "ezekiel",
+   "chapters": 48,
+   "aliases": [
+    "ezekiel",
+    "ezek",
+    "ez",
+    "eze"
+   ]
+  },
+  {
+   "id": "dan",
+   "name": "Daniel",
+   "abbr": "Dan",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "daniel",
+   "chapters": 14,
+   "aliases": [
+    "daniel",
+    "dan",
+    "dn"
+   ]
+  },
+  {
+   "id": "hos",
+   "name": "Hosea",
+   "abbr": "Hos",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "hosea",
+   "chapters": 14,
+   "aliases": [
+    "hosea",
+    "hos",
+    "ho"
+   ]
+  },
+  {
+   "id": "jol",
+   "name": "Joel",
+   "abbr": "Joel",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "joel",
+   "chapters": 3,
+   "aliases": [
+    "joel",
+    "jl",
+    "joe"
+   ]
+  },
+  {
+   "id": "amo",
+   "name": "Amos",
+   "abbr": "Amos",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "amos",
+   "chapters": 9,
+   "aliases": [
+    "amos",
+    "am"
+   ]
+  },
+  {
+   "id": "oba",
+   "name": "Obadiah",
+   "abbr": "Obad",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "obadiah",
+   "chapters": 1,
+   "aliases": [
+    "obadiah",
+    "obad",
+    "ob"
+   ]
+  },
+  {
+   "id": "jon",
+   "name": "Jonah",
+   "abbr": "Jonah",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "jonah",
+   "chapters": 4,
+   "aliases": [
+    "jonah"
+   ]
+  },
+  {
+   "id": "mic",
+   "name": "Micah",
+   "abbr": "Mic",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "micah",
+   "chapters": 7,
+   "aliases": [
+    "micah",
+    "mic",
+    "mi"
+   ]
+  },
+  {
+   "id": "nah",
+   "name": "Nahum",
+   "abbr": "Nah",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "nahum",
+   "chapters": 3,
+   "aliases": [
+    "nahum",
+    "nah",
+    "na"
+   ]
+  },
+  {
+   "id": "hab",
+   "name": "Habakkuk",
+   "abbr": "Hab",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "habakkuk",
+   "chapters": 3,
+   "aliases": [
+    "habakkuk",
+    "hab",
+    "hb"
+   ]
+  },
+  {
+   "id": "zep",
+   "name": "Zephaniah",
+   "abbr": "Zeph",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "zephaniah",
+   "chapters": 3,
+   "aliases": [
+    "zephaniah",
+    "zeph",
+    "zep"
+   ]
+  },
+  {
+   "id": "hag",
+   "name": "Haggai",
+   "abbr": "Hag",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "haggai",
+   "chapters": 2,
+   "aliases": [
+    "haggai",
+    "hag",
+    "hg"
+   ]
+  },
+  {
+   "id": "zec",
+   "name": "Zechariah",
+   "abbr": "Zech",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "zechariah",
+   "chapters": 14,
+   "aliases": [
+    "zechariah",
+    "zech",
+    "zec"
+   ]
+  },
+  {
+   "id": "mal",
+   "name": "Malachi",
+   "abbr": "Mal",
+   "testament": "ot",
+   "group": "The Prophets",
+   "usccb": "malachi",
+   "chapters": 4,
+   "aliases": [
+    "malachi",
+    "mal"
+   ]
+  },
+  {
+   "id": "mat",
+   "name": "Matthew",
+   "abbr": "Matt",
+   "testament": "nt",
+   "group": "The Gospels",
+   "usccb": "matthew",
+   "chapters": 28,
+   "aliases": [
+    "matthew",
+    "matt",
+    "mt"
+   ]
+  },
+  {
+   "id": "mrk",
+   "name": "Mark",
+   "abbr": "Mark",
+   "testament": "nt",
+   "group": "The Gospels",
+   "usccb": "mark",
+   "chapters": 16,
+   "aliases": [
+    "mark",
+    "mk",
+    "mrk",
+    "mar"
+   ]
+  },
+  {
+   "id": "luk",
+   "name": "Luke",
+   "abbr": "Luke",
+   "testament": "nt",
+   "group": "The Gospels",
+   "usccb": "luke",
+   "chapters": 24,
+   "aliases": [
+    "luke",
+    "lk",
+    "luk"
+   ]
+  },
+  {
+   "id": "jhn",
+   "name": "John",
+   "abbr": "John",
+   "testament": "nt",
+   "group": "The Gospels",
+   "usccb": "john",
+   "chapters": 21,
+   "aliases": [
+    "john",
+    "jn",
+    "joh"
+   ]
+  },
+  {
+   "id": "act",
+   "name": "Acts",
+   "abbr": "Acts",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "acts",
+   "chapters": 28,
+   "aliases": [
+    "acts",
+    "ac",
+    "act"
+   ]
+  },
+  {
+   "id": "rom",
+   "name": "Romans",
+   "abbr": "Rom",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "romans",
+   "chapters": 16,
+   "aliases": [
+    "romans",
+    "rom",
+    "ro",
+    "rm"
+   ]
+  },
+  {
+   "id": "1co",
+   "name": "1 Corinthians",
+   "abbr": "1 Cor",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "1corinthians",
+   "chapters": 16,
+   "aliases": [
+    "1 corinthians",
+    "1 cor",
+    "i corinthians",
+    "1 co",
+    "1cor",
+    "first corinthians",
+    "1corinthians"
+   ]
+  },
+  {
+   "id": "2co",
+   "name": "2 Corinthians",
+   "abbr": "2 Cor",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "2corinthians",
+   "chapters": 13,
+   "aliases": [
+    "2 corinthians",
+    "2 cor",
+    "ii corinthians",
+    "2 co",
+    "2cor",
+    "second corinthians",
+    "2corinthians"
+   ]
+  },
+  {
+   "id": "gal",
+   "name": "Galatians",
+   "abbr": "Gal",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "galatians",
+   "chapters": 6,
+   "aliases": [
+    "galatians",
+    "gal",
+    "ga"
+   ]
+  },
+  {
+   "id": "eph",
+   "name": "Ephesians",
+   "abbr": "Eph",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "ephesians",
+   "chapters": 6,
+   "aliases": [
+    "ephesians",
+    "eph"
+   ]
+  },
+  {
+   "id": "php",
+   "name": "Philippians",
+   "abbr": "Phil",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "philippians",
+   "chapters": 4,
+   "aliases": [
+    "philippians",
+    "phil",
+    "php",
+    "phi"
+   ]
+  },
+  {
+   "id": "col",
+   "name": "Colossians",
+   "abbr": "Col",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "colossians",
+   "chapters": 4,
+   "aliases": [
+    "colossians",
+    "col"
+   ]
+  },
+  {
+   "id": "1th",
+   "name": "1 Thessalonians",
+   "abbr": "1 Thess",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "1thessalonians",
+   "chapters": 5,
+   "aliases": [
+    "1 thessalonians",
+    "1 thess",
+    "i thessalonians",
+    "1 th",
+    "1 thes",
+    "1thess",
+    "first thessalonians",
+    "1thessalonians"
+   ]
+  },
+  {
+   "id": "2th",
+   "name": "2 Thessalonians",
+   "abbr": "2 Thess",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "2thessalonians",
+   "chapters": 3,
+   "aliases": [
+    "2 thessalonians",
+    "2 thess",
+    "ii thessalonians",
+    "2 th",
+    "2 thes",
+    "2thess",
+    "second thessalonians",
+    "2thessalonians"
+   ]
+  },
+  {
+   "id": "1ti",
+   "name": "1 Timothy",
+   "abbr": "1 Tim",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "1timothy",
+   "chapters": 6,
+   "aliases": [
+    "1 timothy",
+    "1 tim",
+    "i timothy",
+    "1 ti",
+    "1tim",
+    "first timothy",
+    "1timothy"
+   ]
+  },
+  {
+   "id": "2ti",
+   "name": "2 Timothy",
+   "abbr": "2 Tim",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "2timothy",
+   "chapters": 4,
+   "aliases": [
+    "2 timothy",
+    "2 tim",
+    "ii timothy",
+    "2 ti",
+    "2tim",
+    "second timothy",
+    "2timothy"
+   ]
+  },
+  {
+   "id": "tit",
+   "name": "Titus",
+   "abbr": "Titus",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "titus",
+   "chapters": 3,
+   "aliases": [
+    "titus",
+    "ti",
+    "tit"
+   ]
+  },
+  {
+   "id": "phm",
+   "name": "Philemon",
+   "abbr": "Phlm",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "philemon",
+   "chapters": 1,
+   "aliases": [
+    "philemon",
+    "phlm",
+    "phm",
+    "philem"
+   ]
+  },
+  {
+   "id": "heb",
+   "name": "Hebrews",
+   "abbr": "Heb",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "hebrews",
+   "chapters": 13,
+   "aliases": [
+    "hebrews",
+    "heb"
+   ]
+  },
+  {
+   "id": "jas",
+   "name": "James",
+   "abbr": "Jas",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "james",
+   "chapters": 5,
+   "aliases": [
+    "james",
+    "jas",
+    "jam"
+   ]
+  },
+  {
+   "id": "1pe",
+   "name": "1 Peter",
+   "abbr": "1 Pet",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "1peter",
+   "chapters": 5,
+   "aliases": [
+    "1 peter",
+    "1 pet",
+    "i peter",
+    "1 pe",
+    "1pt",
+    "1peter",
+    "first peter"
+   ]
+  },
+  {
+   "id": "2pe",
+   "name": "2 Peter",
+   "abbr": "2 Pet",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "2peter",
+   "chapters": 3,
+   "aliases": [
+    "2 peter",
+    "2 pet",
+    "ii peter",
+    "2 pe",
+    "2pt",
+    "2peter",
+    "second peter"
+   ]
+  },
+  {
+   "id": "1jn",
+   "name": "1 John",
+   "abbr": "1 John",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "1john",
+   "chapters": 5,
+   "aliases": [
+    "1 john",
+    "i john",
+    "1 jn",
+    "1jn",
+    "first john",
+    "1john"
+   ]
+  },
+  {
+   "id": "2jn",
+   "name": "2 John",
+   "abbr": "2 John",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "2john",
+   "chapters": 1,
+   "aliases": [
+    "2 john",
+    "ii john",
+    "2 jn",
+    "2jn",
+    "second john",
+    "2john"
+   ]
+  },
+  {
+   "id": "3jn",
+   "name": "3 John",
+   "abbr": "3 John",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "3john",
+   "chapters": 1,
+   "aliases": [
+    "3 john",
+    "iii john",
+    "3 jn",
+    "3jn",
+    "third john",
+    "3john"
+   ]
+  },
+  {
+   "id": "jud",
+   "name": "Jude",
+   "abbr": "Jude",
+   "testament": "nt",
+   "group": "Acts and the Letters",
+   "usccb": "jude",
+   "chapters": 1,
+   "aliases": [
+    "jude"
+   ]
+  },
+  {
+   "id": "rev",
+   "name": "Revelation",
+   "abbr": "Rev",
+   "testament": "nt",
+   "group": "The Apocalypse",
+   "usccb": "revelation",
+   "chapters": 22,
+   "aliases": [
+    "revelation",
+    "rev",
+    "revelation of john",
+    "apocalypse",
+    "apoc"
+   ],
+   "also": "Apocalypse"
+  }
+ ],
+ "surrender": [
+  "Why do you confuse yourselves by worrying? Leave the care of your affairs to me and everything will be peaceful. I say to you in truth that every act of true, blind, complete surrender to me produces the effect that you desire and resolves all difficult situations.",
+  "Surrender to me does not mean to fret, to be upset, or to lose hope, nor does it mean offering to me a worried prayer asking me to follow you and change your worry into prayer. It is against this surrender, deeply against it, to worry, to be nervous and to desire to think about the consequences of anything.\n\nIt is like the confusion that children feel when they ask their mother to see to their needs, and then try to take care of those needs for themselves so that their childlike efforts get in their mother’s way. Surrender means to placidly close the eyes of the soul, to turn away from thoughts of tribulation and to put yourself in my care, so that only I act, saying, “You take care of it.”",
+  "How many things I do when the soul, in so much spiritual and material need, turns to me, looks at me and says to me, “You take care of it,” then closes its eyes and rests. In pain you pray for me to act, but that I act in the way you want. You do not turn to me, instead, you want me to adapt to your ideas. You are not sick people who ask the doctor to cure you, but rather sick people who tell the doctor how to. So do not act this way, but pray as I taught you in the Our Father: “Hallowed be thy Name,” that is, be glorified in my need. “Thy kingdom come,” that is, let all that is in us and in the world be in accord with your kingdom. “Thy will be done on Earth as it is in Heaven,” that is, in our need, decide as you see fit for our temporal and eternal life. If you say to me truly: “Thy will be done,” which is the same as saying: “You take care of it,” I will intervene with all my omnipotence, and I will resolve the most difficult situations.",
+  "You see evil growing instead of weakening? Do not worry. Close your eyes and say to me with faith: “Thy will be done, You take care of it.” I say to you that I will take care of it, and that I will intervene as does a doctor and I will accomplish miracles when they are needed. Do you see that the sick person is getting worse? Do not be upset, but close your eyes and say, “You take care of it.” I say to you that I will take care of it, and that there is no medicine more powerful than my loving intervention. By my love, I promise this to you.",
+  "And when I must lead you on a path different from the one you see, I will prepare you; I will carry you in my arms; I will let you find yourself, like children who have fallen asleep in their mother’s arms, on the other bank of the river. What troubles you and hurts you immensely are your reason, your thoughts and worry, and your desire at all costs to deal with what afflicts you.",
+  "You are sleepless; you want to judge everything, direct everything and see to everything and you surrender to human strength, or worse — to men themselves, trusting in their intervention. This is what hinders my words and my views. Oh, how much I wish from you this surrender, to help you; and how I suffer when I see you so agitated! Satan tries to do exactly this: to agitate you and to remove you from my protection and to throw you into the jaws of human initiative. So, trust only in me, rest in me, surrender to me in everything.",
+  "I perform miracles in proportion to your full surrender to me and to your not thinking of yourselves. I sow treasure troves of graces when you are in the deepest poverty. No person of reason, no thinker, has ever performed miracles, not even among the saints. He does divine works whosoever surrenders to God. So don’t think about it any more, because your mind is acute and for you it is very hard to see evil and to trust in me and to not think of yourself. Do this for all your needs, do this, all of you, and you will see great continual silent miracles. I will take care of things, I promise this to you.",
+  "Close your eyes and let yourself be carried away on the flowing current of my grace; close your eyes and do not think of the present, turning your thoughts away from the future just as you would from temptation. Repose in me, believing in my goodness, and I promise you by my love that if you say, “You take care of it,” I will take care of it all; I will console you, liberate you and guide you.",
+  "Pray always in readiness to surrender, and you will receive from it great peace and great rewards, even when I confer on you the grace of immolation, of repentance, and of love. Then what does suffering matter? It seems impossible to you? Close your eyes and say with all your soul, “Jesus, you take care of it.” Do not be afraid, I will take care of things and you will bless my name by humbling yourself. A thousand prayers cannot equal one single act of surrender, remember this well. There is no novena more effective than this."
+ ],
+ "prayers": {
+  "sign": "In the name of the Father, and of the Son, and of the Holy Spirit, Amen.",
+  "hailMary": "Hail Mary, full of Grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners now and at the hour of our death, Amen.",
+  "creed": "I believe in God, the Father Almighty, Creator of heaven and earth, and in Jesus Christ, His only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried; He descended into hell; on the third day He arose again from the dead; He ascended into heaven, and is seated at the right hand of God the Father Almighty; from there He will come to judge the living and the dead. I believe in the Holy Spirit, the Holy Catholic Church, the communion of Saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
+  "ourFather": "Our Father, Who art in Heaven, hallowed be Thy name. Thy Kingdom come, Thy will be done on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+  "glory": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now and ever shall be, world without end. Amen.",
+  "fatima": "O my Jesus, forgive us our sins, save us from the fires of hell, lead all souls to Heaven, especially those in most need of Thy mercy",
+  "roseNote": "Every Hail Mary you say is a delicate rose to our Holy Mother!",
+  "bindTail": "and humbly lay this bouquet at your feet",
+  "spiritual": "My Jesus, really present in the most Holy Sacrament of the altar, since I cannot now receive you under the Sacramental Veil, I beseech you, with a heart full of love and longing, to come spiritually into my soul through the immaculate heart of Your most Holy Mother, and abide with me forever.",
+  "petitionClose": "Sweet Mother Mary, I offer you this Spiritual Communion to bind my bouquets in a wreath to place upon your brow. O my Mother! Look with favor upon my gift, and in your love obtain for me (specify request here).",
+  "thanksClose": "Sweet Mother Mary, I offer you this Spiritual Communion to bind my bouquets in a wreath to place upon your brow in thanksgiving for (specify request here).",
+  "petitionQueen": "O Holy Queen, dispenser of God’s graces and mother of all who invoke your holy name. Do not look upon my gift and fail to see its binding. As you graciously receive my gift, I humbly implore you to receive my petition; from your bounty I rest assured that you will grant me the favor I so trustingly seek.",
+  "thanksQueen": "O Holy Queen, dispenser of God’s graces and mother of all who invoke your holy name. Do not look upon my gift and fail to see its binding. As you graciously receive my gift, I kindly implore you to receive my thanksgiving; from your bounty you have granted me the favor I so trustingly sought.",
+  "petitionEnd": "I despair of nothing that I ask of thee. Show thyself my Mother!",
+  "thanksEnd": "I despaired not of what I ask of thee, and thou has truly shown thyself my Mother!",
+  "hailHolyQueen": "Hail, Holy Queen, Mother of Mercy, our life, our sweetness, and our hope. To Thee do we cry, poor banished children of Eve. To Thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, Thine eyes of mercy towards us. And after this our exile, show unto us the blessed Fruit of Thy womb, Jesus. Oh clement, Oh loving, Oh sweet Virgin Mary.",
+  "versicle": "Pray for us, O Holy Mother of God\nThat we may be made worthy of the promises of Christ",
+  "collect": "O God! Whose only-begotten Son, by His life, death, and resurrection, has purchased for us the rewards of eternal life; grant, we beseech Thee, that, meditating on these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may both imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen.",
+  "assistance": "May the divine assistance remain always with us. Amen.",
+  "souls": "And may the souls of the faithful departed, through the mercy of God, rest in peace. Amen",
+  "blessing": "Holy Virgin, with the loving Child, thy blessing give to us this (day/night).",
+  "michaelTitle": "Prayer to St. Michael, the Archangel",
+  "michael": "St. Michael, the Archangel, defend us in battle. Be our protection against the wickedness and snares of the devil. May God rebuke him we humbly pray; and do thou, O Prince of the Heavenly Host, by the power of God, cast into hell Satan and all the evil spirits, who prowl about the world seeking the ruin of souls. Amen.",
+  "memorareTitle": "Memorare",
+  "memorare": "Remember, O most gracious Virgin Mary, that never was it known that anyone who fled to thy protection, implored thy help, or sought thine intercession was left unaided. Inspired by this confidence, I fly unto thee, O Virgin of virgins, my mother; to thee do I come, before thee I stand, sinful and sorrowful. O Mother of the Word Incarnate, despise not my petitions, but in thy mercy hear and answer me. Amen.",
+  "litany": [
+   "The Litany of the Blessed Virgin Mary",
+   "Lord, have mercy",
+   "Christ, have mercy",
+   "Lord, have mercy on us",
+   "Christ, hear us, Christ, graciously hear us",
+   "God the Father of Heaven",
+   "Have mercy on us",
+   "God the Son, Redeemer of the world",
+   "Have mercy on us",
+   "God the Holy Spirit",
+   "Have mercy on us",
+   "Holy Trinity, One God",
+   "Have mercy on us",
+   "Holy Mary",
+   "Pray for us",
+   "Holy Mother of God",
+   "Pray for us",
+   "Holy Virgin of virgins",
+   "Pray for us",
+   "Mother of Christ",
+   "Pray for us",
+   "Mother of the Church",
+   "Pray for us",
+   "Mother of Divine Grace",
+   "Pray for us",
+   "Mother of Hope",
+   "Pray for us",
+   "Mother most pure",
+   "Pray for us",
+   "Mother most chaste",
+   "Pray for us",
+   "Mother inviolate",
+   "Pray for us",
+   "Mother undefiled\nPray for us",
+   "Mother most amiable\nPray for us",
+   "Mother most admirable\nPray for us",
+   "Mother of good counsel\nPray for us",
+   "Mother of our Creator\nPray for us",
+   "Mother of our Savior\nPray for us",
+   "Virgin most prudent\nPray for us",
+   "Virgin most venerable\nPray for us",
+   "Virgin most renowned\nPray for us",
+   "Virgin most powerful\nPray for us",
+   "Virgin most merciful\nPray for us",
+   "Virgin most faithful\nPray for us",
+   "Mirror of justice\nPray for us",
+   "Seat of wisdom\nPray for us",
+   "Cause of our joy\nPray for us",
+   "Spiritual vessel\nPray for us",
+   "Vessel of honor\nPray for us",
+   "Singular vessel of devotion\nPray for us",
+   "Mystical rose\nPray for us",
+   "Tower of David\nPray for us",
+   "Tower of ivory\nPray for us",
+   "House of gold\nPray for us",
+   "Ark of the covenant\nPray for us",
+   "Gate of Heaven\nPray for us",
+   "Morning star\nPray for us",
+   "Health of the sick\nPray for us",
+   "Refuge of sinners\nPray for us",
+   "Solace of migrants",
+   "Pray for us",
+   "Comforter of the afflicted\nPray for us",
+   "Help of Christians\nPray for us",
+   "Queen of Angels\nPray for us",
+   "Queen of Patriarchs\nPray for us",
+   "Queen of Prophets\nPray for us",
+   "Queen of Apostles\nPray for us",
+   "Queen of Martyrs\nPray for us",
+   "Queen of Confessors\nPray for us",
+   "Queen of Virgins\nPray for us",
+   "Queen of all Saints\nPray for us",
+   "Queen conceived without original sin\nPray for us",
+   "Queen assumed into Heaven\nPray for us",
+   "Queen of the most Holy Rosary\nPray for us",
+   "Queen of families",
+   "Pray for us",
+   "Queen of Peace",
+   "Pray for us",
+   "Lamb of God, who takes away the sins of the world",
+   "Spare us, O Lord",
+   "Lamb of God, who takes away the sins of the world",
+   "Graciously hear us, O Lord",
+   "Lamb of God, who takes away the sins of the world",
+   "Have mercy on us",
+   "Pray for us, O Holy Mother of God\nThat we may be made worthy of the promises of Christ",
+   "Let us pray.\nGrant, we beseech thee, O Lord God, that we, your servants, may enjoy perpetual health of mind and body; and by the glorious intercession of the Blessed Mary, ever Virgin, may be delivered from present sorrow, and obtain eternal joy. Through Christ our Lord.\nAmen."
+  ],
+  "kiss": "*By Kissing the Crucifix at the end of the Rosary, you are showing your love to God and thanking Him...",
+  "mysteries": {
+   "joyful": {
+    "crown": "Hail! Queen of the Most Holy Rosary, my Mother Mary, hail! At your feet I humbly pray and offer you a crown of snow-white roses, to remind you of your joys. Each ten bound together, recalling to you a joyful mystery, with my petition for a particular grace.",
+    "decades": [
+     {
+      "title": "The First Joyful Mystery - The Annunciation",
+      "address": "Sweet Mother Mary,",
+      "meditation": "meditating on the Mystery of the Annunciation, when the angel Gabriel appeared to you with the news that you were to become the Mother of God. He greeted you with that sublime salutation, “Hail, full of grace! The Lord is with thee!” and you did humbly submit yourself to the will of the Father, responding: “Behold the handmaid of the Lord. Be it done unto me according to thy word,”",
+      "fruit": "Humility"
+     },
+     {
+      "title": "The Second Joyful Mystery - The Visitation",
+      "address": "Sweet Mother Mary,",
+      "meditation": "meditating on the Mystery of the Visitation, when, upon your visit to your holy cousin, Elizabeth, she greeted you with the prophetic utterance, “Blessed art thou among women, and blessed is the fruit of thy womb!” and you answered with that canticle of canticles, the Magnificat,",
+      "fruit": "Charity Towards My Neighbor"
+     },
+     {
+      "title": "The Third Joyful Mystery - The Nativity",
+      "address": "Sweet Mother Mary,",
+      "meditation": "meditating on the Mystery of the Nativity of Our Lord, when, your time being completed, you brought forth, O holy Virgin, the redeemer of the world in a stable at Bethlehem; whereupon choirs of angels filled the Heavens with their exultant song of praise – “Glory to God in the highest, and on Earth peace to people of good will,”",
+      "fruit": "Detachment From The World"
+     },
+     {
+      "title": "The Fourth Joyful Mystery - The Presentation",
+      "address": "Sweet Mother Mary,",
+      "meditation": "meditating on the Mystery of the Presentation, when, in obedience to the Law of Moses, you presented the Child in the temple, where the holy prophet Simeon, taking the Child in his arms, offered thanks to God for allowing him to look upon his Saviour,",
+      "fruit": "Purity"
+     },
+     {
+      "title": "The Fifth Joyful Mystery - The Finding of the Child Jesus in the Temple",
+      "address": "Sweet Mother Mary,",
+      "meditation": "meditating on the Mystery of the Finding of the Child Jesus in the Temple, when, having sought Him for three days, distressed and anxious at His absence, your heart was gladdened when you found Him in the temple speaking to the doctors; and upon your request, He obediently returned home,",
+      "fruit": "True Wisdom"
+     }
+    ]
+   },
+   "sorrowful": {
+    "crown": "Hail! Queen of the Most Holy Rosary, my Mother Mary, hail! At your feet I humbly pray and offer you a crown of blood-red roses, in remembrance of the passion of your divine Son. Each ten bound together, recalling to you a sorrowful mystery, with my petition for a particular grace.",
+    "decades": [
+     {
+      "title": "The First Sorrowful Mystery - The Agony",
+      "address": "O Most Sorrowful Mother Mary,",
+      "meditation": "meditating on the Mystery of the Agony of Our Lord in the Garden, when, in the grotto of the Garden of Olives, Jesus saw the sins of the world unfolded before Him by Satan, who sought to dissuade Him from the sacrifice He was about to make; when, His soul shrinking from the sight, and His precious blood flowing from every pore at the vision of the torture and death He was to undergo, your own sufferings, dear Mother, the future sufferings of His Church, and His own sufferings in the Blessed Sacrament, He cried in anguish, “Abba! Father! If it be possible, let this chalice pass from Me!”; but, immediately resigning Himself to His Father’s will, He prayed, “Not as I will, but as Thou wilt!”",
+      "fruit": "Uniformity With the Will of God"
+     },
+     {
+      "title": "The Second Sorrowful Mystery - The Scourging at the Pillar",
+      "address": "O Most Sorrowful Mother Mary,",
+      "meditation": "meditating on the Mystery of the Scourging of Our Lord when, at Pilate’s command, your divine Son, stripped and bound to a pillar, was lacerated from head to foot with cruel scourges and His flesh torn away until His mortified body could bear no more,",
+      "fruit": "Mortifying My Senses"
+     },
+     {
+      "title": "The Third Sorrowful Mystery - The Crowning With Thorns",
+      "address": "O Most Sorrowful Mother Mary,",
+      "meditation": "meditating on the Mystery of the Crowning of Our Lord with thorns, when, the soldiers, binding about His head a crown of sharp thorns, showered blows upon it, driving the thorns deeply into His head; then, in mock adoration, knelt before Him, crying, “Hail, King of the Jews!”",
+      "fruit": "Courage in Tough Trials"
+     },
+     {
+      "title": "The Fourth Sorrowful Mystery - The Carrying of the Cross",
+      "address": "O Most Sorrowful Mother Mary,",
+      "meditation": "meditating on the Mystery of the Carrying of the Cross, when, with the heavy wood of the Cross upon His shoulders, your divine Son was dragged, weak and suffering, yet patient, through the streets, amidst the revilements of the people, to Calvary; falling often, but urged along by the cruel blows of His executioners,",
+      "fruit": "Patience in Adversity"
+     },
+     {
+      "title": "The Fifth Sorrowful Mystery - The Crucifixion",
+      "address": "O Most Sorrowful Mother Mary,",
+      "meditation": "meditating on the Mystery of the Crucifixion, when your divine Son was nailed to the cross, upon which He died after three hours of indescribable agony, during which time He begged His Father forgiveness of His enemies,",
+      "fruit": "Forgiveness"
+     }
+    ]
+   },
+   "glorious": {
+    "crown": "Hail! Queen of the Most Holy Rosary, my Mother Mary, hail! At your feet I humbly pray and offer you a crown of royal-purple roses, to remind you of your glories. Each ten bound together, recalling to you a glorious mystery, with my petition for a particular grace.",
+    "decades": [
+     {
+      "title": "The First Glorious Mystery - The Resurrection",
+      "address": "O Glorious Mother Mary,",
+      "meditation": "meditating on the Mystery of the Resurrection of Our Lord from the Dead, when, on the morning of the third day after His death and burial, He arose from the dead and appeared to you, dear Mother, and filled your heart with unspeakable joy; then appeared to the holy women and to His disciples, who adored Him as their risen God,",
+      "fruit": "Faith"
+     },
+     {
+      "title": "The Second Glorious Mystery - The Ascension",
+      "address": "O Glorious Mother Mary,",
+      "meditation": "meditating on the Mystery of the Ascension, when your divine Son, after forty days on Earth, went to Mount Olivet accompanied by His disciples, where they adored Him for the last time, after which He promised to remain with them until the end of the world; then, extending His pierced hands over them in a last blessing, He ascended into heaven,",
+      "fruit": "Desire for Heaven"
+     },
+     {
+      "title": "The Third Glorious Mystery - The Descent of the Holy Spirit",
+      "address": "O Glorious Mother Mary,",
+      "meditation": "meditating on the Mystery of the Descent of the Holy Spirit, when, the Apostles being assembled in a house in Jerusalem, the Holy Spirit descended upon them in the form of fiery tongues, inflaming the hearts of the Apostles with the fire of divine love, teaching them all truths and giving to them the gift of tongues,",
+      "fruit": "Receiving the Holy Spirit"
+     },
+     {
+      "title": "The Fourth Glorious Mystery - The Assumption of Our Blessed Mother Into Heaven",
+      "address": "O Glorious Mother Mary,",
+      "meditation": "meditating on the Mystery of your Assumption into Heaven, when, consumed with the desire to be united with your divine Son, your soul departed from your body and united itself to Him, Who, out of the excessive love He bore for you, His Mother, whose virginal body was His first tabernacle, took that body into Heaven and there, amidst the acclaims of the angels and saints, fused into it your soul,",
+      "fruit": "True Devotion to You, Dear Mother"
+     },
+     {
+      "title": "The Fifth Glorious Mystery - The Coronation of Our Blessed Mother in Heaven as Its Queen",
+      "address": "O Glorious Mother Mary,",
+      "meditation": "meditating on the Mystery of your Coronation in Heaven, when, upon being taken up, you were triply crowned as the August Queen of Heaven by God the Father as His beloved daughter, by God the Son as His dearest mother, and by God the Holy Spirit as His chosen spouse; the most perfect adorer of the Blessed Trinity, pleading our cause as our most powerful and merciful mother, through you,",
+      "fruit": "Trust In Your Intercession"
+     }
+    ]
+   },
+   "luminous": {
+    "crown": "Hail! Queen of the Most Holy Rosary, my Mother Mary, hail! At your feet I humbly pray and offer you a crown of bright-yellow roses, to remind you of the ministry of your Son. Each ten bound together, recalling to you a luminous mystery, with my petition for a particular grace.",
+    "decades": [
+     {
+      "title": "The First Luminous Mystery - The Baptism of Jesus in the Jordan River",
+      "address": "O Courageous Mother Mary,",
+      "meditation": "meditating on the Mystery of the Baptism of Jesus in the Jordan River, when your Son, as an example to all, insisted on being baptised by His cousin John and the sky opened and the Holy Spirit came down to Him like a dove and a voice from Heaven said, \"You are my own dear Son in whom I am well pleased,\"",
+      "fruit": "Openness to the Holy Spirit"
+     },
+     {
+      "title": "The Second Luminous Mystery - The Wedding at Cana",
+      "address": "O Courageous Mother Mary,",
+      "meditation": "meditating on the Mystery of the First Miracle of Jesus at the Wedding Feast at Cana, when at your urging, your Son performed the first of His many miracles by helping a couple celebrate their marriage, by changing water into wine of such quality that the chief steward upbraided the host by saying, \"Usually people serve the best wine first and save the cheaper wine for last, but you have saved the choice wine for last,\"",
+      "fruit": "Manifestation Through Faith"
+     },
+     {
+      "title": "The Third Luminous Mystery - The Proclamation of the Kingdom of God",
+      "address": "O Courageous Mother Mary,",
+      "meditation": "meditating on the Mystery of the Proclamation of the Kingdom of God, when your Son revealed that the reign of God has already begun \"within us\" and we are called to conversion and forgiveness, praying \"Your Kingdom come, Your will be done, on Earth as it is in Heaven,\"",
+      "fruit": "Trust In God"
+     },
+     {
+      "title": "The Fourth Luminous Mystery - The Transfiguration",
+      "address": "O Courageous Mother Mary,",
+      "meditation": "meditating on the Mystery of the Transfiguration, when your Son revealed His glory to His three disciples, appearing on a mountain with Moses and Elijah, His face shining like the sun and a voice from heaven proclaiming, \"This is my beloved Son...Listen to him,\"",
+      "fruit": "Desire for Holiness"
+     },
+     {
+      "title": "The Fifth Luminous Mystery - Institution of the Eucharist",
+      "address": "O Courageous Mother Mary,",
+      "meditation": "meditating on the Mystery of the Institution of the Sacrament of the Eucharist, when on the day before He died your Son celebrated the Passover with His disciples and took bread and gave it to them saying, \"Take and eat; this is My body\" and when dinner was finished He took a cup of wine and shared it with them saying, \"Take and drink; this is My blood, which will be given up for you; do this in memory of Me,\"",
+      "fruit": "Adoration of the Eucharist"
+     }
+    ]
+   }
+  },
+  "roses": {
+   "joyful": "snow-white roses",
+   "sorrowful": "blood-red roses",
+   "glorious": "royal-purple roses",
+   "luminous": "bright-yellow roses"
+  }
+ },
+ "mysteryReadings": {
+  "joyful": [
+   {
+    "book": "luk",
+    "chapter": 1,
+    "verse": 26,
+    "reading": "Luke 1:26"
+   },
+   {
+    "book": "luk",
+    "chapter": 1,
+    "verse": 39,
+    "reading": "Luke 1:39"
+   },
+   {
+    "book": "luk",
+    "chapter": 2,
+    "verse": 1,
+    "reading": "Luke 2:1"
+   },
+   {
+    "book": "luk",
+    "chapter": 2,
+    "verse": 22,
+    "reading": "Luke 2:22"
+   },
+   {
+    "book": "luk",
+    "chapter": 2,
+    "verse": 41,
+    "reading": "Luke 2:41"
+   }
+  ],
+  "sorrowful": [
+   {
+    "book": "mat",
+    "chapter": 26,
+    "verse": 36,
+    "reading": "Matthew 26:36"
+   },
+   {
+    "book": "jhn",
+    "chapter": 19,
+    "verse": 1,
+    "reading": "John 19:1"
+   },
+   {
+    "book": "mat",
+    "chapter": 27,
+    "verse": 27,
+    "reading": "Matthew 27:27"
+   },
+   {
+    "book": "luk",
+    "chapter": 23,
+    "verse": 26,
+    "reading": "Luke 23:26"
+   },
+   {
+    "book": "jhn",
+    "chapter": 19,
+    "verse": 25,
+    "reading": "John 19:25"
+   }
+  ],
+  "glorious": [
+   {
+    "book": "jhn",
+    "chapter": 20,
+    "verse": 1,
+    "reading": "John 20:1"
+   },
+   {
+    "book": "act",
+    "chapter": 1,
+    "verse": 6,
+    "reading": "Acts 1:6"
+   },
+   {
+    "book": "act",
+    "chapter": 2,
+    "verse": 1,
+    "reading": "Acts 2:1"
+   },
+   {
+    "book": "luk",
+    "chapter": 1,
+    "verse": 46,
+    "reading": "Luke 1:46"
+   },
+   {
+    "book": "rev",
+    "chapter": 12,
+    "verse": 1,
+    "reading": "Revelation 12:1"
+   }
+  ],
+  "luminous": [
+   {
+    "book": "mat",
+    "chapter": 3,
+    "verse": 13,
+    "reading": "Matthew 3:13"
+   },
+   {
+    "book": "jhn",
+    "chapter": 2,
+    "verse": 1,
+    "reading": "John 2:1"
+   },
+   {
+    "book": "mrk",
+    "chapter": 1,
+    "verse": 14,
+    "reading": "Mark 1:14"
+   },
+   {
+    "book": "mat",
+    "chapter": 17,
+    "verse": 1,
+    "reading": "Matthew 17:1"
+   },
+   {
+    "book": "luk",
+    "chapter": 22,
+    "verse": 19,
+    "reading": "Luke 22:19"
+   }
+  ]
+ },
+ "mysteryNames": {
+  "joyful": {
+   "name": "Joyful Mysteries",
+   "short": "Joyful",
+   "letter": "J"
+  },
+  "sorrowful": {
+   "name": "Sorrowful Mysteries",
+   "short": "Sorrowful",
+   "letter": "S"
+  },
+  "glorious": {
+   "name": "Glorious Mysteries",
+   "short": "Glorious",
+   "letter": "G"
+  },
+  "luminous": {
+   "name": "Luminous Mysteries",
+   "short": "Luminous",
+   "letter": "L"
+  }
+ },
+ "mysteryReflections": {
+  "joyful": [
+   {
+    "reflection": "Gabriel does not ask Mary to invent a plan. He tells her what God is already doing, and her answer makes room: “Let it be done to me.” Humility here is not shrinking. It is taking your hands off the story.",
+    "questions": [
+     "Where are you still trying to write the ending of this intention yourself?",
+     "What would “let it be done” sound like, in one sentence, about the favor you are asking?"
+    ]
+   },
+   {
+    "reflection": "Mary leaves at once, carrying a secret she could have kept. Charity in this mystery is going toward someone else’s need with the Lord already in you, before your own question is settled.",
+    "questions": [
+     "Who, this week, is the person you could actually go to?",
+     "What do you carry to them besides advice?"
+    ]
+   },
+   {
+    "reflection": "A census moves them, the inn does not receive them, and the child is laid in a manger. Detachment is letting the favor come in the form God gives, not the form you arranged.",
+    "questions": [
+     "What comfort are you requiring before you will call this prayer answered?",
+     "Where is the poor place, the manger, God might already be using?"
+    ]
+   },
+   {
+    "reflection": "They bring the child because the Law says so, and Simeon is still waiting. Purity is a clean yes, held long enough that you are there when God comes.",
+    "questions": [
+     "What are you holding that makes this prayer cloudy?",
+     "What small obedience, already clear, have you been postponing?"
+    ]
+   },
+   {
+    "reflection": "They look for three days and find him in his Father’s house, about his Father’s business. Wisdom is not getting him back on your schedule. It is learning where he actually is.",
+    "questions": [
+     "Where have you been looking for an answer that is not where Jesus is?",
+     "What would it mean to stay in his Father’s house while the favor is still unanswered?"
+    ]
+   }
+  ],
+  "sorrowful": [
+   {
+    "reflection": "He asks that the cup pass, and then he stays. Surrender is not the absence of the plea. It is the second sentence: not as I will, but as you will.",
+    "questions": [
+     "What cup in this intention are you still bargaining over?",
+     "Can you pray the plea and the surrender in the same breath today?"
+    ]
+   },
+   {
+    "reflection": "Pilate has him scourged as a tactic, hoping a ruined body will satisfy the crowd. Mortification is not hating the body. It is refusing to let comfort or fear decide the next step.",
+    "questions": [
+     "Which appetite has been steering this prayer: news, reassurance, or control?",
+     "What one comfort could you set down today without announcing it?"
+    ]
+   },
+   {
+    "reflection": "They dress him as a king in order to mock the title, and he does not take the crown off. Courage is wearing the truth when it is being laughed at.",
+    "questions": [
+     "Where does this intention make you feel ridiculous for still asking?",
+     "What truth about it are you tempted to joke away?"
+    ]
+   },
+   {
+    "reflection": "Simon is pulled in from the country. Jesus does not carry the cross alone, and Simon did not volunteer. Patience is staying under the weight for the length of the road, including the help you did not choose.",
+    "questions": [
+     "Who has been pulled into this with you, and have you let them help?",
+     "What part of the road are you trying to skip?"
+    ]
+   },
+   {
+    "reflection": "From the cross he gives his mother a son and the disciple a mother, and he speaks forgiveness while the nails are still in. The favor you want is not more important than the person you have not forgiven.",
+    "questions": [
+     "Who stands near this intention whom you are still refusing?",
+     "What would one honest sentence of forgiveness cost you today?"
+    ]
+   }
+  ],
+  "glorious": [
+   {
+    "reflection": "The tomb is empty before anyone understands it. Mary Magdalene sees the stone rolled back and still thinks the body has been taken. Faith walks toward the garden before the explanation arrives.",
+    "questions": [
+     "What would you do differently this week if the favor were already in God’s hands?",
+     "Where are you calling “stolen” what may only be hidden?"
+    ]
+   },
+   {
+    "reflection": "They ask if he will restore the kingdom now. He makes them witnesses and is taken up. The desire for heaven is not an escape from the favor. It is refusing to make this world the whole of what you ask.",
+    "questions": [
+     "Have you been asking only for the kingdom to be restored now?",
+     "What witness is still yours to give while you wait?"
+    ]
+   },
+   {
+    "reflection": "They are together in one place when the wind comes. The Spirit is not a mood you work up after the prayer feels dry. It is given to people who stayed.",
+    "questions": [
+     "Where have you left this novena because it felt quiet?",
+     "What do you need to ask the Spirit for by name, besides the favor itself?"
+    ]
+   },
+   {
+    "reflection": "Scripture does not narrate the Assumption. It does give her song: the Mighty One has done great things, and he lifts the lowly. Devotion lets her magnify him. It does not replace him.",
+    "questions": [
+     "Does this prayer magnify the Lord, or only the outcome you want?",
+     "Where are you lowly enough, right now, for that lifting to be real?"
+    ]
+   },
+   {
+    "reflection": "A woman clothed with the sun, a dragon waiting, a child caught up to God. Trust in her intercession is trust that the child is already safe with God while the fight is still on the earth.",
+    "questions": [
+     "What are you afraid will devour this intention if you stop managing it?",
+     "Can you leave it with her while the struggle is unfinished?"
+    ]
+   }
+  ],
+  "luminous": [
+   {
+    "reflection": "Jesus steps into a line of sinners. The voice comes after he goes down into the water, not before. Openness is getting into the river you would rather explain away.",
+    "questions": [
+     "What humbling are you still standing on the bank of?",
+     "Where do you want the voice from heaven before you will step in?"
+    ]
+   },
+   {
+    "reflection": "“They have no wine.” She does not tell him how to fill the jars. She tells the servants to do whatever he says. That is the shape of the whole novena.",
+    "questions": [
+     "Are you only describing the lack, or have you also handed him the method?",
+     "What ordinary “whatever he says” is already in front of you?"
+    ]
+   },
+   {
+    "reflection": "After John is arrested, Jesus begins: the time is fulfilled, the kingdom is at hand. The kingdom is announced in the middle of bad news, not after it clears.",
+    "questions": [
+     "What bad news are you treating as a sign that God has not started?",
+     "What would repenting look like inside this particular intention?"
+    ]
+   },
+   {
+    "reflection": "They see him as he is, and Peter wants to build tents and stay. Holiness does not camp on the feeling. The same Jesus walks them down to the boy who still needs healing.",
+    "questions": [
+     "What spiritual feeling are you trying to keep instead of the favor itself?",
+     "Who at the foot of the mountain still needs you to come down?"
+    ]
+   },
+   {
+    "reflection": "He gives his body on the night he is betrayed, and tells them to do this in memory of him. The gift is handed over before the night looks like a victory. Adoration stays with what he placed in your hands.",
+    "questions": [
+     "Can you thank him for this intention before you see how it ends?",
+     "Where, this week, will you actually sit with him in the Eucharist?"
+    ]
+   }
+  ]
+ },
+ "chapterReflections": {
+  "gen:46": {
+   "reflection": "At the Well of the Oath, God tells Jacob not to be afraid to go down into Egypt: he will descend with him, and he will lead him back. The long list of names is the promise becoming a household — seventy souls, wagons, flocks — and then Joseph falls on his father’s neck. Jacob says he can die happy, because he has seen his son’s face and is leaving him alive.",
+   "questions": [
+    "What move are you treating as the end of the promise, when God may be going down with you?",
+    "Who, in this intention, would it be enough simply to see alive?"
+   ]
+  },
+  "gen:47": {
+   "reflection": "Pharaoh puts them in Goshen, the best of the land, and Jacob blesses the king. Then the famine takes Egypt’s money, cattle, and land, while Israel is fed and multiplies. At the end Jacob makes Joseph swear he will not be buried in Egypt, but with his fathers. A favor that feeds you is not the same as a land that owns you.",
+   "questions": [
+    "Where has provision started to feel like ownership — someone else’s, or your own?",
+    "What do you need kept after the favor arrives, the way Jacob asked to sleep with his fathers?"
+   ]
+  },
+  "gen:48": {
+   "reflection": "Jacob sits up to die and claims Joseph’s sons, born in Egypt, as his own, equal to Reuben and Simeon. Then he crosses his hands: the right hand goes to Ephraim, the younger. Joseph tries to lift it off. Jacob refuses. “I know, my son, I know.” The blessing does not follow the order you arranged.",
+   "questions": [
+    "Where are you still trying to uncross God’s hands?",
+    "Who have you decided is too late, or too far from home, to be counted in the promise?"
+   ]
+  },
+  "gen:49": {
+   "reflection": "Jacob tells his sons what will happen in the last days, and the words are not all kind. Reuben is poured out like water. Simeon and Levi are divided for their violence. Judah keeps the scepter until the one who will be sent arrives, the expectation of the nations. Then Jacob asks to be buried in the cave with Abraham and Sarah, Isaac and Rebekah, and Leah. A true word about the family can still carry the promise forward.",
+   "questions": [
+    "Which word about your life have you wanted to skip because it is not the kind part?",
+    "What do you need to be buried with — the people and the place the promise already named?"
+   ]
+  },
+  "gen:50": {
+   "reflection": "Once Jacob is dead, the brothers expect revenge, and they send a plea in their father’s name. Joseph weeps. “You devised evil against me. But God turned it into good, so that he might bring about the salvation of many peoples.” He dies asking that his bones go up when God visits them. Forgiveness here is not pretending the evil was nothing. It is refusing to end the story where the evil stopped.",
+   "questions": [
+    "What injury are you still waiting to repay, now that the person who held the peace is gone?",
+    "Can you say, about this intention, that God turned it toward the saving of many — not only toward your relief?"
+   ]
+  },
+  "exo:1": {
+   "reflection": "A new king rises who is ignorant of Joseph. The household that was welcomed is feared, and fear becomes policy: hard labor, then an order to the midwives to kill the sons. Shiphrah and Puah fear God, and they do not act according to the king’s precept. The chapter does not end in rescue. Pharaoh tells his people to cast every boy into the river. Sometimes the first act of faith is a refusal, not a victory.",
+   "questions": [
+    "Whose order have you been treating as the only one that counts?",
+    "What small refusal, already clear, would fear of God ask of you this week?"
+   ]
+  },
+  "exo:2": {
+   "reflection": "A Levite mother hides her son, then lays him in a basket among the sedges. Pharaoh’s daughter draws him out and names him Moses, “because I took him from the water.” He grows up, kills an Egyptian, and is asked, “Who appointed you as leader and judge over us?” He flees, and names his son Gershom: a newcomer in a foreign land. After a long time the king dies. Israel groans, and God hears, and remembers Abraham, Isaac, and Jacob.",
+   "questions": [
+    "Where have you tried to force the rescue, and been told you were not appointed?",
+    "What cry — yours, or someone else’s — are you treating as unheard because the answer has not arrived?"
+   ]
+  },
+  "exo:3": {
+   "reflection": "Moses turns aside for a bush that burns and is not burnt. God calls him by name from the middle of it and says he has seen the affliction. Then he sends him to Pharaoh. Moses asks, “Who am I?” God does not hand him a stronger self. He says he will be with him, and he gives the name: I AM WHO AM. HE WHO IS sends him. The call is God attaching his own presence to a man who was content with the flock.",
+   "questions": [
+    "What ordinary thing have you walked past that you were meant to turn aside for?",
+    "When you say “Who am I to do this?”, are you waiting for a better self, or for “I will be with you”?"
+   ]
+  },
+  "exo:4": {
+   "reflection": "Moses says they will not believe him. God gives the staff, the hand, and the water. Moses still pleads slowness of tongue, and then, “Send whomever else you would send.” The Lord’s anger kindles, and Aaron is given as the mouth — a companion in the sending, not a way out of it. On the road, the covenant mark has been neglected, and Zipporah acts. A call does not skip the obedience you already owed.",
+   "questions": [
+    "Which excuse are you still offering after God has already answered it?",
+    "What smaller obedience, on the way to the thing you fear, have you left undone?"
+   ]
+  },
+  "exo:5": {
+   "reflection": "The first word to Pharaoh makes the work worse. No straw, the same tally of bricks, and the overseers beaten. The people turn on Moses. Moses turns to the Lord: “Why have you afflicted this people? Why have you sent me? You have not freed them.” The chapter ends on that question. It does not tidy it. Sometimes petition begins where obedience has made the burden heavier.",
+   "questions": [
+    "Where has doing what you were told made things worse, and what have you concluded from that?",
+    "Can you take “Why have you sent me?” to God without smoothing it first?"
+   ]
+  },
+  "exo:6": {
+   "reflection": "God does not explain the straw. He says, “I am the Lord,” and he piles up the verbs: I will lead you away from the work house, rescue you, redeem you, and take you to myself as my people. Moses tells Israel, and they do not agree with him, because of anguish of spirit and very difficult work. A promise can be true and still not yet be hearable.",
+   "questions": [
+    "Which of those words do you most need to hear again: lead out, rescue, redeem, or take as my own?",
+    "Who cannot listen yet, and are you willing to keep saying the promise anyway?"
+   ]
+  },
+  "exo:7": {
+   "reflection": "Aaron’s staff becomes a serpent and swallows the sorcerers’ staffs. Then the river, the thing Egypt trusts, turns to blood, and the fish die. The magicians copy the sign, and Pharaoh goes back into his house. A sign can be unmistakable and still be refused. The first plague is not Pharaoh yielding. It is the Lord laying hold of what Egypt leans on.",
+   "questions": [
+    "What are you trusting the way Egypt trusted the Nile?",
+    "Have you mistaken a copied sign — something that only looks like an answer — for the real one?"
+   ]
+  },
+  "exo:8": {
+   "reflection": "Frogs, then stinging insects, then flies. Pharaoh bargains by stages: pray and I will release them; sacrifice, but only in this land; go, but not far. Each time the pressure lifts, his heart hardens. The sorcerers reach their limit and say, “This is the finger of God,” and even that does not move him. God also sets a division: no flies in Goshen. A smaller yes than the one asked is still a no.",
+   "questions": [
+    "Where are you offering a smaller yes than the one asked — “in this land,” or “not far”?",
+    "What relief have you treated as an answer, when your heart went back as soon as the pressure stopped?"
+   ]
+  },
+  "exo:9": {
+   "reflection": "Egypt’s livestock die, and Israel’s do not. Ashes from the oven become sores, and the sorcerers cannot stand before Moses. Then hail and fire, with a warning first: gather in whatever you hope to keep. Some of Pharaoh’s own servants fear the word and shelter their cattle. Pharaoh says, “I have sinned. The Lord is just,” and when the hail stops he adds to his sin. A confession spoken only while it hails is not yet a turning.",
+   "questions": [
+    "What warning are you still leaving out in the field?",
+    "Have you named the sin, and then, once the storm passed, gone back to it?"
+   ]
+  }
+ },
+ "surrenderRefrain": "O Jesus, I surrender myself to you, take care of everything!",
+ "surrenderMarian": "Mother, I am yours now and forever. Through you and with you I always want to belong completely to Jesus.",
+ "feasts": [
+  {
+   "name": "Solemnity of Mary, Mother of God",
+   "month": 1,
+   "day": 1
+  },
+  {
+   "name": "Our Lady of Prompt Succor",
+   "month": 1,
+   "day": 8
+  },
+  {
+   "name": "Presentation of the Lord",
+   "month": 2,
+   "day": 2
+  },
+  {
+   "name": "Our Lady of Lourdes",
+   "month": 2,
+   "day": 11
+  },
+  {
+   "name": "Annunciation",
+   "month": 3,
+   "day": 25
+  },
+  {
+   "name": "Our Lady of Pompeii",
+   "month": 5,
+   "day": 8
+  },
+  {
+   "name": "Our Lady of Fatima",
+   "month": 5,
+   "day": 13
+  },
+  {
+   "name": "Visitation",
+   "month": 5,
+   "day": 31
+  },
+  {
+   "name": "Our Mother of Perpetual Help",
+   "month": 6,
+   "day": 27
+  },
+  {
+   "name": "Our Lady of Mount Carmel",
+   "month": 7,
+   "day": 16
+  },
+  {
+   "name": "Assumption",
+   "month": 8,
+   "day": 15
+  },
+  {
+   "name": "Queenship of Mary",
+   "month": 8,
+   "day": 22
+  },
+  {
+   "name": "Birth of Mary",
+   "month": 9,
+   "day": 8
+  },
+  {
+   "name": "The Most Holy Name of Mary",
+   "month": 9,
+   "day": 12
+  },
+  {
+   "name": "Our Lady of Sorrows",
+   "month": 9,
+   "day": 15
+  },
+  {
+   "name": "Our Lady of the Rosary",
+   "month": 10,
+   "day": 7
+  },
+  {
+   "name": "Presentation of the Blessed Virgin Mary",
+   "month": 11,
+   "day": 21
+  },
+  {
+   "name": "Immaculate Conception",
+   "month": 12,
+   "day": 8
+  },
+  {
+   "name": "Our Lady of Guadalupe",
+   "month": 12,
+   "day": 12
+  }
+ ]
+}

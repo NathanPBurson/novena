@@ -1,0 +1,15 @@
+{
+  "_comment": "Edited by the daily routine. Dates are America/New_York.",
+  "novena": { "anchorDate": "2026-10-22", "anchorDay": 42, "petitionDays": 27, "totalDays": 54 },
+  "reading": { "startDate": "2026-10-21", "startBook": "gen", "startChapter": 46 },
+  "mysteryMode": "weekday",
+  "intention": "the favor I place in your hands",
+  "notes": [],
+  "dailyNotes": {},
+  "links": {
+    "live": "https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live",
+    "discord": "https://discord.gg/HqXPUEd5JQ",
+    "kofi": "https://ko-fi.com/pioslostsheep"
+  },
+  "updated": "2026-10-23"
+}
