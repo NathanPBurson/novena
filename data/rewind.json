@@ -1,0 +1,5 @@
+{
+  "_comment": "OBS Browser Source page /rewind/. To swap the video: change videoId ONLY, then run `node build_pages.js` (rewrites rewind/index.html) and push. URL https://nathanpburson.github.io/novena/rewind/ must never change. Page is intentionally not linked from nav and has no sitemap entry (robots noindex).",
+  "videoId": "BBEOOdY_k5A",
+  "banner": "Audio is LIVE · Gameplay is a REWIND"
+}

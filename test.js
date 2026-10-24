@@ -42,4 +42,16 @@ for(const d of fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d
   t(!h.includes('data-phase="'+(pet?"thanksgiving":"petition")+'"'),`${d}: no prayers from the wrong phase`);
 }
 const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("2026-10-07",site,books).day===27&&L.compute("2026-10-08",site,books).phase==="thanksgiving","day 27 = Oct 7 petition, day 28 = Oct 8 thanksgiving");
+// 6. /rewind/ OBS page
+{const RW=require("./data/rewind.json"),id=RW.videoId,h=fs.readFileSync(path.join(__dirname,"rewind/index.html"),"utf8");
+ t(id==="BBEOOdY_k5A"||/^[A-Za-z0-9_-]{11}$/.test(id),"rewind videoId valid in data/rewind.json");
+ t(h.includes(`src="https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0"`),"rewind embed URL exact");
+ t((h.match(/[A-Za-z0-9_-]{11}\?autoplay/g)||[]).length===1&&!/BBEOOdY_k5A/.test(fs.readFileSync(path.join(__dirname,"build_pages.js"),"utf8")),"video ID only from data/rewind.json");
+ t(h.includes(">Audio is LIVE &middot; Gameplay is a REWIND<")||h.includes(">Audio is LIVE · Gameplay is a REWIND<"),"rewind banner exact text");
+ t(/overflow:hidden/.test(h)&&/background:#000/.test(h)&&/100vw/.test(h)&&/100vh/.test(h),"rewind full-window, black, no scrollbars");
+ t(/noindex/.test(h),"rewind noindex");
+ const pages=["index.html","novena/index.html","day/index.html",...fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}/.test(x)).map(d=>"day/"+d+"/index.html")];
+ t(pages.every(f=>!/rewind/i.test(fs.readFileSync(path.join(__dirname,f),"utf8"))),"rewind not linked from nav/pages");
+ t(!fs.existsSync(path.join(__dirname,"sitemap.xml"))||!/rewind/.test(fs.readFileSync(path.join(__dirname,"sitemap.xml"),"utf8")),"rewind not in sitemap");}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
+
