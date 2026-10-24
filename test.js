@@ -46,10 +46,11 @@ const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("
 {const RW=require("./data/rewind.json"),id=RW.videoId,h=fs.readFileSync(path.join(__dirname,"rewind/index.html"),"utf8"),js=fs.readFileSync(path.join(__dirname,"js/rewind.js"),"utf8");
  t(/^[A-Za-z0-9_-]{11}$/.test(id)&&h.includes(`window.REWIND_YT_ID=${JSON.stringify(id)}`),"rewind fallback YouTube ID from data/rewind.json");
  t(/rel:0,modestbranding:1,iv_load_policy:3,playsinline:1/.test(js)&&/controls:0/.test(js)&&/mute:1/.test(js)&&js.includes('"https://www.youtube.com/embed/"+FALLBACK_YT+"?autoplay=1&mute=1&loop=1&playlist="+FALLBACK_YT+"&controls=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1'),"YouTube params: muted, no controls, rel=0, modestbranding, iv_load_policy=3, playsinline");
- t(/obs"\)==="1"/.test(js)&&/\\bOBS\\\//.test(js)&&/obsstudio/.test(js)&&/else ui\.remove\(\)/.test(js),"OBS mode via ?obs=1 / OBS UA: controls removed");
- t(/setTimeout\(function\(\)\{ui\.classList\.remove\("show"\)\},2000\)/.test(js)&&/id="rw-bar"/.test(h)&&/id="rw-fs"/.test(h),"normal mode: progress bar + fullscreen, hide after 2s");
- t(/object-fit:cover/.test(h)&&/16\/9/.test(js)&&/k=1\.18/.test(js),"cover-fit 16:9 (no letterbox); OBS oversize crop");
- t(h.includes('src="../js/rewind.js"')&&js.includes('"../data/rewind_playlist.json"'),"rewind reads data/rewind_playlist.json at runtime");
+ t(/OBS\?\{start:t0,autoplay:1,mute:1,controls:0/.test(js)&&/:\{start:t0,autoplay:1,mute:1,controls:1,rel:0,modestbranding:1,iv_load_policy:3,playsinline:1,fs:1/.test(js),"normal mode = YouTube native controls (controls=1, fs=1); OBS = controls=0");
+ t(/obs"\)==="1"/.test(js)&&/\\bOBS\\\//.test(js)&&/obsstudio/.test(js)&&/sh\.remove\(\)/.test(js)&&!/id="rw-bar"/.test(h),"OBS detection; normal mode removes shield so YouTube controls are clickable; no custom bar");
+ t(/object-fit:cover/.test(h)&&/16\/9/.test(js)&&/k=1\.18/.test(js)&&/else\{w=W;h=H\}/.test(js),"OBS: 16:9 cover + oversize crop; normal: window-sized");
+ t(/rewind\.js\?v=[0-9a-f]{10}"/.test(h)&&/http-equiv="Cache-Control" content="no-cache/.test(h)&&/css\/lu\.css\?v=[0-9a-f]{10}"/.test(fs.readFileSync(path.join(__dirname,"index.html"),"utf8"))&&/\.\.\/js\/app\.js\?v=[0-9a-f]{10}"/.test(fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8")),"cache-busting ?v= on JS/CSS + no-cache meta");
+ t(/src="\.\.\/js\/rewind\.js\?v=/.test(h)&&js.includes('"../data/rewind_playlist.json"'),"rewind reads data/rewind_playlist.json at runtime");
  t(/v\.muted=true/.test(js)&&/"ended"/.test(js)&&/%blocks\.length/.test(js)&&/e\.data===0/.test(js),"player: muted, advances on ended, loops");
  t(h.includes(">Audio is LIVE &middot; Gameplay is a REWIND<")||h.includes(">Audio is LIVE · Gameplay is a REWIND<"),"rewind banner exact text");
  t(/overflow:hidden/.test(h)&&/background:#000/.test(h),"rewind full-window, black, no scrollbars");
@@ -58,14 +59,16 @@ const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("
  t(pages.every(f=>!/rewind/i.test(fs.readFileSync(path.join(__dirname,f),"utf8"))),"rewind not linked from nav/pages");
  t(!fs.existsSync(path.join(__dirname,"sitemap.xml"))||!/rewind/.test(fs.readFileSync(path.join(__dirname,"sitemap.xml"),"utf8")),"rewind not in sitemap");
  t(/html,body\{margin:0;padding:0;border:0;width:100%;height:100%;overflow:hidden;background:#000\}/.test(h)&&!/max-width:\d/.test(h),"rewind: no margins/scrollbars/size caps");
- t(/requestFullscreen/.test(js)&&/"dblclick"/.test(js)&&/"mousemove",show/.test(js),"fullscreen API + click/dblclick + mousemove reveal");
+ t(RW.rotateSec===600&&h.includes("window.REWIND_ROTATE=600")&&/cur\.t\(\)-t0>=ROT/.test(js)&&/start:t0/.test(js),"rotate after rotateSec (600, from data/rewind.json) or on end; start param per pass");
+ t(/ST\.off\[b\.k\]=\(ended\|\|\(E&&t>=E-30\)\)\?b\.s:Math\.max\(b\.s,t\)/.test(js),"per-clip offsets advance and wrap before the end");
+ t(/setInterval\(save,5000\)/.test(js)&&/localStorage\.setItem\(KEY/.test(js)&&/ST\.resume=true/.test(js),"position saved every 5s in localStorage and resumed on reload");
  // build copies the manifest (and picks up changes); missing manifest -> empty list -> YouTube fallback
  const os=require("os"),tm=path.join(os.tmpdir(),"rw_test_manifest.json"),plf=path.join(__dirname,"data/rewind_playlist.json"),keep=fs.readFileSync(plf,"utf8");
  const bld=env=>cp.execFileSync("node",["build_pages.js","--from",from],{cwd:__dirname,env:Object.assign({},process.env,env)});
  fs.writeFileSync(tm,JSON.stringify({blocks:["1AbCdEfGhIjKlMnOp",{driveId:"1QrStUvWxYz012345",title:"B"},{youtubeId:"BBEOOdY_k5A"}]}));bld({REWIND_MANIFEST:tm});
  let pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(pl.blocks.length===3&&pl.blocks[1].driveId==="1QrStUvWxYz012345","build copies manifest into data/rewind_playlist.json");
  fs.writeFileSync(tm,JSON.stringify(["1AbCdEfGhIjKlMnOp"]));bld({REWIND_MANIFEST:tm});pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(pl.blocks.length===1,"build picks up a changed manifest (array form)");
- fs.unlinkSync(tm);bld({REWIND_MANIFEST:tm});pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(Array.isArray(pl.blocks)&&pl.blocks.length===0&&/if\(!blocks\.length\)throw 0/.test(js)&&/blocks=\[\{yt:FALLBACK_YT\}\]/.test(js),"missing manifest -> empty playlist -> YouTube fallback");
+ fs.unlinkSync(tm);bld({REWIND_MANIFEST:tm});pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(Array.isArray(pl.blocks)&&pl.blocks.length===0&&/if\(!blocks\.length\)throw 0/.test(js)&&/blocks=\[\{yt:FALLBACK_YT,/.test(js),"missing manifest -> empty playlist -> YouTube fallback");
  fs.writeFileSync(plf,keep);bld({});}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 

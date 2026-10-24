@@ -6,6 +6,7 @@ const R=__dirname,J=f=>JSON.parse(fs.readFileSync(path.join(R,f)));
 const site=J("data/site.json"),C=J("data/content.json"),SC=J("data/scenes.json").scenes,ART=J("data/art_meta.json"),CR=J("data/art_credits.json"),NT=J("data/novena_traditional.json");
 const a=process.argv.slice(2),arg=(k,d)=>{const i=a.indexOf(k);return i>=0?a[i+1]:d};
 const from=arg("--from",L.todayNY()),ahead=+arg("--days",7);
+const VA=require("crypto").createHash("sha1").update(["css/lu.css","css/style.css","js/logic.js","js/app.js"].map(f=>fs.readFileSync(path.join(R,f))).join("")).digest("hex").slice(0,10); // asset cache-bust hash
 const byId={};C.books.forEach(b=>byId[b.id]=b);
 const MN={joyful:"Joyful",sorrowful:"Sorrowful",glorious:"Glorious",luminous:"Luminous"};
 const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -17,7 +18,7 @@ function credit(t){const m=ART[t],c=CR[t]||{};return `<li><b>${esc(c.title||m.ti
 function collage(sc,root){return `<figure class="lu-collage"><div class="lu-frame"><img src="${root}${sc.image||("images/scenes/"+sc.ref.replace(":","-")+"-"+sc.after+".jpg")}" alt="${esc(sc.scene)} — collage of public-domain paintings" loading="lazy"></div><figcaption><span class="lu-chip">Scene</span> ${esc(sc.scene)}<ul>${sc.art.map(credit).join("")}</ul></figcaption></figure>`}
 function shell(title,root,body,extra=""){return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(title)}</title><link rel="icon" href="${root}favicon.svg"><link rel="stylesheet" href="${root}css/lu.css">${extra}</head>
+<title>${esc(title)}</title><link rel="icon" href="${root}favicon.svg"><link rel="stylesheet" href="${root}css/lu.css?v=${VA}">${extra}</head>
 <body class="lu"><div class="lu-hud-top"><a class="lu-brand" href="${root}"><span class="lu-gem"></span>Pio's Lost Sheep</a>
 <nav class="lu-nav"><a href="${root}">Home</a><a href="${root}novena/">Novena</a><a href="${root}day/">Daily Pages</a><a href="https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live" rel="noopener">Live</a></nav></div>
 <main class="lu-wrap">${body}</main>
@@ -73,37 +74,33 @@ fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`<section
 <li><a class="lu-btn blue" href="https://discord.gg/HqXPUEd5JQ" rel="noopener">Join our Pio's Lost Sheep Discord Server: https://discord.gg/HqXPUEd5JQ</a></li>
 <li><a class="lu-btn gold" href="https://ko-fi.com/pioslostsheep" rel="noopener">Tithe Your Shekels: https://ko-fi.com/pioslostsheep</a></li></ul></section>
 <section class="lu-panel"><div class="lu-tabhead">Sections</div><ul class="lu-list"><li><a href="novena/">The 54 Day Rosary Novena</a> &mdash; prayers, mysteries, the 54-day calendar and the whole Bible</li><li><a href="day/">Daily pages</a> &mdash; one page per date with the chapter, art and prayers</li></ul></section>
-<script src="js/logic.js"></script><script>(function(){var d=NovenaLogic.todayNY(),a=document.getElementById("today-link");a.href="day/"+d+"/";})()</script>`));
+<script src="js/logic.js?v=${VA}"></script><script>(function(){var d=NovenaLogic.todayNY(),a=document.getElementById("today-link");a.href="day/"+d+"/";})()</script>`));
+{const nf=path.join(R,"novena/index.html");fs.writeFileSync(nf,fs.readFileSync(nf,"utf8").replace(/(\.\.\/(?:css|js)\/[\w.-]+\.(?:css|js))(\?v=[0-9a-f]+)?"/g,"$1?v="+VA+'"'));}
 console.log("built",dates[0],"to",dates[dates.length-1],"+ rebuilt",toBuild.length,"pages total");
 // /rewind/ — OBS Browser Source playlist player. Playlist: /workspace/ops/rewind/playlist.json (or $REWIND_MANIFEST)
 // is copied to data/rewind_playlist.json on every build. Fallback YouTube ID: data/rewind.json videoId. Not linked anywhere.
 {const RW=J("data/rewind.json"),id=String(RW.videoId).trim();if(!/^[A-Za-z0-9_-]{11}$/.test(id))throw Error("data/rewind.json videoId invalid");
 const man=process.env.REWIND_MANIFEST||"/workspace/ops/rewind/playlist.json";let pl={blocks:[]};
-try{if(fs.existsSync(man)){const j=JSON.parse(fs.readFileSync(man,"utf8"));const b=(Array.isArray(j)?j:(j.blocks||j.items||[])).filter(x=>typeof x==="string"||(x&&(x.driveId||x.id||x.fileId||x.url||x.youtubeId)));pl={source:"ops/rewind/playlist.json",blocks:b};if(j.apiKey)pl.apiKey=j.apiKey}}catch(e){console.warn("rewind manifest unreadable, using YouTube fallback:",e.message)}
+try{if(fs.existsSync(man)){const j=JSON.parse(fs.readFileSync(man,"utf8"));const b=(Array.isArray(j)?j:(j.blocks||j.items||[])).filter(x=>typeof x==="string"||(x&&(x.driveId||x.id||x.fileId||x.url||x.youtubeId)));pl={source:"ops/rewind/playlist.json",updated_et:j.updated_et||"",blocks:b};if(j.apiKey)pl.apiKey=j.apiKey}}catch(e){console.warn("rewind manifest unreadable, using YouTube fallback:",e.message)}
 fs.writeFileSync(path.join(R,"data","rewind_playlist.json"),JSON.stringify(pl,null,1)+"\n");
 fs.mkdirSync(path.join(R,"rewind"),{recursive:true});
+const V=require("crypto").createHash("sha1").update(fs.readFileSync(path.join(R,"js/rewind.js"))).update(JSON.stringify(RW)).digest("hex").slice(0,10); // cache-busting build hash
 fs.writeFileSync(path.join(R,"rewind","index.html"),`<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta name="rewind-build" content="${V}">
 <title>Rewind</title><style>
-@font-face{font-family:"Lilita One";src:url(../fonts/LilitaOne-Regular.ttf) format("truetype")}
+@font-face{font-family:"Lilita One";src:url(../fonts/LilitaOne-Regular.ttf?v=${V}) format("truetype")}
 html,body{margin:0;padding:0;border:0;width:100%;height:100%;overflow:hidden;background:#000}
+.rw-native #rw-stage .rw-media{pointer-events:auto}
 #rw-stage{position:fixed;inset:0;width:100%;height:100%;margin:0;padding:0;background:#000;overflow:hidden;max-width:none;max-height:none}
 /* media covers the window at 16:9 (JS sets --rw-w/--rw-h; OBS mode oversizes to crop YouTube chrome) */
 #rw-stage .rw-media,#rw-stage iframe,#rw-stage video{position:absolute;left:50%;top:50%;width:var(--rw-w,100vw);height:var(--rw-h,100vh);transform:translate(-50%,-50%);border:0;margin:0;background:#000;object-fit:cover;pointer-events:none}
 #rw-shield{position:fixed;inset:0;z-index:1;background:transparent}
 .rw-banner{position:fixed;left:16px;bottom:16px;z-index:2;padding:6px 14px;border-radius:14px;font:20px "Lilita One","Varela Round",sans-serif;color:#eaf4ff;
  background:linear-gradient(180deg,rgba(40,92,146,.92),rgba(17,44,76,.94));border:3px solid #6fb7e8;box-shadow:inset 0 2px 0 rgba(255,255,255,.25),0 4px 0 #071426;text-shadow:0 2px 0 #0b1a2e;pointer-events:none}
-#rw-ui{position:fixed;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:center;gap:12px;padding:10px 16px 14px;background:linear-gradient(transparent,rgba(5,18,36,.85));opacity:0;visibility:hidden;transition:opacity .25s}
-#rw-ui.show{opacity:1;visibility:visible}
-#rw-bar{flex:1;height:12px;border-radius:6px;background:#06172c;border:2px solid #3e86c4;overflow:hidden;cursor:pointer}
-#rw-fill{height:100%;width:0;background:linear-gradient(#b8f1ff,#3fc3ff 50%,#1489c9);box-shadow:0 0 8px #3fc3ff}
-#rw-fs{padding:6px 12px;border-radius:12px;font:16px "Lilita One",sans-serif;color:#3a1d00;cursor:pointer;background:linear-gradient(#ffe27a,#f6b21b 55%,#e07e10);border:2px solid #fff3b8;box-shadow:0 3px 0 #7a3c00}
-.rw-normal #rw-ui.show~.rw-banner{bottom:62px}
 </style></head><body>
 <div id="rw-stage"></div>
-<div id="rw-shield" title="Click for fullscreen"></div>
-<div id="rw-ui"><div id="rw-bar" title="Seek"><div id="rw-fill"></div></div><button id="rw-fs" type="button" aria-label="Fullscreen">&#x26F6; Fullscreen</button></div>
+<div id="rw-shield"></div>
 <div class="rw-banner" id="rw-banner">${esc(RW.banner)}</div>
-<script>window.REWIND_YT_ID=${JSON.stringify(id)};</script><script src="../js/rewind.js"></script>
+<script>window.REWIND_YT_ID=${JSON.stringify(id)};window.REWIND_ROTATE=${JSON.stringify(+RW.rotateSec||600)};</script><script src="../js/rewind.js?v=${V}"></script>
 </body></html>
 `);console.log("rewind playlist blocks:",pl.blocks.length);}
