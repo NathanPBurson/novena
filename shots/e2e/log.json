@@ -1,0 +1,120 @@
+[
+ {
+  "t": "14:51:34.091 ET",
+  "event": "blocks:4",
+  "iframe": "rFM5Uq6tx6E",
+  "shot": "/workspace/novena_site/shots/e2e/01_blocks-4.png"
+ },
+ {
+  "t": "14:51:34.164 ET",
+  "event": "play:0",
+  "iframe": "rFM5Uq6tx6E",
+  "shot": "/workspace/novena_site/shots/e2e/02_play-0.png"
+ },
+ {
+  "t": "14:51:34.894 ET",
+  "event": "st:0:1"
+ },
+ {
+  "t": "14:51:34.895 ET",
+  "event": "playing:0",
+  "iframe": "rFM5Uq6tx6E",
+  "shot": "/workspace/novena_site/shots/e2e/03_playing-0.png"
+ },
+ {
+  "t": "14:51:49.018 ET",
+  "event": "st:0:0"
+ },
+ {
+  "t": "14:51:49.018 ET",
+  "event": "ended:0",
+  "iframe": "xr_zKF7JX68",
+  "shot": "/workspace/novena_site/shots/e2e/04_ended-0.png"
+ },
+ {
+  "t": "14:51:49.072 ET",
+  "event": "play:1",
+  "iframe": "xr_zKF7JX68",
+  "shot": "/workspace/novena_site/shots/e2e/05_play-1.png"
+ },
+ {
+  "t": "14:51:50.039 ET",
+  "event": "st:1:1"
+ },
+ {
+  "t": "14:51:50.040 ET",
+  "event": "playing:1",
+  "iframe": "xr_zKF7JX68",
+  "shot": "/workspace/novena_site/shots/e2e/06_playing-1.png"
+ },
+ {
+  "t": "14:52:05.401 ET",
+  "event": "st:1:0"
+ },
+ {
+  "t": "14:52:05.415 ET",
+  "event": "ended:1",
+  "iframe": "zzzzzzzzzzz",
+  "shot": "/workspace/novena_site/shots/e2e/07_ended-1.png"
+ },
+ {
+  "t": "14:52:05.488 ET",
+  "event": "play:2",
+  "iframe": "zzzzzzzzzzz",
+  "shot": "/workspace/novena_site/shots/e2e/08_play-2.png"
+ },
+ {
+  "t": "14:52:05.861 ET",
+  "event": "fail:2:yt-error-150",
+  "iframe": "3BAR5_R6vWg",
+  "shot": "/workspace/novena_site/shots/e2e/09_fail-2-yt-error-150.png"
+ },
+ {
+  "t": "14:52:05.927 ET",
+  "event": "play:3",
+  "iframe": "3BAR5_R6vWg",
+  "shot": "/workspace/novena_site/shots/e2e/10_play-3.png"
+ },
+ {
+  "t": "14:52:06.620 ET",
+  "event": "st:3:1"
+ },
+ {
+  "t": "14:52:06.620 ET",
+  "event": "playing:3",
+  "iframe": "3BAR5_R6vWg",
+  "shot": "/workspace/novena_site/shots/e2e/11_playing-3.png"
+ },
+ {
+  "t": "14:52:25.290 ET",
+  "event": "st:3:0"
+ },
+ {
+  "t": "14:52:25.292 ET",
+  "event": "ended:3",
+  "iframe": "rFM5Uq6tx6E",
+  "shot": "/workspace/novena_site/shots/e2e/12_ended-3.png"
+ },
+ {
+  "t": "14:52:25.364 ET",
+  "event": "loop",
+  "iframe": "rFM5Uq6tx6E",
+  "shot": "/workspace/novena_site/shots/e2e/13_loop.png"
+ },
+ {
+  "t": "14:52:25.446 ET",
+  "event": "play:0",
+  "iframe": "rFM5Uq6tx6E",
+  "shot": "/workspace/novena_site/shots/e2e/14_play-0.png"
+ },
+ {
+  "t": "14:52:26.124 ET",
+  "event": "st:0:1"
+ },
+ {
+  "t": "14:52:26.125 ET",
+  "event": "playing:0",
+  "iframe": "rFM5Uq6tx6E",
+  "shot": "/workspace/novena_site/shots/e2e/15_playing-0.png"
+ }
+]
