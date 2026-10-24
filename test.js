@@ -70,5 +70,7 @@ const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("
  fs.writeFileSync(tm,JSON.stringify(["1AbCdEfGhIjKlMnOp"]));bld({REWIND_MANIFEST:tm});pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(pl.blocks.length===1,"build picks up a changed manifest (array form)");
  fs.unlinkSync(tm);bld({REWIND_MANIFEST:tm});pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(Array.isArray(pl.blocks)&&pl.blocks.length===0&&/if\(!blocks\.length\)throw 0/.test(js)&&/blocks=\[\{yt:FALLBACK_YT,/.test(js),"missing manifest -> empty playlist -> YouTube fallback");
  fs.writeFileSync(plf,keep);bld({});}
+{const _r=require('fs').readFileSync(__dirname+'/js/rewind.js','utf8');const ok=/unloadModule\('captions'\)/.test(_r)&&/setOption\('captions','track',\{\}\)/.test(_r)&&/cc_lang_pref/.test(_r)&&/if\(!OBS/.test(_r);console.log((ok?'PASS':'FAIL')+' rewind: OBS mode disables captions');if(!ok)process.exit(1)}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
+
 

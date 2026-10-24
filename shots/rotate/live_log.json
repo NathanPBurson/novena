@@ -1,0 +1,213 @@
+{
+ "normal_src": "start=3931&autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&origin=https%3A%2F%2Fnathanpburson.github.io&enablejsapi=1&widgetid=1&forigin=https%3A%2F%2Fnathanpbu",
+ "normal_log": [
+  "blocks:5",
+  "play:0@3931",
+  "st:0:-1",
+  "st:0:1",
+  "playing:0"
+ ],
+ "hover_at": "15:04:57 ET",
+ "obs_src": "start=3931&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&disablekb=1&fs=0&cc_load_p",
+ "state_before_reload": {
+  "i": 1,
+  "t": 1824.3185208950958,
+  "off": {
+   "Tj9vuZaXOUI@3931": 3971.142955114441,
+   "qIsRqBSHKL4@1800": 1820.4666101296998,
+   "mwnMXX7-X3c@4800": 4820.911917061035,
+   "qIsRqBSHKL4@7200": 7220.189048952317,
+   "M9u2Cqh9Gtw@8500": 8520.282472980927
+  },
+  "resume": false,
+  "k": "qIsRqBSHKL4@1800",
+  "ts": 1792868840208
+ },
+ "ct_before_reload": 1828.3077140400544,
+ "reload_at": "15:07:24 ET",
+ "state_saved": {
+  "i": 1,
+  "t": 1829.3185559637604,
+  "off": {
+   "Tj9vuZaXOUI@3931": 3971.142955114441,
+   "qIsRqBSHKL4@1800": 1820.4666101296998,
+   "mwnMXX7-X3c@4800": 4820.911917061035,
+   "qIsRqBSHKL4@7200": 7220.189048952317,
+   "M9u2Cqh9Gtw@8500": 8520.282472980927
+  },
+  "resume": false,
+  "k": "qIsRqBSHKL4@1800",
+  "ts": 1792868845208
+ },
+ "after_reload_log": [
+  "blocks:5",
+  "resume:1@1829",
+  "play:1@1829",
+  "st:1:-1",
+  "st:1:1",
+  "playing:1"
+ ],
+ "ct_after_reload": 1832.010064917984,
+ "rotation_events": [
+  [
+   "15:05:05 ET",
+   "blocks:5"
+  ],
+  [
+   "15:05:05 ET",
+   "play:0@3931"
+  ],
+  [
+   "15:05:06 ET",
+   "st:0:-1"
+  ],
+  [
+   "15:05:06 ET",
+   "st:0:3"
+  ],
+  [
+   "15:05:06 ET",
+   "st:0:1"
+  ],
+  [
+   "15:05:06 ET",
+   "playing:0"
+  ],
+  [
+   "15:05:26 ET",
+   "rotate:0"
+  ],
+  [
+   "15:05:26 ET",
+   "play:1@1800"
+  ],
+  [
+   "15:05:27 ET",
+   "st:1:-1"
+  ],
+  [
+   "15:05:28 ET",
+   "st:1:1"
+  ],
+  [
+   "15:05:28 ET",
+   "playing:1"
+  ],
+  [
+   "15:05:48 ET",
+   "rotate:1"
+  ],
+  [
+   "15:05:48 ET",
+   "play:2@4800"
+  ],
+  [
+   "15:05:48 ET",
+   "st:2:-1"
+  ],
+  [
+   "15:05:49 ET",
+   "st:2:3"
+  ],
+  [
+   "15:05:49 ET",
+   "st:2:1"
+  ],
+  [
+   "15:05:49 ET",
+   "playing:2"
+  ],
+  [
+   "15:06:10 ET",
+   "rotate:2"
+  ],
+  [
+   "15:06:10 ET",
+   "play:3@7200"
+  ],
+  [
+   "15:06:10 ET",
+   "st:3:-1"
+  ],
+  [
+   "15:06:12 ET",
+   "st:3:1"
+  ],
+  [
+   "15:06:12 ET",
+   "playing:3"
+  ],
+  [
+   "15:06:32 ET",
+   "rotate:3"
+  ],
+  [
+   "15:06:32 ET",
+   "play:4@8500"
+  ],
+  [
+   "15:06:33 ET",
+   "st:4:-1"
+  ],
+  [
+   "15:06:34 ET",
+   "st:4:3"
+  ],
+  [
+   "15:06:34 ET",
+   "st:4:1"
+  ],
+  [
+   "15:06:34 ET",
+   "playing:4"
+  ],
+  [
+   "15:06:54 ET",
+   "rotate:4"
+  ],
+  [
+   "15:06:54 ET",
+   "loop"
+  ],
+  [
+   "15:06:54 ET",
+   "play:0@3951"
+  ],
+  [
+   "15:06:54 ET",
+   "st:0:-1"
+  ],
+  [
+   "15:06:55 ET",
+   "st:0:1"
+  ],
+  [
+   "15:06:55 ET",
+   "playing:0"
+  ],
+  [
+   "15:07:15 ET",
+   "rotate:0"
+  ],
+  [
+   "15:07:15 ET",
+   "play:1@1820"
+  ],
+  [
+   "15:07:16 ET",
+   "st:1:-1"
+  ],
+  [
+   "15:07:16 ET",
+   "st:1:3"
+  ],
+  [
+   "15:07:16 ET",
+   "st:1:1"
+  ],
+  [
+   "15:07:16 ET",
+   "playing:1"
+  ]
+ ]
+}
