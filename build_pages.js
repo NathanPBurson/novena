@@ -3,7 +3,7 @@
 // and /day/index.html. Idempotent: pages are fully rewritten each run; older day pages are kept.
 const fs=require("fs"),path=require("path"),L=require("./js/logic.js");
 const R=__dirname,J=f=>JSON.parse(fs.readFileSync(path.join(R,f)));
-const site=J("data/site.json"),C=J("data/content.json"),SC=J("data/scenes.json").scenes,ART=J("data/art_meta.json"),CR=J("data/art_credits.json");
+const site=J("data/site.json"),C=J("data/content.json"),SC=J("data/scenes.json").scenes,ART=J("data/art_meta.json"),CR=J("data/art_credits.json"),NT=J("data/novena_traditional.json");
 const a=process.argv.slice(2),arg=(k,d)=>{const i=a.indexOf(k);return i>=0?a[i+1]:d};
 const from=arg("--from",L.todayNY()),ahead=+arg("--days",7);
 const byId={};C.books.forEach(b=>byId[b.id]=b);
@@ -35,18 +35,32 @@ function dayPage(date){
 <div class="lu-stat"><b class="m-${T.mystery}">${MN[T.mystery]}</b><span>Mysteries</span></div><div class="lu-stat"><b>${esc(r.name)} ${r.chapter}</b><span>Today's chapter</span></div></div>
 ${active?`<p class="lu-intent"><span class="lu-chip">Intention</span> <i>${esc(intention())}</i></p>`:""}
 <p class="lu-pager"><a class="lu-btn" href="../${prev}/">&laquo; ${esc(fmt(prev))}</a> <a class="lu-btn gold" href="#pray">Pray</a> <a class="lu-btn" href="../${next}/">${esc(fmt(next))} &raquo;</a></p></section>`;
-  h+=`<section class="lu-panel"><div class="lu-tabhead">Scripture &middot; ${esc(r.name)} ${r.chapter} (CPDV)</div><p><a class="lu-btn blue" href="${nl.url}" rel="noopener">Read ${esc(r.name)} ${r.chapter} in the NABRE &rarr;</a></p>${nl.note?`<p class="lu-muted">${esc(nl.note)}</p>`:""}<p class="lu-verses">${vh}</p>${rf?`<div class="lu-note"><b>Reflection</b><p>${esc(rf.reflection)}</p><ol>${rf.questions.map(q=>"<li>"+esc(q)+"</li>").join("")}</ol></div>`:""}</section>`;
-  h+=`<section class="lu-panel" id="pray"><div class="lu-tabhead m-${T.mystery}">The ${MN[T.mystery]} Mysteries</div>`+m.decades.map((d,i)=>{const rd=C.mysteryReadings[T.mystery][i];return `<details class="lu-quest"><summary>${esc(d.title)}</summary><p class="lu-muted">Fruit: ${esc(d.fruit)} &middot; ${esc(rd.reading)}</p><p>${esc(d.address)}</p><p>${esc(d.meditation)}</p></details>`}).join("")+`</section>`;
-  if(active){h+=`<section class="lu-panel"><div class="lu-tabhead">Rosary Novena &middot; Day ${T.day} &middot; ${pet?"Petition":"Thanksgiving"}</div>`+
-    pr(pet?"The Petition Prayer":"The Thanksgiving Prayer",[m.crown,pet?P.petitionQueen:P.thanksQueen,pet?P.petitionEnd:P.thanksEnd].join("\n\n"))+
-    pr(pet?"Prayer in Petition":"Prayer in Thanksgiving",(pet?P.petitionClose:P.thanksClose).replace("(specify request here)",intention()))+
-    `<p><a class="lu-btn gold" href="../../novena/#pray">Full Rosary novena prayers &raquo;</a></p></section>`;
-    h+=`<section class="lu-panel"><div class="lu-tabhead">Surrender Novena (Don Dolindo Ruotolo) &middot; Day ${T.surrenderDay} of 9</div>`+pr("Day "+T.surrenderDay,C.surrender[T.surrenderDay-1])+pr("Ten times",C.surrenderRefrain)+pr("To Our Lady",C.surrenderMarian)+`</section>`;}
-  else h+=`<section class="lu-panel"><div class="lu-tabhead">Surrender Novena</div><p>${T.status==="done"?"The 54 day novena is finished. Deo gratias! You may begin the Surrender Novena again at any time:":""}</p>`+pr("Day 1",C.surrender[0])+pr("Ten times",C.surrenderRefrain)+`</section>`;
+  // ---- 1. PRAYERS FIRST: the full Rosary with the 54 Day Novena prayers in their traditional places ----
+  const fill=x=>x.replace("{request}",intention()).replace("{bouquet}",NT.bouquet[T.mystery]);
+  const hm10=pr("Hail Mary (ten times)",P.hailMary),tail=pr("Glory Be",P.glory)+pr("Fatima Prayer",P.fatima);
+  h+=`<section class="lu-panel" id="pray"><div class="lu-tabhead">Prayers &middot; The Rosary${active?` Novena &middot; Day ${T.day} &middot; ${pet?"Petition":"Thanksgiving"}`:""}</div>
+<p class="lu-muted">${active?(pet?"Days 1&ndash;27: prayed in petition.":"Days 28&ndash;54: prayed in thanksgiving.")+` <span class="m-${T.mystery}">${MN[T.mystery]} Mysteries</span>.`:`<span class="m-${T.mystery}">${MN[T.mystery]} Mysteries</span>.`}</p>
+<h3 class="lu-step" data-step="opening">Opening</h3>`+pr("The Sign of the Cross",P.sign)+
+   (active?`<div class="novena-offering" data-phase="${T.phase}">`+pr(pet?"Novena Opening Offering (in Petition)":"Novena Opening Offering (in Thanksgiving)",fill(pet?NT.petitionOffering:NT.thanksOffering))+`</div>`:"")+
+   pr("The Apostles\u2019 Creed",P.creed)+pr("Our Father",P.ourFather)+pr("Hail Mary (three times, for faith, hope and charity)",P.hailMary)+tail;
+  m.decades.forEach((d,i)=>{const rd=C.mysteryReadings[T.mystery][i];
+    h+=`<h3 class="lu-step" data-step="decade">Decade ${i+1} &middot; ${esc(d.title)}</h3><p class="lu-muted">Fruit: ${esc(d.fruit)} &middot; ${esc(rd.reading)}</p><p>${esc(d.meditation)}</p>`+pr("Our Father",P.ourFather)+hm10+tail+
+    (active?`<div class="novena-decade" data-phase="${T.phase}">`+pr(pet?"Binding the bouquet (in Petition)":"Binding the bouquet (in Thanksgiving)",fill(pet?NT.petitionDecade:NT.thanksDecade))+`</div>`:"");});
+  h+=`<h3 class="lu-step" data-step="closing">Closing</h3>`+pr("Spiritual Communion",NT.spiritualCommunion)+
+   (active?`<div class="novena-closing" data-phase="${T.phase}">`+pr(pet?"Closing Prayer in Petition":"Closing Prayer in Thanksgiving",fill(pet?NT.petitionClosing:NT.thanksClosing))+`</div>`:"")+
+   pr("Hail, Holy Queen",P.hailHolyQueen)+pr("Versicle",P.versicle)+pr("Let us pray",P.collect)+pr("The Sign of the Cross",P.sign);
+  h+=`<p><a class="lu-btn gold" href="../../novena/#pray">Novena section &raquo;</a></p></section>`;
+  if(active)h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena (Don Dolindo Ruotolo) &middot; Day ${T.surrenderDay} of 9</div>`+pr("Day "+T.surrenderDay,C.surrender[T.surrenderDay-1])+pr("Ten times",C.surrenderRefrain)+pr("To Our Lady",C.surrenderMarian)+`</section>`;
+  else h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena</div><p>${T.status==="done"?"The 54 day novena is finished. Deo gratias! You may begin the Surrender Novena again at any time:":""}</p>`+pr("Day 1",C.surrender[0])+pr("Ten times",C.surrenderRefrain)+`</section>`;
+  // ---- 2. SCRIPTURE SECOND ----
+  h+=`<section class="lu-panel" id="scripture"><div class="lu-tabhead">Scripture &middot; ${esc(r.name)} ${r.chapter} (CPDV)</div><p><a class="lu-btn blue" href="${nl.url}" rel="noopener">Read ${esc(r.name)} ${r.chapter} in the NABRE &rarr;</a></p>${nl.note?`<p class="lu-muted">${esc(nl.note)}</p>`:""}<p class="lu-verses">${vh}</p>${rf?`<div class="lu-note"><b>Reflection</b><p>${esc(rf.reflection)}</p><ol>${rf.questions.map(q=>"<li>"+esc(q)+"</li>").join("")}</ol></div>`:""}</section>`;
   return shell(`${fmt(date)} · ${r.name} ${r.chapter} · Pio's Lost Sheep`,root,h);
 }
 const dates=[];for(let i=0;i<=ahead;i++)dates.push(L.addDays(from,i));
-for(const d of dates){const dir=path.join(R,"day",d);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,"index.html"),dayPage(d));}
+// also rebuild every day page that already exists so older pages follow the current template
+const existing=fs.existsSync(path.join(R,"day"))?fs.readdirSync(path.join(R,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x)):[];
+const toBuild=[...new Set([...existing,...dates])].sort();
+for(const d of toBuild){const dir=path.join(R,"day",d);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,"index.html"),dayPage(d));}
 const all=fs.readdirSync(path.join(R,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x)).sort();
 const today=L.todayNY(),T0=L.compute(today,site,C.books);
 fs.writeFileSync(path.join(R,"day","index.html"),shell("Daily Pages · Pio's Lost Sheep","../",`<section class="lu-panel"><div class="lu-tabhead">Daily Pages</div><ul class="lu-list">${all.map(d=>{const t=L.compute(d,site,C.books);return `<li><a href="${d}/">${esc(fmt(d))}</a> &middot; ${esc(t.reading.name)} ${t.reading.chapter} &middot; ${t.status==="active"?"Novena day "+t.day:t.status==="done"?"after the novena":"before the novena"}</li>`}).join("")}</ul></section>`));
@@ -60,4 +74,4 @@ fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`<section
 <li><a class="lu-btn gold" href="https://ko-fi.com/pioslostsheep" rel="noopener">Tithe Your Shekels: https://ko-fi.com/pioslostsheep</a></li></ul></section>
 <section class="lu-panel"><div class="lu-tabhead">Sections</div><ul class="lu-list"><li><a href="novena/">The 54 Day Rosary Novena</a> &mdash; prayers, mysteries, the 54-day calendar and the whole Bible</li><li><a href="day/">Daily pages</a> &mdash; one page per date with the chapter, art and prayers</li></ul></section>
 <script src="js/logic.js"></script><script>(function(){var d=NovenaLogic.todayNY(),a=document.getElementById("today-link");a.href="day/"+d+"/";})()</script>`));
-console.log("built",dates[0],"to",dates[dates.length-1],"("+dates.length+" pages)");
+console.log("built",dates[0],"to",dates[dates.length-1],"+ rebuilt",toBuild.length,"pages total");

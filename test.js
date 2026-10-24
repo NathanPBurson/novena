@@ -27,4 +27,19 @@ const pub=["index.html","novena/index.html","css/lu.css","css/style.css",...Obje
 t(!/\bLEGO\b|Ninjago|Nexus Force/i.test(pub),"no LEGO names/trademarks in pages or CSS");
 for(const f of ["Nunito-Variable.ttf","VarelaRound-Regular.ttf","LilitaOne-Regular.ttf"])t(fs.existsSync("fonts/"+f)&&fs.existsSync("fonts/"+f.split(/[-.]/)[0]+"-OFL.txt"),"font "+f+" + OFL license");
 t(site.intention==="the favor I place in your hands","intention unchanged");
+
+// 5. order + 54 Day Novena prayers on every day page
+const NT=require("./data/novena_traditional.json");
+for(const d of fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x))){
+  const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),T=L.compute(d,site,books),i=k=>h.indexOf(k);
+  t(i('id="pray"')>0&&i('id="surrender"')>i('id="pray"')&&i('id="scripture"')>i('id="surrender"')&&i('class="lu-verses"')>i('id="scripture"'),`${d} order: Rosary prayers -> Surrender -> Scripture`);
+  if(T.status!=="active")continue;const pet=T.phase==="petition",ph=T.phase;
+  const off=esc((pet?NT.petitionOffering:NT.thanksOffering).split("{bouquet}")[0]),other=esc((pet?NT.thanksOffering:NT.petitionOffering).split("{bouquet}")[0]);
+  const o=i('class="novena-offering" data-phase="'+ph+'"'),cr=i("The Apostles\u2019 Creed"),d1=i('data-step="decade"');
+  t(o>i('id="pray"')&&o<cr&&h.includes(off)&&h.includes(esc(NT.bouquet[T.mystery]))&&!h.includes(other.slice(0,120).replace(/humbly|gratefully/,"X")),`${d} day ${T.day}: traditional ${ph} opening offering before the Creed`);
+  t((h.match(new RegExp('class="novena-decade" data-phase="'+ph+'"',"g"))||[]).length===5&&i('class="novena-decade"')>d1,`${d}: ${ph} binding prayer after each of the 5 decades`);
+  t(i('class="novena-closing" data-phase="'+ph+'"')>i('data-step="closing"')&&h.includes(esc(pet?"Show thyself my Mother!":"thou hast truly shown thyself my Mother!")),`${d}: ${ph} closing prayer in place`);
+  t(!h.includes('data-phase="'+(pet?"thanksgiving":"petition")+'"'),`${d}: no prayers from the wrong phase`);
+}
+const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("2026-10-07",site,books).day===27&&L.compute("2026-10-08",site,books).phase==="thanksgiving","day 27 = Oct 7 petition, day 28 = Oct 8 thanksgiving");
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);

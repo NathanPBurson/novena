@@ -60,3 +60,4 @@ body.lu:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18
 .lu-tabhead.m-joyful,.lu-tabhead.m-sorrowful,.lu-tabhead.m-glorious,.lu-tabhead.m-luminous{color:#3a1d00}
 .lu-foot{max-width:1000px;margin:10px auto 30px;padding:0 12px;font-size:13px;color:#8fb3d6;text-align:center}
 @media(max-width:600px){.lu-hero-text h1{font-size:34px}.lu-verses{font-size:17px;padding:12px}}
+.lu h3.lu-step{font:20px "Lilita One",sans-serif;color:var(--gold);margin:18px 0 6px;padding-bottom:4px;border-bottom:2px solid #2f6da5}
