@@ -1,41 +1,131 @@
 {
  "source": "ops/rewind/playlist.json",
- "updated_et": "2026-10-24 15:05",
+ "updated_et": "2026-10-24 16:30",
  "blocks": [
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 5460,
+   "end": 6060,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 6660,
+   "end": 7260,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 6060,
+   "end": 6660,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 1860,
+   "end": 2460,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 7260,
+   "end": 7860,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 4860,
+   "end": 5460,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 2460,
+   "end": 3060,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 4260,
+   "end": 4860,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 3660,
+   "end": 4260,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "WJ_8Qofph8U",
+   "start": 3060,
+   "end": 3660,
+   "title": "Super Mario Odyssey (stream 2026-09-17)",
+   "game": "Super Mario Odyssey",
+   "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
   {
    "youtubeId": "Tj9vuZaXOUI",
    "start": 3931,
    "end": 9100,
    "title": "Super Mario Galaxy 2 (stream 2026-10-21)",
-   "game": "Mario Galaxy 2"
+   "game": "Mario Galaxy 2",
+   "removeWhenOldVodsIn": true,
+   "note": "recent VOD (<1 month): remove once more pre-Sep-24 VODs are added"
   },
   {
    "youtubeId": "qIsRqBSHKL4",
    "start": 1800,
    "end": 4800,
    "title": "LEGO Marvel Super Heroes (stream 2026-10-23)",
-   "game": "LEGO Marvel"
+   "game": "LEGO Marvel",
+   "removeWhenOldVodsIn": true,
+   "note": "recent VOD (<1 month): remove once more pre-Sep-24 VODs are added"
   },
   {
    "youtubeId": "mwnMXX7-X3c",
    "start": 4800,
    "end": 5400,
    "title": "Xenoblade Chronicles 2 (stream 2026-09-22)",
-   "game": "Xenoblade"
+   "game": "Xenoblade",
+   "removeWhenOldVodsIn": true,
+   "note": "recent VOD (<1 month): remove once more pre-Sep-24 VODs are added"
   },
   {
    "youtubeId": "qIsRqBSHKL4",
    "start": 7200,
    "end": 8400,
    "title": "Smash Bros Ultimate (stream 2026-10-23)",
-   "game": "Smash Ultimate"
+   "game": "Smash Ultimate",
+   "removeWhenOldVodsIn": true,
+   "note": "recent VOD (<1 month): remove once more pre-Sep-24 VODs are added"
   },
   {
    "youtubeId": "M9u2Cqh9Gtw",
    "start": 8500,
    "end": 9400,
    "title": "Pokemon FireRed (stream 2026-10-20)",
-   "game": "Pokemon FireRed"
+   "game": "Pokemon FireRed",
+   "removeWhenOldVodsIn": true,
+   "note": "recent VOD (<1 month): remove once more pre-Sep-24 VODs are added"
   }
  ]
 }
