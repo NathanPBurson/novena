@@ -1,3 +1,21 @@
 {
- "blocks": []
+ "source": "ops/rewind/playlist.json",
+ "blocks": [
+  {
+   "youtubeId": "rFM5Uq6tx6E",
+   "title": "Short 1 (14s)"
+  },
+  {
+   "youtubeId": "xr_zKF7JX68",
+   "title": "Short 2 (15s)"
+  },
+  {
+   "youtubeId": "zzzzzzzzzzz",
+   "title": "BROKEN on purpose"
+  },
+  {
+   "youtubeId": "3BAR5_R6vWg",
+   "title": "Short 3 (19s)"
+  }
+ ]
 }
