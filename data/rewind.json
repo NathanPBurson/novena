@@ -1,5 +1,5 @@
 {
-  "_comment": "OBS Browser Source page /rewind/. To swap the video: change videoId ONLY, then run `node build_pages.js` (rewrites rewind/index.html) and push. URL https://nathanpburson.github.io/novena/rewind/ must never change. Page is intentionally not linked from nav and has no sitemap entry (robots noindex).",
+  "_comment": "OBS Browser Source page /rewind/ (URL https://nathanpburson.github.io/novena/rewind/ must never change; not in nav, noindex). PLAYLIST: node build_pages.js copies /workspace/ops/rewind/playlist.json (override with $REWIND_MANIFEST) to data/rewind_playlist.json; format {\"apiKey\":\"optional Google API key (needed for Drive)\",\"blocks\":[\"DRIVE_ID\" | {\"driveId\":\"...\"} | {\"url\":\"direct .mp4\"} | {\"youtubeId\":\"...\"}, optional durationSec/title]}. Empty/missing playlist -> plays videoId below. Browser test: python3 tools/rewind_browser_test.py",
   "videoId": "BBEOOdY_k5A",
   "banner": "Audio is LIVE · Gameplay is a REWIND"
 }

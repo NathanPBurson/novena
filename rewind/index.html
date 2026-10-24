@@ -3,11 +3,11 @@
 <title>Rewind</title><style>
 @font-face{font-family:"Lilita One";src:url(../fonts/LilitaOne-Regular.ttf) format("truetype")}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000}
-iframe{position:fixed;inset:0;width:100vw;height:100vh;border:0;background:#000}
+#rw-stage,#rw-stage video,#rw-stage iframe{position:fixed;inset:0;width:100vw;height:100vh;border:0;background:#000;object-fit:contain}
 .rw-banner{position:fixed;left:16px;bottom:16px;z-index:2;padding:6px 14px;border-radius:14px;font:20px "Lilita One","Varela Round",sans-serif;color:#eaf4ff;
  background:linear-gradient(180deg,rgba(40,92,146,.92),rgba(17,44,76,.94));border:3px solid #6fb7e8;box-shadow:inset 0 2px 0 rgba(255,255,255,.25),0 4px 0 #071426;text-shadow:0 2px 0 #0b1a2e;pointer-events:none}
-.rw-banner b{color:#f6c42b;font-weight:400}
 </style></head><body>
-<iframe id="rw-video" src="https://www.youtube.com/embed/BBEOOdY_k5A?autoplay=1&mute=1&loop=1&playlist=BBEOOdY_k5A&controls=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Rewind"></iframe>
+<div id="rw-stage"></div>
 <div class="rw-banner" id="rw-banner">Audio is LIVE · Gameplay is a REWIND</div>
+<script>window.REWIND_YT_ID="BBEOOdY_k5A";</script><script src="../js/rewind.js"></script>
 </body></html>

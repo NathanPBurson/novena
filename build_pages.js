@@ -75,21 +75,24 @@ fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`<section
 <section class="lu-panel"><div class="lu-tabhead">Sections</div><ul class="lu-list"><li><a href="novena/">The 54 Day Rosary Novena</a> &mdash; prayers, mysteries, the 54-day calendar and the whole Bible</li><li><a href="day/">Daily pages</a> &mdash; one page per date with the chapter, art and prayers</li></ul></section>
 <script src="js/logic.js"></script><script>(function(){var d=NovenaLogic.todayNY(),a=document.getElementById("today-link");a.href="day/"+d+"/";})()</script>`));
 console.log("built",dates[0],"to",dates[dates.length-1],"+ rebuilt",toBuild.length,"pages total");
-// /rewind/ — OBS Browser Source. Video ID lives ONLY in data/rewind.json (videoId). Not linked in nav/sitemap.
+// /rewind/ — OBS Browser Source playlist player. Playlist: /workspace/ops/rewind/playlist.json (or $REWIND_MANIFEST)
+// is copied to data/rewind_playlist.json on every build. Fallback YouTube ID: data/rewind.json videoId. Not linked anywhere.
 {const RW=J("data/rewind.json"),id=String(RW.videoId).trim();if(!/^[A-Za-z0-9_-]{11}$/.test(id))throw Error("data/rewind.json videoId invalid");
-const src=`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0`;
+const man=process.env.REWIND_MANIFEST||"/workspace/ops/rewind/playlist.json";let pl={blocks:[]};
+try{if(fs.existsSync(man)){const j=JSON.parse(fs.readFileSync(man,"utf8"));const b=(Array.isArray(j)?j:(j.blocks||j.items||[])).filter(x=>typeof x==="string"||(x&&(x.driveId||x.id||x.fileId||x.url||x.youtubeId)));pl={source:"ops/rewind/playlist.json",blocks:b};if(j.apiKey)pl.apiKey=j.apiKey}}catch(e){console.warn("rewind manifest unreadable, using YouTube fallback:",e.message)}
+fs.writeFileSync(path.join(R,"data","rewind_playlist.json"),JSON.stringify(pl,null,1)+"\n");
 fs.mkdirSync(path.join(R,"rewind"),{recursive:true});
 fs.writeFileSync(path.join(R,"rewind","index.html"),`<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
 <title>Rewind</title><style>
 @font-face{font-family:"Lilita One";src:url(../fonts/LilitaOne-Regular.ttf) format("truetype")}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000}
-iframe{position:fixed;inset:0;width:100vw;height:100vh;border:0;background:#000}
+#rw-stage,#rw-stage video,#rw-stage iframe{position:fixed;inset:0;width:100vw;height:100vh;border:0;background:#000;object-fit:contain}
 .rw-banner{position:fixed;left:16px;bottom:16px;z-index:2;padding:6px 14px;border-radius:14px;font:20px "Lilita One","Varela Round",sans-serif;color:#eaf4ff;
  background:linear-gradient(180deg,rgba(40,92,146,.92),rgba(17,44,76,.94));border:3px solid #6fb7e8;box-shadow:inset 0 2px 0 rgba(255,255,255,.25),0 4px 0 #071426;text-shadow:0 2px 0 #0b1a2e;pointer-events:none}
-.rw-banner b{color:#f6c42b;font-weight:400}
 </style></head><body>
-<iframe id="rw-video" src="${src}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Rewind"></iframe>
+<div id="rw-stage"></div>
 <div class="rw-banner" id="rw-banner">${esc(RW.banner)}</div>
+<script>window.REWIND_YT_ID=${JSON.stringify(id)};</script><script src="../js/rewind.js"></script>
 </body></html>
-`);}
+`);console.log("rewind playlist blocks:",pl.blocks.length);}
