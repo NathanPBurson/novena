@@ -54,6 +54,8 @@ const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("
  const pages=["index.html","novena/index.html","day/index.html",...fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}/.test(x)).map(d=>"day/"+d+"/index.html")];
  t(pages.every(f=>!/rewind/i.test(fs.readFileSync(path.join(__dirname,f),"utf8"))),"rewind not linked from nav/pages");
  t(!fs.existsSync(path.join(__dirname,"sitemap.xml"))||!/rewind/.test(fs.readFileSync(path.join(__dirname,"sitemap.xml"),"utf8")),"rewind not in sitemap");
+ t(/html,body\{margin:0;padding:0;border:0;width:100%;height:100%;overflow:hidden;background:#000\}/.test(h)&&/#rw-stage video\{position:fixed;inset:0;width:100vw;height:100vh;object-fit:contain;background:#000/.test(h)&&/#rw-stage iframe\{position:fixed;inset:0;width:100%;height:100%;border:0/.test(h)&&!/max-width:\d/.test(h),"rewind fill-viewport CSS (video contain, iframe inset 0, no caps)");
+ t(/id="rw-fs"/.test(h)&&/requestFullscreen/.test(h)&&/"dblclick"/.test(h)&&/addEventListener\("click",fs\)/.test(h)&&/"mousemove",show/.test(h)&&/3000/.test(h)&&/#rw-fs\{[^}]*opacity:0;visibility:hidden/.test(h),"fullscreen button (hidden by default, mousemove shows, 3s auto-hide) + click/dblclick fullscreen");
  // build copies the manifest (and picks up changes); missing manifest -> empty list -> YouTube fallback
  const os=require("os"),tm=path.join(os.tmpdir(),"rw_test_manifest.json"),plf=path.join(__dirname,"data/rewind_playlist.json"),keep=fs.readFileSync(plf,"utf8");
  const bld=env=>cp.execFileSync("node",["build_pages.js","--from",from],{cwd:__dirname,env:Object.assign({},process.env,env)});
