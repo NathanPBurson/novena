@@ -1,6 +1,6 @@
 {
  "source": "ops/rewind/playlist.json",
- "updated_et": "2026-10-24 16:25",
+ "updated_et": "2026-10-24 16:50",
  "blocks": [
   {
    "youtubeId": "WJ_8Qofph8U",
@@ -89,6 +89,86 @@
    "title": "Super Mario Bros. Wonder (stream 2026-09-19)",
    "game": "Super Mario Bros. Wonder",
    "note": "gameplay W1 levels; small facecam bottom-left + light overlay remain; stream audio (talk) included"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 3480,
+   "end": 4080,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 6120,
+   "end": 6720,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 1920,
+   "end": 2520,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 9300,
+   "end": 9900,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 4800,
+   "end": 5400,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 7260,
+   "end": 7860,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 1080,
+   "end": 1680,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 2520,
+   "end": 3120,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 7980,
+   "end": 8580,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
+  },
+  {
+   "youtubeId": "JUdf32CfEPE",
+   "start": 9900,
+   "end": 10500,
+   "title": "Yoshi's Island (stream 2026-08-30)",
+   "game": "Yoshi's Island",
+   "note": "gameplay; small facecam + light overlay remain; stream audio (talk) included, ordered quietest-first; paused/talk stretches (incl. ~2:24-2:28, ~3:36-3:52) skipped"
   },
   {
    "youtubeId": "Tj9vuZaXOUI",
