@@ -1,6 +1,6 @@
 {
  "source": "ops/rewind/playlist.json",
- "updated_et": "2026-10-24 16:30",
+ "updated_et": "2026-10-24 16:25",
  "blocks": [
   {
    "youtubeId": "WJ_8Qofph8U",
@@ -81,6 +81,14 @@
    "title": "Super Mario Odyssey (stream 2026-09-17)",
    "game": "Super Mario Odyssey",
    "note": "gameplay; small facecam bottom-left + light overlay remain; stream audio (talk) included, ordered quietest-first"
+  },
+  {
+   "youtubeId": "0yAKpxjQWxY",
+   "start": 385,
+   "end": 705,
+   "title": "Super Mario Bros. Wonder (stream 2026-09-19)",
+   "game": "Super Mario Bros. Wonder",
+   "note": "gameplay W1 levels; small facecam bottom-left + light overlay remain; stream audio (talk) included"
   },
   {
    "youtubeId": "Tj9vuZaXOUI",
