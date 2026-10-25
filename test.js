@@ -113,6 +113,10 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(ds.length>0&&pu,"purity prayer with source on every day page");
  t(ds.length>0&&co,"Compline link matches each page date and is last in the prayers");
  t(dc,"no discord.gg links on day pages");}
+{const pg=[];const walk=d=>{for(const x of fs.readdirSync(d,{withFileTypes:true})){const f=path.join(d,x.name);if(x.isDirectory()&&!/^(\.git|_source_snapshot|node_modules|bible|fonts)$/.test(x.name))walk(f);else if(x.name==="index.html")pg.push(f)}};walk(__dirname);
+ let fi=true,av=true;for(const f of pg){const h=fs.readFileSync(f,"utf8");if(!(/rel="icon"[^>]*favicon-32\.png/.test(h)&&/rel="apple-touch-icon"[^>]*apple-touch-icon\.png/.test(h)))fi=false;if(!/rewind/.test(f)&&!/<img class="lu-avatar" src="[^"]*images\/channel_avatar_96\.png"/.test(h))av=false;}
+ t(pg.length>5&&fi,"every page has favicon and apple-touch-icon links");t(av,"every page header has the round channel avatar");
+ t(["favicon-32.png","apple-touch-icon.png","images/channel_avatar_96.png","images/channel_avatar.jpg"].every(x=>fs.existsSync(path.join(__dirname,x))),"avatar and icon files exist");}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
 

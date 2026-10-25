@@ -34,8 +34,8 @@ function biay(key){const b=BY.chapters[key];if(!b)return "";const a=(u,t)=>`<a h
 function collage(sc,root){return `<figure class="lu-collage"><div class="lu-frame"><img src="${root}${imgv(sc.image||("images/scenes/"+sc.ref.replace(":","-")+"-"+sc.after+".jpg"))}" alt="${esc(sc.scene)} — collage of public-domain paintings" loading="lazy"></div><figcaption><span class="lu-chip">Scene</span> ${esc(sc.scene)}<ul>${sc.art.map(credit).join("")}</ul></figcaption></figure>`}
 function shell(title,root,body,extra=""){return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(title)}</title><link rel="icon" href="${root}favicon.svg"><link rel="stylesheet" href="${root}css/lu.css?v=${VA}">${extra}</head>
-<body class="lu"><div class="lu-hud-top"><a class="lu-brand" href="${root}"><span class="lu-gem"></span>Pio's Lost Sheep</a>
+<title>${esc(title)}</title><link rel="icon" type="image/png" sizes="32x32" href="${root}favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="${root}apple-touch-icon.png"><link rel="stylesheet" href="${root}css/lu.css?v=${VA}">${extra}</head>
+<body class="lu"><div class="lu-hud-top"><a class="lu-brand" href="${root}"><img class="lu-avatar" src="${root}images/channel_avatar_96.png" alt="" width="32" height="32" style="width:32px;height:32px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:8px">Pio's Lost Sheep</a>
 <nav class="lu-nav"><a href="${root}">Home</a><a href="${root}novena/">Novena</a><a href="${root}day/">Daily Pages</a><a href="${root}hours/">Liturgy of the Hours</a><a href="https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live" rel="noopener">Live</a></nav></div>
 <main class="lu-wrap">${body}</main>
 <footer class="lu-foot">Scripture: Catholic Public Domain Version &middot; NABRE links to USCCB.org &middot; Art: public-domain paintings via Wikimedia Commons &middot; Fonts: Nunito, Varela Round, Lilita One (SIL OFL, <a href="${root}fonts/">licenses</a>)<br>Fan-made devotional site; not affiliated with any game or toy company. Ad Jesum per Mariam.</footer></body></html>
@@ -117,7 +117,7 @@ fs.mkdirSync(path.join(R,"rewind"),{recursive:true});
 const V=require("crypto").createHash("sha1").update(fs.readFileSync(path.join(R,"js/rewind.js"))).update(JSON.stringify(RW)).digest("hex").slice(0,10); // cache-busting build hash
 fs.writeFileSync(path.join(R,"rewind","index.html"),`<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta name="rewind-build" content="${V}">
-<title>Rewind</title><style>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><title>Rewind</title><style>
 @font-face{font-family:"Lilita One";src:url(../fonts/LilitaOne-Regular.ttf?v=${V}) format("truetype")}
 html,body{margin:0;padding:0;border:0;width:100%;height:100%;overflow:hidden;background:#000}
 .rw-native #rw-stage .rw-media{pointer-events:auto}
