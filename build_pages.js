@@ -15,7 +15,17 @@ const wk=d=>["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturd
 const intention=()=>(site.intention||"").trim()||"the favor I place in your hands"; // used verbatim
 const pr=(t,x)=>`<div class="lu-prayer"><h4>${esc(t)}</h4><p>${esc(x)}</p></div>`;
 function credit(t){const m=ART[t],c=CR[t]||{};return `<li><b>${esc(c.title||m.title)}</b> &mdash; ${esc(c.artist||m.artist)}${c.date?" ("+esc(c.date)+")":""} &middot; ${esc(m.license)} &middot; <a href="${esc(m.source)}" rel="noopener">source</a></li>`}
-function collage(sc,root){return `<figure class="lu-collage"><div class="lu-frame"><img src="${root}${sc.image||("images/scenes/"+sc.ref.replace(":","-")+"-"+sc.after+".jpg")}" alt="${esc(sc.scene)} — collage of public-domain paintings" loading="lazy"></div><figcaption><span class="lu-chip">Scene</span> ${esc(sc.scene)}<ul>${sc.art.map(credit).join("")}</ul></figcaption></figure>`}
+function imgv(f){const p=path.join(R,f);return f+(fs.existsSync(p)?"?v="+require("crypto").createHash("sha1").update(fs.readFileSync(p)).digest("hex").slice(0,10):"")}
+const BY=fs.existsSync(path.join(R,"data/biay.json"))?J("data/biay.json"):{days:{}};
+// Bible in a Year: Where we are / Reflection / Notes / For prayer / sources, all retold in our own words (Nathan, Oct 24)
+function biay(date){const b=BY.days[date];if(!b)return "";const a=(u,t)=>`<a href="${esc(u)}" rel="noopener">${esc(t)}</a>`;
+ return `<section class="lu-panel" id="biay"><div class="lu-tabhead">Bible in a Year &middot; Day ${b.day}</div>`+
+ `<div class="lu-note" data-part="where"><b>Where we are</b><p>Day ${b.day} &middot; <i>${esc(b.title)}</i><br>Readings: ${esc(b.readings)}<br>Timeline period: ${esc(b.period)}</p></div>`+
+ `<div class="lu-note" data-part="reflection"><b>Reflection</b><p>${esc(b.reflection)}</p></div>`+
+ `<div class="lu-note" data-part="notes"><b>Notes</b><ul><li><b>Catechism ${b.ccc.n}.</b> ${esc(b.ccc.text)}</li><li><b>${esc(b.father.who)}</b>, <i>${esc(b.father.work)}</i>: ${esc(b.father.text)}</li>${b.haydock.map(h=>`<li><b>Haydock on ${esc(h.ref)}.</b> ${esc(h.text)}</li>`).join("")}</ul></div>`+
+ `<div class="lu-note" data-part="prayer"><b>For prayer</b><p>${esc(b.question)}</p></div>`+
+ `<p class="lu-muted" data-part="sources">${esc(BY.credit)} Links: ${a(b.episode,"Episode")} &middot; ${a(BY.plan,"Reading plan")} &middot; ${a("https://www.vatican.va/archive/ENG0015/_INDEX.HTM","Catechism")} &middot; ${a(b.father.url,b.father.who)} &middot; ${b.haydock.map(h=>a(h.url,"Haydock "+h.ref)).join(" &middot; ")}</p></section>`}
+function collage(sc,root){return `<figure class="lu-collage"><div class="lu-frame"><img src="${root}${imgv(sc.image||("images/scenes/"+sc.ref.replace(":","-")+"-"+sc.after+".jpg"))}" alt="${esc(sc.scene)} — collage of public-domain paintings" loading="lazy"></div><figcaption><span class="lu-chip">Scene</span> ${esc(sc.scene)}<ul>${sc.art.map(credit).join("")}</ul></figcaption></figure>`}
 function shell(title,root,body,extra=""){return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title><link rel="icon" href="${root}favicon.svg"><link rel="stylesheet" href="${root}css/lu.css?v=${VA}">${extra}</head>
@@ -54,7 +64,7 @@ ${active?`<p class="lu-intent"><span class="lu-chip">Intention</span> <i>${esc(i
   if(active)h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena (Don Dolindo Ruotolo) &middot; Day ${T.surrenderDay} of 9</div>`+pr("Day "+T.surrenderDay,C.surrender[T.surrenderDay-1])+pr("Ten times",C.surrenderRefrain)+pr("To Our Lady",C.surrenderMarian)+`</section>`;
   else h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena</div><p>${T.status==="done"?"The 54 day novena is finished. Deo gratias! You may begin the Surrender Novena again at any time:":""}</p>`+pr("Day 1",C.surrender[0])+pr("Ten times",C.surrenderRefrain)+`</section>`;
   // ---- 2. SCRIPTURE SECOND ----
-  h+=`<section class="lu-panel" id="scripture"><div class="lu-tabhead">Scripture &middot; ${esc(r.name)} ${r.chapter} (CPDV)</div><p><a class="lu-btn blue" href="${nl.url}" rel="noopener">Read ${esc(r.name)} ${r.chapter} in the NABRE &rarr;</a></p>${nl.note?`<p class="lu-muted">${esc(nl.note)}</p>`:""}<p class="lu-verses">${vh}</p>${rf?`<div class="lu-note"><b>Reflection</b><p>${esc(rf.reflection)}</p><ol>${rf.questions.map(q=>"<li>"+esc(q)+"</li>").join("")}</ol></div>`:""}</section>`;
+  h+=`<section class="lu-panel" id="scripture"><div class="lu-tabhead">Scripture &middot; ${esc(r.name)} ${r.chapter} (CPDV)</div><p><a class="lu-btn blue" href="${nl.url}" rel="noopener">Read ${esc(r.name)} ${r.chapter} in the NABRE &rarr;</a></p>${nl.note?`<p class="lu-muted">${esc(nl.note)}</p>`:""}<p class="lu-verses">${vh}</p>${rf&&!BY.days[date]?`<div class="lu-note"><b>Reflection</b><p>${esc(rf.reflection)}</p><ol>${rf.questions.map(q=>"<li>"+esc(q)+"</li>").join("")}</ol></div>`:""}</section>`+biay(date);
   return shell(`${fmt(date)} · ${r.name} ${r.chapter} · Pio's Lost Sheep`,root,h);
 }
 const dates=[];for(let i=0;i<=ahead;i++)dates.push(L.addDays(from,i));
