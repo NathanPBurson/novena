@@ -22,6 +22,8 @@ for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),n=require
   const want=[];for(let k=10;k<=n;k+=10)want.push(k);
   const okSets=want.every(k=>{const sc=scenes.find(s=>s.ref===ref&&s.after===k),a=h.indexOf(`<span id="v${k}">`),f=h.indexOf('class="lu-collage"',a),b=h.indexOf(`<span id="v${k+1}">`);return sc&&a>0&&f>a&&(b<0||f<b)&&sc.art.every(x=>cred[x])});
   t(okSets&&(h.match(/class="lu-collage"/g)||[]).length===want.length,`${d} ${r.reading.name} ${r.reading.chapter}: ${want.length} collage set(s), one after every 10 verses (${want.map(k=>"v"+k).join(", ")})`);}
+{const py=fs.readFileSync(path.join(__dirname,"tools/build_collages.py"),"utf8"),win=Object.keys(s1).map(d=>{const r=L.compute(d,site,books);return r.reading.book+":"+r.reading.chapter});
+ const ws=scenes.filter(s=>win.includes(s.ref));t(/C=pop\(C,sc\)/.test(py)&&/def torn/.test(py)&&/def halftone/.test(py)&&/def label/.test(py)&&!/outline=\(255,255,255/.test(py)&&ws.every(s=>s.pop===true&&s.callout&&/\d+:\d+$/.test(s.callout)),`Fisk pop overlays (torn corners, halftone, scripture callout label) built into every set in the window (${ws.length})`);}
 {const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");t(/\.lu-collage\{width:60%;max-width:480px;margin:18px auto;/.test(css),"collages shown smaller (60%, max 480px) and centered");}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 // 3. home page links

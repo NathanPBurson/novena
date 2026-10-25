@@ -8,7 +8,9 @@
    "art": [
     "File:Rembrandt van Rijn - Jacob blessing Ephraim and Manasseh (Gemäldegalerie Alte Meister Kassel).jpg",
     "File:Karel Pluym - Manner of - Jacob Blessing Manasseh and Ephraim, NMH 20221863.jpg"
-   ]
+   ],
+   "image": "images/scenes/gen-48-16.jpg",
+   "pop": true
   },
   {
    "ref": "gen:49",
@@ -18,7 +20,10 @@
     "File:Tissot Drawing 086 Reuben (Genesis 49 3) for Brunoff 081 Ruben.jpg",
     "File:Tissot Drawing 088 Simeon and Levi (Genesis 49 5) for Brunoff 082 Siméon et Lévi.jpg",
     "File:Tissot Drawing 087 Judah (Genesis 49 8) for Brunoff 083 Juda.jpg"
-   ]
+   ],
+   "callout": "“The scepter from Judah” · 49:10",
+   "image": "images/scenes/gen-49-10.jpg",
+   "pop": true
   },
   {
    "ref": "gen:49",
@@ -29,7 +34,10 @@
     "File:Tissot Drawing 092 Dan (Genesis 49 16) for Brunoff 086 Dan.jpg",
     "File:Tissot Drawing 091 Gad (Genesis 49 19) for Brunoff 087 Gad.jpg",
     "File:Tissot Drawing 093 Asher (Genesis 49 20) for Brunoff 088 Aser.jpg"
-   ]
+   ],
+   "callout": "“I will wait for your salvation, O Lord” · 49:18",
+   "image": "images/scenes/gen-49-20.jpg",
+   "pop": true
   },
   {
    "ref": "gen:49",
@@ -39,7 +47,10 @@
     "File:Tissot Drawing 095 Joseph (Genesis 49 22) for Brunoff 090 Joseph.jpg",
     "File:Tissot Drawing 094 Naphtali (Genesis 49 21) for Brunoff 089 Nephthali.jpg",
     "File:Tissot Drawing 096 Benjamin (Genesis 49 21) for Brunoff 091 Benjamin.jpg"
-   ]
+   ],
+   "callout": "“The Almighty will bless you” · 49:25",
+   "image": "images/scenes/gen-49-30.jpg",
+   "pop": true
   },
   {
    "ref": "gen:50",
@@ -47,7 +58,10 @@
    "scene": "Jacob is embalmed and carried up to Canaan with a great company",
    "art": [
     "File:Tissot Drawing 099 Jacob's body Is taken to Canaan (Genesis 50 9) for Brunoff 092 Le corps de Jacob ramené en Égypte.jpg"
-   ]
+   ],
+   "callout": "“Seven full days” · 50:10",
+   "image": "images/scenes/gen-50-10.jpg",
+   "pop": true
   },
   {
    "ref": "gen:50",
@@ -56,7 +70,10 @@
    "art": [
     "File:Pontormo, Giuseppe riceve richieste d'aiuto dai fratelli.jpg",
     "File:Tissot Drawing 097 Joseph reigns over Egypt (Genesis 50 2) for Brunoff 093 Joseph règne sur l'Égypte.jpg"
-   ]
+   ],
+   "callout": "“God turned it into good” · 50:20",
+   "image": "images/scenes/gen-50-20.jpg",
+   "pop": true
   },
   {
    "ref": "exo:1",
@@ -64,7 +81,10 @@
    "scene": "A new king who knew not Joseph fears the sons of Israel",
    "art": [
     "File:Tissot Drawing 098 Pharaoh notes the importance of the Jewish people (Exodus 1 10) for Brunoff 094 Pharaon médite sur l'importance des Établissements Juifs.jpg"
-   ]
+   ],
+   "callout": "“A new king … ignorant of Joseph” · 1:8",
+   "image": "images/scenes/exo-1-10.jpg",
+   "pop": true
   },
   {
    "ref": "exo:1",
@@ -73,7 +93,10 @@
    "art": [
     "File:1867 Edward Poynter - Israel in Egypt.jpg",
     "File:Tissot Drawing 101 Pharaoh and the midwives (Exodus 1 15) for Brunoff 095 Pharaon et les sages-femmes.jpg"
-   ]
+   ],
+   "callout": "“The midwives feared God” · 1:17",
+   "image": "images/scenes/exo-1-20.jpg",
+   "pop": true
   },
   {
    "ref": "exo:2",
@@ -83,7 +106,10 @@
     "File:Tissot Drawing 104 Moses laid amid the flags (Exodus 2 3) for Brunoff 096 Moïse exposé parmi les roseaux.jpg",
     "File:1904 Lawrence Alma-Tadema - The Finding of Moses.jpg",
     "File:Tissot Drawing 100 Pharaoh's daughter receives the mother of Moses (Exodus 2 8) for Brunoff 098 La fille de Pharaon acueille la vraie mère de Moïse.jpg"
-   ]
+   ],
+   "callout": "“I took him from the water” · 2:10",
+   "image": "images/scenes/exo-2-10.jpg",
+   "pop": true
   },
   {
    "ref": "exo:2",
@@ -93,7 +119,10 @@
     "File:Tissot Drawing 102 Moses slays an Egyptian (Exodus 2 12) for Brunoff 099 Moïse tue un Égyptien.jpg",
     "File:Rosso Fiorentino - Moses defending the Daughters of Jethro - Web Gallery of Art.jpg",
     "File:Tissot Drawing 107 Moses at the well at Midian (Exodus 2 15) for Brunoff 100 Moïse à la fontaine.jpg"
-   ]
+   ],
+   "callout": "“Moses rose up, defending the girls” · 2:17",
+   "image": "images/scenes/exo-2-20.jpg",
+   "pop": true
   },
   {
    "ref": "exo:3",
@@ -102,7 +131,10 @@
    "art": [
     "File:Tissot Drawing 115 Moses and the burning bush (Exodus 3 2) for Brunoff 102 Moïse et le buisson ardent.jpg",
     "File:Pedro Orrente (1580-1645) - Moses and the Burning Bush - 1257137 - National Trust.jpg"
-   ]
+   ],
+   "callout": "“Remove the shoes from your feet” · 3:5",
+   "image": "images/scenes/exo-3-10.jpg",
+   "pop": true
   },
   {
    "ref": "exo:3",
@@ -110,7 +142,10 @@
    "scene": "“I AM WHO AM”: Moses before God in the bush",
    "art": [
     "File:Tissot Drawing 108 Moses adores God in the burning bush (Exodus 3 5) for Brunoff 103 Moïse adore le buisson ardent.jpg"
-   ]
+   ],
+   "callout": "“I AM WHO AM” · 3:14",
+   "image": "images/scenes/exo-3-20.jpg",
+   "pop": true
   },
   {
    "ref": "exo:4",
@@ -118,7 +153,10 @@
    "scene": "Moses' rod is turned into a serpent",
    "art": [
     "File:Tissot Drawing 106 Moses' rod Is turned into a serpent (Exodus 4 3) for Brunoff 104 La verge de Moïse changée en serpent.jpg"
-   ]
+   ],
+   "callout": "“Turned into a snake” · 4:3",
+   "image": "images/scenes/exo-4-10.jpg",
+   "pop": true
   },
   {
    "ref": "exo:4",
@@ -126,7 +164,10 @@
    "scene": "Aaron will be your mouth; Moses sets out for Egypt",
    "art": [
     "File:Tissot Drawing 122 Aaron (Exodus 4 16) for Brunoff 116 Aaron.jpg"
-   ]
+   ],
+   "callout": "“He will be your mouth” · 4:16",
+   "image": "images/scenes/exo-4-20.jpg",
+   "pop": true
   },
   {
    "ref": "exo:4",
@@ -135,7 +176,10 @@
    "art": [
     "File:Tissot Drawing 111 Moses and Aaron Speak to the People (Exodus 4 29) for Brunoff 105 Moïse et Aaron parlent au peuple.jpg",
     "File:Moses and Aaron performing the signs to the Elders of Israel.jpg"
-   ]
+   ],
+   "callout": "“And the people believed” · 4:31",
+   "image": "images/scenes/exo-4-30.jpg",
+   "pop": true
   },
   {
    "ref": "exo:5",
@@ -144,7 +188,10 @@
    "art": [
     "File:Tissot Drawing 112 Moses speaks to pharaoh (Exodus 5 1) for Brunoff 106 Moïse parle à Pharaon.jpg",
     "File:Pietro della Vecchia - Moses and Aaron with the Pharaoh.jpg"
-   ]
+   ],
+   "callout": "“Release my people” · 5:1",
+   "image": "images/scenes/exo-5-10.jpg",
+   "pop": true
   },
   {
    "ref": "exo:5",
@@ -152,7 +199,10 @@
    "scene": "Bricks without straw: the people scattered and scourged",
    "art": [
     "File:Edward John Poynter (1836-1919) - Israel in Egypt - 1014 - Guildhall Art Gallery.jpg"
-   ]
+   ],
+   "callout": "“Straw is not given to us” · 5:16",
+   "image": "images/scenes/exo-5-20.jpg",
+   "pop": true
   },
   {
    "ref": "exo:6",
@@ -161,7 +211,10 @@
    "art": [
     "File:Tissot Drawing 109 God re-assures Moses (Exodus 6 1) for Brunoff 107 Dieu rassure Moïse.jpg",
     "File:Tissot Drawing 110 Moses speaks to the people (Exodus 6 9) for Brunoff 108 Moïse parle au peuple.jpg"
-   ]
+   ],
+   "callout": "“I am the Lord” · 6:2",
+   "image": "images/scenes/exo-6-10.jpg",
+   "pop": true
   },
   {
    "ref": "exo:6",
@@ -169,7 +222,10 @@
    "scene": "The house of Levi, of whom came Aaron and Moses",
    "art": [
     "File:Tissot Drawing 122 Aaron (Exodus 4 16) for Brunoff 116 Aaron.jpg"
-   ]
+   ],
+   "callout": "“Who bore for him Aaron and Moses” · 6:20",
+   "image": "images/scenes/exo-6-20.jpg",
+   "pop": true
   },
   {
    "ref": "exo:6",
@@ -177,7 +233,10 @@
    "scene": "Aaron and Moses sent to speak to Pharaoh",
    "art": [
     "File:Moses and Aaron before Pharaoh- An Allegory of the Dinteville Family MET DT1462.jpg"
-   ]
+   ],
+   "callout": "“Speak to Pharaoh” · 6:29",
+   "image": "images/scenes/exo-6-30.jpg",
+   "pop": true
   }
  ]
 }
