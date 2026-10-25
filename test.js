@@ -35,6 +35,12 @@ for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),n=require
 // 2d. cameos (Nathan, Oct 24): only where a real stream gag matches a figure; face on that figure, no name tags, never on God/Christ/Eucharist scenes
 {const cs=scenes.flatMap(s=>(s.cameos||[]).map(c=>Object.assign({ref:s.ref,after:s.after,scene:s.scene},c))),py=fs.readFileSync(path.join(__dirname,"tools/build_collages.py"),"utf8"),files=fs.readdirSync(path.join(__dirname,"images/cameos"));
  t(scenes.every(s=>!s.cameo)&&cs.every(c=>c.gag&&c.match&&c.h<=.15&&c.cx>0&&c.cx<1&&fs.existsSync(path.join(__dirname,c.file))&&!(c.ref==="exo:3"||c.ref==="exo:6"&&c.after===10||/Christ|Jesus|Eucharist|burning bush|God reassures/i.test(c.scene)))&&!/\['tag'\]/.test(py)&&files.every(f=>cs.some(c=>c.file.endsWith("/"+f)))&&!cp.execSync("git ls-files",{cwd:__dirname}).toString().split("\n").some(f=>/01M5R|cameos\/.*\.jpe?g$/i.test(f)),`${cs.length} gag-matched cameos, no name tags, none on sacred scenes, only used cutouts shipped`);}
+// 2e. Prayer of Intentions (approved Oct 24 8:55 PM) + Closing Prayers with a saint of the day, today..+7
+{const I=require("./data/intentions.json"),SA=require("./data/saints.json");for(const [d,h] of Object.entries(s1)){const i=k=>h.indexOf(k),s=SA.days[d];
+  const ib=i('id="intentions"'),off=i('class="novena-offering"'),cr=i("The Apostles\u2019 Creed"),sc=i('id="scripture"');
+  t(ib>i('data-step="opening"')&&(off<0||ib>off)&&ib<cr&&[I.title,I.opening,...I.items,I.closing].every(x=>h.includes(esc(x)))&&I.items.length===8,`${d}: Prayer of Intentions word for word, after the opening offering, before the Creed`);
+  const cp=i('id="closing-prayers"'),hq=i("Hail, Holy Queen");
+  t(s&&cp>hq&&cp<sc&&i("St. Michael the Archangel")>cp&&i("St. Padre Pio")>i("St. Michael the Archangel")&&i("St. Joan of Arc")>i("St. Padre Pio")&&i('data-saint="'+esc(s.saint)+'"')>i("St. Joan of Arc")&&h.includes(esc(s.why))&&h.includes(esc(SA.pio))&&h.includes(esc(SA.joan)),`${d}: Closing Prayers (Michael, Padre Pio, Joan of Arc, ${s&&s.saint}) after Hail Holy Queen, before scripture`);}}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 // 3. home page links
 const home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");

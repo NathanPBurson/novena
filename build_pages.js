@@ -13,6 +13,9 @@ const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",
 const fmt=d=>{const[y,m,dd]=d.split("-");return["January","February","March","April","May","June","July","August","September","October","November","December"][m-1]+" "+(+dd)+", "+y};
 const wk=d=>["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][new Date(d+"T12:00:00Z").getUTCDay()];
 const intention=()=>(site.intention||"").trim()||"the favor I place in your hands"; // used verbatim
+const INT=fs.existsSync(path.join(R,"data/intentions.json"))?J("data/intentions.json"):null,SA=fs.existsSync(path.join(R,"data/saints.json"))?J("data/saints.json"):null;
+const intentionsBox=()=>INT?`<div class="lu-prayer" id="intentions"><h4>${esc(INT.title)}</h4><p>${esc(INT.opening)}</p><ul>${INT.items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul><p>${esc(INT.closing)}</p></div>`:"";
+const closingPrayers=d=>{if(!SA)return "";const s=SA.days[d];return `<div class="closing-prayers" id="closing-prayers"><h3 class="lu-step" data-step="closing-prayers">Closing Prayers</h3>`+pr("St. Michael the Archangel",SA.michael)+pr("St. Padre Pio",SA.pio)+pr("St. Joan of Arc",SA.joan)+(s?`<div class="lu-prayer" data-saint="${esc(s.saint)}"><h4>${esc(s.saint)}</h4><p class="lu-muted saint-why">${esc(s.why)}</p><p>${esc(s.prayer)}</p></div>`:"")+`</div>`};
 const pr=(t,x)=>`<div class="lu-prayer"><h4>${esc(t)}</h4><p>${esc(x)}</p></div>`;
 function credit(t){const m=ART[t],c=CR[t]||{};return `<li><b>${esc(c.title||m.title)}</b> &mdash; ${esc(c.artist||m.artist)}${c.date?" ("+esc(c.date)+")":""} &middot; ${esc(m.license)} &middot; <a href="${esc(m.source)}" rel="noopener">source</a></li>`}
 function imgv(f){const p=path.join(R,f);return f+(fs.existsSync(p)?"?v="+require("crypto").createHash("sha1").update(fs.readFileSync(p)).digest("hex").slice(0,10):"")}
@@ -52,14 +55,14 @@ ${active?`<p class="lu-intent"><span class="lu-chip">Intention</span> <i>${esc(i
   h+=`<section class="lu-panel" id="pray"><div class="lu-tabhead">Prayers &middot; The Rosary${active?` Novena &middot; Day ${T.day} &middot; ${pet?"Petition":"Thanksgiving"}`:""}</div>
 <p class="lu-muted">${active?(pet?"Days 1&ndash;27: prayed in petition.":"Days 28&ndash;54: prayed in thanksgiving.")+` <span class="m-${T.mystery}">${MN[T.mystery]} Mysteries</span>.`:`<span class="m-${T.mystery}">${MN[T.mystery]} Mysteries</span>.`}</p>
 <h3 class="lu-step" data-step="opening">Opening</h3>`+pr("The Sign of the Cross",P.sign)+
-   (active?`<div class="novena-offering" data-phase="${T.phase}">`+pr(pet?"Novena Opening Offering (in Petition)":"Novena Opening Offering (in Thanksgiving)",fill(pet?NT.petitionOffering:NT.thanksOffering))+`</div>`:"")+
+   (active?`<div class="novena-offering" data-phase="${T.phase}">`+pr(pet?"Novena Opening Offering (in Petition)":"Novena Opening Offering (in Thanksgiving)",fill(pet?NT.petitionOffering:NT.thanksOffering))+`</div>`:"")+(date>="2026-10-24"?intentionsBox():"")+
    pr("The Apostles\u2019 Creed",P.creed)+pr("Our Father",P.ourFather)+pr("Hail Mary (three times, for faith, hope and charity)",P.hailMary)+tail;
   m.decades.forEach((d,i)=>{const rd=C.mysteryReadings[T.mystery][i];
     h+=`<h3 class="lu-step" data-step="decade">Decade ${i+1} &middot; ${esc(d.title)}</h3><p class="lu-muted">Fruit: ${esc(d.fruit)} &middot; ${esc(rd.reading)}</p><p>${esc(d.meditation)}</p>`+pr("Our Father",P.ourFather)+hm10+tail+
     (active?`<div class="novena-decade" data-phase="${T.phase}">`+pr(pet?"Binding the bouquet (in Petition)":"Binding the bouquet (in Thanksgiving)",fill(pet?NT.petitionDecade:NT.thanksDecade))+`</div>`:"");});
   h+=`<h3 class="lu-step" data-step="closing">Closing</h3>`+pr("Spiritual Communion",NT.spiritualCommunion)+
    (active?`<div class="novena-closing" data-phase="${T.phase}">`+pr(pet?"Closing Prayer in Petition":"Closing Prayer in Thanksgiving",fill(pet?NT.petitionClosing:NT.thanksClosing))+`</div>`:"")+
-   pr("Hail, Holy Queen",P.hailHolyQueen)+pr("Versicle",P.versicle)+pr("Let us pray",P.collect)+pr("The Sign of the Cross",P.sign);
+   pr("Hail, Holy Queen",P.hailHolyQueen)+pr("Versicle",P.versicle)+pr("Let us pray",P.collect)+(date>="2026-10-24"?closingPrayers(date):"")+pr("The Sign of the Cross",P.sign);
   h+=`<p><a class="lu-btn gold" href="../../novena/#pray">Novena section &raquo;</a></p></section>`;
   if(active)h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena (Don Dolindo Ruotolo) &middot; Day ${T.surrenderDay} of 9</div>`+pr("Day "+T.surrenderDay,C.surrender[T.surrenderDay-1])+pr("Ten times",C.surrenderRefrain)+pr("To Our Lady",C.surrenderMarian)+`</section>`;
   else h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena</div><p>${T.status==="done"?"The 54 day novena is finished. Deo gratias! You may begin the Surrender Novena again at any time:":""}</p>`+pr("Day 1",C.surrender[0])+pr("Ten times",C.surrenderRefrain)+`</section>`;
