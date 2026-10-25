@@ -1,249 +1,250 @@
 {
  "credit": "Retold in our own words from Ascension’s The Bible in a Year podcast with Fr. Mike Schmitz (built on Jeff Cavins’ Great Adventure Bible Timeline), with notes from the Catechism of the Catholic Church, the Church Fathers (New Advent), and Haydock’s Catholic Bible Commentary (1859). Not affiliated with Ascension.",
  "plan": "https://ascensionpress.com/bibleinayear",
- "days": {
-  "2026-10-24": {
-   "day": 297,
-   "title": "Using Good Things for Evil",
-   "readings": "1 Maccabees 16, Sirach 38–39, Proverbs 23:29–35",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-297-2026",
-   "confirmed": "2026 episode page",
-   "reflection": "Today 1 Maccabees comes to its end. Simon, the last of Mattathias’ sons, is murdered at a banquet by his own son-in-law, a man with plenty of silver and gold whose heart was lifted up. Fr. Mike pairs that with Sirach and Proverbs: everything God made is good, wine, medicine, skill, wealth, but we can turn good things toward evil ends. Sirach tells us to honor the physician and to pray, because healing comes from the Most High. Proverbs paints the person who lingers over wine with red eyes and a sore heart. The gift is not the problem. The question is what we do with it.",
+ "by": "chapter",
+ "chapters": {
+  "gen:49": {
+   "day": 26,
+   "title": "God Responds to Job",
+   "readings": "Genesis 49–50, Job 41–42, Psalm 17",
+   "period": "Patriarchs (Fr. Mike says this day wraps up the Patriarchs)",
+   "episode": "https://bibleinayear.fireside.fm/day-26-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 26 lists these readings",
+   "reflection": "Day 26 closes Genesis and Job together. Fr. Mike finishes the story of the Patriarchs and points us to God’s answer to Job, beautiful and mysterious. In Genesis 49 the dying Jacob gathers his sons and speaks a true word over each one. Some words are hard, like Reuben’s lost birthright and Simeon and Levi scattered for their violence. Judah hears the great promise: the scepter will not leave him until the one who is to be sent arrives. A family’s whole story, wounds included, is carried into God’s plan.",
    "ccc": {
-    "n": 2290,
-    "text": "Temperance asks us to avoid every kind of excess: food, alcohol, tobacco, or medicine. Endangering our own or others’ safety through drunkenness is a grave fault."
+    "n": 64,
+    "text": "Through the prophets, God formed his people in the hope of salvation, in the expectation of a new and everlasting Covenant meant for all people."
+   },
+   "father": {
+    "who": "St. Justin Martyr",
+    "work": "Dialogue with Trypho, ch. 52",
+    "url": "https://www.newadvent.org/fathers/01284.htm",
+    "text": "Justin reads Jacob’s word to Judah as a prophecy of Christ. Israel always had its own princes until Jesus came, and after that the nations, not only Israel, began to look to him."
+   },
+   "haydock": [
+    {
+     "ref": "Genesis 49:10",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/genesis-49.html",
+     "text": "Haydock notes that ancient Jews and Christians alike read this verse as a prophecy of the Messiah. The scepter’s passing from Judah shows that the Messiah has long since come."
+    }
+   ],
+   "question": "Which hard true word about my past do I need to hand to God, trusting He can still carry the promise through it?"
+  },
+  "gen:50": {
+   "day": 26,
+   "title": "God Responds to Job",
+   "readings": "Genesis 49–50, Job 41–42, Psalm 17",
+   "period": "Patriarchs (Fr. Mike says this day wraps up the Patriarchs)",
+   "episode": "https://bibleinayear.fireside.fm/day-26-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 26 lists these readings",
+   "reflection": "On the same Day 26, Genesis ends. Joseph weeps over Jacob, embalms him, and leads a great procession to bury him in the cave Abraham bought. Then the brothers panic: with their father gone, will Joseph finally take revenge? He weeps again and tells them not to be afraid. They meant evil, but God meant it for good, to keep many people alive. Fr. Mike calls this day the end of the Patriarchs, and Joseph’s last words look ahead: God will surely visit you and bring you up out of this land.",
+   "ccc": {
+    "n": 312,
+    "text": "In time we can discover that God, in his almighty providence, can bring good from the effects of evil, even moral evil, as Joseph told his brothers."
    },
    "father": {
     "who": "St. Augustine",
-    "work": "On the Care to Be Had for the Dead",
-    "url": "https://www.newadvent.org/fathers/1316.htm",
-    "text": "On Sirach’s call to bury the dead with care, Augustine says funerals, burial and its honors are more a comfort for the living than a help to the dead. What helps the dead is prayer, alms and the Mass offered for them."
+    "work": "Handbook on Faith, Hope and Love (Enchiridion), ch. 11 and 27",
+    "url": "https://www.newadvent.org/fathers/1302.htm",
+    "text": "Augustine teaches that God, being supremely good, would never allow evil in his works unless he were powerful and good enough to bring good even out of evil."
    },
    "haydock": [
     {
-     "ref": "Sirach 38:9",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/sirach-38.html",
-     "text": "We should neither trust doctors too much nor despise them. Despising them would be tempting God."
+     "ref": "Genesis 50:19–20",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/genesis-50.html",
+     "text": "Joseph sees that his brothers’ plans turned to everyone’s good, so he will not punish them. Haydock adds that God drew good out of an evil he had no part in."
     }
    ],
-   "question": "Which good gift in my life am I tempted to use for something God never meant it for?"
+   "question": "Who do I still need to tell, in word or deed, “Do not be afraid. I forgive you”?"
   },
-  "2026-10-25": {
-   "day": 298,
-   "title": "The Gift of Life",
-   "readings": "2 Maccabees 1, Sirach 40–41, Proverbs 24:1–7",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-298-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "2 Maccabees opens with letters to the Jews in Egypt, inviting them to keep the feast of the Temple’s purification. Fr. Mike sets the scene: this book retells some of 1 Maccabees from a more God-centered angle. He tells the story of the sacred fire hidden before the exile and found by Nehemiah as a thick liquid that burst into flame on the altar. Sirach 41 then speaks of death, bitter to the comfortable and welcome to the worn out. Fr. Mike speaks gently to anyone grieving: our lives, and the lives of those we love, are a gift.",
+  "exo:1": {
+   "day": 27,
+   "title": "The Birth of Moses",
+   "readings": "Exodus 1–2, Leviticus 1, Psalm 44",
+   "period": "Egypt and Exodus (this day begins it)",
+   "episode": "https://bibleinayear.fireside.fm/day-27-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 27 lists these readings",
+   "reflection": "Day 27 begins a new period: Egypt and Exodus. A new king who did not know Joseph fears how the Israelites are multiplying. He crushes them with brick and clay, then orders the Hebrew midwives to kill the baby boys. The midwives fear God more than Pharaoh and let the children live. Fr. Mike’s episode also links the burnt offerings of Leviticus 1 to the sacrifice of the Mass, which is where the whole story of rescue is heading.",
    "ccc": {
-    "n": 1007,
-    "text": "Death ends our earthly life. Remembering that our time is limited reminds us that we have only a set span in which to live out our lives."
-   },
-   "father": {
-    "who": "St. Ambrose",
-    "work": "On the Death of Satyrus, Book I",
-    "url": "https://www.newadvent.org/fathers/34031.htm",
-    "text": "Ambrose preached at his own brother’s funeral. He admits his grief openly, then lets St. Paul’s words about not grieving like those without hope rein in his sorrow."
-   },
-   "haydock": [
-    {
-     "ref": "2 Maccabees 1:21",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/2-maccabees-1.html",
-     "text": "Nehemiah has the priests sprinkle the thick water over the wood and the sacrifice. Haydock compares it to Elijah calling down fire on his sacrifice."
-    }
-   ],
-   "question": "Whose life am I thanking God for today, even if I miss them?"
-  },
-  "2026-10-26": {
-   "day": 299,
-   "title": "Jeremiah Hides the Ark",
-   "readings": "2 Maccabees 2, Sirach 42–44, Proverbs 24:8–9",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-299-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "Jeremiah, warned by God, takes the tent, the Ark and the altar of incense to the mountain where Moses saw the promised land. He seals them in a cave whose place is to stay unknown until God gathers his people again. Fr. Mike explains where the Ark was hidden and what its absence meant for God’s people. He looks ahead to the rest of 2 Maccabees. Then Sirach 44 begins its praise of famous men, which leads to his question for us: what will the people who love us remember about us?",
-   "ccc": {
-    "n": 2676,
-    "text": "Mary is the one in whom the Lord himself has just made his dwelling. She is the daughter of Zion in person, the ark of the covenant, the place where the glory of the Lord dwells."
-   },
-   "father": {
-    "who": "St. Ambrose",
-    "work": "On the Duties of the Clergy, Book III",
-    "url": "https://www.newadvent.org/fathers/34013.htm",
-    "text": "Ambrose retells how the priests hid the altar fire before the exile, and how it returned as water and then fire. He reads it as a sign of grace, which burns away sin like fire and washes it away like water."
-   },
-   "haydock": [
-    {
-     "ref": "2 Maccabees 2:7",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/2-maccabees-2.html",
-     "text": "The Ark most likely never stood in the second Temple. The promise points to the Messiah, whom the Ark prefigured. God was drawing his people from visible signs toward spiritual realities."
-    }
-   ],
-   "question": "What do I hope the people who love me will remember about how I loved God?"
-  },
-  "2026-10-27": {
-   "day": 300,
-   "title": "Conversion of Heart",
-   "readings": "2 Maccabees 3, Sirach 45–46, Proverbs 24:10–12",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-300-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "Heliodorus comes to rob the Temple treasury. A rider in golden armor and two strong young men drive him back, and he is spared only by the high priest’s prayer. Fr. Mike contrasts the two books: 1 Maccabees tells events from a more secular angle, while 2 Maccabees keeps pointing to God at work. He asks us to look at our own days the same way, seeing God in each moment of our story. He also tells the conversion of St. Mary of Egypt, whose heart changed completely.",
-   "ccc": {
-    "n": 1430,
-    "text": "Jesus’ call to conversion and penance aims first at the heart, at interior conversion, not at outward works like sackcloth and ashes."
+    "n": 2258,
+    "text": "Human life is sacred because from its beginning it involves the creative action of God. No one may claim the right to directly destroy an innocent human being."
    },
    "father": {
     "who": "St. Augustine",
-    "work": "Confessions, Book VIII",
-    "url": "https://www.newadvent.org/fathers/110108.htm",
-    "text": "Augustine describes how long his will stayed divided, wanting God but saying “not yet.” In a garden in Milan, he hears a voice say “take up and read,” opens St. Paul, and his heart is finally turned."
+    "work": "Against Lying, ch. 15",
+    "url": "https://www.newadvent.org/fathers/1313.htm",
+    "text": "Augustine says God rewarded the midwives for their mercy and fear of God, not for the lie they told Pharaoh. Their goodness was rewarded and their weakness pardoned."
    },
    "haydock": [
     {
-     "ref": "2 Maccabees 3:25",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/2-maccabees-3.html",
-     "text": "The heavenly horse and rider are compared to the fiery horses that took Elijah and filled the mountain around Elisha. Haydock points to St. Ambrose for more on this story."
+     "ref": "Exodus 1:16",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/exodus-1.html",
+     "text": "We must not obey rulers when they command something unjust (citing Acts 4–5)."
     }
    ],
-   "question": "Where did God show up in my day today that I almost missed?"
+   "question": "Where is God asking me to fear Him more than the pressure around me?"
   },
-  "2026-10-28": {
-   "day": 301,
-   "title": "Rising Again",
-   "readings": "2 Maccabees 4, Sirach 47–49, Proverbs 24:13–16",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-301-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "Jason buys the high priesthood and brings Greek ways into Jerusalem, and Menelaus outbids him. Meanwhile Sirach walks back through the whole story we have read this year: David, Solomon, Elijah, Elisha, Hezekiah, Josiah. As the Old Testament winds down, Fr. Mike points out that Scripture keeps saying one thing. Get back up after sin and return to God, because he always lifts us again with his mercy. “The just man falls seven times and rises.”",
+  "exo:2": {
+   "day": 27,
+   "title": "The Birth of Moses",
+   "readings": "Exodus 1–2, Leviticus 1, Psalm 44",
+   "period": "Egypt and Exodus (this day begins it)",
+   "episode": "https://bibleinayear.fireside.fm/day-27-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 27 lists these readings",
+   "reflection": "Still Day 27, Fr. Mike reads the birth of Moses. A Levite mother hides her beautiful son for three months, then sets him in a basket among the reeds. His sister watches, and Pharaoh’s own daughter draws him out and names him Moses. He grows up, strikes down an Egyptian who was beating a Hebrew, and flees to Midian. There he defends Jethro’s daughters at the well and settles down. The chapter ends with Israel groaning under slavery, and God hearing, remembering His covenant, and knowing their pain.",
    "ccc": {
-    "n": 1846,
-    "text": "The Gospel reveals, in Jesus Christ, God’s mercy to sinners."
+    "n": 1867,
+    "text": "The catechetical tradition names sins that cry to heaven, among them the cry of the people oppressed in Egypt."
    },
    "father": {
-    "who": "St. John Chrysostom",
-    "work": "To Theodore After His Fall",
-    "url": "https://www.newadvent.org/fathers/1903.htm",
-    "text": "Chrysostom writes to a friend who has given up his vows. He says the devil’s aim in pushing us toward despair is to cut the anchor of our hope in God. Repentance is never closed to us."
+    "who": "St. Augustine",
+    "work": "Reply to Faustus, Book XXII",
+    "url": "https://www.newadvent.org/fathers/140622.htm",
+    "text": "Augustine says Moses’ killing of the Egyptian came from an untrained zeal for justice, not settled cruelty. God later shaped that zeal into the leader of His people, as He did with Peter."
    },
    "haydock": [
     {
-     "ref": "Proverbs 24:16",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/proverbs-24.html",
-     "text": "The just person still has many failings and venial sins and does not lose the name of just. The wicked person who consents to mortal sin does not rise again so easily."
+     "ref": "Exodus 2:25",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/exodus-2.html",
+     "text": "“He knew them” means God looked on them with mercy. Some Latin copies read that he delivered them."
     }
    ],
-   "question": "What fall am I still lying in, and what would rising look like this week?"
+   "question": "Where do I feel unseen right now, and can I trust that God hears and knows?"
   },
-  "2026-10-29": {
-   "day": 302,
-   "title": "The Pursuit of Wisdom",
-   "readings": "2 Maccabees 5, Sirach 50–51, Proverbs 24:17–20",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-302-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "Sirach ends with the high priest Simon shining in the Temple and with Ben Sira’s prayer of thanks and his invitation to seek wisdom. Fr. Mike encourages us to keep pursuing it. In 2 Maccabees, the Temple is plundered again, and Judas Maccabeus slips away into the hills to live clean among the wild beasts. Proverbs adds a hard word: do not rejoice when your enemy falls.",
+  "exo:3": {
+   "day": 28,
+   "title": "The Burning Bush",
+   "readings": "Exodus 3, Leviticus 2–3, Psalm 45",
+   "period": "Egypt and Exodus",
+   "episode": "https://bibleinayear.fireside.fm/day-28-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 28 lists these readings",
+   "reflection": "Day 28 is the burning bush. Moses, keeping Jethro’s sheep at Horeb, sees a bush that burns without burning up and turns aside to look. God calls him by name, tells him to take off his sandals on holy ground, and says He has seen His people’s misery and come down to free them. When Moses asks His name, God answers, “I AM WHO AM.” Fr. Mike’s episode is about this moment: God reveals Himself and promises to set Israel free.",
    "ccc": {
-    "n": 2303,
-    "text": "Deliberate hatred is contrary to charity. Wanting evil for our neighbor is a grave sin. Christ asks us to love our enemies and pray for those who persecute us."
+    "n": 206,
+    "text": "In revealing his mysterious name, YHWH, “I AM WHO AM,” God says who he is and by what name he is to be called. The name is both a revelation and a kind of refusal: God is beyond all that we can understand or say."
    },
    "father": {
-    "who": "St. John Chrysostom",
-    "work": "Homily 18 on Matthew",
-    "url": "https://www.newadvent.org/fathers/200118.htm",
-    "text": "Preaching on “love your enemies,” Chrysostom calls this the highest peak of virtue. It is not enough to bear a wrong. We are to pray for and do good to the one who did it."
+    "who": "St. Augustine",
+    "work": "City of God, Book VIII, ch. 11",
+    "url": "https://www.newadvent.org/fathers/120108.htm",
+    "text": "Augustine marvels at “I AM WHO AM.” Compared with God, who truly is because He is unchangeable, the things He made hardly are at all."
    },
    "haydock": [
     {
-     "ref": "Proverbs 24:18",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/proverbs-24.html",
-     "text": "If we gloat, God may turn his anger away from our enemy, and our thirst for revenge comes to nothing."
+     "ref": "Exodus 3:14",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/exodus-3.html",
+     "text": "God is being itself: eternal, self-existent, unchanging, and the source of every other being. No name can fully express Him."
     }
    ],
-   "question": "Whose fall have I secretly enjoyed, and can I pray for them by name tonight?"
+   "question": "What would it look like for me to “turn aside” today and take my shoes off before God?"
   },
-  "2026-10-30": {
-   "day": 303,
-   "title": "Eleazar's Martyrdom",
-   "readings": "2 Maccabees 6, Wisdom 1–2, Proverbs 24:21–26",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-303-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "Eleazar, ninety years old, refuses to eat pork, and he refuses even to pretend to, though friends offer him a way out. Fr. Mike marvels at his courage: he avoids sin, and he refuses to lead the young into sin by his example. Then we open the Book of Wisdom. Three lessons: God did not make death, death entered the world through sin, and we are wise when we walk in truth and foolish when we walk in evil.",
+  "exo:4": {
+   "day": 29,
+   "title": "Moses Returns to Egypt",
+   "readings": "Exodus 4–5, Leviticus 4, Psalm 46",
+   "period": "Egypt and Exodus",
+   "episode": "https://bibleinayear.fireside.fm/day-29-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 29 lists these readings",
+   "reflection": "Day 29: Moses returns to Egypt. Moses objects that the people will not believe him and that he is slow of speech. God gives him signs, his staff becoming a serpent and his hand turning leprous and then healed. He gives him Aaron as his mouth, and sends him. Fr. Mike’s point is that God wants to set us free so that we can worship Him. Moses and Aaron gather the elders and do the signs, and the people believe and bow down in worship.",
    "ccc": {
-    "n": 413,
-    "text": "“God did not make death, and he does not delight in the death of the living… It was through the devil’s envy that death entered the world” (Wis 1:13; 2:24)."
+    "n": 2575,
+    "text": "God calls Moses from the burning bush and makes him a model of prayer. Moses objects and asks questions, and in that conversation he learns to trust the God who sends him."
    },
    "father": {
-    "who": "St. Ambrose",
-    "work": "On Jacob, quoted by Haydock on 2 Maccabees 6:24",
-    "url": "https://www.studylight.org/commentaries/eng/hcc/2-maccabees-6.html",
-    "text": "Ambrose says old age should be the harbor of a life well lived, not its shipwreck. Eleazar lives it out: he will not shame his gray hair at the very end."
+    "who": "St. Gregory the Great",
+    "work": "Pastoral Rule, Book I, ch. 7",
+    "url": "https://www.newadvent.org/fathers/36011.htm",
+    "text": "Gregory says Moses rightly showed both humility and obedience: he did not want to be placed over so great a people, yet he obeyed when God’s will was clear."
    },
    "haydock": [
     {
-     "ref": "2 Maccabees 6:21",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/2-maccabees-6.html",
-     "text": "The pity Eleazar’s friends show is called wicked, because it suggested saving his life by pretending. Faking consent to a false religion is never lawful."
+     "ref": "Exodus 4:10",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/exodus-4.html",
+     "text": "God let Moses feel his weakness so that the glory of the work would be God’s, and so that Moses would stay humble while working wonders."
     }
    ],
-   "question": "Who is watching my example, and what is it teaching them?"
+   "question": "What excuse am I giving God, and what if He has already given me the help I need?"
   },
-  "2026-10-31": {
-   "day": 304,
-   "title": "Life Beyond Death",
-   "readings": "2 Maccabees 7, Wisdom 3–4, Proverbs 24:27–29",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-304-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "Seven brothers and their mother refuse to break God’s law, one after another, and they hold fast to the hope of the resurrection. Fr. Mike says one theme ties all of today’s readings together: life beyond death. Wisdom 3 says the souls of the just are in the hand of God and no torment will touch them. Death is not the end. Eternal life is waiting.",
+  "exo:5": {
+   "day": 29,
+   "title": "Moses Returns to Egypt",
+   "readings": "Exodus 4–5, Leviticus 4, Psalm 46",
+   "period": "Egypt and Exodus",
+   "episode": "https://bibleinayear.fireside.fm/day-29-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 29 lists these readings",
+   "reflection": "Also on Day 29, Moses and Aaron make their first demand: “Let my people go, so that they may hold a feast to me in the wilderness.” Pharaoh answers, “Who is the Lord, that I should listen?” He takes away the straw but keeps the brick quota the same, and calls the people lazy for wanting to worship. The foremen are beaten and turn on Moses, and Moses turns to God: “Why did you ever send me?” Fr. Mike frames it all as worship: God frees His people so they can worship Him.",
    "ccc": {
-    "n": 992,
-    "text": "God revealed the resurrection of the dead to his people step by step. The martyrdom of the seven brothers in 2 Maccabees shows that hope: the King of the universe will raise us up to everlasting life."
+    "n": 2057,
+    "text": "The Decalogue must first be understood in the setting of the Exodus, God’s great act of liberation. Its commandments describe the life of a people set free from slavery to serve God."
    },
    "father": {
-    "who": "St. Gregory of Nazianzus and other Fathers, as noted by Haydock on 2 Maccabees 7:41",
-    "url": "https://www.studylight.org/commentaries/eng/hcc/2-maccabees-7.html",
-    "work": "Sermons on the Maccabees",
-    "text": "The Church honored these martyrs from the earliest centuries, before any other saints of the Old Testament. Gregory, Maximus of Turin and Gaudentius preached their praises. Haydock calls them the martyrs of the resurrection."
+    "who": "St. Irenaeus",
+    "work": "Against Heresies, Book IV, ch. 29",
+    "url": "https://www.newadvent.org/fathers/0103429.htm",
+    "text": "Irenaeus explains that God gave Pharaoh over to the unbelief he himself had chosen. Seeing the works of God, Pharaoh still would not believe."
    },
    "haydock": [
     {
-     "ref": "2 Maccabees 7:9",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/2-maccabees-7.html",
-     "text": "The resurrection is stated plainly in each brother’s answer, and the Redeemer was near at hand."
+     "ref": "Exodus 5:22",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/exodus-5.html",
+     "text": "Moses’ “Why?” is not anger but earnest prayer, as St. Augustine says. Great undertakings usually meet many difficulties, and those should not discourage us."
     }
    ],
-   "question": "What would change in how I live this week if I really believed the resurrection?"
+   "question": "When obeying God makes things harder at first, do I bring my “why” to Him in prayer?"
   },
-  "2026-11-01": {
-   "day": 305,
-   "title": "The Defender",
-   "readings": "2 Maccabees 8, Wisdom 5–6, Proverbs 24:30–34",
-   "period": "Maccabean Revolt, read alongside the Wisdom books",
-   "episode": "https://bibleinayear.fireside.fm/day-305-2025",
-   "confirmed": "2025 episode page (the 2026 replay was not posted yet)",
-   "reflection": "2 Maccabees tells again how Judas Maccabeus and his brothers fought for the honor of the Temple, but this time we see how clearly they knew God was present, merciful and just in what they faced. Fr. Mike’s point is simple: whatever we are going through, God is our great defender, present and at work in every part of our lives. Wisdom 5 shows the just standing with great confidence before those who mocked them, and on All Saints’ Day that is a fitting picture of the saints.",
+  "exo:6": {
+   "day": 30,
+   "title": "Nile Turned to Blood",
+   "readings": "Exodus 6–7, Leviticus 5, Psalm 47",
+   "period": "Egypt and Exodus",
+   "episode": "https://bibleinayear.fireside.fm/day-30-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 30 lists these readings",
+   "reflection": "Day 30: Fr. Mike explains that God is doing something new in this period, and how much He wants to pour out His mercy on us. In Exodus 6 God answers Moses’ discouragement: “I am the Lord.” He remembers His covenant and promises, “I will bring you out… I will take you as my people, and I will be your God.” The people are too crushed in spirit to listen. The chapter then gives the family line of Levi, the house of Aaron and Moses, the ordinary men God chose.",
    "ccc": {
-    "n": 956,
-    "text": "The saints in heaven, being more closely united to Christ, do not stop interceding for us with the Father. Their brotherly care is a great help to our weakness."
+    "n": 207,
+    "text": "By revealing his name, God reveals his faithfulness, which is from everlasting to everlasting. He who is faithful to the fathers will be faithful to the children and free them from slavery."
    },
    "father": {
-    "who": "St. Augustine, as noted by Haydock on Wisdom 5:17",
-    "work": "Sermon on the life of the apostles",
-    "url": "https://www.studylight.org/commentaries/eng/hcc/wisdom-of-solomon-5.html",
-    "text": "Scripture pictures the glory of the saints as a crown, and the joy of the elect is to lay those crowns before God’s throne, because in him they find everything good."
+    "who": "St. Gregory of Nazianzus",
+    "work": "Fourth Theological Oration (Oration 30), §18",
+    "url": "https://www.newadvent.org/fathers/310230.htm",
+    "text": "Gregory says “He Who Is” and “God” are the names most proper to God’s essence, above all “He Who Is,” the name God gave Moses."
    },
    "haydock": [
     {
-     "ref": "Wisdom 5:1",
-     "url": "https://www.studylight.org/commentaries/eng/hcc/wisdom-of-solomon-5.html",
-     "text": "Worldly people laugh at those who work for the goods of eternity and think they labor in vain. At the judgment, the just stand firm."
+     "ref": "Exodus 6:9",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/exodus-6.html",
+     "text": "The people were so discouraged by anguish that they could not even hope for change."
     }
    ],
-   "question": "Which saint do I want standing beside me as a defender this month, and what will I ask them?"
+   "question": "Where am I too discouraged to listen, and can I let God say “I am the Lord” to me there?"
+  },
+  "exo:7": {
+   "day": 30,
+   "title": "Nile Turned to Blood",
+   "readings": "Exodus 6–7, Leviticus 5, Psalm 47",
+   "period": "Egypt and Exodus",
+   "episode": "https://bibleinayear.fireside.fm/day-30-2026",
+   "confirmed": "Confirmed: Ascension's 2026 episode page for Day 30 lists these readings",
+   "reflection": "Also Day 30, Fr. Mike reads the Nile turned to blood. Moses is eighty and Aaron eighty-three when they stand before Pharaoh. Aaron’s staff becomes a serpent and swallows the magicians’ staffs, but Pharaoh’s heart stays hard. Then Moses strikes the Nile and it turns to blood, the first plague. Fr. Mike says God is doing something new here, and that God’s deep desire is to pour out His mercy, even as He confronts the powers that enslave His people.",
+   "ccc": {
+    "n": 2117,
+    "text": "All practices of magic or sorcery, by which one tries to tame occult powers and gain power over others, are gravely contrary to the virtue of religion."
+   },
+   "father": {
+    "who": "St. Irenaeus",
+    "work": "Against Heresies, Book IV, ch. 29",
+    "url": "https://www.newadvent.org/fathers/0103429.htm",
+    "text": "Irenaeus explains that God hardened Pharaoh’s heart by handing him over to the unbelief he had already chosen, so that seeing the finger of God, he still would not believe."
+   },
+   "haydock": [
+    {
+     "ref": "Exodus 7:3",
+     "url": "https://www.studylight.org/commentaries/eng/hcc/exodus-7.html",
+     "text": "God hardens Pharaoh not by causing his sin but by permitting it, withdrawing grace as punishment for his malice. Pharaoh’s own malice is the real cause."
+    }
+   ],
+   "question": "Is there a sign of God’s mercy I keep explaining away?"
   }
  }
 }

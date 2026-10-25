@@ -19,9 +19,9 @@ const closingPrayers=d=>{if(!SA)return "";const s=SA.days[d];return `<div class=
 const pr=(t,x)=>`<div class="lu-prayer"><h4>${esc(t)}</h4><p>${esc(x)}</p></div>`;
 function credit(t){const m=ART[t],c=CR[t]||{};return `<li><b>${esc(c.title||m.title)}</b> &mdash; ${esc(c.artist||m.artist)}${c.date?" ("+esc(c.date)+")":""} &middot; ${esc(m.license)} &middot; <a href="${esc(m.source)}" rel="noopener">source</a></li>`}
 function imgv(f){const p=path.join(R,f);return f+(fs.existsSync(p)?"?v="+require("crypto").createHash("sha1").update(fs.readFileSync(p)).digest("hex").slice(0,10):"")}
-const BY=fs.existsSync(path.join(R,"data/biay.json"))?J("data/biay.json"):{days:{}};
+const BY=fs.existsSync(path.join(R,"data/biay.json"))?J("data/biay.json"):{chapters:{}};
 // Bible in a Year: Where we are / Reflection / Notes / For prayer / sources, all retold in our own words (Nathan, Oct 24)
-function biay(date){const b=BY.days[date];if(!b)return "";const a=(u,t)=>`<a href="${esc(u)}" rel="noopener">${esc(t)}</a>`;
+function biay(key){const b=BY.chapters[key];if(!b)return "";const a=(u,t)=>`<a href="${esc(u)}" rel="noopener">${esc(t)}</a>`;
  return `<section class="lu-panel" id="biay"><div class="lu-tabhead">Bible in a Year &middot; Day ${b.day}</div>`+
  `<div class="lu-note" data-part="where"><b>Where we are</b><p>Day ${b.day} &middot; <i>${esc(b.title)}</i><br>Readings: ${esc(b.readings)}<br>Timeline period: ${esc(b.period)}</p></div>`+
  `<div class="lu-note" data-part="reflection"><b>Reflection</b><p>${esc(b.reflection)}</p></div>`+
@@ -67,7 +67,7 @@ ${active?`<p class="lu-intent"><span class="lu-chip">Intention</span> <i>${esc(i
   if(active)h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena (Don Dolindo Ruotolo) &middot; Day ${T.surrenderDay} of 9</div>`+pr("Day "+T.surrenderDay,C.surrender[T.surrenderDay-1])+pr("Ten times",C.surrenderRefrain)+pr("To Our Lady",C.surrenderMarian)+`</section>`;
   else h+=`<section class="lu-panel" id="surrender"><div class="lu-tabhead">Surrender Novena</div><p>${T.status==="done"?"The 54 day novena is finished. Deo gratias! You may begin the Surrender Novena again at any time:":""}</p>`+pr("Day 1",C.surrender[0])+pr("Ten times",C.surrenderRefrain)+`</section>`;
   // ---- 2. SCRIPTURE SECOND ----
-  h+=`<section class="lu-panel" id="scripture"><div class="lu-tabhead">Scripture &middot; ${esc(r.name)} ${r.chapter} (CPDV)</div><p><a class="lu-btn blue" href="${nl.url}" rel="noopener">Read ${esc(r.name)} ${r.chapter} in the NABRE &rarr;</a></p>${nl.note?`<p class="lu-muted">${esc(nl.note)}</p>`:""}<p class="lu-verses">${vh}</p>${rf&&!BY.days[date]?`<div class="lu-note"><b>Reflection</b><p>${esc(rf.reflection)}</p><ol>${rf.questions.map(q=>"<li>"+esc(q)+"</li>").join("")}</ol></div>`:""}</section>`+biay(date);
+  h+=`<section class="lu-panel" id="scripture"><div class="lu-tabhead">Scripture &middot; ${esc(r.name)} ${r.chapter} (CPDV)</div><p><a class="lu-btn blue" href="${nl.url}" rel="noopener">Read ${esc(r.name)} ${r.chapter} in the NABRE &rarr;</a></p>${nl.note?`<p class="lu-muted">${esc(nl.note)}</p>`:""}<p class="lu-verses">${vh}</p>${rf&&!BY.chapters[r.book+":"+r.chapter]?`<div class="lu-note"><b>Reflection</b><p>${esc(rf.reflection)}</p><ol>${rf.questions.map(q=>"<li>"+esc(q)+"</li>").join("")}</ol></div>`:""}</section>`+biay(r.book+":"+r.chapter);
   return shell(`${fmt(date)} · ${r.name} ${r.chapter} · Pio's Lost Sheep`,root,h);
 }
 const dates=[];for(let i=0;i<=ahead;i++)dates.push(L.addDays(from,i));
