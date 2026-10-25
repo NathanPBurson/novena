@@ -17,6 +17,12 @@ for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),T=r;
   t(sc.length>0||T.status==="done",`${d} has ${sc.length} scene collage(s)`);
   for(const s of sc){t(fs.existsSync(path.join(__dirname,s.image||`images/scenes/${s.ref.replace(":","-")}-${s.after}.jpg`))&&s.art.every(a=>art[a]&&/public domain|cc0|no restrictions/i.test(art[a].license)&&fs.existsSync(path.join(__dirname,art[a].local))&&h.includes(esc(art[a].source))&&cred[a]),`  ${s.scene}: PD art local, credited with source`);}
 }
+// 2b. Nathan, Oct 24: one collage set after every 10 verses (v10, v20, ...) on today..+7, smaller and centered
+for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),n=require("./bible/cpdv/"+r.reading.book+".json").chapters[r.reading.chapter-1].length,ref=r.reading.book+":"+r.reading.chapter;
+  const want=[];for(let k=10;k<=n;k+=10)want.push(k);
+  const okSets=want.every(k=>{const sc=scenes.find(s=>s.ref===ref&&s.after===k),a=h.indexOf(`<span id="v${k}">`),f=h.indexOf('class="lu-collage"',a),b=h.indexOf(`<span id="v${k+1}">`);return sc&&a>0&&f>a&&(b<0||f<b)&&sc.art.every(x=>cred[x])});
+  t(okSets&&(h.match(/class="lu-collage"/g)||[]).length===want.length,`${d} ${r.reading.name} ${r.reading.chapter}: ${want.length} collage set(s), one after every 10 verses (${want.map(k=>"v"+k).join(", ")})`);}
+{const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");t(/\.lu-collage\{width:60%;max-width:480px;margin:18px auto;/.test(css),"collages shown smaller (60%, max 480px) and centered");}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 // 3. home page links
 const home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
