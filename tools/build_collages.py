@@ -55,17 +55,14 @@ def label(C,text):
   sd.text((18,9),text,font=f,fill=(255,214,102,255))
   S=S.rotate(2,resample=Image.BICUBIC,expand=True);C=C.convert('RGBA');C.alpha_composite(S,(x,y-6));return C.convert('RGB')
 def cameo(C,cm):
-  # small friend/viewer cameo in the quieter top corner (~13% of the width), never over the middle figures; tiny name tag
-  w,h=C.size;im=Image.open(R+'/'+cm['file']).convert('RGBA');t=int(w*.11);im.thumbnail((t,t));y=int(h*.05)
-  x=w-im.width-18;y=12
-  C=C.convert('RGBA');sh=Image.new('RGBA',im.size,(0,0,0,0));sh.putalpha(im.split()[-1].point(lambda v:int(v*.5)));C.alpha_composite(sh,(x+4,y+5));C.alpha_composite(im,(x,y))
-  f=ImageFont.truetype(FONT,20);d=ImageDraw.Draw(C);tw=d.textlength(cm['tag'],font=f);bx=x+(im.width-int(tw))//2-8;by=y+im.height-10
-  d.rounded_rectangle((bx,by,bx+tw+16,by+28),9,fill=(201,162,74,255));d.text((bx+8,by+2),cm['tag'],font=f,fill=(14,42,75,255));return C.convert('RGB')
+  # face on a matching minor figure (only where a real stream gag fits); oval feathered cutout, no outline, no name tag
+  w,h=C.size;im=Image.open(R+'/'+cm['file']).convert('RGBA');t=int(h*cm['h']);im=im.resize((int(im.width*t/im.height),t),Image.LANCZOS)
+  C=C.convert('RGBA');C.alpha_composite(im,(int(w*cm['cx'])-im.width//2,int(h*cm['cy'])-im.height//2));return C.convert('RGB')
 def pop(C,sc):
   rnd=random.Random(sc['ref']+str(sc['after']))
   C=torn(C,'tl',rnd);C=torn(C,'br',rnd);C=halftone(C)
   if sc.get('callout'):C=label(C,sc['callout'])
-  if sc.get('cameo'):C=cameo(C,sc['cameo'])
+  for cm in sc.get('cameos',[]):C=cameo(C,cm)
   sc['pop']=True;return C
 W,H,g=1200,560,8;os.makedirs(R+'/images/scenes',exist_ok=True)
 for sc in S['scenes']:

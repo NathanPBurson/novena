@@ -41,7 +41,7 @@ body.lu:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18
 .lu-muted{color:#9cc3e6;font-size:14px}
 .lu-verses{font:18px/1.85 Georgia,"Times New Roman",serif;color:#22190e;background:var(--paper);padding:16px 20px;border-radius:12px;border:3px solid #c9a24a;box-shadow:inset 0 0 30px rgba(140,100,40,.25);margin:10px 0}
 .lu-verses sup{font:bold 11px "Varela Round",sans-serif;color:#9a2a1a;margin-right:3px}
-.lu-collage{width:60%;max-width:480px;margin:18px auto;padding:0}@media(max-width:640px){.lu-collage{width:88%}}
+.lu-collage{width:80%;max-width:640px;margin:18px auto;padding:0}@media(max-width:640px){.lu-collage{width:100%}}
 .lu-frame{padding:10px;border-radius:18px;background:linear-gradient(135deg,#2d6aa6,#0e2a4b);border:3px solid var(--edge);box-shadow:0 6px 0 #071426,0 0 0 4px #0b2547}
 .lu-frame img{display:block;width:100%;height:auto;border-radius:8px}
 .lu-collage figcaption{margin-top:8px;font-size:14px;color:#d6e9fb}.lu-collage ul{margin:4px 0 0 18px;padding:0}

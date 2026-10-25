@@ -23,29 +23,39 @@
    ],
    "callout": "“The scepter from Judah” · 49:10",
    "image": "images/scenes/gen-49-10.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/jim.png",
-    "tag": "Jim"
-   }
+   "pop": true
   },
   {
    "ref": "gen:49",
    "after": 20,
-   "scene": "Zebulun by the sea, Dan the serpent in the way, Gad and Asher",
+   "scene": "Zebulun by the sea, Issachar the resting donkey, Dan the serpent in the way, and Asher",
    "art": [
     "File:Tissot Drawing 089 Zabulon (Genesis 49 13) for Brunoff 084 Zabulon.jpg",
     "File:Tissot Drawing 092 Dan (Genesis 49 16) for Brunoff 086 Dan.jpg",
-    "File:Tissot Drawing 091 Gad (Genesis 49 19) for Brunoff 087 Gad.jpg",
+    "File:Tissot Drawing 090 Issachar (Genesis 49 14) for Brunoff 085 Issachar.jpg",
     "File:Tissot Drawing 093 Asher (Genesis 49 20) for Brunoff 088 Aser.jpg"
    ],
    "callout": "“I will wait for your salvation, O Lord” · 49:18",
    "image": "images/scenes/gen-49-20.jpg",
    "pop": true,
-   "cameo": {
-    "file": "images/cameos/matthew_peter.png",
-    "tag": "Matthew"
-   }
+   "cameos": [
+    {
+     "file": "images/cameos/jim.png",
+     "cx": 0.612,
+     "cy": 0.215,
+     "h": 0.12,
+     "gag": "Jim's signal-hijack characters ambush Donald's broadcasts",
+     "match": "Dan, 'a snake in the way… biting the hooves of horses, so that his rider may fall' (Gen 49:17)"
+    },
+    {
+     "file": "images/cameos/matthew_polo.png",
+     "cx": 0.757,
+     "cy": 0.095,
+     "h": 0.13,
+     "gag": "Sleepy Matt: 'I'm pushing 30, I have a bedtime' / 'Matthew is not Donkey'",
+     "match": "Issachar, 'a strong donkey… he saw that rest would be good' (Gen 49:14–15)"
+    }
+   ]
   },
   {
    "ref": "gen:49",
@@ -58,11 +68,7 @@
    ],
    "callout": "“The Almighty will bless you” · 49:25",
    "image": "images/scenes/gen-49-30.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/sammy.png",
-    "tag": "Sammy"
-   }
+   "pop": true
   },
   {
    "ref": "gen:50",
@@ -73,11 +79,7 @@
    ],
    "callout": "“Seven full days” · 50:10",
    "image": "images/scenes/gen-50-10.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/jeb.png",
-    "tag": "Jeb"
-   }
+   "pop": true
   },
   {
    "ref": "gen:50",
@@ -89,11 +91,7 @@
    ],
    "callout": "“God turned it into good” · 50:20",
    "image": "images/scenes/gen-50-20.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/nathan.png",
-    "tag": "Nathan"
-   }
+   "pop": true
   },
   {
    "ref": "exo:1",
@@ -104,11 +102,7 @@
    ],
    "callout": "“A new king … ignorant of Joseph” · 1:8",
    "image": "images/scenes/exo-1-10.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/biden.png",
-    "tag": "Biden"
-   }
+   "pop": true
   },
   {
    "ref": "exo:1",
@@ -120,7 +114,17 @@
    ],
    "callout": "“The midwives feared God” · 1:17",
    "image": "images/scenes/exo-1-20.jpg",
-   "pop": true
+   "pop": true,
+   "cameos": [
+    {
+     "file": "images/cameos/freddie.png",
+     "cx": 0.266,
+     "cy": 0.585,
+     "h": 0.09,
+     "gag": "Freddie's LEGO movie he was trying to produce (Jim, Oct 21 stream)",
+     "match": "the man standing up directing the brick-and-clay labor crew (Ex 1:14)"
+    }
+   ]
   },
   {
    "ref": "exo:2",
@@ -146,11 +150,7 @@
    ],
    "callout": "“Moses rose up, defending the girls” · 2:17",
    "image": "images/scenes/exo-2-20.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/spot.png",
-    "tag": "Spot"
-   }
+   "pop": true
   },
   {
    "ref": "exo:3",
@@ -195,11 +195,7 @@
    ],
    "callout": "“He will be your mouth” · 4:16",
    "image": "images/scenes/exo-4-20.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/harry.png",
-    "tag": "Harry"
-   }
+   "pop": true
   },
   {
    "ref": "exo:4",
@@ -211,11 +207,7 @@
    ],
    "callout": "“And the people believed” · 4:31",
    "image": "images/scenes/exo-4-30.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/freddie.png",
-    "tag": "Freddie"
-   }
+   "pop": true
   },
   {
    "ref": "exo:5",
@@ -227,11 +219,7 @@
    ],
    "callout": "“Release my people” · 5:1",
    "image": "images/scenes/exo-5-10.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/trump.png",
-    "tag": "Trump"
-   }
+   "pop": true
   },
   {
    "ref": "exo:5",
@@ -242,11 +230,7 @@
    ],
    "callout": "“Straw is not given to us” · 5:16",
    "image": "images/scenes/exo-5-20.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/matthew_polo.png",
-    "tag": "Matthew"
-   }
+   "pop": true
   },
   {
    "ref": "exo:6",
@@ -269,11 +253,7 @@
    ],
    "callout": "“Who bore for him Aaron and Moses” · 6:20",
    "image": "images/scenes/exo-6-20.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/matthew_3d.png",
-    "tag": "Matthew"
-   }
+   "pop": true
   },
   {
    "ref": "exo:6",
@@ -284,11 +264,7 @@
    ],
    "callout": "“Speak to Pharaoh” · 6:29",
    "image": "images/scenes/exo-6-30.jpg",
-   "pop": true,
-   "cameo": {
-    "file": "images/cameos/cameron.png",
-    "tag": "Cameron"
-   }
+   "pop": true
   },
   {
    "ref": "exo:7",

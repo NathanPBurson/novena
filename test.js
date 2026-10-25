@@ -24,7 +24,7 @@ for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),n=require
   t(okSets&&(h.match(/class="lu-collage"/g)||[]).length===want.length,`${d} ${r.reading.name} ${r.reading.chapter}: ${want.length} collage set(s), one after every 10 verses (${want.map(k=>"v"+k).join(", ")})`);}
 {const py=fs.readFileSync(path.join(__dirname,"tools/build_collages.py"),"utf8"),win=Object.keys(s1).map(d=>{const r=L.compute(d,site,books);return r.reading.book+":"+r.reading.chapter});
  const ws=scenes.filter(s=>win.includes(s.ref));t(/C=pop\(C,sc\)/.test(py)&&/def torn/.test(py)&&/def halftone/.test(py)&&/def label/.test(py)&&!/outline=\(255,255,255/.test(py)&&ws.every(s=>s.pop===true&&s.callout&&/\d+:\d+$/.test(s.callout)),`Fisk pop overlays (torn corners, halftone, scripture callout label) built into every set in the window (${ws.length})`);}
-{const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");t(/\.lu-collage\{width:60%;max-width:480px;margin:18px auto;/.test(css),"collages shown smaller (60%, max 480px) and centered");}
+{const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");t(/\.lu-collage\{width:80%;max-width:640px;margin:18px auto;/.test(css)&&/@media\(max-width:640px\)\{\.lu-collage\{width:100%\}\}/.test(css),"collages 80% wide (max 640px), centered, full width on phones");}
 // 2c. Bible in a Year section (Nathan, Oct 24): where/reflection/notes/prayer/sources, retold, on today..+7
 {const BY=require("./data/biay.json");for(const [d,h] of Object.entries(s1)){const b=BY.days[d],i=k=>h.indexOf(k);
   const pr=b&&b.question,q=(String(pr).match(/\?/g)||[]).length;
@@ -32,9 +32,9 @@ for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),n=require
    &&h.includes("Catechism "+b.ccc.n+".")&&/^\d{3,4}$/.test(String(b.ccc.n))&&b.father.url&&b.haydock.length>=1&&b.haydock.length<=2&&q===1&&h.includes(esc(BY.credit))&&h.includes(b.episode)&&!h.includes("<b>Reflection</b><p>"+esc((C.chapterReflections[L.compute(d,site,books).reading.book+":"+L.compute(d,site,books).reading.chapter]||{}).reflection||"@@")),
    `${d}: Bible in a Year day ${b&&b.day} section (where, reflection, notes w/ CCC ${b&&b.ccc.n} + Father + Haydock, one prayer question, sources) after scripture`);
   t(b&&[b.reflection,b.ccc.text,b.father.text,...b.haydock.map(x=>x.text)].every(x=>x.split(/\s+/).length<160),`${d}: Bible in a Year text is short retelling, no transcript-length blocks`);}}
-// 2d. cameos (approved by Nathan via Joansey): small cutouts only, never on God/burning-bush scenes, raw photos never in repo
-{const cs=scenes.filter(s=>s.cameo),py=fs.readFileSync(path.join(__dirname,"tools/build_collages.py"),"utf8");
- t(cs.length>0&&cs.every(s=>fs.existsSync(path.join(__dirname,s.cameo.file))&&fs.statSync(path.join(__dirname,s.cameo.file)).size<120000&&s.ref!=="exo:3"&&s.cameo.tag)&&/t=int\(w\*\.11\)/.test(py)&&!cp.execSync("git ls-files",{cwd:__dirname}).toString().split("\n").some(f=>/01M5R|cameos\/.*\.jpe?g$/i.test(f)),`${cs.length} cameos: small (11% wide) corner cutouts, none on the burning-bush scenes, no raw photos in repo`);}
+// 2d. cameos (Nathan, Oct 24): only where a real stream gag matches a figure; face on that figure, no name tags, never on God/Christ/Eucharist scenes
+{const cs=scenes.flatMap(s=>(s.cameos||[]).map(c=>Object.assign({ref:s.ref,scene:s.scene},c))),py=fs.readFileSync(path.join(__dirname,"tools/build_collages.py"),"utf8"),files=fs.readdirSync(path.join(__dirname,"images/cameos"));
+ t(scenes.every(s=>!s.cameo)&&cs.every(c=>c.gag&&c.match&&c.h<=.15&&c.cx>0&&c.cx<1&&fs.existsSync(path.join(__dirname,c.file))&&!/God|Christ|Lord|burning bush|Eucharist/i.test(c.scene))&&!/\['tag'\]/.test(py)&&files.every(f=>cs.some(c=>c.file.endsWith("/"+f)))&&!cp.execSync("git ls-files",{cwd:__dirname}).toString().split("\n").some(f=>/01M5R|cameos\/.*\.jpe?g$/i.test(f)),`${cs.length} gag-matched cameos, no name tags, none on sacred scenes, only used cutouts shipped`);}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 // 3. home page links
 const home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
