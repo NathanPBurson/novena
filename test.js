@@ -104,6 +104,15 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(!/discord\.gg/i.test(hh),"hours page has no discord.gg links");
  const ih=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dh=Object.values(s1)[0];
  t(ih.includes('href="hours/"')&&dh.includes('href="../../hours/"'),"hours linked from home page and day pages nav");}
+{const dd=path.join(__dirname,"day"),ds=fs.readdirSync(dd).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));let pu=true,co=true,dc=true;
+ for(const d of ds){const h=fs.readFileSync(path.join(dd,d,"index.html"),"utf8");
+  if(!(h.includes("Guardian of virgins, and holy father Joseph")&&h.includes("Source: Traditional; Raccolta")))pu=false;
+  const u=`https://universalis.com/USA/${d.replace(/-/g,"")}/compline.htm`,ci=h.indexOf(u),sc=h.lastIndexOf("The Sign of the Cross"),pi=h.indexOf('id="purity-prayer"'),lp=h.lastIndexOf('class="lu-prayer"');
+  if(!(ci>sc&&sc>pi&&pi>0&&(()=>{const n=h.indexOf('id="night-prayer"'),e=h.indexOf("</section>",n),q=h.indexOf('class="lu-prayer',n);return q<0||q>e})()&&h.includes('provided by <a href="https://universalis.com/"')))co=false;
+  if(/discord\.gg/i.test(h))dc=false;}
+ t(ds.length>0&&pu,"purity prayer with source on every day page");
+ t(ds.length>0&&co,"Compline link matches each page date and is last in the prayers");
+ t(dc,"no discord.gg links on day pages");}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
 
