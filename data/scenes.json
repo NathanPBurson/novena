@@ -237,6 +237,28 @@
    "callout": "“Speak to Pharaoh” · 6:29",
    "image": "images/scenes/exo-6-30.jpg",
    "pop": true
+  },
+  {
+   "ref": "exo:7",
+   "after": 10,
+   "scene": "Aaron casts down his rod before Pharaoh and it becomes a serpent",
+   "art": [
+    "File:Luigi Ademollo, Moses and Aaron before Pharaoh, with the Rods Turned into Serpents, NGA 144270.jpg"
+   ],
+   "callout": "“It was turned into a snake” · 7:10",
+   "image": "images/scenes/exo-7-10.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:7",
+   "after": 20,
+   "scene": "Aaron's rod swallows the magicians' rods; the water is turned into blood",
+   "art": [
+    "File:Tissot Drawing 114 Water Is changed into blood (Exodus 7 20) for Brunoff 110 L'eau changée en sang.jpg"
+   ],
+   "callout": "“Turned into blood” · 7:20",
+   "image": "images/scenes/exo-7-20.jpg",
+   "pop": true
   }
  ]
 }
