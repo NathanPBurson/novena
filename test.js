@@ -97,6 +97,13 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  fs.unlinkSync(tm);bld({REWIND_MANIFEST:tm});pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(Array.isArray(pl.blocks)&&pl.blocks.length===0&&/if\(!blocks\.length\)throw 0/.test(js)&&/blocks=\[\{yt:FALLBACK_YT,/.test(js),"missing manifest -> empty playlist -> YouTube fallback");
  fs.writeFileSync(plf,keep);bld({});}
 {const _r=require('fs').readFileSync(__dirname+'/js/rewind.js','utf8');const ok=/unloadModule\('captions'\)/.test(_r)&&/setOption\('captions','track',\{\}\)/.test(_r)&&/cc_lang_pref/.test(_r)&&/if\(!OBS/.test(_r);console.log((ok?'PASS':'FAIL')+' rewind: OBS mode disables captions');if(!ok)process.exit(1)}
+{const hp=path.join(__dirname,"hours/index.html"),hh=fs.existsSync(hp)?fs.readFileSync(hp,"utf8"):"";
+ t(hh.length>0,"hours page exists");
+ t(["lauds","readings","sext","vespers","compline"].every(k=>hh.includes(`data-hour="${k}"`))&&/America\/New_York/.test(hh)&&hh.includes('"https://universalis.com/USA/"+ymd+"/"'),"hours page links all 5 hours (Lauds, Readings, Midday, Vespers, Compline) by NY date");
+ t(/<noscript>[\s\S]*https:\/\/universalis\.com\/USA\/"/.test(hh)&&/provided by <a href="https:\/\/universalis\.com\/"/.test(hh),"hours page has noscript fallback and Universalis credit");
+ t(!/discord\.gg/i.test(hh),"hours page has no discord.gg links");
+ const ih=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dh=Object.values(s1)[0];
+ t(ih.includes('href="hours/"')&&dh.includes('href="../../hours/"'),"hours linked from home page and day pages nav");}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
 

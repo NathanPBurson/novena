@@ -33,7 +33,7 @@ function shell(title,root,body,extra=""){return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title><link rel="icon" href="${root}favicon.svg"><link rel="stylesheet" href="${root}css/lu.css?v=${VA}">${extra}</head>
 <body class="lu"><div class="lu-hud-top"><a class="lu-brand" href="${root}"><span class="lu-gem"></span>Pio's Lost Sheep</a>
-<nav class="lu-nav"><a href="${root}">Home</a><a href="${root}novena/">Novena</a><a href="${root}day/">Daily Pages</a><a href="https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live" rel="noopener">Live</a></nav></div>
+<nav class="lu-nav"><a href="${root}">Home</a><a href="${root}novena/">Novena</a><a href="${root}day/">Daily Pages</a><a href="${root}hours/">Liturgy of the Hours</a><a href="https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live" rel="noopener">Live</a></nav></div>
 <main class="lu-wrap">${body}</main>
 <footer class="lu-foot">Scripture: Catholic Public Domain Version &middot; NABRE links to USCCB.org &middot; Art: public-domain paintings via Wikimedia Commons &middot; Fonts: Nunito, Varela Round, Lilita One (SIL OFL, <a href="${root}fonts/">licenses</a>)<br>Fan-made devotional site; not affiliated with any game or toy company. Ad Jesum per Mariam.</footer></body></html>
 `}
@@ -79,6 +79,18 @@ const all=fs.readdirSync(path.join(R,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(
 const today=L.todayNY(),T0=L.compute(today,site,C.books);
 fs.writeFileSync(path.join(R,"day","index.html"),shell("Daily Pages · Pio's Lost Sheep","../",`<section class="lu-panel"><div class="lu-tabhead">Daily Pages</div><ul class="lu-list">${all.map(d=>{const t=L.compute(d,site,C.books);return `<li><a href="${d}/">${esc(fmt(d))}</a> &middot; ${esc(t.reading.name)} ${t.reading.chapter} &middot; ${t.status==="active"?"Novena day "+t.day:t.status==="done"?"after the novena":"before the novena"}</li>`}).join("")}</ul></section>`));
 // Home page. JS redirects "today" to the live NY date; static fallback is the build date.
+// Liturgy of the Hours (Nathan approved, Oct 24): links only to Universalis USA; no Universalis text copied.
+{const HRS=[["lauds","Morning Prayer (Lauds)"],["readings","Office of Readings"],["sext","Midday Prayer"],["vespers","Evening Prayer (Vespers)"],["compline","Night Prayer (Compline)"]];
+fs.mkdirSync(path.join(R,"hours"),{recursive:true});
+fs.writeFileSync(path.join(R,"hours","index.html"),shell("Liturgy of the Hours · Pio's Lost Sheep","../",`<section class="lu-panel"><div class="lu-tabhead">Liturgy of the Hours &middot; <span id="hrs-date">today</span></div>
+<p>Pray the Church's daily prayer with us. Each button opens today's hour (USA calendar, New York date) on Universalis.</p>
+<ul class="lu-list" id="hrs-list">${HRS.map(([k,n])=>`<li><a class="lu-btn blue" data-hour="${k}" href="https://universalis.com/USA/${k}.htm" rel="noopener">${esc(n)} &rarr;</a></li>`).join("")}</ul>
+<noscript><p><a class="lu-btn gold" href="https://universalis.com/USA/" rel="noopener">Open today's hours on Universalis (USA) &rarr;</a></p></noscript>
+<p class="lu-muted">Daytime prayer also at <a data-hour="terce" href="https://universalis.com/USA/terce.htm" rel="noopener">Terce</a> &middot; <a data-hour="none" href="https://universalis.com/USA/none.htm" rel="noopener">None</a>.</p>
+<p class="lu-muted">Texts of the Hours are provided by <a href="https://universalis.com/" rel="noopener">Universalis</a>; this site only links to them.</p></section>
+<script>(function(){var p=new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});var ymd=o.year+o.month+o.day;
+document.getElementById("hrs-date").textContent=new Date(o.year+"-"+o.month+"-"+o.day+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+document.querySelectorAll("a[data-hour]").forEach(function(a){a.href="https://universalis.com/USA/"+ymd+"/"+a.getAttribute("data-hour")+".htm"})})();</script>`));}
 fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`<section class="lu-panel lu-hero"><div class="lu-hero-art"></div><div class="lu-hero-text"><div class="lu-kicker">Welcome, Lost Sheep</div><h1>Pio's Lost Sheep</h1><p>Pray, read Scripture one chapter a day, and gather with us live.</p>
 <p><a class="lu-btn gold" id="today-link" href="day/${today}/">Today's page &middot; ${esc(fmt(today))}</a> <a class="lu-btn" href="novena/">54 Day Rosary Novena</a></p></div></section>
 <section class="lu-panel"><div class="lu-tabhead">Today</div><p>${T0.status==="active"?`Novena day ${T0.day} of 54 (${T0.phase})`:"Daily Scripture"} &middot; <b>${esc(T0.reading.name)} ${T0.reading.chapter}</b> &middot; ${MN[T0.mystery]} Mysteries</p></section>
@@ -86,6 +98,7 @@ fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`<section
 <li><a class="lu-btn red" href="https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live" rel="noopener">&#9658; Watch live on YouTube</a> <span class="lu-muted">https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live</span></li>
 <li><a class="lu-btn blue" href="https://discord.gg/HqXPUEd5JQ" rel="noopener">Join our Pio's Lost Sheep Discord Server: https://discord.gg/HqXPUEd5JQ</a></li>
 <li><a class="lu-btn gold" href="https://ko-fi.com/pioslostsheep" rel="noopener">Tithe Your Shekels: https://ko-fi.com/pioslostsheep</a></li>
+<li><a class="lu-btn blue" href="hours/">Liturgy of the Hours (daily links)</a></li>
 <li><a class="lu-btn" href="https://nathanpburson.github.io/novena/rewind/?obs=1">Rewind (OBS): https://nathanpburson.github.io/novena/rewind/?obs=1</a></li></ul></section>
 <section class="lu-panel"><div class="lu-tabhead">Sections</div><ul class="lu-list"><li><a href="novena/">The 54 Day Rosary Novena</a> &mdash; prayers, mysteries, the 54-day calendar and the whole Bible</li><li><a href="day/">Daily pages</a> &mdash; one page per date with the chapter, art and prayers</li></ul></section>
 <script src="js/logic.js?v=${VA}"></script><script>(function(){var d=NovenaLogic.todayNY(),a=document.getElementById("today-link");a.href="day/"+d+"/";})()</script>`));
