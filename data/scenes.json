@@ -23,7 +23,11 @@
    ],
    "callout": "“The scepter from Judah” · 49:10",
    "image": "images/scenes/gen-49-10.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/jim.png",
+    "tag": "Jim"
+   }
   },
   {
    "ref": "gen:49",
@@ -37,7 +41,11 @@
    ],
    "callout": "“I will wait for your salvation, O Lord” · 49:18",
    "image": "images/scenes/gen-49-20.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/matthew_peter.png",
+    "tag": "Matthew"
+   }
   },
   {
    "ref": "gen:49",
@@ -50,7 +58,11 @@
    ],
    "callout": "“The Almighty will bless you” · 49:25",
    "image": "images/scenes/gen-49-30.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/sammy.png",
+    "tag": "Sammy"
+   }
   },
   {
    "ref": "gen:50",
@@ -61,7 +73,11 @@
    ],
    "callout": "“Seven full days” · 50:10",
    "image": "images/scenes/gen-50-10.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/jeb.png",
+    "tag": "Jeb"
+   }
   },
   {
    "ref": "gen:50",
@@ -73,7 +89,11 @@
    ],
    "callout": "“God turned it into good” · 50:20",
    "image": "images/scenes/gen-50-20.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/nathan.png",
+    "tag": "Nathan"
+   }
   },
   {
    "ref": "exo:1",
@@ -84,7 +104,11 @@
    ],
    "callout": "“A new king … ignorant of Joseph” · 1:8",
    "image": "images/scenes/exo-1-10.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/biden.png",
+    "tag": "Biden"
+   }
   },
   {
    "ref": "exo:1",
@@ -122,7 +146,11 @@
    ],
    "callout": "“Moses rose up, defending the girls” · 2:17",
    "image": "images/scenes/exo-2-20.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/spot.png",
+    "tag": "Spot"
+   }
   },
   {
    "ref": "exo:3",
@@ -167,7 +195,11 @@
    ],
    "callout": "“He will be your mouth” · 4:16",
    "image": "images/scenes/exo-4-20.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/harry.png",
+    "tag": "Harry"
+   }
   },
   {
    "ref": "exo:4",
@@ -179,7 +211,11 @@
    ],
    "callout": "“And the people believed” · 4:31",
    "image": "images/scenes/exo-4-30.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/freddie.png",
+    "tag": "Freddie"
+   }
   },
   {
    "ref": "exo:5",
@@ -191,7 +227,11 @@
    ],
    "callout": "“Release my people” · 5:1",
    "image": "images/scenes/exo-5-10.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/trump.png",
+    "tag": "Trump"
+   }
   },
   {
    "ref": "exo:5",
@@ -202,7 +242,11 @@
    ],
    "callout": "“Straw is not given to us” · 5:16",
    "image": "images/scenes/exo-5-20.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/matthew_polo.png",
+    "tag": "Matthew"
+   }
   },
   {
    "ref": "exo:6",
@@ -225,7 +269,11 @@
    ],
    "callout": "“Who bore for him Aaron and Moses” · 6:20",
    "image": "images/scenes/exo-6-20.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/matthew_3d.png",
+    "tag": "Matthew"
+   }
   },
   {
    "ref": "exo:6",
@@ -236,7 +284,11 @@
    ],
    "callout": "“Speak to Pharaoh” · 6:29",
    "image": "images/scenes/exo-6-30.jpg",
-   "pop": true
+   "pop": true,
+   "cameo": {
+    "file": "images/cameos/cameron.png",
+    "tag": "Cameron"
+   }
   },
   {
    "ref": "exo:7",

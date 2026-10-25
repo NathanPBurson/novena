@@ -32,6 +32,9 @@ for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),n=require
    &&h.includes("Catechism "+b.ccc.n+".")&&/^\d{3,4}$/.test(String(b.ccc.n))&&b.father.url&&b.haydock.length>=1&&b.haydock.length<=2&&q===1&&h.includes(esc(BY.credit))&&h.includes(b.episode)&&!h.includes("<b>Reflection</b><p>"+esc((C.chapterReflections[L.compute(d,site,books).reading.book+":"+L.compute(d,site,books).reading.chapter]||{}).reflection||"@@")),
    `${d}: Bible in a Year day ${b&&b.day} section (where, reflection, notes w/ CCC ${b&&b.ccc.n} + Father + Haydock, one prayer question, sources) after scripture`);
   t(b&&[b.reflection,b.ccc.text,b.father.text,...b.haydock.map(x=>x.text)].every(x=>x.split(/\s+/).length<160),`${d}: Bible in a Year text is short retelling, no transcript-length blocks`);}}
+// 2d. cameos (approved by Nathan via Joansey): small cutouts only, never on God/burning-bush scenes, raw photos never in repo
+{const cs=scenes.filter(s=>s.cameo),py=fs.readFileSync(path.join(__dirname,"tools/build_collages.py"),"utf8");
+ t(cs.length>0&&cs.every(s=>fs.existsSync(path.join(__dirname,s.cameo.file))&&fs.statSync(path.join(__dirname,s.cameo.file)).size<120000&&s.ref!=="exo:3"&&s.cameo.tag)&&/t=int\(w\*\.11\)/.test(py)&&!cp.execSync("git ls-files",{cwd:__dirname}).toString().split("\n").some(f=>/01M5R|cameos\/.*\.jpe?g$/i.test(f)),`${cs.length} cameos: small (11% wide) corner cutouts, none on the burning-bush scenes, no raw photos in repo`);}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 // 3. home page links
 const home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
