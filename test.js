@@ -56,7 +56,8 @@ const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("
  t(/overflow:hidden/.test(h)&&/background:#000/.test(h),"rewind full-window, black, no scrollbars");
  t(/noindex/.test(h),"rewind noindex");
  const pages=["index.html","novena/index.html","day/index.html",...fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}/.test(x)).map(d=>"day/"+d+"/index.html")];
- t(pages.every(f=>!/rewind/i.test(fs.readFileSync(path.join(__dirname,f),"utf8"))),"rewind not linked from nav/pages");
+t(pages.filter(f=>f!=="index.html").every(f=>!/rewind/i.test(fs.readFileSync(path.join(__dirname,f),"utf8"))),"rewind only linked from home page (Nathan, Oct 24)");
+t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.readFileSync(path.join(__dirname,"index.html"),"utf8")),"home links Rewind (OBS)");
  t(!fs.existsSync(path.join(__dirname,"sitemap.xml"))||!/rewind/.test(fs.readFileSync(path.join(__dirname,"sitemap.xml"),"utf8")),"rewind not in sitemap");
  t(/html,body\{margin:0;padding:0;border:0;width:100%;height:100%;overflow:hidden;background:#000\}/.test(h)&&!/max-width:\d/.test(h),"rewind: no margins/scrollbars/size caps");
  t(RW.rotateSec===600&&h.includes("window.REWIND_ROTATE=600")&&/cur\.t\(\)-t0>=ROT/.test(js)&&/start:t0/.test(js),"rotate after rotateSec (600, from data/rewind.json) or on end; start param per pass");
