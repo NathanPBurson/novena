@@ -382,5 +382,21 @@
   "artist": "",
   "title": "Martin, John - The Seventh Plague - 1823",
   "date": ""
+ },
+ "File:Tissot Drawing 124 Pharaoh sues to Moses (Exodus 9 27) for Brunoff 115 Pharaon accorde à Moïse.jpg": {
+  "local": "images/scenes/src/c35059e401.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Tissot_Drawing_124_Pharaoh_sues_to_Moses_(Exodus_9_27)_for_Brunoff_115_Pharaon_accorde_%C3%A0_Mo%C3%AFse.jpg",
+  "license": "Public domain",
+  "artist": "James Tissot",
+  "title": "Tissot Drawing 124 Pharaoh sues to Moses (Exodus 9 27) for Brunoff 115 Pharaon accorde à Moïse",
+  "date": "1900"
+ },
+ "File:Tissot Drawing 121 The plague of locusts (Exodus 10 13) for Brunoff 117 Les sauterelles.jpg": {
+  "local": "images/scenes/src/22de34c049.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Tissot_Drawing_121_The_plague_of_locusts_(Exodus_10_13)_for_Brunoff_117_Les_sauterelles.jpg",
+  "license": "Public domain",
+  "artist": "James Tissot",
+  "title": "Tissot Drawing 121 The plague of locusts (Exodus 10 13) for Brunoff 117 Les sauterelles",
+  "date": "1900"
  }
 }

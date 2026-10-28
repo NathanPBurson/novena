@@ -356,6 +356,30 @@
    "callout": "“The earth belongs to the Lord” · 9:29",
    "image": "images/scenes/exo-9-30.jpg",
    "pop": true
+  },
+  {
+   "ref": "exo:10",
+   "after": 10,
+   "scene": "Pharaoh's servants plead, “Egypt is perishing”; Pharaoh calls Moses back and bargains over who may go",
+   "art": [
+    "File:Tissot Drawing 124 Pharaoh sues to Moses (Exodus 9 27) for Brunoff 115 Pharaon accorde à Moïse.jpg"
+   ],
+   "callout": "“Do you not see that Egypt is perishing?” · 10:7",
+   "image": "images/scenes/exo-10-10.jpg",
+   "pop": true,
+   "pillar": true
+  },
+  {
+   "ref": "exo:10",
+   "after": 20,
+   "scene": "Locusts cover the face of Egypt; Pharaoh says “I have sinned,” and Moses prays until the west wind sweeps them into the Red Sea",
+   "art": [
+    "File:Tissot Drawing 121 The plague of locusts (Exodus 10 13) for Brunoff 117 Les sauterelles.jpg"
+   ],
+   "callout": "“Moses extended his staff over the land of Egypt” · 10:13",
+   "image": "images/scenes/exo-10-20.jpg",
+   "pop": true,
+   "pillar": true
   }
  ]
 }
