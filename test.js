@@ -117,34 +117,19 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  let fi=true,av=true;for(const f of pg){const h=fs.readFileSync(f,"utf8");if(!(/rel="icon"[^>]*favicon-32\.png/.test(h)&&/rel="apple-touch-icon"[^>]*apple-touch-icon\.png/.test(h)))fi=false;if(!/rewind/.test(f)&&!/<img class="lu-avatar" src="[^"]*images\/channel_avatar_96\.png"/.test(h))av=false;}
  t(pg.length>5&&fi,"every page has favicon and apple-touch-icon links");t(av,"every page header has the round channel avatar");
  t(["favicon-32.png","apple-touch-icon.png","images/channel_avatar_96.png","images/channel_avatar.jpg"].every(x=>fs.existsSync(path.join(__dirname,x))),"avatar and icon files exist");}
-{// On-site Liturgy of the Hours: Universalis iframe (modern) + Divinum Officium static text (traditional)
- const H=require("./js/hours.js"),hh=fs.readFileSync(path.join(__dirname,"hours/index.html"),"utf8"),hs=fs.readFileSync(path.join(__dirname,"js/hours.js"),"utf8"),td=path.join(__dirname,"hours/trad"),fl=fs.readdirSync(td).filter(x=>/^\d{4}-\d\d-\d\d\.json$/.test(x)).sort();
+{// On-site Liturgy of the Hours: five stacked Universalis iframes, one scrolling page
+ const H=require("./js/hours.js"),hh=fs.readFileSync(path.join(__dirname,"hours/index.html"),"utf8"),hs=fs.readFileSync(path.join(__dirname,"js/hours.js"),"utf8"),hc=fs.readFileSync(path.join(__dirname,"css/hours.css"),"utf8"),keys=["readings","lauds","sext","vespers","compline"];
  t(H.universalisUrl("2026-10-28","vespers")==="https://universalis.com/usa/20261028/vespers.htm"&&H.universalisUrl("2026-11-01","readings")==="https://universalis.com/usa/20261101/readings.htm","hours.js builds dated Universalis (usa) hour URLs");
- t(H.addDays("2026-10-31",1)==="2026-11-01"&&H.addDays("2026-03-01",-1)==="2026-02-28"&&/^\d{4}-\d\d-\d\d$/.test(H.todayNY()),"hours.js date helpers (month rollover, NY today)");
- t(H.divinumUrl("2026-10-28","lauds")==="https://www.divinumofficium.com/cgi-bin/horas/officium.pl?date1=10-28-2026&command=prayLaudes&version=Divino%20Afflatu&lang2=English","hours.js builds Divinum Officium fallback link");
- t((hh.match(/<iframe /g)||[]).length===1&&/<iframe id="hrs-frame"/.test(hh)&&!/<iframe[^>]*src="(?!https:\/\/universalis\.com\/)/.test(hh),"hours page has exactly one iframe and it is Universalis");
- t(hh.includes("https://universalis.com/n-iframe.htm")&&hh.includes("&copy; Universalis Publishing Ltd")&&hh.includes("Jerusalem Bible"),"modern text credits Universalis, copyright and its documented iframe method");
- t(hh.includes("Traditional Roman Office, not the modern Liturgy of the Hours")&&hh.includes("MIT")&&hh.includes("public domain")&&hh.includes("github.com/DivinumOfficium/divinum-officium")&&hh.includes("Douay-Rheims"),"traditional text is labeled as such with Divinum Officium license credit");
- t(/hrs-modes/.test(hh)&&/data-mode="modern"/.test(hh)&&/data-mode="trad"/.test(hh)&&hh.includes('id="hrs-trad-body"'),"hours page has modern/traditional switch and text area");
+ t(H.addDays("2026-10-31",1)==="2026-11-01"&&H.addDays("2026-03-01",-1)==="2026-02-28"&&/^\d{4}-\d\d-\d\d$/.test(H.todayNY())&&/America\/New_York/.test(hs),"hours.js date helpers (month rollover, NY today)");
+ t(JSON.stringify(H.HOURS.map(h=>h.k))===JSON.stringify(keys),"hours are in order: Readings, Lauds, Midday, Vespers, Compline");
+ const pos=keys.map(k=>hh.indexOf(`id="hour-${k}"`));t(pos.every((p,i)=>p>0&&(i==0||p>pos[i-1])),"hours page stacks the 5 hours top to bottom in order");
+ t(keys.every(k=>new RegExp(`id="hour-${k}"><h2>[^<]+</h2><iframe class="hrs-frame" id="hrs-frame-${k}"`).test(hh)),"each hour has its own heading and its own iframe");
+ t((hh.match(/<iframe /g)||[]).length===5&&!/<iframe[^>]*src=/.test(hh)&&/universalis\.com\/usa\//.test(hs),"exactly five iframes, all pointed at Universalis by hours.js");
+ t(keys.every(k=>{const m=hc.match(new RegExp(`#hrs-frame-${k}\\{height:(\\d+)px`));return m&&+m[1]>=4000}),"each frame is tall (4000px+) so the page scrolls, not the frames");
+ t(!/<button[^>]*data-hr=|data-mode|hrs-hours|hrs-modes/.test(hh+hs)&&["hrs-prev","hrs-today","hrs-next","hrs-date"].every(i=>hh.includes(`id="${i}"`)),"no hour tabs or buttons; only previous/today/next and the date remain");
+ t(hh.includes("https://universalis.com/n-iframe.htm")&&hh.includes("&copy; Universalis Publishing Ltd")&&hh.includes("Jerusalem Bible")&&/<noscript>[\s\S]*https:\/\/universalis\.com\/USA\/"/.test(hh)&&/provided by <a href="https:\/\/universalis\.com\/"/.test(hh),"credit, copyright, documented-iframe link and noscript fallback present");
+ t(!/trad|Divinum|Douay/i.test(hh+hs+hc)&&!fs.existsSync(path.join(__dirname,"hours/trad"))&&!fs.existsSync(path.join(__dirname,"tools/gen_hours.js")),"no traditional-office text or generator remains (modern only)");
  t(!/discord\.gg|discord\.com/i.test(hh+hs),"hours page and script have no Discord links");
- t(fl.length>=7,"at least 7 days of on-site traditional text exist ("+fl.length+" days: "+fl[0]+" to "+fl[fl.length-1]+")");
- let okd=true,okn=true,okc=true,okx=true,okh=true;const keys=["matins","lauds","prime","terce","sext","none","vespers","compline"];
- for(const f of fl){const j=JSON.parse(fs.readFileSync(path.join(td,f),"utf8")),raw=JSON.stringify(j);
-  if(j.date!==f.slice(0,10))okd=false;
-  if(!keys.every(k=>j.hours[k]&&j.hours[k].html.length>1000&&j.hours[k].title))okn=false;
-  if(!(/Psalm \d+/.test(j.hours.vespers.html)&&/Psalm \d+/.test(j.hours.lauds.html)&&/Ant\./.test(j.hours.lauds.html)))okc=false;
-  if(/<a[\s>]|<script|<iframe|onclick|discord\.(gg|com)|universalis/i.test(raw))okx=false;
-  if(!H.HOURS.concat(H.EXTRA,H.TRAD_ONLY).every(h=>j.hours[h.trad]))okh=false;}
- t(okd,"traditional JSON date matches its file name");t(okn,"every day has all 8 hours with real text and a feast title");t(okc,"hours contain psalms and antiphons");
- t(okx,"traditional text has no links, scripts, Discord or Universalis text");t(okh,"every hour button on the page has traditional text");
- let seq=true;for(let i=1;i<fl.length;i++)if(H.addDays(fl[i-1].slice(0,10),1)!==fl[i].slice(0,10))seq=false;t(seq,"traditional days are consecutive");
- const cover=H.todayNY(),last=fl[fl.length-1].slice(0,10);if(!(fl[0].slice(0,10)<=cover&&H.addDays(cover,6)<=last))console.log("NOTE: traditional hours data does not yet cover NY today +7 days; run: node tools/gen_hours.js");
- const g=n=>JSON.parse(fs.readFileSync(path.join(td,n+".json"),"utf8"));
- if(fl.includes("2026-10-28.json")){t(/Simon and Jude/.test(g("2026-10-28").title)&&/Simon and Jude/.test(g("2026-10-27").hours.vespers.title),"Oct 28 is Sts. Simon and Jude; Oct 27 Vespers are its first Vespers");}
- if(fl.includes("2026-11-01.json")){t(/All Saints/.test(g("2026-11-01").hours.vespers.title)&&/All Souls/.test(g("2026-11-01").hours.compline.title),"Nov 1 is All Saints; Nov 1 Compline already looks to All Souls");}
- // generator is re-runnable and deterministic when a Divinum Officium checkout is present
- const dsrc=process.env.DO_SRC||"/workspace/do_src";
- if(fs.existsSync(path.join(dsrc,"standalone/tools/epubgen2/EofficiumXhtml.pl"))&&fl.includes("2026-10-28.json")){const f=path.join(td,"2026-10-28.json"),b=fs.readFileSync(f,"utf8");cp.execFileSync("node",["tools/gen_hours.js","--from","2026-10-28","--days","1"],{cwd:__dirname});t(fs.readFileSync(f,"utf8")===b,"gen_hours.js is re-runnable (identical output for 2026-10-28)")}else console.log("SKIP: Divinum Officium checkout not found; gen_hours.js re-run check skipped");
  const ih2=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");t(ih2.includes('href="hours/">Liturgy of the Hours (daily text)'),"home page links to the on-site Hours page");}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 

@@ -1,11 +1,8 @@
 /* /hours/ page only (kept out of lu.css so the other pages' cache-bust hash is unchanged) */
 .hrs-row{margin:8px 0}.hrs-row .lu-btn{cursor:pointer;border-width:3px;border-style:solid;border-color:transparent;font-family:inherit}
 .hrs-row .lu-btn.sm{padding:4px 12px;font-size:14px}
-.hrs-row .lu-btn.on{outline:3px solid #fff;outline-offset:1px}
-.hrs-row .lu-btn[hidden]{display:none}
-#hrs-frame{display:block;width:100%;height:720px;max-height:80vh;border:3px solid var(--edge);border-radius:12px;background:#fff}
-#hrs-trad-body h3{font-size:22px;margin:.4em 0}
-.dv-day{margin:.2em 0 .6em;color:var(--paper)}
-.dv-text{padding:12px 18px;border-radius:14px;background:rgba(244,236,216,.97);color:#2a1f12;border-left:8px solid var(--gold);font:17px/1.65 Georgia,serif;max-height:75vh;overflow:auto}
-.dv-text p{margin:.7em 0}.dv-text b{display:inline-block;margin-top:.6em;color:#7a2e08;font:700 13px "Varela Round",sans-serif;text-transform:uppercase;letter-spacing:.08em}
-.dv-ri,.dv-rd{color:#b3261e}.dv-w,.dv-s{color:#6b5a44;font-style:italic;font-size:.9em}.dv-nigra{font-weight:700}
+.hrs-hour{margin:26px 0 8px}.hrs-hour h2{margin:0 0 8px;font-size:24px}
+/* Frames are tall (measured on Universalis at ~900px wide, 4.2k-6.7k px, plus ~20% margin for longer days) so the page scrolls, not the frames; phones get more height because the text wraps. */
+.hrs-frame{display:block;width:100%;border:3px solid var(--edge);border-radius:12px;background:#fff}
+#hrs-frame-readings{height:8200px}#hrs-frame-lauds{height:7600px}#hrs-frame-sext{height:6800px}#hrs-frame-vespers{height:6800px}#hrs-frame-compline{height:5400px}
+@media(max-width:700px){#hrs-frame-readings{height:12000px}#hrs-frame-lauds{height:11000px}#hrs-frame-sext{height:10000px}#hrs-frame-vespers{height:10000px}#hrs-frame-compline{height:8000px}}
