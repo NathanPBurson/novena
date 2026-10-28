@@ -99,7 +99,7 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
 {const _r=require('fs').readFileSync(__dirname+'/js/rewind.js','utf8');const ok=/unloadModule\('captions'\)/.test(_r)&&/setOption\('captions','track',\{\}\)/.test(_r)&&/cc_lang_pref/.test(_r)&&/if\(!OBS/.test(_r);console.log((ok?'PASS':'FAIL')+' rewind: OBS mode disables captions');if(!ok)process.exit(1)}
 {const hp=path.join(__dirname,"hours/index.html"),hh=fs.existsSync(hp)?fs.readFileSync(hp,"utf8"):"";
  t(hh.length>0,"hours page exists");
- t(["lauds","readings","sext","vespers","compline"].every(k=>hh.includes(`data-hour="${k}"`))&&/America\/New_York/.test(hh)&&hh.includes('"https://universalis.com/USA/"+ymd+"/"'),"hours page links all 5 hours (Lauds, Readings, Midday, Vespers, Compline) by NY date");
+ t(["lauds","readings","sext","vespers","compline"].every(k=>hh.includes(`data-hour="${k}"`))&&hh.includes('src="../js/hours.js')&&/America\/New_York/.test(fs.readFileSync(path.join(__dirname,"js/hours.js"),"utf8")),"hours page has all 5 hours (Lauds, Readings, Midday, Vespers, Compline) and follows the NY date");
  t(/<noscript>[\s\S]*https:\/\/universalis\.com\/USA\/"/.test(hh)&&/provided by <a href="https:\/\/universalis\.com\/"/.test(hh),"hours page has noscript fallback and Universalis credit");
  t(!/discord\.gg/i.test(hh),"hours page has no discord.gg links");
  const ih=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dh=Object.values(s1)[0];
@@ -117,6 +117,20 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  let fi=true,av=true;for(const f of pg){const h=fs.readFileSync(f,"utf8");if(!(/rel="icon"[^>]*favicon-32\.png/.test(h)&&/rel="apple-touch-icon"[^>]*apple-touch-icon\.png/.test(h)))fi=false;if(!/rewind/.test(f)&&!/<img class="lu-avatar" src="[^"]*images\/channel_avatar_96\.png"/.test(h))av=false;}
  t(pg.length>5&&fi,"every page has favicon and apple-touch-icon links");t(av,"every page header has the round channel avatar");
  t(["favicon-32.png","apple-touch-icon.png","images/channel_avatar_96.png","images/channel_avatar.jpg"].every(x=>fs.existsSync(path.join(__dirname,x))),"avatar and icon files exist");}
+{// On-site Liturgy of the Hours: five stacked Universalis iframes, one scrolling page
+ const H=require("./js/hours.js"),hh=fs.readFileSync(path.join(__dirname,"hours/index.html"),"utf8"),hs=fs.readFileSync(path.join(__dirname,"js/hours.js"),"utf8"),hc=fs.readFileSync(path.join(__dirname,"css/hours.css"),"utf8"),keys=["readings","lauds","sext","vespers","compline"];
+ t(H.universalisUrl("2026-10-28","vespers")==="https://universalis.com/usa/20261028/vespers.htm"&&H.universalisUrl("2026-11-01","readings")==="https://universalis.com/usa/20261101/readings.htm","hours.js builds dated Universalis (usa) hour URLs");
+ t(H.addDays("2026-10-31",1)==="2026-11-01"&&H.addDays("2026-03-01",-1)==="2026-02-28"&&/^\d{4}-\d\d-\d\d$/.test(H.todayNY())&&/America\/New_York/.test(hs),"hours.js date helpers (month rollover, NY today)");
+ t(JSON.stringify(H.HOURS.map(h=>h.k))===JSON.stringify(keys),"hours are in order: Readings, Lauds, Midday, Vespers, Compline");
+ const pos=keys.map(k=>hh.indexOf(`id="hour-${k}"`));t(pos.every((p,i)=>p>0&&(i==0||p>pos[i-1])),"hours page stacks the 5 hours top to bottom in order");
+ t(keys.every(k=>new RegExp(`id="hour-${k}"><h2>[^<]+</h2><iframe class="hrs-frame" id="hrs-frame-${k}"`).test(hh)),"each hour has its own heading and its own iframe");
+ t((hh.match(/<iframe /g)||[]).length===5&&!/<iframe[^>]*src=/.test(hh)&&/universalis\.com\/usa\//.test(hs),"exactly five iframes, all pointed at Universalis by hours.js");
+ t(keys.every(k=>{const m=hc.match(new RegExp(`#hrs-frame-${k}\\{height:(\\d+)px`));return m&&+m[1]>=4000}),"each frame is tall (4000px+) so the page scrolls, not the frames");
+ t(!/<button[^>]*data-hr=|data-mode|hrs-hours|hrs-modes/.test(hh+hs)&&["hrs-prev","hrs-today","hrs-next","hrs-date"].every(i=>hh.includes(`id="${i}"`)),"no hour tabs or buttons; only previous/today/next and the date remain");
+ t(hh.includes("https://universalis.com/n-iframe.htm")&&hh.includes("&copy; Universalis Publishing Ltd")&&hh.includes("Jerusalem Bible")&&/<noscript>[\s\S]*https:\/\/universalis\.com\/USA\/"/.test(hh)&&/provided by <a href="https:\/\/universalis\.com\/"/.test(hh),"credit, copyright, documented-iframe link and noscript fallback present");
+ t(!/trad|Divinum|Douay/i.test(hh+hs+hc)&&!fs.existsSync(path.join(__dirname,"hours/trad"))&&!fs.existsSync(path.join(__dirname,"tools/gen_hours.js")),"no traditional-office text or generator remains (modern only)");
+ t(!/discord\.gg|discord\.com/i.test(hh+hs),"hours page and script have no Discord links");
+ const ih2=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");t(ih2.includes('href="hours/">Liturgy of the Hours (daily text)'),"home page links to the on-site Hours page");}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
 

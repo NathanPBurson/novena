@@ -1,0 +1,8 @@
+/* /hours/ page only (kept out of lu.css so the other pages' cache-bust hash is unchanged) */
+.hrs-row{margin:8px 0}.hrs-row .lu-btn{cursor:pointer;border-width:3px;border-style:solid;border-color:transparent;font-family:inherit}
+.hrs-row .lu-btn.sm{padding:4px 12px;font-size:14px}
+.hrs-hour{margin:26px 0 8px}.hrs-hour h2{margin:0 0 8px;font-size:24px}
+/* Frames are tall (measured on Universalis at ~900px wide, 4.2k-6.7k px, plus ~20% margin for longer days) so the page scrolls, not the frames; phones get more height because the text wraps. */
+.hrs-frame{display:block;width:100%;border:3px solid var(--edge);border-radius:12px;background:#fff}
+#hrs-frame-readings{height:8200px}#hrs-frame-lauds{height:7600px}#hrs-frame-sext{height:6800px}#hrs-frame-vespers{height:6800px}#hrs-frame-compline{height:5400px}
+@media(max-width:700px){#hrs-frame-readings{height:12000px}#hrs-frame-lauds{height:11000px}#hrs-frame-sext{height:10000px}#hrs-frame-vespers{height:10000px}#hrs-frame-compline{height:8000px}}
