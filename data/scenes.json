@@ -287,6 +287,75 @@
    "callout": "“Turned into blood” · 7:20",
    "image": "images/scenes/exo-7-20.jpg",
    "pop": true
+  },
+  {
+   "ref": "exo:8",
+   "after": 10,
+   "scene": "The plague of frogs: “There is no one like the Lord our God”",
+   "art": [
+    "File:Tissot Drawing 116 (not in Brunoff) The plague of frogs (Exodus 8 1-14).jpg"
+   ],
+   "callout": "“No one like the Lord our God” · 8:10",
+   "image": "images/scenes/exo-8-10.jpg",
+   "pop": true,
+   "pillar": true
+  },
+  {
+   "ref": "exo:8",
+   "after": 20,
+   "scene": "The plague of gnats: “This is the finger of God”",
+   "art": [
+    "File:William de Brailes - The Third Plague of Egypt - Gnats (Exodus 8 -17) - Walters W1065R - Full Page.jpg"
+   ],
+   "callout": "“This is the finger of God” · 8:19",
+   "image": "images/scenes/exo-8-20.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:8",
+   "after": 30,
+   "scene": "The plague of flies, with Goshen set apart",
+   "art": [
+    "File:Tissot Drawing 117 The plague of flies (Exodus 8 24) for Brunoff 111 La plaie des mouches.jpg"
+   ],
+   "callout": "“A division between my people and your people” · 8:23",
+   "image": "images/scenes/exo-8-30.jpg",
+   "pop": true,
+   "pillar": true
+  },
+  {
+   "ref": "exo:9",
+   "after": 10,
+   "scene": "Ashes from the oven: the plague of boils",
+   "art": [
+    "File:Tissot Drawing 118 The plague of boils and blains (Exodus 9 10) for Brunoff 112 Moïse jette de la cendre.jpg"
+   ],
+   "callout": "“Sores and swelling pustules” · 9:9",
+   "image": "images/scenes/exo-9-10.jpg",
+   "pop": true,
+   "pillar": true
+  },
+  {
+   "ref": "exo:9",
+   "after": 20,
+   "scene": "Moses calls down the hail; those who feared the Lord's word shelter their servants and cattle",
+   "art": [
+    "File:Pieter Mulier the younger (c.1637-1701) - Landscape with Moses and Aaron Calling Down the Plague of Hail upon Egypt - 1298257 - National Trust.jpg"
+   ],
+   "callout": "“He who feared the word of the Lord” · 9:20",
+   "image": "images/scenes/exo-9-20.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:9",
+   "after": 30,
+   "scene": "Hail and fire on Egypt; Pharaoh: “I have sinned”",
+   "art": [
+    "File:Martin, John - The Seventh Plague - 1823.jpg"
+   ],
+   "callout": "“The earth belongs to the Lord” · 9:29",
+   "image": "images/scenes/exo-9-30.jpg",
+   "pop": true
   }
  ]
 }

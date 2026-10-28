@@ -9,7 +9,35 @@ def clean(s):return html.unescape(re.sub('<[^>]+>','',s or '')).strip()
 for sc in S['scenes']:
   for t in sc['art']:
     if t in M and os.path.exists(R+'/'+M[t]['local']):continue
-    r=requests.get('https://commons.wikimedia.org/w/api.php',params=dict(action='query',titles=t,prop='imageinfo',iiprop='url|size|extmetadata',iiurlwidth=1280,format='json'),headers=H).json()
+    for k in range(2):  # Commons sometimes answers 503/HTML under load
+      try:
+        rr=requests.get('https://commons.wikimedia.org/w/api.php',params=dict(action='query',titles=t,prop='imageinfo',iiprop='url|size|extmetadata',iiurlwidth=1280,format='json'),headers=H,timeout=60)
+        r=rr.json();break
+      except (ValueError,requests.RequestException):time.sleep(15*(k+1))
+    else:r=None
+    if r is None:
+      # Commons API down: read the public file page instead (same licence check)
+      pg=None
+      for k in range(6):
+        try:gg=requests.get('https://commons.wikimedia.org/wiki/'+t.replace(' ','_'),headers=H,timeout=60)
+        except requests.RequestException:time.sleep(10*(k+1));continue
+        if gg.ok:pg=gg.text;break
+        time.sleep(10*(k+1))
+      if pg is None:raise SystemExit('file page failed '+t)
+      lics=[html.unescape(x) for x in re.findall(r'licensetpl&#95;short[^>]*>([^<]*)<',pg)]
+      lic=next((x for x in lics if re.search(r'public domain|cc0|no restrictions|pd',x,re.I)),'')
+      if not lic or any(re.search(r'cc[- ]by|gfdl|share ?alike',x,re.I) for x in lics):raise SystemExit('NOT PD: '+t+' '+str(lics))
+      u=re.search(r'class="fullImageLink" id="file"><a href="([^"]+)"',pg).group(1).replace('&amp;','&')
+      loc='images/scenes/src/'+hashlib.md5(t.encode()).hexdigest()[:10]+'.jpg'
+      for k in range(6):
+        try:g=requests.get(u,headers=H,timeout=120)
+        except requests.RequestException:time.sleep(20*(k+1));continue
+        if g.ok and g.headers.get('content-type','').startswith('image') and len(g.content)>20000:break
+        time.sleep(20*(k+1))
+      else:raise SystemExit('download failed '+t)
+      open(R+'/'+loc,'wb').write(g.content);time.sleep(2)
+      M[t]=dict(local=loc,source='https://commons.wikimedia.org/wiki/'+t.replace(' ','_'),license=lic,artist='',title=t[5:-4],date='')
+      json.dump(M,open(mp,'w'),indent=1,ensure_ascii=False);print(lic,'|',t[:70],flush=True);continue
     p=list(r['query']['pages'].values())[0];ii=p['imageinfo'][0];m=ii['extmetadata']
     lic=m.get('LicenseShortName',{}).get('value','')
     if not re.search(r'public domain|cc0|no restrictions|pd',lic,re.I):raise SystemExit('NOT PD: '+t+' '+lic)

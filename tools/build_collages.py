@@ -1,6 +1,6 @@
 # Fisk-style collage per scene from local PD paintings (data/scenes.json + data/art_meta.json). Safe to re-run.
 import json,os
-from PIL import Image,ImageOps,ImageDraw
+from PIL import Image,ImageOps,ImageDraw,ImageFilter
 import numpy as np
 from skimage import color
 R=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -17,7 +17,15 @@ def match(ims,s=.45):
 def crop(im,t):
   # Tissot gouaches are photographed on their paper mounts: trim the mat
   if 'Tissot Drawing' not in t:return im
-  w,h=im.size;return im.crop((int(w*.17),int(h*.12),int(w*.83),int(h*.88)))
+  w,h=im.size
+  # small framed pen drawings (116-118) sit on a big mat at different spots: use their own inner boxes
+  for k,b in {'Tissot Drawing 116':(.245,.14,.81,.84),'Tissot Drawing 117':(.12,.07,.94,.74),'Tissot Drawing 118':(.11,.14,.865,.82)}.items():
+    if k in t:return im.crop((int(w*b[0]),int(h*b[1]),int(w*b[2]),int(h*b[3])))
+  return im.crop((int(w*.17),int(h*.12),int(w*.83),int(h*.88)))
+def pillar(im,W,H):
+  # near-square art in a wide banner: show the whole picture centred on a blurred, darkened copy of itself
+  bg=ImageOps.fit(im,(W,H),Image.LANCZOS).filter(ImageFilter.GaussianBlur(28)).point(lambda v:int(v*.55))
+  fg=ImageOps.contain(im,(W,H),Image.LANCZOS);bg.paste(fg,((W-fg.width)//2,(H-fg.height)//2));return bg
 
 # Fisk-style pop (Nathan, Oct 24): light overlays that never cover the middle of the painting.
 # Torn parchment corners, a halftone band in the bottom margin, and one sticker-label scripture callout
@@ -66,12 +74,13 @@ def pop(C,sc):
   sc['pop']=True;return C
 W,H,g=1200,560,8;os.makedirs(R+'/images/scenes',exist_ok=True)
 for sc in S['scenes']:
+  if os.environ.get('ONLY') and sc['ref'] not in os.environ['ONLY'].split(','):continue  # ONLY=exo:8,exo:9 rebuilds just those chapters
   name='images/scenes/%s-%d.jpg'%(sc['ref'].replace(':','-'),sc['after']);sc['image']=name
   ims=[crop(Image.open(R+'/'+M[t]['local']).convert('RGB'),t) for t in sc['art']];n=len(ims)
   # first panel wider (the "hero"), the rest share the remainder
   ws=[W] if n==1 else [int((W-g*(n-1))*(.55 if n>1 else 1))]+[int((W-g*(n-1))*.45/(n-1))]*(n-1)
   ws[-1]+=W-g*(n-1)-sum(ws)
-  ims=match([ImageOps.fit(im,(w,H),Image.LANCZOS,centering=(.5,.4)) for im,w in zip(ims,ws)])
+  ims=match([pillar(im,w,H) if sc.get('pillar') else ImageOps.fit(im,(w,H),Image.LANCZOS,centering=(.5,.4)) for im,w in zip(ims,ws)])
   C=Image.new('RGB',(W,H),(22,15,10));x=0
   for im,w in zip(ims,ws):C.paste(im,(x,0));x+=w+g
   C=pop(C,sc)

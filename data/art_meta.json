@@ -334,5 +334,53 @@
   "artist": "James Tissot",
   "title": "Tissot Drawing 090 Issachar (Genesis 49 14) for Brunoff 085 Issachar",
   "date": "1900"
+ },
+ "File:Tissot Drawing 116 (not in Brunoff) The plague of frogs (Exodus 8 1-14).jpg": {
+  "local": "images/scenes/src/007ce47c75.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Tissot_Drawing_116_(not_in_Brunoff)_The_plague_of_frogs_(Exodus_8_1-14).jpg",
+  "license": "Public domain",
+  "artist": "James Tissot",
+  "title": "Tissot Drawing 116 (not in Brunoff) The plague of frogs (Exodus 8 1-14)",
+  "date": "1900"
+ },
+ "File:William de Brailes - The Third Plague of Egypt - Gnats (Exodus 8 -17) - Walters W1065R - Full Page.jpg": {
+  "local": "images/scenes/src/194c41e90b.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:William_de_Brailes_-_The_Third_Plague_of_Egypt_-_Gnats_(Exodus_8_-17)_-_Walters_W1065R_-_Full_Page.jpg",
+  "license": "Public domain",
+  "artist": "",
+  "title": "William de Brailes - The Third Plague of Egypt - Gnats (Exodus 8 -17) - Walters W1065R - Full Page",
+  "date": ""
+ },
+ "File:Tissot Drawing 117 The plague of flies (Exodus 8 24) for Brunoff 111 La plaie des mouches.jpg": {
+  "local": "images/scenes/src/30204e6a41.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Tissot_Drawing_117_The_plague_of_flies_(Exodus_8_24)_for_Brunoff_111_La_plaie_des_mouches.jpg",
+  "license": "Public domain",
+  "artist": "",
+  "title": "Tissot Drawing 117 The plague of flies (Exodus 8 24) for Brunoff 111 La plaie des mouches",
+  "date": ""
+ },
+ "File:Tissot Drawing 118 The plague of boils and blains (Exodus 9 10) for Brunoff 112 Moïse jette de la cendre.jpg": {
+  "local": "images/scenes/src/25094a23f2.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Tissot_Drawing_118_The_plague_of_boils_and_blains_(Exodus_9_10)_for_Brunoff_112_Moïse_jette_de_la_cendre.jpg",
+  "license": "Public domain",
+  "artist": "",
+  "title": "Tissot Drawing 118 The plague of boils and blains (Exodus 9 10) for Brunoff 112 Moïse jette de la cendre",
+  "date": ""
+ },
+ "File:Pieter Mulier the younger (c.1637-1701) - Landscape with Moses and Aaron Calling Down the Plague of Hail upon Egypt - 1298257 - National Trust.jpg": {
+  "local": "images/scenes/src/7ab6d46ae5.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Pieter_Mulier_the_younger_(c.1637-1701)_-_Landscape_with_Moses_and_Aaron_Calling_Down_the_Plague_of_Hail_upon_Egypt_-_1298257_-_National_Trust.jpg",
+  "license": "Public domain",
+  "artist": "",
+  "title": "Pieter Mulier the younger (c.1637-1701) - Landscape with Moses and Aaron Calling Down the Plague of Hail upon Egypt - 1298257 - National Trust",
+  "date": ""
+ },
+ "File:Martin, John - The Seventh Plague - 1823.jpg": {
+  "local": "images/scenes/src/d377765423.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Martin,_John_-_The_Seventh_Plague_-_1823.jpg",
+  "license": "Public domain",
+  "artist": "",
+  "title": "Martin, John - The Seventh Plague - 1823",
+  "date": ""
  }
 }
