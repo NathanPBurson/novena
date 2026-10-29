@@ -380,6 +380,18 @@
    "image": "images/scenes/exo-10-20.jpg",
    "pop": true,
    "pillar": true
+  },
+  {
+   "ref": "exo:11",
+   "after": 10,
+   "scene": "Moses warns of the last plague, the death of every firstborn in Egypt, and goes out from Pharaoh exceedingly angry",
+   "art": [
+    "File:Tissot Drawing 119 Moses leaves pharaoh in anger (Exodus 11 8) for Brunoff 118 Moïse en colère se retire.jpg"
+   ],
+   "callout": "“He went out from Pharaoh exceedingly angry” · 11:9",
+   "image": "images/scenes/exo-11-10.jpg",
+   "pop": true,
+   "pillar": true
   }
  ]
 }

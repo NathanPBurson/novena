@@ -18,8 +18,8 @@ def crop(im,t):
   # Tissot gouaches are photographed on their paper mounts: trim the mat
   if 'Tissot Drawing' not in t:return im
   w,h=im.size
-  # small framed pen drawings (116-118, 121, 124) sit on a big mat at different spots: use their own inner boxes
-  for k,b in {'Tissot Drawing 116':(.245,.14,.81,.84),'Tissot Drawing 117':(.12,.07,.94,.74),'Tissot Drawing 118':(.11,.14,.865,.82),'Tissot Drawing 121':(.125,.16,.86,.82),'Tissot Drawing 124':(.22,.145,.86,.87)}.items():
+  # small framed pen drawings (116-119, 121, 124) sit on a big mat at different spots: use their own inner boxes
+  for k,b in {'Tissot Drawing 116':(.245,.14,.81,.84),'Tissot Drawing 117':(.12,.07,.94,.74),'Tissot Drawing 118':(.11,.14,.865,.82),'Tissot Drawing 119':(.105,.145,.84,.835),'Tissot Drawing 121':(.125,.16,.86,.82),'Tissot Drawing 124':(.22,.145,.86,.87)}.items():
     if k in t:return im.crop((int(w*b[0]),int(h*b[1]),int(w*b[2]),int(h*b[3])))
   return im.crop((int(w*.17),int(h*.12),int(w*.83),int(h*.88)))
 def pillar(im,W,H):
