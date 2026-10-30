@@ -1,5 +1,5 @@
 {
-  "_comment": "Edited by the daily routine. Dates are America/New_York.",
+  "_comment": "Edited by the daily routine. Dates are America/New_York; the day rolls over at 6 AM ET. streams[].startUtc is an explicit UTC instant.",
   "novena": {
     "anchorDate": "2026-10-22",
     "anchorDay": 42,
@@ -20,5 +20,17 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-10-27"
+  "updated": "2026-10-27",
+  "streams": [
+    {
+      "startUtc": "2026-10-31T03:00:00Z",
+      "label": "Tonight's stream (Fri Oct 30)",
+      "display": "Friday night, Oct 30 · 11:00 PM ET"
+    },
+    {
+      "startUtc": "2026-11-01T05:30:00Z",
+      "label": "Saturday night's stream",
+      "display": "Saturday night's stream · starts 1:30 AM ET Sun Nov 1 (after midnight, 05:30 UTC)"
+    }
+  ]
 }

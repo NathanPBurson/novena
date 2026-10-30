@@ -8,7 +8,7 @@ var HOURS=[
  {k:"vespers",label:"Evening Prayer (Vespers)"},
  {k:"compline",label:"Night Prayer (Compline)"}];
 function pad(n){return(n<10?"0":"")+n}
-function todayNY(now){var p=new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(now||new Date()),o={};p.forEach(function(x){o[x.type]=x.value});return o.year+"-"+o.month+"-"+o.day}
+function todayNY(now){var p=new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit"}).formatToParts(now||new Date()),o={};p.forEach(function(x){o[x.type]=x.value});return new Date(Date.UTC(+o.year,+o.month-1,+o.day,+o.hour-6)).toISOString().slice(0,10)}
 function addDays(d,n){var x=new Date(d+"T12:00:00Z");x.setUTCDate(x.getUTCDate()+n);return x.getUTCFullYear()+"-"+pad(x.getUTCMonth()+1)+"-"+pad(x.getUTCDate())}
 function ymd(d){return d.replace(/-/g,"")}
 function universalisUrl(d,k){return"https://universalis.com/usa/"+ymd(d)+"/"+k+".htm"}

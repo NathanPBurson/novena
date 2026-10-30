@@ -131,6 +131,17 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(!/trad|Divinum|Douay/i.test(hh+hs+hc)&&!fs.existsSync(path.join(__dirname,"hours/trad"))&&!fs.existsSync(path.join(__dirname,"tools/gen_hours.js")),"no traditional-office text or generator remains (modern only)");
  t(!/discord\.gg|discord\.com/i.test(hh+hs),"hours page and script have no Discord links");
  const ih2=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");t(ih2.includes('href="hours/">Liturgy of the Hours (daily text)'),"home page links to the on-site Hours page");}
+{// 6 AM rollover + streams
+ const D=s=>new Date(s),site=JSON.parse(fs.readFileSync(path.join(__dirname,"data/site.json"),"utf8"));
+ t(L.todayNY(D("2026-10-31T09:59:00Z"))==="2026-10-30"&&L.todayNY(D("2026-10-31T10:00:00Z"))==="2026-10-31","today rolls over at 6 AM EDT (10:00Z), not midnight");
+ t(L.todayNY(D("2026-11-01T05:30:00Z"))==="2026-10-31"&&L.todayNY(D("2026-11-01T10:59:00Z"))==="2026-10-31"&&L.todayNY(D("2026-10-31T04:00:00Z"))==="2026-10-30"&&L.todayNY(D("2026-11-01T11:00:00Z"))==="2026-11-01","1:30 AM Sun Nov 1 still counts as Saturday; 6 AM EST (11:00Z) rolls over after DST ends");
+ t(require("./js/hours.js").todayNY(D("2026-10-31T09:59:00Z"))==="2026-10-30"&&require("./js/hours.js").todayNY(D("2026-10-31T10:00:00Z"))==="2026-10-31","/hours/ today uses the same 6 AM rollover");
+ const S=site.streams||[],f=S.find(x=>x.startUtc==="2026-10-31T03:00:00Z"),g=S.find(x=>x.startUtc==="2026-11-01T05:30:00Z");
+ t(f&&/11:00 PM ET/.test(f.display)&&g&&/Saturday night/.test(g.display)&&/1:30 AM/.test(g.display),"streams: Fri 11 PM ET and Saturday night 1:30 AM stored as explicit UTC (03:00Z, 05:30Z)");
+ t(D("2026-11-01T05:30:00Z").toLocaleString("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit",timeZoneName:"short"})==="1:30 AM EDT","05:30Z is 1:30 AM EDT");
+ t(L.nextStream(S,D("2026-10-30T20:00:00Z")).startUtc==="2026-10-31T03:00:00Z"&&L.nextStream(S,D("2026-10-31T08:00:00Z")).startUtc==="2026-11-01T05:30:00Z"&&L.nextStream(S,D("2026-11-02T00:00:00Z"))===null,"nextStream picks the upcoming stream and drops past ones");
+ t(/in 1h 30m$/.test(L.countdown("2026-11-01T05:30:00Z",D("2026-11-01T04:00:00Z"))),"countdown targets 05:30Z");
+ t(fs.readFileSync(path.join(__dirname,"index.html"),"utf8").includes('id="stream-panel"'),"home page shows the Next Stream panel");}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
 

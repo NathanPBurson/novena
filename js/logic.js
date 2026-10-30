@@ -1,9 +1,11 @@
 /* Pure date logic. Works in browser (window.NovenaLogic) and Node (module.exports). */
 (function (root) {
+  // The site's day rolls over at 6 AM New York wall-clock time (late-night streams stay on the right day): subtract 6 h from NY local time, then take the date.
+  var ROLLOVER_HOURS = 6;
   function todayNY(now) {
-    var p = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now || new Date());
+    var p = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York", hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit" }).formatToParts(now || new Date());
     var o = {}; p.forEach(function (x) { o[x.type] = x.value; });
-    return o.year + "-" + o.month + "-" + o.day;
+    return new Date(Date.UTC(+o.year, +o.month - 1, +o.day, +o.hour - ROLLOVER_HOURS)).toISOString().slice(0, 10);
   }
   function utc(d) { var a = d.split("-").map(Number); return Date.UTC(a[0], a[1] - 1, a[2]); }
   function diffDays(a, b) { return Math.round((utc(b) - utc(a)) / 864e5); }
@@ -40,6 +42,18 @@
     if (bk.id === "psa") { var p = psalmNabre(ch); return { url: "https://bible.usccb.org/bible/psalms/" + p, note: p === ch ? "Traditional Catholic psalm numbering; matches the NABRE." : "Traditional Catholic psalm numbering; this is NABRE Psalm " + p + "." }; }
     return { url: "https://bible.usccb.org/bible/" + bk.usccb + "/" + ch, note: "" };
   }
-  var api = { todayNY: todayNY, compute: compute, addDays: addDays, diffDays: diffDays, nabreLink: nabreLink };
+  // Streams are explicit UTC instants (DST-safe). A stream stays "next" until 4 h after it starts.
+  function nextStream(streams, now) {
+    var t = (now ? now.getTime() : Date.now());
+    var l = (streams || []).filter(function (x) { return Date.parse(x.startUtc) + 4 * 36e5 > t; }).sort(function (a, b) { return Date.parse(a.startUtc) - Date.parse(b.startUtc); });
+    return l[0] || null;
+  }
+  function countdown(startUtc, now) {
+    var ms = Date.parse(startUtc) - (now ? now.getTime() : Date.now());
+    if (ms <= 0) return "Live now / starting";
+    var m = Math.floor(ms / 6e4), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60);
+    return "in " + (d ? d + "d " : "") + h + "h " + (m % 60) + "m";
+  }
+  var api = { nextStream: nextStream, countdown: countdown, ROLLOVER_HOURS: ROLLOVER_HOURS, todayNY: todayNY, compute: compute, addDays: addDays, diffDays: diffDays, nabreLink: nabreLink };
   if (typeof module !== "undefined") module.exports = api; else root.NovenaLogic = api;
 })(this);
