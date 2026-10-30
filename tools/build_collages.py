@@ -19,7 +19,7 @@ def crop(im,t):
   if 'Tissot Drawing' not in t:return im
   w,h=im.size
   # small framed pen drawings (116-119, 121, 124) sit on a big mat at different spots: use their own inner boxes
-  for k,b in {'Tissot Drawing 116':(.245,.14,.81,.84),'Tissot Drawing 117':(.12,.07,.94,.74),'Tissot Drawing 118':(.11,.14,.865,.82),'Tissot Drawing 119':(.105,.145,.84,.835),'Tissot Drawing 121':(.125,.16,.86,.82),'Tissot Drawing 124':(.22,.145,.86,.87)}.items():
+  for k,b in {'Tissot Drawing 116':(.245,.14,.81,.84),'Tissot Drawing 117':(.12,.07,.94,.74),'Tissot Drawing 118':(.11,.14,.865,.82),'Tissot Drawing 119':(.105,.145,.84,.835),'Tissot Drawing 121':(.125,.16,.86,.82),'Tissot Drawing 124':(.22,.145,.86,.87),'Tissot Drawing 122':(.29,.105,.755,.85)}.items():
     if k in t:return im.crop((int(w*b[0]),int(h*b[1]),int(w*b[2]),int(h*b[3])))
   return im.crop((int(w*.17),int(h*.12),int(w*.83),int(h*.88)))
 def pillar(im,W,H):
@@ -80,7 +80,9 @@ for sc in S['scenes']:
   # first panel wider (the "hero"), the rest share the remainder
   ws=[W] if n==1 else [int((W-g*(n-1))*(.55 if n>1 else 1))]+[int((W-g*(n-1))*.45/(n-1))]*(n-1)
   ws[-1]+=W-g*(n-1)-sum(ws)
-  ims=match([pillar(im,w,H) if sc.get('pillar') else ImageOps.fit(im,(w,H),Image.LANCZOS,centering=(.5,.4)) for im,w in zip(ims,ws)])
+  # never crop the painting away (Nathan, Oct 29): if the art's shape differs from its slot by >20%, show it whole (pillar)
+  def fits(im,w):r=(im.width/im.height)/(w/H);return .8<=r<=1.25
+  ims=match([ImageOps.fit(im,(w,H),Image.LANCZOS,centering=(.5,.4)) if fits(im,w) and not sc.get('pillar') else pillar(im,w,H) for im,w in zip(ims,ws)])
   C=Image.new('RGB',(W,H),(22,15,10));x=0
   for im,w in zip(ims,ws):C.paste(im,(x,0));x+=w+g
   C=pop(C,sc)
