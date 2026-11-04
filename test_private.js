@@ -22,7 +22,7 @@ const pwf="/workspace/novena_private_pw.txt";
  const tok=await C.encryptToken(r.key,"github_pat_FAKE");t(!JSON.stringify(tok).includes("FAKE")&&await C.decryptToken(r.key,tok)==="github_pat_FAKE","token is stored encrypted and decrypts back");
  // defaults: placeholders only
  const secs=Object.fromEntries(s0.sections.map(x=>[x.id,x]));
- t(["Checklists","Forms","Portfolio drafts","Quick links"].every((n,i)=>s0.sections[i].title===n)&&secs.checklists.docs.some(d=>d.title==="Eleni paperwork"&&d.items.length===0)&&s0.sections.every(s=>s.docs.every(d=>(d.items||[]).length===0&&!(d.body))),"template: Checklists (with empty 'Eleni paperwork'), Forms, Portfolio drafts, Quick links; all empty");
+ t(["Checklists","Nathan's to-dos","Joan's to-dos","Forms","Portfolio drafts","Quick links"].every((n,i)=>s0.sections[i].title===n)&&secs.checklists.docs.some(d=>d.title==="Eleni paperwork"&&d.items.length===0)&&s0.sections.every(s=>s.docs.every(d=>(d.items||[]).length===0&&!(d.body))),"template: Checklists (with empty 'Eleni paperwork'), Nathan + Joan to-dos, Forms, Portfolio drafts, Quick links; all empty");
  t(S.safeUrl("javascript:alert(1)")===""&&S.safeUrl("data:text/html,x")===""&&S.safeUrl("example.com/a")==="https://example.com/a"&&S.safeUrl("http://x.org")==="http://x.org","links: only http(s) URLs are accepted");
  // merge
  const A=S.defaults(),B=S.defaults(),dA=A.sections[0].docs[0],dB=B.sections[0].docs[0];
@@ -39,7 +39,7 @@ const pwf="/workspace/novena_private_pw.txt";
   if(store.sha&&b.sha!==store.sha)return{ok:false,status:409,json:async()=>({})};if(!store.sha&&b.sha)return{ok:false,status:422,json:async()=>({})};
   store.sha="sha"+(++n);store.content=b.content;return{ok:true,status:200,json:async()=>({content:{sha:store.sha}})}};
  const meta={iter:1000,salt:r.blob.salt},mk=()=>new Sync({fetch:fakeFetch,cfg,token:"github_pat_FAKE",key:r.key,meta});
- const d1=mk(),d2=mk();t(cfg.branch==="site-v2"&&cfg.owner==="NathanPBurson"&&cfg.repo==="novena"&&cfg.path===D+"/data.enc.json","sync config: staging saves go to branch site-v2, path inside the private dir");
+ const d1=mk(),d2=mk();t(cfg.branch==="main"&&cfg.owner==="NathanPBurson"&&cfg.repo==="novena-data"&&cfg.path==="data.enc.json","sync config: private repo novena-data, main, data.enc.json");
  t((await d1.pull()).state===null,"pull of a missing file is empty, not an error");
  const s1=S.defaults();s1.sections[0].docs[0].items.push({id:"p1",t:"paper one",u:5});await d1.push(s1);t(store.sha==="sha1","first push creates the file");
  await d2.pull();const s2=S.defaults();s2.sections[0].docs[0].items.push({id:"p2",t:"paper two",u:6});await d2.push(S.merge(s2,(await d2.pull()).state));
@@ -47,7 +47,7 @@ const pwf="/workspace/novena_private_pw.txt";
  const ids=res.state.sections[0].docs[0].items.map(i=>i.id).sort().join();t(ids==="p1,p2,p3","409 stale sha: refetch, merge and retry keeps both devices' edits");
  const fin=(await mk().pull()).state;t(fin.sections[0].docs[0].items.length===3,"final remote state has all three items after the conflict");
  conflictOnce=true;await mk().push(fin);t(true,"a bare 409 with an unchanged remote also resolves");
- t(store.puts.every(p=>{const txt=Buffer.from(p.content,"base64").toString();return!/paper|Eleni|Checklists/.test(txt)&&!p.content.includes("FAKE")&&JSON.parse(txt).ct&&p.branch===cfg.branch}),"every commit body is ciphertext only, on the staging branch, with no token or plaintext");
+ t(store.puts.every(p=>{const txt=Buffer.from(p.content,"base64").toString();return!/paper|Eleni|Checklists/.test(txt)&&!p.content.includes("FAKE")&&JSON.parse(txt).ct&&p.branch===cfg.branch}),"every commit body is ciphertext only, on the configured branch, with no token or plaintext");
  t(store.auth.every(a=>a[0]==="api.github.com"&&a[1]==="Bearer github_pat_FAKE"),"token is sent only to api.github.com");
  // PWA
  t(man.display==="standalone"&&man.scope==="./"&&man.start_url==="./"&&man.name&&man.icons.length>=2&&man.icons.every(i=>fs.existsSync(P(i.src)))&&/rel="manifest" href="manifest\.json"/.test(html),"PWA manifest: scoped to the private path, standalone, icons from the channel avatar");

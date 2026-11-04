@@ -5,6 +5,8 @@ function id(){var a=new Uint8Array(6);(globalThis.crypto).getRandomValues(a);ret
 // Empty template: placeholder sections only. No personal, faith or relationship content; the owner fills it in.
 function defaults(){return{v:1,sections:[
  {id:"checklists",title:"Checklists",kind:"check",u:0,docs:[{id:"eleni-paperwork",title:"Eleni paperwork",u:0,items:[]},{id:"checklist-1",title:"Checklist (placeholder)",u:0,items:[]}]},
+ {id:"todo-nathan",title:"Nathan's to-dos",kind:"check",u:0,docs:[{id:"todo-nathan-1",title:"To-do (placeholder)",u:0,items:[]}]},
+ {id:"todo-joan",title:"Joan's to-dos",kind:"check",u:0,docs:[{id:"todo-joan-1",title:"To-do (placeholder)",u:0,items:[]}]},
  {id:"forms",title:"Forms",kind:"check",u:0,docs:[{id:"forms-todo",title:"Forms to fill out (placeholder)",u:0,items:[]}]},
  {id:"portfolio",title:"Portfolio drafts",kind:"draft",u:0,docs:[{id:"draft-1",title:"Draft 1 (placeholder)",body:"",u:0,bu:0}]},
  {id:"links",title:"Quick links",kind:"links",u:0,docs:[{id:"links-main",title:"My links",u:0,items:[]}]}]}}

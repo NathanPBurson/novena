@@ -8,10 +8,10 @@ function jget(u){return fetch(u,{cache:"no-store"}).then(function(r){if(!r.ok)th
 function lsGet(k){try{return JSON.parse(LS.getItem(k)||"null")}catch(e){return null}}
 /* ---------- unlock ---------- */
 $("pv-form").addEventListener("submit",function(ev){ev.preventDefault();var pw=$("pv-pw").value;if(!pw||busy)return;busy=true;msg("Deriving key\u2026");
- Promise.all([jget("config.json"),jget("data.enc.json").catch(function(){return null})]).then(function(a){cfg=a[0];var remote=a[1],local=lsGet(K_BLOB),blob=remote||local;if(!blob)throw new Error("no data file");
+ Promise.all([jget("config.json"),jget("data.enc.json").catch(function(){return null})]).then(function(a){cfg=a[0];var remote=a[1],local=lsGet(K_BLOB),blob=local||remote;if(!blob)throw new Error("no data file");
   return C.openState(pw,blob).then(function(o){key=o.key;meta=o.meta;state=o.state;
    var p=local&&local.salt===blob.salt&&LS.getItem(K_PEND)==="1"&&local!==blob?C.decryptState(key,local).then(function(l){state=S.merge(l,state)}).catch(function(){}):Promise.resolve();
-   return p})}).then(function(){$("pv-pw").value="";$("pv-gate").hidden=true;$("pv-app").hidden=false;$("pv-lock").hidden=false;$("pv-sync").hidden=false;render();arm();return loadToken().then(function(){return pullMerge()})})
+   return p})}).then(function(){$("pv-pw").value="";$("pv-gate").hidden=true;$("pv-app").hidden=false;$("pv-lock").hidden=false;$("pv-sync").hidden=false;render();arm();return loadToken().then(function(){if(!sync)setStatus("Sync not set up on this device \u2014 showing local data. Tap Sync to set up sync.");return pullMerge()})})
  .catch(function(e){key=null;state=null;msg(e&&e.name==="OperationError"?"Wrong password.":"Could not unlock: "+(e&&e.message||e))}).then(function(){busy=false})});
 function lock(){state=null;key=null;sync=null;clearTimeout(saveT);clearTimeout(idleT);$("pv-app").hidden=true;$("pv-app").textContent="";$("pv-gate").hidden=false;$("pv-lock").hidden=true;$("pv-sync").hidden=true;msg("Locked.")}
 $("pv-lock").addEventListener("click",lock);$("pv-sync").addEventListener("click",function(){if(state)syncPanel()});
@@ -52,7 +52,7 @@ function doc(sec,d){var box=el("div",{class:"pv-doc"},[el("h3",{class:"pv-h",tex
 function syncPanel(){var root=$("pv-app"),old=root.querySelector("[data-section=sync]");if(old){old.remove();return}
  var p=el("section",{class:"lu-panel","data-section":"sync"},[el("div",{class:"lu-tabhead",text:"Sync across devices"}),
   el("p",{text:"Saves go to "+cfg.owner+"/"+cfg.repo+" (branch "+cfg.branch+") as one encrypted file. "+(sync?"Sync is ON for this device.":"Paste the fine-grained GitHub token once on each device.")}),
-  el("p",{class:"lu-muted",text:"Token needs Contents: read and write on this repository only. It is stored here encrypted under your password."})]);
+  el("p",{class:"lu-muted",text:"Setup: GitHub \u2192 Settings \u2192 Developer settings \u2192 Fine-grained tokens \u2192 Generate. Repository access: Only select repositories \u2192 "+cfg.owner+"/"+cfg.repo+". Permissions: Contents = Read and write (nothing else). Paste it here once per device; it is stored encrypted under your password."})]);
  var f=el("form"),t=el("input",{class:"pv-in",type:"password",placeholder:"github_pat_\u2026",autocomplete:"off",required:"required"});f.appendChild(t);f.appendChild(el("button",{class:"lu-btn gold sm",type:"submit",text:sync?"Replace token":"Save token & sync"}));
  f.addEventListener("submit",function(ev){ev.preventDefault();var v=t.value.trim();t.value="";if(!v)return;setToken(v).then(function(){p.remove()})});p.appendChild(f);
  if(sync)p.appendChild(el("button",{class:"lu-btn sm",type:"button",text:"Turn sync off here",onclick:function(){forgetToken();p.remove()}}));

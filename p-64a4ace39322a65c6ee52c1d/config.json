@@ -1,1 +1,1 @@
-{"owner":"NathanPBurson","repo":"novena","branch":"site-v2","path":"p-64a4ace39322a65c6ee52c1d/data.enc.json","note":"STAGING: saves go to branch site-v2. Change branch to main (or point owner/repo at a dedicated data repo) when Nathan approves."}
+{"owner":"NathanPBurson","repo":"novena-data","branch":"main","path":"data.enc.json","note":"Private data repo. Read/written via the GitHub Contents API with a fine-grained token scoped to NathanPBurson/novena-data only (Contents: read and write). Without a token the app uses this device's local copy."}
