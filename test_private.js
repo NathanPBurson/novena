@@ -13,7 +13,7 @@ t(blob.v===1&&blob.kdf==="PBKDF2-SHA256"&&blob.iter>=600000&&blob.salt&&blob.iv&
 const pwf="/workspace/novena_private_pw.txt";
 (async()=>{
  if(fs.existsSync(pwf)){const pw=fs.readFileSync(pwf,"utf8").trim();t((fs.statSync(pwf).mode&0o777)===0o600&&pw.length>=24,"password file exists, mode 600, 24+ chars");
-  const o=await C.openState(pw,blob);t(S.valid(o.state)&&JSON.stringify(o.state)===JSON.stringify(S.defaults()),"real password decrypts the sealed file to the empty template");
+  const o=await C.openState(pw,blob);t(S.valid(o.state)&&JSON.stringify(o.state.sections.filter(s=>s.id!=="gdocs"))===JSON.stringify(S.defaults().sections)&&(o.state.sections.find(s=>s.id==="gdocs")||{docs:[]}).docs.length===3,"real password decrypts the sealed file to the empty template plus the 3 Docs links");
   t(await C.openState(pw+"x",blob).then(()=>false,()=>true),"a wrong password is rejected")}
  const TP="test-passphrase-1234567890",s0=S.defaults(),r=await C.sealState(TP,s0,{iter:1000,salt:C.b64e(new Uint8Array(16))});
  const o=await C.openState(TP,r.blob);t(JSON.stringify(o.state)===JSON.stringify(s0),"seal/open round trip");
@@ -55,4 +55,7 @@ const pwf="/workspace/novena_private_pw.txt";
  t(/data\\\.enc\\\.json\$/.test(sw)&&/u\.origin!==self\.location\.origin/.test(sw)&&!/api\.github/.test(sw)&&!/localStorage|PVCrypto|subtle/.test(sw)&&/FILES=\[/.test(sw),"service worker: app shell only; skips data.enc.json and cross-origin (GitHub API); no crypto or storage access");
  t(fs.existsSync(P("sw.js"))&&/serviceWorker/.test(rd("app.js"))&&/sw\.js/.test(rd("app.js")),"app registers its service worker");
  t(/localStorage/.test(rd("app.js"))&&/encryptToken/.test(rd("app.js"))&&!/LS\.setItem\(K_TOK,tok/.test(rd("app.js")),"token goes into localStorage only after encryption under the password-derived key");
- process.exit(ok?0:1)})();
+ {const H=["b312e3e68f19f726","3474938a7c4a9916","e3a5a4f286b03fb7"],hh=x=>require("crypto").createHash("sha256").update(x).digest("hex").slice(0,16);const walk=(d,o=[])=>{for(const x of fs.readdirSync(d,{withFileTypes:true})){const f=path.join(d,x.name);if(x.isDirectory()){if(!/^(\.git|node_modules|_source_snapshot|bible|fonts|images)$/.test(x.name))walk(f,o)}else if(true)o.push(f)}return o};
+ t(!walk(R).some(f=>{const s=fs.readFileSync(f,"latin1");return (s.match(/[A-Za-z0-9_-]{44}/g)||[]).some(i=>H.includes(hh(i)))}),"Google Doc IDs never appear in plaintext in the repo");
+ t(/frame-src https:\/\/docs\.google\.com/.test(html)&&/kind==="gdocs"/.test(rd("app.js"))&&/rm=minimal/.test(rd("app.js"))&&/Open in Docs/.test(rd("app.js")),"Docs section: CSP frame-src docs.google.com, iframe + Open in Docs link")}
+process.exit(ok?0:1)})();

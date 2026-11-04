@@ -35,6 +35,10 @@ var now=function(){return Date.now()};
 function live(a){return(a||[]).filter(function(x){return!x.del})}
 function render(){var root=$("pv-app");root.textContent="";root.appendChild(el("p",{class:"lu-muted",id:"pv-status",text:status}));
  state.sections.forEach(function(sec){var p=el("section",{class:"lu-panel","data-section":sec.id},[el("div",{class:"lu-tabhead",text:sec.title})]);
+  if(sec.kind==="gdocs"){p.appendChild(el("p",{class:"lu-muted",text:"Sign in to Google as nathanpburson to see these. On iPhone, Safari may block the embed, so use Open in Docs."}));
+   live(sec.docs).forEach(function(d){if(!/^[A-Za-z0-9_-]{20,80}$/.test(d.gid||""))return;var u="https://docs.google.com/document/d/"+d.gid+"/edit";
+    p.appendChild(el("div",{class:"pv-doc pv-gdoc"},[el("h3",{class:"pv-h",text:d.title}),el("iframe",{class:"pv-frame",src:u+"?rm=minimal",title:d.title,loading:"lazy",referrerpolicy:"no-referrer"}),el("p",{},[el("a",{class:"lu-btn sm",href:u,target:"_blank",rel:"noopener noreferrer",text:"Open in Docs"})])]))});
+   root.appendChild(p);return}
   live(sec.docs).forEach(function(d){p.appendChild(doc(sec,d))});
   p.appendChild(el("button",{type:"button",class:"lu-btn sm",text:"+ Add "+(sec.kind==="draft"?"draft":sec.kind==="links"?"link group":"list"),onclick:function(){var t=prompt("Name?");if(!t)return;var n={id:S.id(),title:t,u:now()};if(sec.kind==="draft"){n.body="";n.bu=n.u}else n.items=[];sec.docs.push(n);sec.u=now();changed();render()}}));
   root.appendChild(p)})}
