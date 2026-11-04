@@ -9,12 +9,19 @@ function lsGet(k){try{return JSON.parse(LS.getItem(k)||"null")}catch(e){return n
 /* ---------- unlock ---------- */
 $("pv-form").addEventListener("submit",function(ev){ev.preventDefault();var pw=$("pv-pw").value;if(!pw||busy)return;busy=true;msg("Deriving key\u2026");
  Promise.all([jget("config.json"),jget("data.enc.json").catch(function(){return null})]).then(function(a){cfg=a[0];var remote=a[1],local=lsGet(K_BLOB),blob=local||remote;if(!blob)throw new Error("no data file");
-  return C.openState(pw,blob).then(function(o){key=o.key;meta=o.meta;state=o.state;
+  return C.openState(pw,blob).then(function(o){key=o.key;meta=o.meta;state=o.state;if($("pv-remember").checked)PVDevKey.put(key,meta).catch(function(){});
    var p=local&&local.salt===blob.salt&&LS.getItem(K_PEND)==="1"&&local!==blob?C.decryptState(key,local).then(function(l){state=S.merge(l,state)}).catch(function(){}):Promise.resolve();
-   return p})}).then(function(){$("pv-pw").value="";$("pv-gate").hidden=true;$("pv-app").hidden=false;$("pv-lock").hidden=false;$("pv-sync").hidden=false;render();arm();return loadToken().then(function(){if(!sync)setStatus("Sync not set up on this device \u2014 showing local data. Tap Sync to set up sync.");return pullMerge()})})
+   return p})}).then(function(){$("pv-pw").value="";return show()})
  .catch(function(e){key=null;state=null;msg(e&&e.name==="OperationError"?"Wrong password.":"Could not unlock: "+(e&&e.message||e))}).then(function(){busy=false})});
+function show(){$("pv-gate").hidden=true;$("pv-app").hidden=false;$("pv-lock").hidden=false;$("pv-sync").hidden=false;render();arm();return loadToken().then(function(){if(!sync)setStatus("Sync not set up on this device \u2014 showing local data. Tap Sync to set up sync.");return pullMerge()})}
+/* Remembered device: decrypt straight away with the stored non-extractable key; any failure falls back to the password screen. */
+function autoUnlock(){if(busy||state)return Promise.resolve(false);busy=true;return PVDevKey.get().then(function(rec){if(!rec||!rec.key)return false;msg("Unlocking this device\u2026");
+ return Promise.all([jget("config.json"),jget("data.enc.json").catch(function(){return null})]).then(function(a){cfg=a[0];var local=lsGet(K_BLOB),blob=local&&local.salt===rec.meta.salt?local:a[1];if(!blob||blob.salt!==rec.meta.salt)throw new Error("salt");
+  return C.decryptState(rec.key,blob).then(function(s){key=rec.key;meta=rec.meta;state=s;msg("");return show().then(function(){return true})})})}).catch(function(){key=null;state=null;msg("Enter your password.");return false}).then(function(r){busy=false;return r})}
+/* Idle: hide the UI and drop the in-memory copy only; the remembered key stays until Forget. */
 function lock(){state=null;key=null;sync=null;clearTimeout(saveT);clearTimeout(idleT);$("pv-app").hidden=true;$("pv-app").textContent="";$("pv-gate").hidden=false;$("pv-lock").hidden=true;$("pv-sync").hidden=true;msg("Locked.")}
-$("pv-lock").addEventListener("click",lock);$("pv-sync").addEventListener("click",function(){if(state)syncPanel()});
+function forgetDevice(){return PVDevKey.forget().then(function(){[K_TOK,K_BLOB,K_PEND].forEach(function(k){LS.removeItem(k)});lock();msg("Locked and forgotten on this device.")})}
+$("pv-lock").addEventListener("click",forgetDevice);$("pv-resume").addEventListener("click",function(){autoUnlock()});autoUnlock();$("pv-sync").addEventListener("click",function(){if(state)syncPanel()});
 function arm(){clearTimeout(idleT);idleT=setTimeout(lock,15*60*1000)}["click","keydown","touchstart"].forEach(function(n){document.addEventListener(n,function(){if(state)arm()},{passive:true})});
 /* ---------- token (stored in localStorage only as ciphertext under the password-derived key) ---------- */
 function loadToken(){var t=lsGet(K_TOK);sync=null;if(!t)return Promise.resolve();return C.decryptToken(key,t).then(function(tok){mk(tok)}).catch(function(){LS.removeItem(K_TOK);setStatus("Token needs to be pasted again.")})}

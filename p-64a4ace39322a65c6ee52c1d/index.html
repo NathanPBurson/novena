@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.github.com; manifest-src 'self'; worker-src 'self'; frame-src https://docs.google.com; base-uri 'none'; form-action 'none'">
 <meta name="theme-color" content="#14213d"><link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="apple-touch-icon" href="icon-180.png">
-<title>Private</title><link rel="stylesheet" href="../css/lu.css"><link rel="stylesheet" href="../css/private.css"></head>
-<body class="lu pv"><div class="lu-hud-top"><span class="lu-brand"><img class="lu-avatar" src="icon-192.png" alt="" width="32" height="32" style="width:32px;height:32px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:8px">Private</span>
-<nav class="lu-nav"><button type="button" id="pv-sync" class="lu-btn sm" hidden>Sync</button> <button type="button" id="pv-lock" class="lu-btn sm" hidden>Lock</button></nav></div>
+<title>Account</title><link rel="stylesheet" href="../css/lu.css"><link rel="stylesheet" href="../css/private.css"></head>
+<body class="lu pv"><div class="lu-hud-top app-bar"><a class="app-btn" id="app-back" href="../" aria-label="Back">&#8249; Back</a><a class="app-btn" href="../" aria-label="Home">&#8962; Home</a><span class="lu-brand"><img class="lu-avatar" src="icon-192.png" alt="" width="32" height="32" style="width:32px;height:32px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:8px">Account</span>
+<nav class="lu-nav"><button type="button" id="pv-sync" class="lu-btn sm" hidden>Sync</button> <button type="button" id="pv-lock" class="lu-btn sm" hidden>Lock / forget this device</button></nav></div>
 <main class="lu-wrap">
-<section class="lu-panel" id="pv-gate"><div class="lu-tabhead">Private area</div><p>Enter the password to decrypt. Nothing is shown or stored in readable form until you do.</p>
-<form id="pv-form" autocomplete="off"><input type="password" id="pv-pw" class="pv-in" placeholder="Password" autocomplete="current-password" required> <button class="lu-btn gold" type="submit">Unlock</button></form><p class="lu-muted" id="pv-msg" role="status"></p></section>
+<section class="lu-panel" id="pv-gate"><div class="lu-tabhead">Account</div><p>Enter the password to decrypt. Nothing is shown or stored in readable form until you do.</p>
+<form id="pv-form" autocomplete="off"><input type="password" id="pv-pw" class="pv-in" placeholder="Password" autocomplete="current-password" required> <button class="lu-btn gold" type="submit">Unlock</button> <label class="pv-rem"><input type="checkbox" id="pv-remember" checked> Remember this device</label></form><p><button type="button" class="lu-btn sm" id="pv-resume">Resume on this device</button></p><p class="lu-muted" id="pv-msg" role="status"></p></section>
 <div id="pv-app" hidden></div>
-</main><script src="crypto.js"></script><script src="state.js"></script><script src="sync.js"></script><script src="app.js"></script></body></html>
+</main><script src="crypto.js"></script><script src="state.js"></script><script src="sync.js"></script><script src="devkey.js"></script><script src="../js/appbar.js"></script><script src="app.js"></script></body></html>

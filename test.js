@@ -166,7 +166,7 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(/NovenaLogic\.compute\(d,SITE,BK\)/.test(ho)&&ho.includes('id="today-text"')&&!/Novena day 50/.test(ho)&&ho.includes("Novena day 1 of 54"),"home 'Today' panel is computed in the browser (static fallback is current); no stale day");
  t(/location\.replace\(m\[1\]\+"novena\/\?date="\+m\[2\]\+"#today"\)/.test(nf)&&/noindex/.test(nf),"404.html sends un-built /day/YYYY-MM-DD/ pages to the live Novena page for that date");
  const nvh=fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8");
- t((ho.match(/class="lu-tile /g)||[]).length===7&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&(ho.match(/p-[0-9a-f]{24}/g)||[]).length===2&&/<a class="nav-myspace" href="p-[0-9a-f]{24}\/" rel="nofollow">/.test(ho)&&/<a class="lu-tile c-teal" href="p-[0-9a-f]{24}\/" rel="nofollow" id="tile-myspace">/.test(ho),"home has a seven-tile grid; only private link is the nofollow My Space tile");
+ t((ho.match(/class="lu-tile /g)||[]).length===7&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&(ho.match(/p-[0-9a-f]{24}/g)||[]).length===2&&/<a class="nav-myspace" href="p-[0-9a-f]{24}\/" rel="nofollow">/.test(ho)&&/<a class="lu-tile c-teal" href="p-[0-9a-f]{24}\/" rel="nofollow" id="tile-myspace">/.test(ho),"home has a seven-tile grid; only private link is the nofollow Account tile");
  const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");
  t(/\.lu-tile\{/.test(css)&&/\.lu-hud-top\{background:linear-gradient\(#ffffff/.test(css)&&/\.lu-panel:before\{content:""/.test(css)&&/\.lu-clock/.test(css)&&dd.every(d=>fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8").includes('id="lu-clock"')),"restyle: channel tiles, glossy panels, bright top bar with clock on every built page");
  t(fs.existsSync(path.join(__dirname,"images/header.jpg"))&&/header\.jpg/.test(css)&&!fs.readdirSync(path.join(__dirname,"images")).some(f=>/ai[-_]|generated/i.test(f)),"Fisk public-domain art kept, no AI images added");
@@ -177,7 +177,7 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  const pages=["index.html","readings/index.html","hours/index.html","novena/index.html",...fs.readdirSync(path.join(__dirname,"day")).filter(d=>/^\d{4}-/.test(d)).slice(0,3).map(d=>"day/"+d+"/index.html")];
  for(const p of pages){const h=fs.readFileSync(path.join(__dirname,p),"utf8"),home=p==="index.html";
   t(/viewport-fit=cover/.test(h)&&/rel="manifest"/.test(h)&&/name="theme-color" content="#0a1030"/.test(h)&&/apple-mobile-web-app-capable/.test(h)&&/apple-mobile-web-app-status-bar-style/.test(h),p+": PWA meta + viewport-fit=cover");
-  t(/class="nav-myspace"[^>]*rel="nofollow"/.test(h),p+": My Space nav button (nofollow)");
+  t(/class="nav-myspace"[^>]*rel="nofollow"/.test(h),p+": Account nav button (nofollow)");
   if(!home)t(/id="app-back"/.test(h)&&/aria-label="Home"/.test(h)&&/app-bar/.test(h)&&/js\/appbar\.js/.test(h),p+": sticky app bar with Back + Home");
   const refs=h.match(/(?:href|src)="[^"]*\.(?:css|js)(?:\?[^"]*)?"/g)||[];t(refs.length>0&&refs.every(r=>r.includes("?v="+GVh)||r.includes("?v=")&&/rewind/.test(p)),p+": every CSS/JS URL carries ?v=<commit>")}
  const m=JSON.parse(fs.readFileSync(path.join(__dirname,"manifest.webmanifest"),"utf8"));t(m.display==="standalone"&&/^#0/.test(m.theme_color),"site manifest: standalone, dark theme-color");
