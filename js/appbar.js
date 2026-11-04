@@ -1,0 +1,2 @@
+/* Web-app Back button: history.back() when there is in-site history, else go home. */
+(function(){var b=document.getElementById("app-back");if(!b)return;b.addEventListener("click",function(e){e.preventDefault();var ref=document.referrer,same=false;try{same=ref&&new URL(ref).origin===location.origin}catch(x){}if(history.length>1&&same)history.back();else location.href=b.getAttribute("href")})})();

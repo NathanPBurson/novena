@@ -82,7 +82,7 @@ const pd=L.compute("2026-09-20",site,books);t(pd.phase==="petition"&&L.compute("
  t(/OBS\?\{start:t0,autoplay:1,mute:1,controls:0/.test(js)&&/:\{start:t0,autoplay:1,mute:1,controls:1,rel:0,modestbranding:1,iv_load_policy:3,playsinline:1,fs:1/.test(js),"normal mode = YouTube native controls (controls=1, fs=1); OBS = controls=0");
  t(/obs"\)==="1"/.test(js)&&/\\bOBS\\\//.test(js)&&/obsstudio/.test(js)&&/sh\.remove\(\)/.test(js)&&!/id="rw-bar"/.test(h),"OBS detection; normal mode removes shield so YouTube controls are clickable; no custom bar");
  t(/object-fit:cover/.test(h)&&/16\/9/.test(js)&&/k=1\.18/.test(js)&&/else\{w=W;h=H\}/.test(js),"OBS: 16:9 cover + oversize crop; normal: window-sized");
- t(/rewind\.js\?v=[0-9a-f]{10}"/.test(h)&&/http-equiv="Cache-Control" content="no-cache/.test(h)&&/css\/lu\.css\?v=[0-9a-f]{10}"/.test(fs.readFileSync(path.join(__dirname,"index.html"),"utf8"))&&/\.\.\/js\/app\.js\?v=[0-9a-f]{10}"/.test(fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8")),"cache-busting ?v= on JS/CSS + no-cache meta");
+ t(/rewind\.js\?v=[0-9a-f]{7,12}"/.test(h)&&/http-equiv="Cache-Control" content="no-cache/.test(h)&&/css\/lu\.css\?v=[0-9a-f]{7,12}"/.test(fs.readFileSync(path.join(__dirname,"index.html"),"utf8"))&&/\.\.\/js\/app\.js\?v=[0-9a-f]{7,12}"/.test(fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8")),"cache-busting ?v= on JS/CSS + no-cache meta");
  t(/src="\.\.\/js\/rewind\.js\?v=/.test(h)&&js.includes('"../data/rewind_playlist.json"'),"rewind reads data/rewind_playlist.json at runtime");
  t(/v\.muted=true/.test(js)&&/"ended"/.test(js)&&/%blocks\.length/.test(js)&&/e\.data===0/.test(js),"player: muted, advances on ended, loops");
  t(h.includes(">Audio is LIVE &middot; Gameplay is a REWIND<")||h.includes(">Audio is LIVE · Gameplay is a REWIND<"),"rewind banner exact text");
@@ -166,11 +166,27 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(/NovenaLogic\.compute\(d,SITE,BK\)/.test(ho)&&ho.includes('id="today-text"')&&!/Novena day 50/.test(ho)&&ho.includes("Novena day 1 of 54"),"home 'Today' panel is computed in the browser (static fallback is current); no stale day");
  t(/location\.replace\(m\[1\]\+"novena\/\?date="\+m\[2\]\+"#today"\)/.test(nf)&&/noindex/.test(nf),"404.html sends un-built /day/YYYY-MM-DD/ pages to the live Novena page for that date");
  const nvh=fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8");
- t((ho.match(/class="lu-tile /g)||[]).length===7&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&(ho.match(/p-[0-9a-f]{24}/g)||[]).length===1&&/<a class="lu-tile c-teal" href="p-[0-9a-f]{24}\/" rel="nofollow" id="tile-myspace">/.test(ho),"home has a seven-tile grid; only private link is the nofollow My Space tile");
+ t((ho.match(/class="lu-tile /g)||[]).length===7&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&(ho.match(/p-[0-9a-f]{24}/g)||[]).length===2&&/<a class="nav-myspace" href="p-[0-9a-f]{24}\/" rel="nofollow">/.test(ho)&&/<a class="lu-tile c-teal" href="p-[0-9a-f]{24}\/" rel="nofollow" id="tile-myspace">/.test(ho),"home has a seven-tile grid; only private link is the nofollow My Space tile");
  const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");
  t(/\.lu-tile\{/.test(css)&&/\.lu-hud-top\{background:linear-gradient\(#ffffff/.test(css)&&/\.lu-panel:before\{content:""/.test(css)&&/\.lu-clock/.test(css)&&dd.every(d=>fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8").includes('id="lu-clock"')),"restyle: channel tiles, glossy panels, bright top bar with clock on every built page");
  t(fs.existsSync(path.join(__dirname,"images/header.jpg"))&&/header\.jpg/.test(css)&&!fs.readdirSync(path.join(__dirname,"images")).some(f=>/ai[-_]|generated/i.test(f)),"Fisk public-domain art kept, no AI images added");
 }
+
+// v4: web-app bar, manifest, cache bust, slideshow
+{const GVh=require("child_process").execSync("git rev-parse --short HEAD",{cwd:__dirname}).toString().trim();
+ const pages=["index.html","readings/index.html","hours/index.html","novena/index.html",...fs.readdirSync(path.join(__dirname,"day")).filter(d=>/^\d{4}-/.test(d)).slice(0,3).map(d=>"day/"+d+"/index.html")];
+ for(const p of pages){const h=fs.readFileSync(path.join(__dirname,p),"utf8"),home=p==="index.html";
+  t(/viewport-fit=cover/.test(h)&&/rel="manifest"/.test(h)&&/name="theme-color" content="#0a1030"/.test(h)&&/apple-mobile-web-app-capable/.test(h)&&/apple-mobile-web-app-status-bar-style/.test(h),p+": PWA meta + viewport-fit=cover");
+  t(/class="nav-myspace"[^>]*rel="nofollow"/.test(h),p+": My Space nav button (nofollow)");
+  if(!home)t(/id="app-back"/.test(h)&&/aria-label="Home"/.test(h)&&/app-bar/.test(h)&&/js\/appbar\.js/.test(h),p+": sticky app bar with Back + Home");
+  const refs=h.match(/(?:href|src)="[^"]*\.(?:css|js)(?:\?[^"]*)?"/g)||[];t(refs.length>0&&refs.every(r=>r.includes("?v="+GVh)||r.includes("?v=")&&/rewind/.test(p)),p+": every CSS/JS URL carries ?v=<commit>")}
+ const m=JSON.parse(fs.readFileSync(path.join(__dirname,"manifest.webmanifest"),"utf8"));t(m.display==="standalone"&&/^#0/.test(m.theme_color),"site manifest: standalone, dark theme-color");
+ const c=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");t(/\.app-bar\{position:sticky/.test(c)&&/env\(safe-area-inset-top\)/.test(c)&&/min-height:44px;min-width:44px/.test(c)&&/\[hidden\]\{display:none!important\}/.test(c),"app bar CSS: sticky, safe-area, 44px targets, [hidden] rule");
+ const a=fs.readFileSync(path.join(__dirname,"js/appbar.js"),"utf8");t(/history\.back\(\)/.test(a)&&/location\.href/.test(a),"Back uses history.back() with home fallback");
+ const ho=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),sl=JSON.parse(fs.readFileSync(path.join(__dirname,"data/slides.json"),"utf8")),imgs=ho.match(/<a class="lu-slide[^>]*><img [^>]*>/g)||[];
+ t(sl.length>=10&&imgs.length===sl.length&&imgs.slice(1).every(x=>/loading="lazy"/.test(x))&&!/loading="lazy"/.test(imgs[0])&&sl.every(s=>{const f=path.join(__dirname,"images/thumbs/"+s.id+".webp");return fs.existsSync(f)&&fs.statSync(f).size<=62*1024&&ho.includes("watch?v="+s.id)}),"hero slideshow: "+sl.length+" linked WebP slides, <=62KB, lazy after first");
+ const sj=fs.readFileSync(path.join(__dirname,"js/slides.js"),"utf8");t(/4000/.test(sj)&&/prefers-reduced-motion/.test(sj)&&/mouseenter/.test(sj),"slideshow: 4s, pause on hover, reduced-motion");
+ const sw=fs.readFileSync(path.join(__dirname,fs.readdirSync(__dirname).find(d=>/^p-[0-9a-f]{24}$/.test(d))+"/sw.js"),"utf8");t(!/pv-shell-v1"/.test(sw)&&/skipWaiting/.test(sw)&&/clients\.claim/.test(sw)&&/caches\.delete/.test(sw),"service worker cache bumped, skipWaiting/claim/old-cache cleanup")}
 {const r=cp.spawnSync("node",["test_private.js"],{cwd:__dirname,encoding:"utf8"});process.stdout.write(r.stdout);t(r.status===0,"private area tests (test_private.js)");if(r.stderr)console.log(r.stderr)}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
