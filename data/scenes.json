@@ -392,6 +392,138 @@
    "image": "images/scenes/exo-11-10.jpg",
    "pop": true,
    "pillar": true
+  },
+  {
+   "ref": "exo:12",
+   "after": 10,
+   "scene": "The Israelites eat the Passover standing, staffs in hand, ready to leave",
+   "art": [
+    "File:Tissot Drawing 120 The Jews' Passover (Exodus 12 11) for Brunoff 119 La pâque des Juifs.jpg"
+   ],
+   "callout": "“It is the Phase (that is the Passage) of the Lord” · 12:11",
+   "image": "images/scenes/exo-12-10.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:12",
+   "after": 22,
+   "scene": "Hyssop dipped in the lamb's blood marks the doorposts",
+   "art": [
+    "File:Tissot Drawing 128 The sign on the door (Exodus 12 22) for Brunoff 120 Les signes sur la porte.jpg"
+   ],
+   "callout": "“Dip a bunch of hyssop in the blood that is at the door” · 12:22",
+   "image": "images/scenes/exo-12-22.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:12",
+   "after": 30,
+   "scene": "Pharaoh mourns his dead son and sends Israel away",
+   "art": [
+    "File:Tissot Drawing 126 Pharaoh and his dead son (Exodus 12 31) for Brunoff 121 Pharaon et son fils mort.jpg"
+   ],
+   "callout": "“Arise and go forth from among my people” · 12:31",
+   "image": "images/scenes/exo-12-30.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:13",
+   "after": 20,
+   "scene": "The Lord goes before Israel in a pillar of cloud by day and fire by night",
+   "art": [
+    "File:Tissot Drawing 127 The Exodus (Exodus 13 22) for Brunoff 122 L'Exode.jpg"
+   ],
+   "callout": "“In a pillar of a cloud, and by night in a pillar of fire” · 13:21",
+   "image": "images/scenes/exo-13-20.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:14",
+   "after": 8,
+   "scene": "Pharaoh's chariots pursue the Israelites to the sea",
+   "art": [
+    "File:Tissot Drawing 129 Pharaoh pursues the Israelites (Exodus 14 7) for Brunoff 123 Pharaon poursuit les Israélites.jpg"
+   ],
+   "callout": "“He took six hundred chosen chariots” · 14:7",
+   "image": "images/scenes/exo-14-8.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:14",
+   "after": 22,
+   "scene": "The waters part and Israel walks through on dry ground",
+   "art": [
+    "File:Tissot Drawing 130 The waters are divided (Exodus 14 22) for Brunoff 124 Les eaux s'entr'ouvrent.jpg"
+   ],
+   "callout": "“The water was as a wall on their right hand and on their left” · 14:22",
+   "image": "images/scenes/exo-14-22.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:14",
+   "after": 28,
+   "scene": "The sea returns over Pharaoh's army",
+   "art": [
+    "File:Tissot Drawing 131 The Egyptians are destroyed (Exodus 14 28) for Brunoff 125 L'armée égyptienne engloutie.jpg"
+   ],
+   "callout": "“Not so much as one of them did remain” · 14:28",
+   "image": "images/scenes/exo-14-28.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:15",
+   "after": 20,
+   "scene": "Miriam the prophetess leads the women with timbrels",
+   "art": [
+    "File:Miriam, the golden Haggadah.jpg"
+   ],
+   "callout": "“Mary the prophetess, the sister of Aaron, took a timbrel in her hand” · 15:20",
+   "image": "images/scenes/exo-15-20.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:16",
+   "after": 13,
+   "scene": "Quails cover the camp at evening",
+   "art": [
+    "File:Tissot Drawing 135 Quails are sent to the Israelites (Exodus 16 13) for Brunoff 127 Les cailles.jpg"
+   ],
+   "callout": "“Quails coming up, covered the camp” · 16:13",
+   "image": "images/scenes/exo-16-13.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:16",
+   "after": 17,
+   "scene": "The people gather the manna each morning",
+   "art": [
+    "File:Tissot Drawing 132 The gathering of the manna (Exodus 16 17) for Brunoff 128 La récolte de la manne.jpg"
+   ],
+   "callout": "“Manhu! which signifieth: What is this!” · 16:15",
+   "image": "images/scenes/exo-16-17.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:17",
+   "after": 6,
+   "scene": "Moses strikes the rock at Horeb and water flows",
+   "art": [
+    "File:Tissot Drawing 133 Moses smites the rock in the desert (Exodus 17 6) for Brunoff 129 L'eau sortant du rocher.jpg"
+   ],
+   "callout": "“Thou shalt strike the rock, and water shall come out of it” · 17:6",
+   "image": "images/scenes/exo-17-6.jpg",
+   "pop": true
+  },
+  {
+   "ref": "exo:17",
+   "after": 12,
+   "scene": "Aaron and Hur hold up Moses' hands during the battle with Amalec",
+   "art": [
+    "File:Tissot Drawing 136 Moses on the mountain during the battle (Exodus 17 12) for Brunoff 130 Moïse pendant la bataille.jpg"
+   ],
+   "callout": "“When Moses lifted up his hands, Israel overcame” · 17:11",
+   "image": "images/scenes/exo-17-12.jpg",
+   "pop": true
   }
  ]
 }

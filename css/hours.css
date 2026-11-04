@@ -6,3 +6,5 @@
 .hrs-frame{display:block;width:100%;border:3px solid var(--edge);border-radius:12px;background:#fff}
 #hrs-frame-readings{height:8200px}#hrs-frame-lauds{height:7600px}#hrs-frame-sext{height:6800px}#hrs-frame-vespers{height:6800px}#hrs-frame-compline{height:5400px}
 @media(max-width:700px){#hrs-frame-readings{height:12000px}#hrs-frame-lauds{height:11000px}#hrs-frame-sext{height:10000px}#hrs-frame-vespers{height:10000px}#hrs-frame-compline{height:8000px}}
+/* /readings/ (Mass readings) */
+#rd-frame{height:5200px}@media(max-width:700px){#rd-frame{height:8200px}}

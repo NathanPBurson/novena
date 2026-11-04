@@ -1,15 +1,17 @@
 {
-  "_comment": "Edited by the daily routine. Dates are America/New_York; the day rolls over at 6 AM ET. streams[].startUtc is an explicit UTC instant.",
+  "_comment": "Edited by hand. Dates are America/New_York; the day rolls over at 6 AM ET. novena: Day 1 = anchorDate, loops forever (day = days since anchor mod 54). reading: one chapter a day from startBook/startChapter on startDate, wrapping to Genesis 1 after Revelation 22. streams[].startUtc is an explicit UTC instant.",
   "novena": {
-    "anchorDate": "2026-10-22",
-    "anchorDay": 42,
+    "anchorDate": "2026-11-04",
+    "anchorDay": 1,
     "petitionDays": 27,
-    "totalDays": 54
+    "totalDays": 54,
+    "loop": true
   },
   "reading": {
     "startDate": "2026-10-21",
     "startBook": "gen",
-    "startChapter": 46
+    "startChapter": 46,
+    "loop": true
   },
   "mysteryMode": "weekday",
   "intention": "the favor I place in your hands",
@@ -20,7 +22,7 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-10-27",
+  "updated": "2026-11-04",
   "streams": [
     {
       "startUtc": "2026-10-31T03:00:00Z",

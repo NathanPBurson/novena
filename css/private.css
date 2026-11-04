@@ -1,0 +1,10 @@
+/* private area only */
+.pv-in{padding:8px 12px;border-radius:12px;border:3px solid var(--edge,#2b4a7a);font:16px Nunito,sans-serif;min-width:200px;max-width:100%}
+.pv-ta{width:100%;box-sizing:border-box;padding:10px;border-radius:12px;border:3px solid var(--edge,#2b4a7a);font:16px/1.5 Georgia,serif}
+.pv-doc{position:relative;margin:12px 0;padding:8px 14px;border-radius:14px;background:rgba(244,236,216,.96);color:#2a1f12;border-left:8px solid var(--gold,#d9a441)}
+.pv-h{margin:4px 30px 4px 0;font-size:19px;color:#7a2e08}
+.pv-list{list-style:none;margin:6px 0;padding:0}.pv-list li{padding:5px 0;border-bottom:1px dotted #b9a77f;font:16px/1.5 Georgia,serif}.pv-list li.done span{text-decoration:line-through;opacity:.6}
+.pv-list a{color:#1a4a8a}.pv-list input[type=checkbox]{width:20px;height:20px;vertical-align:middle}
+.pv-x{position:absolute;right:8px;border:0;background:none;font-size:22px;color:#9a3b1b;cursor:pointer}.pv-list li{position:relative;padding-right:30px}.pv-list li .pv-x{top:2px}.pv-doc>.pv-x{top:6px}
+.pv-add{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.pv #pv-status{color:#2b4a6a;font-weight:700;margin:4px 6px}.pv .lu-panel>p{color:#eaf4ff}

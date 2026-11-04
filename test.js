@@ -3,10 +3,18 @@ let ok=true;const t=(c,msg)=>{ok=ok&&!!c;console.log(c?"PASS":"FAIL",msg)};
 // 1. date / chapter rules (unchanged)
 const cases=[["2026-10-21",41,"Genesis",46,"glorious"],["2026-10-23",43,"Genesis",48,"sorrowful"],["2026-10-25",45,"Genesis",50,"glorious"],["2026-10-26",46,"Exodus",1,"joyful"],["2026-10-29",49,"Exodus",4,"luminous"],["2026-11-03",54,"Exodus",9,"sorrowful"],["2026-09-11",1,"Genesis",46,"sorrowful"]];
 for(const [d,day,b,ch,m] of cases){const r=L.compute(d,site,books);t(r.day===day&&r.reading.name===b&&r.reading.chapter===ch&&r.mystery===m,`${d} day ${r.day} ${r.phase} ${r.reading.name} ${r.reading.chapter} ${r.mystery} surrender ${r.surrenderDay}`);}
-t(L.compute("2026-11-04",site,books).status==="done"&&L.compute("2026-11-04",site,books).reading.name==="Exodus","after Nov 3: novena done, chapters continue (Exodus 10)");
+{const c=d=>L.compute(d,site,books);
+ t(c("2026-11-04").day===1&&c("2026-11-04").phase==="petition"&&c("2026-11-04").status==="active"&&c("2026-11-04").reading.name==="Exodus"&&c("2026-11-04").reading.chapter===10,"restart: Nov 4 2026 = Day 1 (petition); Scripture continues at Exodus 10");
+ t(c("2026-12-27").day===54&&c("2026-12-27").phase==="thanksgiving"&&c("2026-12-28").day===1&&c("2026-12-28").phase==="petition"&&c("2026-12-28").cycle===2,"loop: Day 54 (Dec 27) is followed by Day 1 (Dec 28), petition again");
+ t(c("2026-12-01").day===28&&c("2026-12-01").phase==="thanksgiving"&&c("2026-11-30").day===27&&c("2026-11-30").phase==="petition","days 1-27 petition, 28-54 thanksgiving after the restart");
+ t(c("2026-11-03").day===54&&c("2026-10-22").day===42&&c("2026-09-11").day===1,"history unchanged: Sep 11 = Day 1, Oct 22 = Day 42, Nov 3 = Day 54 (same numbers modulo 54)");
+ let okd=true;for(let i=0;i<400;i++){const d=L.addDays("2026-11-04",i),r=c(d);if(r.day!==i%54+1||r.surrenderDay!==(r.day-1)%9+1||r.status!=="active")okd=false}t(okd,"400 days after restart: day = days since anchor mod 54, never done/waiting");
+ const tot=books.reduce((a,b)=>a+b.chapters,0),last=L.addDays("2026-10-21",tot-46+0);
+ const w=c(L.addDays("2026-10-21",tot-45));t(tot===1334&&c(L.addDays("2026-10-21",tot-46)).reading.book==="rev"&&c(L.addDays("2026-10-21",tot-46)).reading.chapter===22&&w.reading.book==="gen"&&w.reading.chapter===1,"Scripture loops: Revelation 22 is followed by Genesis 1 (1334 chapters)");
+ t(L.todayNY(new Date("2026-11-04T10:59:00Z"))==="2026-11-03"&&c(L.todayNY(new Date("2026-11-04T10:59:00Z"))).day===54&&c(L.todayNY(new Date("2026-11-04T11:00:00Z"))).day===1,"Day 1 begins at 6 AM ET on Nov 4 (11:00Z EST): 5:59 AM is still Day 54");}
 // 2. generator: re-run twice from a fixed date, output must be identical (idempotent)
-const from=process.env.FROM||L.todayNY(),run=()=>cp.execFileSync("node",["build_pages.js","--from",from],{cwd:__dirname});
-run();const snap=()=>{const o={};for(let i=0;i<=7;i++){const d=L.addDays(from,i);o[d]=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8")}return o};
+const from=process.env.FROM||"2026-11-04",run=()=>cp.execFileSync("node",["build_pages.js","--from",from,"--days","1"],{cwd:__dirname}); // prebuilt window: today and tomorrow only (art exists for these); later days are computed in the browser
+run();const snap=()=>{const o={};for(let i=0;i<=1;i++){const d=L.addDays(from,i);o[d]=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8")}return o};
 const s1=snap();run();const s2=snap();t(JSON.stringify(s1)===JSON.stringify(s2),"generator is re-runnable (identical output)");
 const scenes=require("./data/scenes.json").scenes,art=require("./data/art_meta.json"),cred=require("./data/art_credits.json");
 for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),T=r;
@@ -49,7 +57,7 @@ for(const s of ["Join our Pio's Lost Sheep Discord Server: https://discord.gg/Hq
 t(fs.existsSync(path.join(__dirname,"novena/index.html")),"novena section at /novena/");
 // 4. no trademark branding, fonts licensed, no AI images
 const pub=["index.html","novena/index.html","css/lu.css","css/style.css",...Object.keys(s1).map(d=>`day/${d}/index.html`)].map(f=>fs.readFileSync(path.join(__dirname,f),"utf8")).join("\n");
-t(!/\bLEGO\b|Ninjago|Nexus Force/i.test(pub),"no LEGO names/trademarks in pages or CSS");
+t(!/\bLEGO\b|Ninjago|Nexus Force|Nintendo|\bWii\b|\b3DS\b|Joy-Con/i.test(pub+fs.readFileSync(path.join(__dirname,"css/private.css"),"utf8")),"no LEGO names/trademarks in pages or CSS");
 for(const f of ["Nunito-Variable.ttf","VarelaRound-Regular.ttf","LilitaOne-Regular.ttf"])t(fs.existsSync("fonts/"+f)&&fs.existsSync("fonts/"+f.split(/[-.]/)[0]+"-OFL.txt"),"font "+f+" + OFL license");
 t(site.intention==="the favor I place in your hands","intention unchanged");
 
@@ -90,7 +98,7 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(/setInterval\(save,5000\)/.test(js)&&/localStorage\.setItem\(KEY/.test(js)&&/ST\.resume=true/.test(js),"position saved every 5s in localStorage and resumed on reload");
  // build copies the manifest (and picks up changes); missing manifest -> empty list -> YouTube fallback
  const os=require("os"),tm=path.join(os.tmpdir(),"rw_test_manifest.json"),plf=path.join(__dirname,"data/rewind_playlist.json"),keep=fs.readFileSync(plf,"utf8");
- const bld=env=>cp.execFileSync("node",["build_pages.js","--from",from],{cwd:__dirname,env:Object.assign({},process.env,env)});
+ const bld=env=>cp.execFileSync("node",["build_pages.js","--from",from,"--days","1"],{cwd:__dirname,env:Object.assign({},process.env,env)});
  fs.writeFileSync(tm,JSON.stringify({blocks:["1AbCdEfGhIjKlMnOp",{driveId:"1QrStUvWxYz012345",title:"B"},{youtubeId:"BBEOOdY_k5A"}]}));bld({REWIND_MANIFEST:tm});
  let pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(pl.blocks.length===3&&pl.blocks[1].driveId==="1QrStUvWxYz012345","build copies manifest into data/rewind_playlist.json");
  fs.writeFileSync(tm,JSON.stringify(["1AbCdEfGhIjKlMnOp"]));bld({REWIND_MANIFEST:tm});pl=JSON.parse(fs.readFileSync(plf,"utf8"));t(pl.blocks.length===1,"build picks up a changed manifest (array form)");
@@ -114,7 +122,7 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(ds.length>0&&co,"Compline link matches each page date and is last in the prayers");
  t(dc,"no discord.gg links on day pages");}
 {const pg=[];const walk=d=>{for(const x of fs.readdirSync(d,{withFileTypes:true})){const f=path.join(d,x.name);if(x.isDirectory()&&!/^(\.git|_source_snapshot|node_modules|bible|fonts)$/.test(x.name))walk(f);else if(x.name==="index.html")pg.push(f)}};walk(__dirname);
- let fi=true,av=true;for(const f of pg){const h=fs.readFileSync(f,"utf8");if(!(/rel="icon"[^>]*favicon-32\.png/.test(h)&&/rel="apple-touch-icon"[^>]*apple-touch-icon\.png/.test(h)))fi=false;if(!/rewind/.test(f)&&!/<img class="lu-avatar" src="[^"]*images\/channel_avatar_96\.png"/.test(h))av=false;}
+ let fi=true,av=true;for(const f of pg){if(/[\/\\]p-[0-9a-f]{24}[\/\\]/.test(f))continue;const h=fs.readFileSync(f,"utf8");if(!(/rel="icon"[^>]*favicon-32\.png/.test(h)&&/rel="apple-touch-icon"[^>]*apple-touch-icon\.png/.test(h)))fi=false;if(!/rewind/.test(f)&&!/<img class="lu-avatar" src="[^"]*images\/channel_avatar_96\.png"/.test(h))av=false;}
  t(pg.length>5&&fi,"every page has favicon and apple-touch-icon links");t(av,"every page header has the round channel avatar");
  t(["favicon-32.png","apple-touch-icon.png","images/channel_avatar_96.png","images/channel_avatar.jpg"].every(x=>fs.existsSync(path.join(__dirname,x))),"avatar and icon files exist");}
 {// On-site Liturgy of the Hours: five stacked Universalis iframes, one scrolling page
@@ -142,6 +150,28 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(L.nextStream(S,D("2026-10-30T20:00:00Z")).startUtc==="2026-10-31T03:00:00Z"&&L.nextStream(S,D("2026-10-31T08:00:00Z")).startUtc==="2026-11-01T05:30:00Z"&&L.nextStream(S,D("2026-11-02T00:00:00Z"))===null,"nextStream picks the upcoming stream and drops past ones");
  t(/in 1h 30m$/.test(L.countdown("2026-11-01T05:30:00Z",D("2026-11-01T04:00:00Z"))),"countdown targets 05:30Z");
  t(fs.readFileSync(path.join(__dirname,"index.html"),"utf8").includes('id="stream-panel"'),"home page shows the Next Stream panel");}
+{// Night Prayer (Compline) embedded in every day page: public-domain Douay/CPDV, Universalis kept as the official option
+ const CD=require("./data/compline.json"),V=(b,c)=>require("./bible/cpdv/"+b+".json").chapters[c-1],dd=fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x));let good=true;
+ for(const d of dd){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),n=h.indexOf('id="night-prayer"'),e=h.indexOf("</section>",n),seg=h.slice(n,e),idx=k=>seg.indexOf(esc(k));
+  const need=[V("psa",4)[1],V("psa",90)[3].slice(0,40),V("psa",133)[2],V("1pe",5)[7].slice(0,40),V("luk",2)[28].slice(1,30),"Before the ending of the day","Visit, we beseech thee, O Lord, this dwelling","May the almighty Lord grant us a quiet night"];
+  const order=["Opening","Examination of conscience","Hymn","Psalm 4 ","Psalm 90","Psalm 133","Short Reading","Responsory","Canticle of Simeon","Prayer","Blessing","Hail, Holy Queen"].map(k=>seg.indexOf("<h4>"+k));
+  if(!(n>0&&need.every(x=>seg.includes(esc(x)))&&order.every((p,i)=>p>0&&(i===0||p>order[i-1]))&&seg.includes("<details")&&seg.includes("compline.htm")&&seg.includes("public-domain")&&h.lastIndexOf("The Sign of the Cross")<n&&!/International Commission|ICEL/.test(seg)))good=false}
+ t(dd.length>0&&good,`Night Prayer on all ${dd.length} day pages: Compline order (opening, examination, hymn, Ps 4/90/133, reading, responsory, Nunc dimittis, prayer, blessing, Salve) from CPDV + PD texts, last in the prayers, Universalis kept as official link`);
+ const ap=fs.readFileSync(path.join(__dirname,"js/app.js"),"utf8"),nh=fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8");
+ t(/NovenaCompline\.html\(CD,"prayer"\)/.test(ap)&&nh.includes("../js/compline.js")&&CD.sections.length===12&&/copyrighted/.test(CD.note),"Pray tab of the Novena app embeds the same Compline; note says modern text is copyrighted and not used");
+ // loop + readings + 404 + restyle
+ const hm=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),rp=fs.readFileSync(path.join(__dirname,"readings/index.html"),"utf8"),rj=require("./js/readings.js"),nf=fs.readFileSync(path.join(__dirname,"404.html"),"utf8");
+ t(rj.massUrl("2026-11-04")==="https://universalis.com/usa/20261104/mass.htm"&&/id="rd-frame"/.test(rp)&&!/<iframe[^>]*src=/.test(rp)&&rp.includes("https://universalis.com/n-iframe.htm")&&rp.includes("&copy; Universalis Publishing Ltd")&&/<noscript>[\s\S]*mass\.htm/.test(rp)&&!/discord\.gg/.test(rp)&&hm.includes('href="readings/"'),"/readings/: Universalis Mass readings iframe set by the browser from the NY date (no daily build), credit, noscript, linked from home");
+ const ho=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
+ t(/NovenaLogic\.compute\(d,SITE,BK\)/.test(ho)&&ho.includes('id="today-text"')&&!/Novena day 50/.test(ho)&&ho.includes("Novena day 1 of 54"),"home 'Today' panel is computed in the browser (static fallback is current); no stale day");
+ t(/location\.replace\(m\[1\]\+"novena\/\?date="\+m\[2\]\+"#today"\)/.test(nf)&&/noindex/.test(nf),"404.html sends un-built /day/YYYY-MM-DD/ pages to the live Novena page for that date");
+ const nvh=fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8");
+ t((ho.match(/class="lu-tile /g)||[]).length===6&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&!/private|p-[0-9a-f]{24}/.test(ho),"home has a six-tile channel grid (no link to the private area)");
+ const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");
+ t(/\.lu-tile\{/.test(css)&&/\.lu-hud-top\{background:linear-gradient\(#ffffff/.test(css)&&/\.lu-panel:before\{content:""/.test(css)&&/\.lu-clock/.test(css)&&dd.every(d=>fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8").includes('id="lu-clock"')),"restyle: channel tiles, glossy panels, bright top bar with clock on every built page");
+ t(fs.existsSync(path.join(__dirname,"images/header.jpg"))&&/header\.jpg/.test(css)&&!fs.readdirSync(path.join(__dirname,"images")).some(f=>/ai[-_]|generated/i.test(f)),"Fisk public-domain art kept, no AI images added");
+}
+{const r=cp.spawnSync("node",["test_private.js"],{cwd:__dirname,encoding:"utf8"});process.stdout.write(r.stdout);t(r.status===0,"private area tests (test_private.js)");if(r.stderr)console.log(r.stderr)}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
 
