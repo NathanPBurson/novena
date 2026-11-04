@@ -3,7 +3,7 @@
 @font-face{font-family:"Nunito";src:url(../fonts/Nunito-Variable.ttf) format("truetype");font-weight:200 1000;font-display:swap}
 @font-face{font-family:"Varela Round";src:url(../fonts/VarelaRound-Regular.ttf) format("truetype");font-display:swap}
 @font-face{font-family:"Lilita One";src:url(../fonts/LilitaOne-Regular.ttf) format("truetype");font-display:swap}
-:root{--ink:#0b1a2e;--panel:#13304f;--panel2:#1c4670;--edge:#6fb7e8;--imag:#3fc3ff;--gold:#f6c42b;--orange:#f08a1c;--red:#d8302a;--maelstrom:#6a2c8c;--paper:#f4ecd8}
+:root{--ink:#0b1a2e;--panel:#1a3c60;--panel2:#255685;--edge:#6fb7e8;--imag:#3fc3ff;--gold:#f6c42b;--orange:#f08a1c;--red:#d8302a;--maelstrom:#6a2c8c;--paper:#f4ecd8}
 /* novena section keeps its layout but takes the HUD fonts */
 body:not(.lu){font-family:"Nunito","Varela Round",sans-serif}
 body:not(.lu) h1,body:not(.lu) h2,body:not(.lu) h3,body:not(.lu) #tabs a{font-family:"Lilita One","Varela Round",sans-serif;letter-spacing:.3px}
@@ -69,7 +69,7 @@ body.lu:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18
 
 /* ===== Restyle v2: original "channel" look. The glossy blue HUD panels and gold tabs are blended with a console-menu channel grid, a bright top bar with a clock chip,
    and light handheld touches (bevelled tabs, a glowing selection cursor, colored edge accents). CSS only, no logos, no third-party assets. ===== */
-:root{--sky1:#f3faff;--sky2:#cfe6f7;--sky3:#9fc9ea;--gloss:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.05) 40%,rgba(255,255,255,0) 60%);--r-panel:28px;--edge-l:#2bc3ee;--edge-r:#ff4a55}
+:root{--sky1:#ffffff;--sky2:#e4f2fc;--sky3:#c3e0f5;--gloss:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.05) 40%,rgba(255,255,255,0) 60%);--r-panel:28px;--edge-l:#2bc3ee;--edge-r:#ff4a55}
 body.lu{color:#eaf4ff;background:radial-gradient(circle at 20% 0,rgba(255,255,255,.9) 0,rgba(255,255,255,0) 40%),radial-gradient(circle at 85% 12%,rgba(255,255,255,.7) 0,rgba(255,255,255,0) 30%),
  linear-gradient(180deg,var(--sky1),var(--sky2) 55%,var(--sky3)) fixed,var(--sky2)}
 body.lu:before{opacity:.5;background:radial-gradient(circle,rgba(255,255,255,.55) 0 2px,transparent 3px) 0 0/34px 34px}  /* dot grid replaces the old streaks */
@@ -97,7 +97,8 @@ body.lu:before{opacity:.5;background:radial-gradient(circle,rgba(255,255,255,.55
 .lu-tile i{display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin-bottom:4px;border-radius:50%;font:normal 28px/1 "Nunito",sans-serif;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.3);
  background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.75) 0,rgba(255,255,255,0) 40%),var(--tc,#1a8fd6);box-shadow:inset 0 -4px 0 rgba(0,0,0,.22),0 3px 0 rgba(0,0,0,.2)}
 .lu-tile b{font:19px/1.1 "Lilita One",sans-serif;color:#17426e}.lu-tile span{font-size:12.5px;color:#4a6a88;line-height:1.25}
-.c-red{--tc:#d8302a}.c-gold{--tc:#e9a216}.c-blue{--tc:#1a8fd6}.c-sky{--tc:#3fb4e8}.c-green{--tc:#3da95a}.c-violet{--tc:#6a2c8c}
+.c-red{--tc:#d8302a}.c-gold{--tc:#e9a216}.c-blue{--tc:#1a8fd6}.c-sky{--tc:#3fb4e8}.c-green{--tc:#3da95a}.c-violet{--tc:#6a2c8c}.c-rosary{--tc:#7aa7dc}.c-teal{--tc:#2aa79b}
+[hidden]{display:none!important}
 /* Selection cursor: soft cyan/red glowing outline on hover and keyboard focus */
 .lu-tile:hover,.lu-tile:focus-visible,.lu-btn:focus-visible,.lu-nav a:focus-visible{transform:translateY(-3px) scale(1.02);outline-color:var(--edge-l);box-shadow:inset 0 0 0 2px #b9d3e8,0 0 0 3px var(--edge-r),0 8px 0 #7da6c7,0 14px 22px rgba(5,25,50,.4)}
 .lu-tile:active{transform:translateY(2px)}

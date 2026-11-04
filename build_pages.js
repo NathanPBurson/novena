@@ -111,12 +111,13 @@ fs.writeFileSync(path.join(R,"404.html"),`<!DOCTYPE html><html lang="en"><head><
 fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`<section class="lu-panel lu-hero"><div class="lu-hero-art"></div><div class="lu-hero-text"><div class="lu-kicker">Welcome, Lost Sheep</div><h1>Pio's Lost Sheep</h1><p>Pray, read Scripture one chapter a day, and gather with us live.</p>
 <p><a class="lu-btn gold" id="today-link" href="day/${today}/">Today's page &middot; ${esc(fmt(today))}</a> <a class="lu-btn" href="novena/">54 Day Rosary Novena</a></p></div></section>
 <section class="lu-panel" id="channels"><div class="lu-tabhead">Channels</div><div class="lu-channels">
-<a class="lu-tile c-red" href="novena/"><i>&#10013;</i><b>54 Day Novena</b><span>Prayers, mysteries, whole Bible</span></a>
+<a class="lu-tile c-rosary" href="novena/"><i><svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><g fill="#fff"><circle cx="20" cy="3.5" r="2.2"/><circle cx="14" cy="5.5" r="2.2"/><circle cx="26" cy="5.5" r="2.2"/><circle cx="20" cy="11" r="2.6"/></g><path d="M18 14h4v6h6v4h-6v13h-4V24h-6v-4h6z" fill="#ffe27a" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg></i><b>54 Day Novena</b><span>Prayers, mysteries, whole Bible</span></a>
 <a class="lu-tile c-gold" href="day/${today}/" id="tile-today"><i>&#9733;</i><b>Today's Page</b><span>Chapter, art and prayers</span></a>
 <a class="lu-tile c-blue" href="readings/"><i>&#10022;</i><b>Mass Readings</b><span>Updates itself daily</span></a>
 <a class="lu-tile c-sky" href="hours/"><i>&#9728;</i><b>Liturgy of the Hours</b><span>Five prayers, one page</span></a>
 <a class="lu-tile c-green" href="day/"><i>&#9776;</i><b>Daily Pages</b><span>One page per date</span></a>
 <a class="lu-tile c-violet" href="https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live" rel="noopener"><i>&#9654;</i><b>Watch Live</b><span>YouTube stream</span></a>
+<a class="lu-tile c-teal" href="p-64a4ace39322a65c6ee52c1d/" rel="nofollow" id="tile-myspace"><i><svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><path d="M13 18v-5a7 7 0 0 1 14 0v5" fill="none" stroke="#fff" stroke-width="3.5"/><rect x="9" y="18" width="22" height="16" rx="4" fill="#fff"/><circle cx="20" cy="26" r="2.5" fill="#3a8fd0"/></svg></i><b>My Space</b><span>Private, password locked</span></a>
 </div></section>
 <section class="lu-panel" id="today-panel"><div class="lu-tabhead">Today</div><p id="today-text">${T0.status==="active"?`Novena day ${T0.day} of 54 (${T0.phase})`:"Daily Scripture"} &middot; <b>${esc(T0.reading.name)} ${T0.reading.chapter}</b> &middot; ${MN[T0.mystery]} Mysteries</p></section>
 <section class="lu-panel" id="stream-panel"><div class="lu-tabhead">Next Stream</div><p id="stream-text">${esc(((site.streams||[]).filter(x=>Date.parse(x.startUtc)+144e5>Date.now())[0]||{display:"Watch live on YouTube."}).display)}</p><p class="lu-muted" id="stream-count"></p></section>

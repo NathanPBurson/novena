@@ -166,7 +166,7 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(/NovenaLogic\.compute\(d,SITE,BK\)/.test(ho)&&ho.includes('id="today-text"')&&!/Novena day 50/.test(ho)&&ho.includes("Novena day 1 of 54"),"home 'Today' panel is computed in the browser (static fallback is current); no stale day");
  t(/location\.replace\(m\[1\]\+"novena\/\?date="\+m\[2\]\+"#today"\)/.test(nf)&&/noindex/.test(nf),"404.html sends un-built /day/YYYY-MM-DD/ pages to the live Novena page for that date");
  const nvh=fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8");
- t((ho.match(/class="lu-tile /g)||[]).length===6&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&!/private|p-[0-9a-f]{24}/.test(ho),"home has a six-tile channel grid (no link to the private area)");
+ t((ho.match(/class="lu-tile /g)||[]).length===7&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&(ho.match(/p-[0-9a-f]{24}/g)||[]).length===1&&/<a class="lu-tile c-teal" href="p-[0-9a-f]{24}\/" rel="nofollow" id="tile-myspace">/.test(ho),"home has a seven-tile grid; only private link is the nofollow My Space tile");
  const css=fs.readFileSync(path.join(__dirname,"css/lu.css"),"utf8");
  t(/\.lu-tile\{/.test(css)&&/\.lu-hud-top\{background:linear-gradient\(#ffffff/.test(css)&&/\.lu-panel:before\{content:""/.test(css)&&/\.lu-clock/.test(css)&&dd.every(d=>fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8").includes('id="lu-clock"')),"restyle: channel tiles, glossy panels, bright top bar with clock on every built page");
  t(fs.existsSync(path.join(__dirname,"images/header.jpg"))&&/header\.jpg/.test(css)&&!fs.readdirSync(path.join(__dirname,"images")).some(f=>/ai[-_]|generated/i.test(f)),"Fisk public-domain art kept, no AI images added");
