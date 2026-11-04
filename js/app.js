@@ -1,5 +1,5 @@
 (function(){
-var R=window.SITE_ROOT||"",L=window.NovenaLogic, S, C, T, bookById={};
+var R=window.SITE_ROOT||"",L=window.NovenaLogic, S, C, T, CD, bookById={};
 var MN={joyful:"Joyful",sorrowful:"Sorrowful",glorious:"Glorious",luminous:"Luminous"};
 var ICON={joyful:"\u2605",sorrowful:"\u271D",glorious:"\u2600",luminous:"\u2726"};
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -40,7 +40,7 @@ function vToday(){
     if(rf)h+='<div class="note"><p style="margin:0;font:14px/1.7 Georgia,serif">'+esc(rf.reflection)+'</p><ol class="muted">'+rf.questions.map(function(q){return'<li>'+esc(q)+'</li>'}).join("")+'</ol></div>';}
   var notes=(S.notes||[]).concat(S.dailyNotes&&S.dailyNotes[T.date]?[].concat(S.dailyNotes[T.date]):[]);
   if(notes.length)h+='<div class="sec">Notes</div>'+notes.map(function(n){return'<div class="note">'+esc(n)+'</div>'}).join("");
-  h+='<p class="muted">Day 1 was '+fmt(T.startDate)+'; day 54 is '+fmt(T.endDate)+'. Days 1&ndash;27 are in petition, days 28&ndash;54 in thanksgiving. Surrender novena: day '+T.surrenderDay+' of 9.</p>';
+  h+='<p class="muted">'+(T.cycle>=1?'Round '+T.cycle+' &middot; ':'')+'Day 1 was '+fmt(T.startDate)+'; day 54 is '+fmt(T.endDate)+'. After day 54 the novena begins again at day 1. Days 1&ndash;27 are in petition, days 28&ndash;54 in thanksgiving. Surrender novena: day '+T.surrenderDay+' of 9.</p>';
   h+='<p><a class="gbtn red" href="#pray">Begin today\'s Rosary novena &raquo;</a></p></div>';
   // mystery meditations w/ reflections
   var refl=C.mysteryReflections[T.mystery]||[];
@@ -67,7 +67,9 @@ function vPray(){
   h+='<div class="sec">Closing &middot; The Surrender Novena (Don Dolindo Ruotolo) &middot; Day '+T.surrenderDay+' of 9</div>'+
     pr("Day "+T.surrenderDay,C.surrender[T.surrenderDay-1])+pr("Ten times",C.surrenderRefrain)+pr("To Our Lady",C.surrenderMarian)+'<p class="muted">Servant of God Don Dolindo Ruotolo.</p>'+
     '<details><summary>All nine days of the Surrender Novena</summary>'+C.surrender.map(function(t,i){return pr("Day "+(i+1),t)}).join("")+'</details>'+
-    pr("The Sign of the Cross",P.sign)+pr("At the crucifix",P.kiss.replace(/^\*/,""))+'</div>';
+    pr("The Sign of the Cross",P.sign)+pr("At the crucifix",P.kiss.replace(/^\*/,""))+
+    '<div class="sec">Night Prayer (Compline)</div><details><summary>Full text &middot; public-domain Douay/CPDV</summary>'+window.NovenaCompline.html(CD,"prayer")+'</details>'+
+    '<p><a class="gbtn blue" href="https://universalis.com/USA/'+T.date.replace(/-/g,"")+'/compline.htm" rel="noopener">Official modern text on Universalis &raquo;</a></p></div>';
   return h;
 }
 
@@ -90,7 +92,7 @@ function vChapter(b,ch,main){
   }).catch(function(){document.getElementById("vv").innerHTML='This chapter could not be opened. <a href="'+nl.url+'">Read it in the NABRE</a>.'});
 }
 function vDays(){
-  var h='<div class="box"><h2>The 54 Days</h2><p class="muted">Day '+S.novena.anchorDay+' is '+fmt(S.novena.anchorDate)+'. Day 1 is '+fmt(T.startDate)+'. Day 54 is '+fmt(T.endDate)+'. Days 1&ndash;27 are in petition; days 28&ndash;54 in thanksgiving.</p>';
+  var h='<div class="box"><h2>The 54 Days</h2><p class="muted">This round: Day 1 is '+fmt(T.startDate)+' and Day 54 is '+fmt(T.endDate)+'; the next day it starts again at Day 1. Days 1&ndash;27 are in petition; days 28&ndash;54 in thanksgiving.</p>';
   [["Prayer in petition",1,27],["Prayer in thanksgiving",28,54]].forEach(function(s){h+='<div class="sec">'+s[0]+'</div><div class="daygrid">';
     for(var d=s[1];d<=s[2];d++){var dt=L.addDays(T.startDate,d-1);h+='<div class="'+(d===T.day?"now":d<T.day?"past":"")+'" title="'+fmt(dt)+'">'+d+'<br><span style="font-size:9px">'+dt.slice(5).replace("-","/")+'</span></div>'}h+='</div>'});
   return h+'<p class="muted">If a day was truly missed, the old custom is to begin again.</p></div>';
@@ -106,8 +108,8 @@ function route(){
   else main.innerHTML=({pray:vPray,days:vDays,feasts:vFeasts}[tab]||vToday)();
   window.scrollTo(0,0);
 }
-Promise.all([getJSON(R+"data/site.json"),getJSON(R+"data/content.json")]).then(function(a){
-  S=a[0];C=a[1];C.books.forEach(function(b){bookById[b.id]=b});T=L.compute(testDate(),S,C.books);
+Promise.all([getJSON(R+"data/site.json"),getJSON(R+"data/content.json"),getJSON(R+"data/compline.json")]).then(function(a){
+  S=a[0];C=a[1];CD=a[2];C.books.forEach(function(b){bookById[b.id]=b});T=L.compute(testDate(),S,C.books);
   var ln=S.links||{};if(ln.live)document.getElementById("l-live").href=ln.live;
   document.getElementById("upd").textContent="Updated "+(S.updated||"");
   imgCheck(document.getElementById("header"),R+"images/header.jpg","noimg");

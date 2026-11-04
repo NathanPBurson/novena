@@ -61,3 +61,47 @@ body.lu:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18
 .lu-foot{max-width:1000px;margin:10px auto 30px;padding:0 12px;font-size:13px;color:#8fb3d6;text-align:center}
 @media(max-width:600px){.lu-hero-text h1{font-size:34px}.lu-verses{font-size:17px;padding:12px}}
 .lu h3.lu-step{font:20px "Lilita One",sans-serif;color:var(--gold);margin:18px 0 6px;padding-bottom:4px;border-bottom:2px solid #2f6da5}
+
+.cmp summary{cursor:pointer;font:700 14px "Trebuchet MS",sans-serif;color:#7a2e08;margin:4px 0}
+.cmp-box{margin:8px 0;padding:6px 12px;border-radius:10px;background:rgba(255,250,235,.75);border-left:5px solid #b8860b}
+.cmp-box h4{margin:2px 0;font-size:16px;color:#7a2e08}
+.cmp-note,.cmp-src{font-size:13px;font-style:italic;color:#5a4628}
+
+/* ===== Restyle v2: original "channel" look. The glossy blue HUD panels and gold tabs are blended with a console-menu channel grid, a bright top bar with a clock chip,
+   and light handheld touches (bevelled tabs, a glowing selection cursor, colored edge accents). CSS only, no logos, no third-party assets. ===== */
+:root{--sky1:#f3faff;--sky2:#cfe6f7;--sky3:#9fc9ea;--gloss:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.05) 40%,rgba(255,255,255,0) 60%);--r-panel:28px;--edge-l:#2bc3ee;--edge-r:#ff4a55}
+body.lu{color:#eaf4ff;background:radial-gradient(circle at 20% 0,rgba(255,255,255,.9) 0,rgba(255,255,255,0) 40%),radial-gradient(circle at 85% 12%,rgba(255,255,255,.7) 0,rgba(255,255,255,0) 30%),
+ linear-gradient(180deg,var(--sky1),var(--sky2) 55%,var(--sky3)) fixed,var(--sky2)}
+body.lu:before{opacity:.5;background:radial-gradient(circle,rgba(255,255,255,.55) 0 2px,transparent 3px) 0 0/34px 34px}  /* dot grid replaces the old streaks */
+/* Top bar: bright glossy strip, clock chip, rounded pill buttons, cyan and red edge accents */
+.lu-hud-top{background:linear-gradient(#ffffff,#e4f1fb 55%,#cfe3f3);border-bottom:0;border-radius:0 0 26px 26px;max-width:1040px;margin:0 auto;padding:8px 22px;
+ box-shadow:inset 8px 0 0 var(--edge-l),inset -8px 0 0 var(--edge-r),0 4px 0 #9fc2de,0 10px 22px rgba(30,70,110,.3)}
+.lu-brand{color:#17426e!important;text-shadow:0 1px 0 #fff;font-size:24px}
+.lu-clock{margin-left:auto;padding:3px 14px;border-radius:14px;background:linear-gradient(#e8eef5,#d3dde8);color:#3b5873;font:700 14px "Nunito",sans-serif;box-shadow:inset 0 2px 3px rgba(0,0,0,.18),0 1px 0 #fff}
+.lu-nav{display:flex;flex-wrap:wrap;gap:2px}
+.lu-nav a,.lu-nav button{color:#17426e!important;background:linear-gradient(#ffffff,#dbe8f3);border:2px solid #b3cde3;box-shadow:inset 0 2px 0 #fff,0 3px 0 #9fb9d0;font-weight:700}
+.lu-nav a:hover,.lu-nav button:hover{background:linear-gradient(#fff3b3,#ffc94d);border-color:#fff;color:#4a2a00!important}
+@media(max-width:700px){.lu-clock{display:none}}
+/* glossy rounded panels (HUD blue + soft gloss), bevelled tab labels */
+.lu-panel{border-radius:var(--r-panel);overflow:visible}
+.lu-panel:before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--gloss);pointer-events:none}
+.lu-tabhead{border-radius:16px;box-shadow:inset 0 2px 0 rgba(255,255,255,.6),inset 0 -3px 0 rgba(120,60,0,.25),0 3px 0 #7a3c00}
+.lu-btn{border-radius:999px;position:relative;overflow:hidden}
+.lu-btn:before{content:"";position:absolute;left:6%;right:6%;top:2px;height:45%;border-radius:999px;background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.08));pointer-events:none}
+.lu-frame,.lu-stat,.lu-quest{border-radius:20px}
+/* Channel grid (home page) */
+.lu-channels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:2px}
+@media(max-width:760px){.lu-channels{grid-template-columns:repeat(2,1fr)}}@media(max-width:420px){.lu-channels{gap:10px}}
+.lu-tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:132px;padding:12px 8px 10px;text-align:center;text-decoration:none;border-radius:22px;
+ color:#17426e!important;background:linear-gradient(180deg,#ffffff,#e9f3fb 60%,#d3e5f4);border:3px solid #fff;outline:3px solid transparent;box-shadow:inset 0 0 0 2px #b9d3e8,0 5px 0 #7da6c7,0 10px 16px rgba(5,25,50,.35);transition:transform .12s,outline-color .12s}
+.lu-tile i{display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin-bottom:4px;border-radius:50%;font:normal 28px/1 "Nunito",sans-serif;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.3);
+ background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.75) 0,rgba(255,255,255,0) 40%),var(--tc,#1a8fd6);box-shadow:inset 0 -4px 0 rgba(0,0,0,.22),0 3px 0 rgba(0,0,0,.2)}
+.lu-tile b{font:19px/1.1 "Lilita One",sans-serif;color:#17426e}.lu-tile span{font-size:12.5px;color:#4a6a88;line-height:1.25}
+.c-red{--tc:#d8302a}.c-gold{--tc:#e9a216}.c-blue{--tc:#1a8fd6}.c-sky{--tc:#3fb4e8}.c-green{--tc:#3da95a}.c-violet{--tc:#6a2c8c}
+/* Selection cursor: soft cyan/red glowing outline on hover and keyboard focus */
+.lu-tile:hover,.lu-tile:focus-visible,.lu-btn:focus-visible,.lu-nav a:focus-visible{transform:translateY(-3px) scale(1.02);outline-color:var(--edge-l);box-shadow:inset 0 0 0 2px #b9d3e8,0 0 0 3px var(--edge-r),0 8px 0 #7da6c7,0 14px 22px rgba(5,25,50,.4)}
+.lu-tile:active{transform:translateY(2px)}
+.lu-foot{color:#2b4a6a}.lu-foot a{color:#17508a!important}
+.lu h3.lu-step{border-bottom-color:rgba(255,255,255,.3)}
+/* legacy /novena/ app: same glossy rounded feel */
+body:not(.lu) #tabs a{border-radius:999px}body:not(.lu) .box{border-radius:22px}

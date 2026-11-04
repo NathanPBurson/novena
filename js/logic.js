@@ -16,24 +16,29 @@
   // Source site's rotation (luminous cycle by prayer day)
   var CYCLE = ["joyful", "sorrowful", "glorious", "luminous"];
   function compute(date, site, books) {
-    var n = site.novena, r = site.reading;
-    var day = n.anchorDay + diffDays(n.anchorDate, date);            // source: Day 42 = Oct 22, Day 1 = Sep 11
-    var status = day < 1 ? "waiting" : day > n.totalDays ? "done" : "active";
-    var phase = day <= n.petitionDays ? "petition" : "thanksgiving";
-    var pd = Math.min(n.totalDays, Math.max(1, day));
-    var mystery = site.mysteryMode === "novenaDay" ? CYCLE[(pd - 1) % 4] : WEEK[weekday(date)];
-    var idx = Math.max(0, diffDays(r.startDate, date));            // source: Oct 21 = index 0 = Gen 46
-    var reading = null, started = false, i = 0;
-    for (var b = 0; b < books.length && !reading; b++) {
-      var bk = books[b];
-      if (!started) { if (bk.id !== r.startBook) continue; started = true; }
-      for (var c = (bk.id === r.startBook ? r.startChapter : 1); c <= bk.chapters; c++, i++) {
-        if (i === idx) { reading = { book: bk.id, name: bk.name, chapter: c, usccb: bk.usccb }; break; }
-      }
+    var n = site.novena, r = site.reading, tot = n.totalDays;
+    var diff = diffDays(n.anchorDate, date), day, cycle, status;
+    if (n.loop) {                                                    // loops forever: Day 54 is followed by Day 1 (computed, no daily build)
+      var k = n.anchorDay - 1 + diff;
+      day = ((k % tot) + tot) % tot + 1; cycle = Math.floor(k / tot) + 1; status = "active";
+    } else {
+      day = n.anchorDay + diff; cycle = 1; status = day < 1 ? "waiting" : day > tot ? "done" : "active";
     }
-    return { date: date, day: day, prayerDay: pd, status: status, phase: phase, mystery: mystery,
-      surrenderDay: (pd - 1) % 9 + 1, readingIndex: idx, reading: reading, startDate: addDays(n.anchorDate, -(n.anchorDay - 1)),
-      endDate: addDays(n.anchorDate, n.totalDays - n.anchorDay) };
+    var phase = day <= n.petitionDays ? "petition" : "thanksgiving";
+    var pd = Math.min(tot, Math.max(1, day));
+    var mystery = site.mysteryMode === "novenaDay" ? CYCLE[(pd - 1) % 4] : WEEK[weekday(date)];
+    // Scripture: one chapter a day, in order through the whole canon. Independent of the 54-day loop; with reading.loop it wraps from the last chapter back to Genesis 1.
+    var idx = Math.max(0, diffDays(r.startDate, date)), total = 0, before = 0, seen = false;
+    books.forEach(function (bk) { if (bk.id === r.startBook) { seen = true; before = total + r.startChapter - 1; } total += bk.chapters; });
+    var pos = before + idx; if (r.loop) pos = pos % total;
+    var reading = null;
+    for (var b = 0, left = pos; b < books.length && !reading; b++) {
+      if (left < books[b].chapters) reading = { book: books[b].id, name: books[b].name, chapter: left + 1, usccb: books[b].usccb };
+      else left -= books[b].chapters;
+    }
+    var start = addDays(date, -(day - 1));
+    return { date: date, day: day, cycle: cycle, prayerDay: pd, status: status, phase: phase, mystery: mystery,
+      surrenderDay: (pd - 1) % 9 + 1, readingIndex: idx, reading: reading, startDate: start, endDate: addDays(start, tot - 1) };
   }
   function psalmNabre(e) { return e <= 8 ? e : e === 9 ? 9 : e >= 10 && e <= 112 ? e + 1 : e === 113 ? 114 : e === 114 || e === 115 ? 116 : e >= 116 && e <= 145 ? e + 1 : e === 146 || e === 147 ? 147 : e; }
   function nabreLink(bk, ch) {
