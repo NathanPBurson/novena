@@ -22,7 +22,7 @@ function autoUnlock(){if(busy||state)return Promise.resolve(false);busy=true;ret
 function lock(){state=null;key=null;sync=null;clearTimeout(saveT);clearTimeout(idleT);$("pv-app").hidden=true;$("pv-app").textContent="";$("pv-gate").hidden=false;$("pv-lock").hidden=true;$("pv-sync").hidden=true;msg("Locked.")}
 function forgetDevice(){return PVDevKey.forget().then(function(){[K_TOK,K_BLOB,K_PEND].forEach(function(k){LS.removeItem(k)});lock();msg("Locked and forgotten on this device.")})}
 $("pv-lock").addEventListener("click",forgetDevice);$("pv-resume").addEventListener("click",function(){autoUnlock()});autoUnlock();$("pv-sync").addEventListener("click",function(){if(state)syncPanel()});
-function arm(){clearTimeout(idleT);idleT=setTimeout(lock,15*60*1000)}["click","keydown","touchstart"].forEach(function(n){document.addEventListener(n,function(){if(state)arm()},{passive:true})});
+function arm(){clearTimeout(idleT)}/* no idle auto-lock: stays unlocked until Lock / forget */["click","keydown","touchstart"].forEach(function(n){document.addEventListener(n,function(){if(state)arm()},{passive:true})});
 /* ---------- token (stored in localStorage only as ciphertext under the password-derived key) ---------- */
 function loadToken(){var t=lsGet(K_TOK);sync=null;if(!t)return Promise.resolve();return C.decryptToken(key,t).then(function(tok){mk(tok)}).catch(function(){LS.removeItem(K_TOK);setStatus("Token needs to be pasted again.")})}
 function mk(tok){sync=new PVSync.Sync({fetch:function(u,o){return fetch(u,o)},cfg:cfg,token:tok,key:key,meta:meta})}
