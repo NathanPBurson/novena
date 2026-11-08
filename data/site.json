@@ -22,14 +22,14 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "streams": [
     {
-      "startUtc": "2026-11-08T02:00:00Z",
-      "label": "Tonight's stream (Sat Nov 7)",
-      "display": "Saturday night, Nov 7 · 9:00 PM ET",
-      "title": "Praying the Rosary, then Pokémon + Ocarina LIVE",
-      "url": "https://www.youtube.com/watch?v=9-eW7sD3Pa0"
+      "startUtc": "2026-11-09T02:00:00Z",
+      "label": "Tonight's stream (Sun Nov 8)",
+      "display": "Sunday night, Nov 8 · 9:00 PM ET (usual time; no YouTube premiere is scheduled)",
+      "title": "Watch live on YouTube",
+      "url": "https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live"
     }
   ]
 }
