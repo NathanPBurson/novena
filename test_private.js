@@ -65,7 +65,7 @@ const pwf="/workspace/novena_private_pw.txt";
  t(/if\(\$\("pv-remember"\)\.checked\)PVDevKey\.put\(key,meta\)/.test(a),"key remembered only after a successful unlock with the box ticked");
  t(/function autoUnlock\(\)[\s\S]*C\.decryptState\(rec\.key,blob\)[\s\S]*\.catch\(function\(\)\{key=null;state=null;msg\("Enter your password\."\)/.test(a)&&/autoUnlock\(\);/.test(a),"next visit auto-decrypts with the stored key, falls back to the password screen on failure");
  const fd=(a.match(/function forgetDevice\(\)\{[^\n]*/)||[""])[0];t(/PVDevKey\.forget\(\)/.test(fd)&&/K_TOK/.test(fd)&&/K_BLOB/.test(fd)&&/K_PEND/.test(fd)&&/\$\("pv-lock"\)\.addEventListener\("click",forgetDevice\)/.test(a)&&/Lock \/ forget this device/.test(h),"Lock / forget wipes the IndexedDB key, token and cached data");
- const lk=(a.match(/function lock\(\)\{[^\n]*/)||[""])[0];t(lk&&!/forget|removeItem/.test(lk)&&/idleT=setTimeout\(lock,/.test(a),"idle auto-lock only hides the UI (keeps the remembered key)");
+ const lk=(a.match(/function lock\(\)\{[^\n]*/)||[""])[0];t(lk&&!/idleT=setTimeout\(lock,/.test(a)&&/no idle auto-lock/.test(a),"no idle auto-lock; stays unlocked until Lock or forget");
  t(/<title>Account<\/title>/.test(h)&&/id="app-back"/.test(h)&&/aria-label="Home"/.test(h)&&/js\/appbar\.js/.test(h)&&/viewport-fit=cover/.test(h),"private screens: Account title + sticky Back/Home bar")}
 {const k=await C.deriveKey("x".repeat(20),C.b64e(new Uint8Array(16)),1000);t(k.extractable===false&&k.algorithm.name==="AES-GCM","derived key is a non-extractable AES-GCM CryptoKey")}
 process.exit(ok?0:1)})();

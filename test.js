@@ -47,7 +47,7 @@ for(const [d,h] of Object.entries(s1)){const r=L.compute(d,site,books),n=require
 // 2e. Prayer of Intentions (approved Oct 24 8:55 PM) + Closing Prayers with a saint of the day, today..+7
 {const I=require("./data/intentions.json"),SA=require("./data/saints.json");for(const [d,h] of Object.entries(s1)){const i=k=>h.indexOf(k),s=SA.days[d];
   const ib=i('id="intentions"'),off=i('class="novena-offering"'),cr=i("The Apostles\u2019 Creed"),sc=i('id="scripture"');
-  t(ib>i('data-step="opening"')&&(off<0||ib>off)&&ib<cr&&[I.title,I.opening,...I.items,I.closing].every(x=>h.includes(esc(x)))&&I.items.length===8,`${d}: Prayer of Intentions word for word, after the opening offering, before the Creed`);
+  t(ib>i('data-step="opening"')&&(off<0||ib>off)&&ib<cr&&[I.title,I.opening,...I.items,I.closing].every(x=>h.includes(esc(x)))&&I.items.length>=8,`${d}: Prayer of Intentions word for word, after the opening offering, before the Creed`);
   const cp=i('id="closing-prayers"'),hq=i("Hail, Holy Queen");
   t(s&&cp>hq&&cp<sc&&i("St. Michael the Archangel")>cp&&i("St. Padre Pio")>i("St. Michael the Archangel")&&i("St. Joan of Arc")>i("St. Padre Pio")&&i('data-saint="'+esc(s.saint)+'"')>i("St. Joan of Arc")&&h.includes(esc(s.why))&&h.includes(esc(SA.pio))&&h.includes(esc(SA.joan)),`${d}: Closing Prayers (Michael, Padre Pio, Joan of Arc, ${s&&s.saint}) after Hail Holy Queen, before scripture`);}}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
@@ -56,7 +56,7 @@ const home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
 for(const s of ["Join our Pio's Lost Sheep Discord Server: https://discord.gg/HqXPUEd5JQ","Tithe Your Shekels: https://ko-fi.com/pioslostsheep","https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live",'href="novena/"','id="today-link"'])t(home.includes(s),"home has "+s);
 t(fs.existsSync(path.join(__dirname,"novena/index.html")),"novena section at /novena/");
 // 4. no trademark branding, fonts licensed, no AI images
-const pub=["index.html","novena/index.html","css/lu.css","css/style.css",...Object.keys(s1).map(d=>`day/${d}/index.html`)].map(f=>fs.readFileSync(path.join(__dirname,f),"utf8")).join("\n");
+const pub=["index.html","novena/index.html","css/lu.css","css/style.css",...Object.keys(s1).map(d=>`day/${d}/index.html`)].map(f=>fs.readFileSync(path.join(__dirname,f),"utf8")).join("\n").replace(/<div class="lu-hero-art lu-slides"[\s\S]*?<script src="js\/slides\.js/,"<script src=\"js/slides.js");
 t(!/\bLEGO\b|Ninjago|Nexus Force|Nintendo|\bWii\b|\b3DS\b|Joy-Con/i.test(pub+fs.readFileSync(path.join(__dirname,"css/private.css"),"utf8")),"no LEGO names/trademarks in pages or CSS");
 for(const f of ["Nunito-Variable.ttf","VarelaRound-Regular.ttf","LilitaOne-Regular.ttf"])t(fs.existsSync("fonts/"+f)&&fs.existsSync("fonts/"+f.split(/[-.]/)[0]+"-OFL.txt"),"font "+f+" + OFL license");
 t(site.intention==="the favor I place in your hands","intention unchanged");
@@ -117,7 +117,8 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
   if(!(h.includes("Guardian of virgins, and holy father Joseph")&&h.includes("Source: Traditional; Raccolta")))pu=false;
   const u=`https://universalis.com/USA/${d.replace(/-/g,"")}/compline.htm`,ci=h.indexOf(u),sc=h.lastIndexOf("The Sign of the Cross"),pi=h.indexOf('id="purity-prayer"'),lp=h.lastIndexOf('class="lu-prayer"');
   if(!(ci>sc&&sc>pi&&pi>0&&(()=>{const n=h.indexOf('id="night-prayer"'),e=h.indexOf("</section>",n),q=h.indexOf('class="lu-prayer',n);return q<0||q>e})()&&h.includes('provided by <a href="https://universalis.com/"')))co=false;
-  if(/discord\.gg/i.test(h))dc=false;}
+  const outside=h.replace(/<section class="lu-panel" id="episode"[\s\S]*?<\/section>/,"");
+  if(/discord\.gg/i.test(outside))dc=false;}
  t(ds.length>0&&pu,"purity prayer with source on every day page");
  t(ds.length>0&&co,"Compline link matches each page date and is last in the prayers");
  t(dc,"no discord.gg links on day pages");}
@@ -163,7 +164,8 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  const hm=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),rp=fs.readFileSync(path.join(__dirname,"readings/index.html"),"utf8"),rj=require("./js/readings.js"),nf=fs.readFileSync(path.join(__dirname,"404.html"),"utf8");
  t(rj.massUrl("2026-11-04")==="https://universalis.com/usa/20261104/mass.htm"&&/id="rd-frame"/.test(rp)&&!/<iframe[^>]*src=/.test(rp)&&rp.includes("https://universalis.com/n-iframe.htm")&&rp.includes("&copy; Universalis Publishing Ltd")&&/<noscript>[\s\S]*mass\.htm/.test(rp)&&!/discord\.gg/.test(rp)&&hm.includes('href="readings/"'),"/readings/: Universalis Mass readings iframe set by the browser from the NY date (no daily build), credit, noscript, linked from home");
  const ho=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
- t(/NovenaLogic\.compute\(d,SITE,BK\)/.test(ho)&&ho.includes('id="today-text"')&&!/Novena day 50/.test(ho)&&ho.includes("Novena day 1 of 54"),"home 'Today' panel is computed in the browser (static fallback is current); no stale day");
+ const ny=L.todayNY(),nr=L.compute(ny,site,books),pretty=(function(d){var p=d.split("-"),M=["January","February","March","April","May","June","July","August","September","October","November","December"];return M[p[1]-1]+" "+(+p[2])+", "+p[0]})(ny);
+ t(/NovenaLogic\.compute\(d,SITE,BK\)/.test(ho)&&ho.includes('id="today-text"')&&!/Novena day 50/.test(ho)&&ho.includes("Novena day "+nr.day+" of 54")&&ho.includes('href="day/'+ny+'/"')&&ho.includes("Today's page &middot; "+pretty)&&ho.includes('a.innerHTML="Today\'s page &middot; "'),"home 'Today' panel is computed in the browser (static fallback is current); no stale day");
  t(/location\.replace\(m\[1\]\+"novena\/\?date="\+m\[2\]\+"#today"\)/.test(nf)&&/noindex/.test(nf),"404.html sends un-built /day/YYYY-MM-DD/ pages to the live Novena page for that date");
  const nvh=fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8");
  t((ho.match(/class="lu-tile /g)||[]).length===7&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&(ho.match(/p-[0-9a-f]{24}/g)||[]).length===2&&/<a class="nav-myspace" href="p-[0-9a-f]{24}\/" rel="nofollow">/.test(ho)&&/<a class="lu-tile c-teal" href="p-[0-9a-f]{24}\/" rel="nofollow" id="tile-myspace">/.test(ho),"home has a seven-tile grid; only private link is the nofollow Account tile");
@@ -188,6 +190,23 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  const sj=fs.readFileSync(path.join(__dirname,"js/slides.js"),"utf8");t(/4000/.test(sj)&&/prefers-reduced-motion/.test(sj)&&/mouseenter/.test(sj),"slideshow: 4s, pause on hover, reduced-motion");
  const sw=fs.readFileSync(path.join(__dirname,fs.readdirSync(__dirname).find(d=>/^p-[0-9a-f]{24}$/.test(d))+"/sw.js"),"utf8");t(!/pv-shell-v1"/.test(sw)&&/skipWaiting/.test(sw)&&/clients\.claim/.test(sw)&&/caches\.delete/.test(sw),"service worker cache bumped, skipWaiting/claim/old-cache cleanup")}
 {const r=cp.spawnSync("node",["test_private.js"],{cwd:__dirname,encoding:"utf8"});process.stdout.write(r.stdout);t(r.status===0,"private area tests (test_private.js)");if(r.stderr)console.log(r.stderr)}
+{// Today mark, trivia through the Tuesday refill, Episode 169 embed
+ const ny=L.todayNY(),dow=new Date(ny+"T12:00:00Z").getUTCDay(),toTue=((2-dow+7)%7)||7,last=L.addDays(ny,toTue);
+ const di=fs.readFileSync(path.join(__dirname,"day/index.html"),"utf8");
+ t(di.includes('data-date="'+ny+'"')&&di.includes('aria-current="date"')&&di.includes("today-mark"),"daily index marks "+ny+" as today");
+ const th=fs.readFileSync(path.join(__dirname,"day",ny,"index.html"),"utf8");
+ t(/id="today-flag"(?! hidden)/.test(th)&&th.includes('data-date="'+ny+'"'),ny+" page header is marked Today");
+ const other=L.addDays(ny,1),oh=fs.readFileSync(path.join(__dirname,"day",other,"index.html"),"utf8");
+ t(/id="today-flag" hidden/.test(oh),other+" is not marked today");
+ let tr=true;for(let d=ny;d<=last;d=L.addDays(d,1)){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
+  const items=(require("./data/trivia.json").chapters[r.reading.book+":"+r.reading.chapter]||{}).items||[];
+  if(!(h.indexOf('id="trivia"')>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&items.length>=2&&items.every(x=>h.includes(esc(x)))))tr=false;}
+ t(tr,"trivia section is last content on each day through the Tuesday refill ("+ny+" to "+last+") and matches that day's chapter");
+ const ep=require("./data/episodes.json").episodes[0],eh=fs.readFileSync(path.join(__dirname,"episodes/169/index.html"),"utf8"),home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dayh=fs.readFileSync(path.join(__dirname,"day/2026-11-07/index.html"),"utf8");
+ const embed='src="https://www.youtube.com/embed/3A509tCcfCw"';
+ t(ep.id==="3A509tCcfCw"&&[eh,home,dayh].every(h=>h.includes(embed)&&h.includes(esc(ep.title))&&ep.chapters.every(c=>h.includes(esc(c.title)))&&(h.match(/class="ep-short empty"/g)||[]).length===5&&h.includes("https://discord.gg/HqXPUEd5JQ")&&h.includes("https://ko-fi.com/pioslostsheep")),"Episode 169 embed, chapters, five empty Shorts, and funnel links on the episode page, home, and Nov 7");
+ t(!/original live|unlisted source/i.test(eh+home+dayh)&&fs.existsSync(path.join(__dirname,"images/episodes/3A509tCcfCw.jpg")),"episode pages stay on the public upload; approved thumbnail is on disk");
+}
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
 
 

@@ -146,3 +146,16 @@ body.lu:before{opacity:0}
 .lu-sl-prev,.lu-sl-next{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid #0b2a52;background:var(--pill-blue);color:#fff;font:700 26px/1 sans-serif;cursor:pointer;opacity:.85}
 .lu-sl-prev{left:8px}.lu-sl-next{right:8px}
 @media (prefers-reduced-motion:reduce){.lu-slide{transition:none}}
+/* Today marker and episode player */
+.is-today>a{color:var(--hs-gold,#ffc04d)!important}
+.ep-player{position:relative;width:100%;aspect-ratio:16/9;margin:12px 0;background:#000;border-radius:16px;overflow:hidden;border:1px solid var(--hs-edge,#56647f);box-shadow:0 0 14px rgba(50,150,255,.25)}
+.ep-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ep-thumb{margin:8px 0}.ep-thumb img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--hs-edge,#56647f)}
+.ep-chapters{list-style:none;padding:0;margin:8px 0}.ep-chapters li{margin:4px 0}
+.ep-chapters time{display:inline-block;min-width:5.2em;font:14px "Varela Round",sans-serif;color:var(--hs-gold,#ffc04d)}
+.ep-tags{margin:8px 0}.ep-tags .lu-chip{margin-right:6px}
+.ep-shorts{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;list-style:none;padding:0;margin:12px 0}
+.ep-short{text-align:center}.ep-short b{display:block;margin-top:6px;font:14px "Lilita One",sans-serif;color:#fff}
+.ep-short-slot{display:block;aspect-ratio:9/16;border-radius:14px;border:2px dashed #6fb7e8;background:rgba(5,8,18,.55)}
+@media(max-width:760px){.ep-shorts{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:460px){.ep-shorts{grid-template-columns:repeat(2,1fr)}}

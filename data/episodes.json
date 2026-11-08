@@ -1,0 +1,39 @@
+{
+  "_comment": "Public episodes only. shorts[].id stays empty until a Short is posted. Do not store unlisted source links here.",
+  "episodes": [
+    {
+      "number": 169,
+      "id": "3A509tCcfCw",
+      "date": "2026-11-07",
+      "title": "Episode 169: Blood, Sweat & Stigmata (Stigmata Scare, Exodus 12, Rosary, Pokémon Violet, Zelda, XC2)",
+      "summary": "The Rosary and Exodus 12, then Xenoblade Chronicles 2, Pokémon Violet and Zelda: Ocarina of Time, with a stigmata scare, heresies, philosophy and politics along the way.",
+      "games": ["Xenoblade Chronicles 2", "Pokémon Violet", "Zelda: Ocarina of Time"],
+      "topics": ["Rosary", "Exodus 12", "Stigmata scare", "Heresies", "Philosophy", "Politics"],
+      "thumb": "images/episodes/3A509tCcfCw.jpg",
+      "chapters": [
+        {"t": "0:00", "title": "Previously on Pio's Lost Sheep"},
+        {"t": "3:11", "title": "Coming Up Roses (Rosary)"},
+        {"t": "43:27", "title": "Doorframe or Die (Exodus 12)"},
+        {"t": "50:55", "title": "Daredevil's Running Mate (Picking Games)"},
+        {"t": "54:45", "title": "Post Malone, Pre-K (Xenoblade Chronicles 2)"},
+        {"t": "1:04:28", "title": "No Party Left Untrolled (Pokémon Violet)"},
+        {"t": "1:16:04", "title": "Dude, Where's My Cat? (Pokémon Violet)"},
+        {"t": "1:26:04", "title": "No Refunds on Redemption (Pokémon Violet)"},
+        {"t": "1:41:59", "title": "Pascal's Betting Problem (Pokémon Violet)"},
+        {"t": "1:49:14", "title": "Mother of All Technicalities (Pokémon Violet)"},
+        {"t": "2:06:35", "title": "Wrong Track Record (Pokémon Violet)"},
+        {"t": "2:23:47", "title": "Stigmata or False Alarm? (Pokémon Violet)"},
+        {"t": "2:32:06", "title": "Executive Disorder (Pokémon Violet)"},
+        {"t": "2:37:49", "title": "The Key to Losing (Pokémon Violet)"},
+        {"t": "2:41:00", "title": "Grave Expectations (Zelda: Ocarina of Time)"}
+      ],
+      "shorts": [
+        {"n": 1, "id": "", "title": ""},
+        {"n": 2, "id": "", "title": ""},
+        {"n": 3, "id": "", "title": ""},
+        {"n": 4, "id": "", "title": ""},
+        {"n": 5, "id": "", "title": ""}
+      ]
+    }
+  ]
+}
