@@ -145,12 +145,16 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(L.todayNY(D("2026-10-31T09:59:00Z"))==="2026-10-30"&&L.todayNY(D("2026-10-31T10:00:00Z"))==="2026-10-31","today rolls over at 6 AM EDT (10:00Z), not midnight");
  t(L.todayNY(D("2026-11-01T05:30:00Z"))==="2026-10-31"&&L.todayNY(D("2026-11-01T10:59:00Z"))==="2026-10-31"&&L.todayNY(D("2026-10-31T04:00:00Z"))==="2026-10-30"&&L.todayNY(D("2026-11-01T11:00:00Z"))==="2026-11-01","1:30 AM Sun Nov 1 still counts as Saturday; 6 AM EST (11:00Z) rolls over after DST ends");
  t(require("./js/hours.js").todayNY(D("2026-10-31T09:59:00Z"))==="2026-10-30"&&require("./js/hours.js").todayNY(D("2026-10-31T10:00:00Z"))==="2026-10-31","/hours/ today uses the same 6 AM rollover");
- const S=site.streams||[],f=S.find(x=>x.startUtc==="2026-10-31T03:00:00Z"),g=S.find(x=>x.startUtc==="2026-11-01T05:30:00Z");
- t(f&&/11:00 PM ET/.test(f.display)&&g&&/Saturday night/.test(g.display)&&/1:30 AM/.test(g.display),"streams: Fri 11 PM ET and Saturday night 1:30 AM stored as explicit UTC (03:00Z, 05:30Z)");
+ const S=site.streams||[],ton=S.find(x=>x.url==="https://www.youtube.com/watch?v=9-eW7sD3Pa0");
+ t(S.length===1&&ton&&ton.startUtc==="2026-11-08T02:00:00Z"&&ton.display==="Saturday night, Nov 7 · 9:00 PM ET"&&ton.title==="Praying the Rosary, then Pokémon + Ocarina LIVE","tonight's stream is Sat Nov 7 at 9:00 PM ET");
+ t(D("2026-11-08T02:00:00Z").toLocaleString("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit",timeZoneName:"short"})==="9:00 PM EST","02:00Z is 9:00 PM EST");
  t(D("2026-11-01T05:30:00Z").toLocaleString("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit",timeZoneName:"short"})==="1:30 AM EDT","05:30Z is 1:30 AM EDT");
- t(L.nextStream(S,D("2026-10-30T20:00:00Z")).startUtc==="2026-10-31T03:00:00Z"&&L.nextStream(S,D("2026-10-31T08:00:00Z")).startUtc==="2026-11-01T05:30:00Z"&&L.nextStream(S,D("2026-11-02T00:00:00Z"))===null,"nextStream picks the upcoming stream and drops past ones");
+ const fix=[{startUtc:"2026-10-31T03:00:00Z",display:"Friday night, Oct 30 · 11:00 PM ET"},{startUtc:"2026-11-01T05:30:00Z",display:"Saturday night's stream · starts 1:30 AM ET"}];
+ t(L.nextStream(fix,D("2026-10-30T20:00:00Z")).startUtc==="2026-10-31T03:00:00Z"&&L.nextStream(fix,D("2026-10-31T08:00:00Z")).startUtc==="2026-11-01T05:30:00Z"&&L.nextStream(fix,D("2026-11-02T00:00:00Z"))===null,"nextStream picks the upcoming stream and drops past ones");
+ t(L.streamForToday(S,D("2026-11-08T01:00:00Z")).url===ton.url&&L.streamForToday(S,D("2026-11-08T07:00:00Z")).url===ton.url&&L.streamForToday(S,D("2026-11-08T11:00:00Z"))===null,"Sat Nov 7 stream stays up through the site-day and drops at 6 AM");
  t(/in 1h 30m$/.test(L.countdown("2026-11-01T05:30:00Z",D("2026-11-01T04:00:00Z"))),"countdown targets 05:30Z");
- t(fs.readFileSync(path.join(__dirname,"index.html"),"utf8").includes('id="stream-panel"'),"home page shows the Next Stream panel");}
+ const hmStream=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
+ t(hmStream.includes('id="stream-panel"')&&hmStream.includes("https://www.youtube.com/watch?v=9-eW7sD3Pa0")&&hmStream.includes("Praying the Rosary, then Pokémon + Ocarina LIVE")&&hmStream.includes("Saturday night, Nov 7 · 9:00 PM ET")&&!/Oct 30/.test(hmStream)&&!/2026-10-31T03:00:00Z/.test(hmStream),"home page shows tonight's stream and not the old next-stream copy");}
 {// Night Prayer (Compline) embedded in every day page: public-domain Douay/CPDV, Universalis kept as the official option
  const CD=require("./data/compline.json"),V=(b,c)=>require("./bible/cpdv/"+b+".json").chapters[c-1],dd=fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x));let good=true;
  for(const d of dd){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),n=h.indexOf('id="night-prayer"'),e=h.indexOf("</section>",n),seg=h.slice(n,e),idx=k=>seg.indexOf(esc(k));
@@ -166,6 +170,10 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  const ho=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
  const ny=L.todayNY(),nr=L.compute(ny,site,books),pretty=(function(d){var p=d.split("-"),M=["January","February","March","April","May","June","July","August","September","October","November","December"];return M[p[1]-1]+" "+(+p[2])+", "+p[0]})(ny);
  t(/NovenaLogic\.compute\(d,SITE,BK\)/.test(ho)&&ho.includes('id="today-text"')&&!/Novena day 50/.test(ho)&&ho.includes("Novena day "+nr.day+" of 54")&&ho.includes('href="day/'+ny+'/"')&&ho.includes("Today's page &middot; "+pretty)&&ho.includes('a.innerHTML="Today\'s page &middot; "'),"home 'Today' panel is computed in the browser (static fallback is current); no stale day");
+ {const a=ho.indexOf('id="latest-episode"'),b=ho.indexOf("https://www.youtube.com/embed/3A509tCcfCw"),c=ho.indexOf("images/episodes/3A509tCcfCw.jpg"),d=ho.indexOf('id="shorts"'),e=ho.indexOf('id="today-link"'),f=ho.indexOf('id="stream-panel"'),g=ho.indexOf('class="ep-chapters"'),s=ho.indexOf('id="lu-slides"');
+  t(a>=0&&a<b&&b<c&&c<d&&d<e&&e<f&&f<g&&g<s,"home leads with the episode embed, v3 thumbnail, three Shorts, today's page, then tonight's stream");
+  t(["TOEhUTqr72M","OjtYTj55CtE","oJChtC1nzao"].every(id=>ho.indexOf("https://www.youtube.com/embed/"+id)>d&&ho.indexOf("https://www.youtube.com/embed/"+id)<e),"the three newest Shorts sit above today's link");}
+ t(ho.includes("Join our Pio's Lost Sheep Discord Server: https://discord.gg/HqXPUEd5JQ")&&ho.includes("Tithe Your Shekels: https://ko-fi.com/pioslostsheep")&&!/\bdonate\b/i.test(ho),"home keeps the Discord and Tithe Your Shekels lines");
  t(/location\.replace\(m\[1\]\+"novena\/\?date="\+m\[2\]\+"#today"\)/.test(nf)&&/noindex/.test(nf),"404.html sends un-built /day/YYYY-MM-DD/ pages to the live Novena page for that date");
  const nvh=fs.readFileSync(path.join(__dirname,"novena/index.html"),"utf8");
  t((ho.match(/class="lu-tile /g)||[]).length===7&&ho.includes('id="channels"')&&ho.includes('href="novena/"')&&(ho.match(/p-[0-9a-f]{24}/g)||[]).length===2&&/<a class="nav-myspace" href="p-[0-9a-f]{24}\/" rel="nofollow">/.test(ho)&&/<a class="lu-tile c-teal" href="p-[0-9a-f]{24}\/" rel="nofollow" id="tile-myspace">/.test(ho),"home has a seven-tile grid; only private link is the nofollow Account tile");

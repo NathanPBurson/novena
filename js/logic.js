@@ -53,12 +53,21 @@
     var l = (streams || []).filter(function (x) { return Date.parse(x.startUtc) + 4 * 36e5 > t; }).sort(function (a, b) { return Date.parse(a.startUtc) - Date.parse(b.startUtc); });
     return l[0] || null;
   }
+  // Home page: the stream scheduled on today's site-day (6 AM New York rollover) stays up after the 4-hour window, until the day rolls.
+  function streamForToday(streams, now) {
+    var n = nextStream(streams, now);
+    if (n) return n;
+    var day = todayNY(now);
+    var t = (streams || []).filter(function (x) { return x && x.startUtc && todayNY(new Date(x.startUtc)) === day; });
+    t.sort(function (a, b) { return Date.parse(b.startUtc) - Date.parse(a.startUtc); });
+    return t[0] || null;
+  }
   function countdown(startUtc, now) {
     var ms = Date.parse(startUtc) - (now ? now.getTime() : Date.now());
     if (ms <= 0) return "Live now / starting";
     var m = Math.floor(ms / 6e4), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60);
     return "in " + (d ? d + "d " : "") + h + "h " + (m % 60) + "m";
   }
-  var api = { nextStream: nextStream, countdown: countdown, ROLLOVER_HOURS: ROLLOVER_HOURS, todayNY: todayNY, compute: compute, addDays: addDays, diffDays: diffDays, nabreLink: nabreLink };
+  var api = { nextStream: nextStream, streamForToday: streamForToday, countdown: countdown, ROLLOVER_HOURS: ROLLOVER_HOURS, todayNY: todayNY, compute: compute, addDays: addDays, diffDays: diffDays, nabreLink: nabreLink };
   if (typeof module !== "undefined") module.exports = api; else root.NovenaLogic = api;
 })(this);
