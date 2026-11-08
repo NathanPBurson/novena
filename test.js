@@ -56,7 +56,7 @@ const home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8");
 for(const s of ["Join our Pio's Lost Sheep Discord Server: https://discord.gg/HqXPUEd5JQ","Tithe Your Shekels: https://ko-fi.com/pioslostsheep","https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live",'href="novena/"','id="today-link"'])t(home.includes(s),"home has "+s);
 t(fs.existsSync(path.join(__dirname,"novena/index.html")),"novena section at /novena/");
 // 4. no trademark branding, fonts licensed, no AI images
-const pub=["index.html","novena/index.html","css/lu.css","css/style.css",...Object.keys(s1).map(d=>`day/${d}/index.html`)].map(f=>fs.readFileSync(path.join(__dirname,f),"utf8")).join("\n").replace(/<div class="lu-hero-art lu-slides"[\s\S]*?<script src="js\/slides\.js/,"<script src=\"js/slides.js");
+const pub=["index.html","novena/index.html","css/lu.css","css/style.css",...Object.keys(s1).map(d=>`day/${d}/index.html`)].map(f=>fs.readFileSync(path.join(__dirname,f),"utf8")).join("\n").replace(/<div class="lu-hero-art lu-slides"[\s\S]*?<script src="js\/slides\.js/,"<script src=\"js/slides.js").replace(/<ol class="ep-shorts"[\s\S]*?<\/ol>/g,"");
 t(!/\bLEGO\b|Ninjago|Nexus Force|Nintendo|\bWii\b|\b3DS\b|Joy-Con/i.test(pub+fs.readFileSync(path.join(__dirname,"css/private.css"),"utf8")),"no LEGO names/trademarks in pages or CSS");
 for(const f of ["Nunito-Variable.ttf","VarelaRound-Regular.ttf","LilitaOne-Regular.ttf"])t(fs.existsSync("fonts/"+f)&&fs.existsSync("fonts/"+f.split(/[-.]/)[0]+"-OFL.txt"),"font "+f+" + OFL license");
 t(site.intention==="the favor I place in your hands","intention unchanged");
@@ -202,9 +202,10 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
   const items=(require("./data/trivia.json").chapters[r.reading.book+":"+r.reading.chapter]||{}).items||[];
   if(!(h.indexOf('id="trivia"')>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&items.length>=2&&items.every(x=>h.includes(esc(x)))))tr=false;}
  t(tr,"trivia section is last content on each day through the Tuesday refill ("+ny+" to "+last+") and matches that day's chapter");
- const ep=require("./data/episodes.json").episodes[0],eh=fs.readFileSync(path.join(__dirname,"episodes/169/index.html"),"utf8"),home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dayh=fs.readFileSync(path.join(__dirname,"day/2026-11-07/index.html"),"utf8");
+ const ep=require("./data/episodes.json").episodes[0],eh=fs.readFileSync(path.join(__dirname,"episodes/169/index.html"),"utf8"),home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dayh=fs.readFileSync(path.join(__dirname,"day/2026-11-07/index.html"),"utf8"),epi=fs.readFileSync(path.join(__dirname,"episodes/index.html"),"utf8");
  const embed='src="https://www.youtube.com/embed/3A509tCcfCw"';
- t(ep.id==="3A509tCcfCw"&&[eh,home,dayh].every(h=>h.includes(embed)&&h.includes(esc(ep.title))&&ep.chapters.every(c=>h.includes(esc(c.title)))&&(h.match(/class="ep-short empty"/g)||[]).length===5&&h.includes("https://discord.gg/HqXPUEd5JQ")&&h.includes("https://ko-fi.com/pioslostsheep")),"Episode 169 embed, chapters, five empty Shorts, and funnel links on the episode page, home, and Nov 7");
+ const posted=(ep.shorts||[]).filter(s=>/^[A-Za-z0-9_-]{11}$/.test(String(s.id||"")));
+ t(ep.id==="3A509tCcfCw"&&[eh,home,dayh,epi].every(h=>h.includes(embed)&&h.includes(esc(ep.title))&&ep.chapters.every(c=>h.includes(esc(c.title)))&&(h.match(/class="ep-short empty"/g)||[]).length===2&&posted.length===3&&posted.every(s=>h.includes('src="https://www.youtube.com/embed/'+s.id+'"')&&h.includes(esc(s.title)))&&h.includes("https://discord.gg/HqXPUEd5JQ")&&h.includes("https://ko-fi.com/pioslostsheep")),"Episode 169 embed, chapters, three published Shorts, two empty slots, and funnel links on the episode page, home, episodes index, and Nov 7");
  t(!/original live|unlisted source/i.test(eh+home+dayh)&&fs.existsSync(path.join(__dirname,"images/episodes/3A509tCcfCw.jpg")),"episode pages stay on the public upload; approved thumbnail is on disk");
 }
 console.log("NY today:",L.todayNY());process.exit(ok?0:1);
