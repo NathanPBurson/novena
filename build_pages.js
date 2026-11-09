@@ -27,12 +27,17 @@ function imgv(f){const p=path.join(R,f);return f+(fs.existsSync(p)?"?v="+require
 const BY=fs.existsSync(path.join(R,"data/biay.json"))?J("data/biay.json"):{chapters:{}};
 // Bible in a Year: Where we are / Reflection / Notes / For prayer / sources, all retold in our own words (Nathan, Oct 24)
 function biay(key){const b=BY.chapters[key];if(!b)return "";const a=(u,t)=>`<a href="${esc(u)}" rel="noopener">${esc(t)}</a>`;
+ // Notes keep CCC + Father + Haydock (tests), then optional multi-source commentary bits (Nathan Nov 9 2026).
+ const extra=(b.bits&&b.bits.length)?b.bits.map(x=>`<li><b>${esc(x.title)}</b> ${esc(x.text)}</li>`).join(""):"";
+ const notes=`<div class="lu-note" data-part="notes"><b>Commentary &amp; notes</b><ul><li><b>Catechism ${b.ccc.n}.</b> ${esc(b.ccc.text)}</li><li><b>${esc(b.father.who)}</b>, <i>${esc(b.father.work)}</i>: ${esc(b.father.text)}</li>${b.haydock.map(h=>`<li><b>Haydock on ${esc(h.ref)}.</b> ${esc(h.text)}</li>`).join("")}${extra}</ul></div>`;
+ const joan=b.joan?`<div class="lu-note" data-part="joan"><b>Joan’s note</b><p>${esc(b.joan)}</p></div>`:"";
+ const more=(b.links&&b.links.length)?(" &middot; "+b.links.map(l=>a(l.url,l.label)).join(" &middot; ")):"";
  return `<section class="lu-panel" id="biay"><div class="lu-tabhead">Bible in a Year &middot; Day ${b.day}</div>`+
  `<div class="lu-note" data-part="where"><b>Where we are</b><p>Day ${b.day} &middot; <i>${esc(b.title)}</i><br>Readings: ${esc(b.readings)}<br>Timeline period: ${esc(b.period)}</p></div>`+
  `<div class="lu-note" data-part="reflection"><b>Reflection</b><p>${esc(b.reflection)}</p></div>`+
- `<div class="lu-note" data-part="notes"><b>Notes</b><ul><li><b>Catechism ${b.ccc.n}.</b> ${esc(b.ccc.text)}</li><li><b>${esc(b.father.who)}</b>, <i>${esc(b.father.work)}</i>: ${esc(b.father.text)}</li>${b.haydock.map(h=>`<li><b>Haydock on ${esc(h.ref)}.</b> ${esc(h.text)}</li>`).join("")}</ul></div>`+
+ notes+joan+
  `<div class="lu-note" data-part="prayer"><b>For prayer</b><p>${esc(b.question)}</p></div>`+
- `<p class="lu-muted" data-part="sources">${esc(BY.credit)} Links: ${a(b.episode,"Episode")} &middot; ${a(BY.plan,"Reading plan")} &middot; ${a("https://www.vatican.va/archive/ENG0015/_INDEX.HTM","Catechism")} &middot; ${a(b.father.url,b.father.who)} &middot; ${b.haydock.map(h=>a(h.url,"Haydock "+h.ref)).join(" &middot; ")}</p></section>`}
+ `<p class="lu-muted" data-part="sources">${esc(BY.credit)} Links: ${a(b.episode,"Episode")} &middot; ${a(BY.plan,"Reading plan")} &middot; ${a("https://www.vatican.va/archive/ENG0015/_INDEX.HTM","Catechism")} &middot; ${a(b.father.url,b.father.who)} &middot; ${b.haydock.map(h=>a(h.url,"Haydock "+h.ref)).join(" &middot; ")}${more}</p></section>`}
 const TR=fs.existsSync(path.join(R,"data/trivia.json"))?J("data/trivia.json"):{chapters:{}};
 function trivia(key,name,ch){const t=TR.chapters[key];if(!t||!t.items||!t.items.length)return "";
  return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><ul class="lu-list">${t.items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></section>`}

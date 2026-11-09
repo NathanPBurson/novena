@@ -4,7 +4,20 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 log=$(mktemp); trap 'rm -f "$log"' EXIT
 fail(){ echo "nightly: $1" >&2; cat "$log" >&2; exit 1; }
-git pull -q --ff-only >"$log" 2>&1 || fail "git pull"
+# Root-cause fix Nov 9 2026: dirty local tree used to abort git pull. Stash any local dirt, pull, then re-apply.
+stashed=0
+if [ -n "$(git status --porcelain)" ]; then
+  git stash push -u -qm "nightly-autostash-$(date +%Y%m%d%H%M%S)" >>"$log" 2>&1 || fail "stash before pull"
+  stashed=1
+fi
+git pull -q --ff-only >>"$log" 2>&1 || fail "git pull"
+if [ "$stashed" = 1 ]; then
+  if ! git stash pop -q >>"$log" 2>&1; then
+    echo "nightly: stash pop had conflicts; keeping stash and continuing with pulled tree" >>"$log"
+    git checkout --theirs . >>"$log" 2>&1 || true
+    git reset -q >>"$log" 2>&1 || true
+  fi
+fi
 args=(); [ "${LOW:-0}" = 1 ] && args+=(--low); [ "${DRY:-0}" = 1 ] && args+=(--dry)
 plan=$(node tools/nightly_fill.js "${args[@]}" 2>>"$log") || fail "plan"
 if [ -n "$plan" ] && [ "${DRY:-0}" != 1 ]; then
@@ -18,5 +31,5 @@ if [ -n "$(git status --porcelain)" ]; then
   git add -A && git commit -qm "nightly: day pages through $(date +%F)" >>"$log" 2>&1 && git push -q origin main >>"$log" 2>&1 || fail "commit/push"
   sleep 60
 fi
-code=$(curl -s -o /dev/null -w '%{http_code}' "https://nathanpburson.github.io/novena/day/$today/") 
+code=$(curl -s -o /dev/null -w '%{http_code}' "https://nathanpburson.github.io/novena/day/$today/")
 [ "$code" = 200 ] || fail "live day page $today returned $code"

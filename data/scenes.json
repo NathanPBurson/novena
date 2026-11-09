@@ -406,7 +406,7 @@
   },
   {
    "ref": "exo:12",
-   "after": 22,
+   "after": 20,
    "scene": "Hyssop dipped in the lamb's blood marks the doorposts",
    "art": [
     "File:Tissot Drawing 128 The sign on the door (Exodus 12 22) for Brunoff 120 Les signes sur la porte.jpg"
@@ -439,7 +439,7 @@
   },
   {
    "ref": "exo:14",
-   "after": 8,
+   "after": 10,
    "scene": "Pharaoh's chariots pursue the Israelites to the sea",
    "art": [
     "File:Tissot Drawing 129 Pharaoh pursues the Israelites (Exodus 14 7) for Brunoff 123 Pharaon poursuit les Israélites.jpg"
@@ -450,7 +450,7 @@
   },
   {
    "ref": "exo:14",
-   "after": 22,
+   "after": 20,
    "scene": "The waters part and Israel walks through on dry ground",
    "art": [
     "File:Tissot Drawing 130 The waters are divided (Exodus 14 22) for Brunoff 124 Les eaux s'entr'ouvrent.jpg"
@@ -461,7 +461,7 @@
   },
   {
    "ref": "exo:14",
-   "after": 28,
+   "after": 30,
    "scene": "The sea returns over Pharaoh's army",
    "art": [
     "File:Tissot Drawing 131 The Egyptians are destroyed (Exodus 14 28) for Brunoff 125 L'armée égyptienne engloutie.jpg"
@@ -483,7 +483,7 @@
   },
   {
    "ref": "exo:16",
-   "after": 13,
+   "after": 10,
    "scene": "Quails cover the camp at evening",
    "art": [
     "File:Tissot Drawing 135 Quails are sent to the Israelites (Exodus 16 13) for Brunoff 127 Les cailles.jpg"
@@ -494,7 +494,7 @@
   },
   {
    "ref": "exo:16",
-   "after": 17,
+   "after": 20,
    "scene": "The people gather the manna each morning",
    "art": [
     "File:Tissot Drawing 132 The gathering of the manna (Exodus 16 17) for Brunoff 128 La récolte de la manne.jpg"
@@ -505,25 +505,98 @@
   },
   {
    "ref": "exo:17",
-   "after": 6,
-   "scene": "Moses strikes the rock at Horeb and water flows",
-   "art": [
-    "File:Tissot Drawing 133 Moses smites the rock in the desert (Exodus 17 6) for Brunoff 129 L'eau sortant du rocher.jpg"
-   ],
-   "callout": "“Thou shalt strike the rock, and water shall come out of it” · 17:6",
-   "image": "images/scenes/exo-17-6.jpg",
-   "pop": true
-  },
-  {
-   "ref": "exo:17",
-   "after": 12,
+   "after": 10,
    "scene": "Aaron and Hur hold up Moses' hands during the battle with Amalec",
    "art": [
     "File:Tissot Drawing 136 Moses on the mountain during the battle (Exodus 17 12) for Brunoff 130 Moïse pendant la bataille.jpg"
    ],
-   "callout": "“When Moses lifted up his hands, Israel overcame” · 17:11",
+   "callout": "“His hands were not weary until sunset” · 17:12",
    "image": "images/scenes/exo-17-12.jpg",
    "pop": true
+  },
+  {
+   "ref": "exo:13",
+   "after": 10,
+   "scene": "The Lord claims every firstborn as Israel leaves Egypt",
+   "callout": "“Sanctify unto me every firstborn that openeth the womb” · 13:2",
+   "art": [
+    "File:Tissot Drawing 127 The Exodus (Exodus 13 22) for Brunoff 122 L'Exode.jpg"
+   ],
+   "image": "images/scenes/exo-13-20.jpg",
+   "pop": true,
+   "reused": true
+  },
+  {
+   "ref": "exo:15",
+   "after": 10,
+   "scene": "Israel sings the Song of the Sea",
+   "callout": "“Let us sing to the Lord, for he has been gloriously magnified” · 15:1",
+   "art": [
+    "File:Miriam, the golden Haggadah.jpg"
+   ],
+   "image": "images/scenes/exo-15-20.jpg",
+   "pop": true,
+   "reused": true
+  },
+  {
+   "ref": "exo:16",
+   "after": 30,
+   "scene": "On the sixth day they gather a double portion for the sabbath",
+   "callout": "“Tomorrow is the rest of the sabbath sanctified to the Lord” · 16:23",
+   "art": [
+    "File:Tissot Drawing 132 The gathering of the manna (Exodus 16 17) for Brunoff 128 La récolte de la manne.jpg"
+   ],
+   "image": "images/scenes/exo-16-17.jpg",
+   "pop": true,
+   "reused": true
+  },
+  {
+   "ref": "exo:18",
+   "after": 10,
+   "scene": "Jethro brings Zipporah and the sons to Moses",
+   "callout": "“I thy kinsman Jethro come to thee” · 18:6",
+   "art": [
+    "File:Tissot Drawing 136 Moses on the mountain during the battle (Exodus 17 12) for Brunoff 130 Moïse pendant la bataille.jpg"
+   ],
+   "image": "images/scenes/exo-17-12.jpg",
+   "pop": true,
+   "reused": true
+  },
+  {
+   "ref": "exo:18",
+   "after": 20,
+   "scene": "Jethro advises Moses to appoint able men over the people",
+   "callout": "“Provide out of all the people able men” · 18:21",
+   "art": [
+    "File:Tissot Drawing 136 Moses on the mountain during the battle (Exodus 17 12) for Brunoff 130 Moïse pendant la bataille.jpg"
+   ],
+   "image": "images/scenes/exo-17-12.jpg",
+   "pop": true,
+   "reused": true
+  },
+  {
+   "ref": "exo:12",
+   "after": 40,
+   "scene": "A mixed multitude goes up with them; they bake unleavened cakes",
+   "callout": "“And the people baked meal which they brought out of Egypt as unleavened loaves” · 12:39",
+   "art": [
+    "File:Tissot Drawing 126 Pharaoh and his dead son (Exodus 12 31) for Brunoff 121 Pharaon et son fils mort.jpg"
+   ],
+   "image": "images/scenes/exo-12-30.jpg",
+   "pop": true,
+   "reused": true
+  },
+  {
+   "ref": "exo:12",
+   "after": 50,
+   "scene": "All the hosts of the Lord go forth from Egypt by night",
+   "callout": "“The same night of the Lord is a careful observance to all the children of Israel” · 12:42",
+   "art": [
+    "File:Tissot Drawing 120 The Jews' Passover (Exodus 12 11) for Brunoff 119 La pâque des Juifs.jpg"
+   ],
+   "image": "images/scenes/exo-12-10.jpg",
+   "pop": true,
+   "reused": true
   }
  ]
 }
