@@ -22,12 +22,26 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
+  "homeShorts": [
+    {
+      "id": "S7HDtltv2Qc",
+      "title": "ST. IGNATIUS: Why Did Reformers Call Him Fake News?"
+    },
+    {
+      "id": "D4vyUFkmii4",
+      "title": "BAD CHRISTIANS: Do They Serve Mephisto When They Diss Marvel?"
+    },
+    {
+      "id": "fexnXol2UMI",
+      "title": "BISHOP BARRON — \"No Clue.\" Thousands of Downvotes"
+    }
+  ],
   "streams": [
     {
-      "startUtc": "2026-11-11T02:00:00Z",
-      "label": "Tonight's stream (Tue Nov 10)",
-      "display": "Tuesday night, Nov 10 · 9:00 PM ET (usual time; no YouTube premiere is scheduled)",
+      "startUtc": "2026-11-12T02:00:00Z",
+      "label": "Tonight's stream (Wed Nov 11)",
+      "display": "Wednesday night, Nov 11 · 9:00 PM ET (usual time; no YouTube premiere is scheduled)",
       "title": "Watch live on YouTube",
       "url": "https://www.youtube.com/channel/UCSadxDY_Q3o_ELwXacDTP6A/live"
     }

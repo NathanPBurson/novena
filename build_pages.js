@@ -45,13 +45,15 @@ function loadEpisodes(){const p=path.join(R,"data/episodes.json");if(!fs.existsS
 function tsSec(t){const p=String(t||"0").split(":").map(n=>+n||0);return p.length>=3?p[0]*3600+p[1]*60+p[2]:p.length===2?p[0]*60+p[1]:p[0];}
 function episodeHtml(ep,root,opts){opts=opts||{};const id=String(ep.id).trim(),watch="https://www.youtube.com/watch?v="+id;
  const ch=(ep.chapters||[]).map(c=>`<li><a href="${watch}&amp;t=${tsSec(c.t)}s" rel="noopener"><time datetime="PT${tsSec(c.t)}S">${esc(c.t)}</time> ${esc(c.title)}</a></li>`).join("");
- let slots=Array.isArray(ep.shorts)?ep.shorts.slice():[];while(slots.length<5)slots.push({n:slots.length+1});
+ const override=Array.isArray(opts.shorts)?opts.shorts.slice():null;
+ let slots=override||(Array.isArray(ep.shorts)?ep.shorts.slice():[]);if(!override)while(slots.length<5)slots.push({n:slots.length+1});
+ const shortsNote=override?(opts.shortsNote||"Newest Shorts on the channel."):"Five Shorts from this episode will go in these slots.";
  const shorts=slots.map((s,i)=>{const n=s.n||i+1,sid=String(s.id||"").trim();
   if(!/^[A-Za-z0-9_-]{11}$/.test(sid))return `<li class="ep-short empty" data-short="${n}"><span class="ep-short-slot" aria-hidden="true"></span><b>Short ${n}</b><span class="lu-muted">Empty — add later</span></li>`;
   return `<li class="ep-short" data-short="${n}"><div class="ep-player ep-short-player"><iframe src="https://www.youtube.com/embed/${sid}" title="${esc(s.title||"Short "+n)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><b>${esc(s.title||"Short "+n)}</b></li>`;}).join("");
  const thumb=ep.thumb?`<figure class="ep-thumb"><img src="${root}${imgv(ep.thumb)}" alt="${esc(ep.title)}" width="1280" height="720"></figure>`:"";
  const more=opts.permalink?"":`<a class="lu-btn" href="${root}episodes/${ep.number}/">Episode page</a>`;
- const shortsBlock=`<h3 class="lu-step" id="shorts">Shorts</h3><p class="lu-muted">Five Shorts from this episode will go in these slots.</p><ol class="ep-shorts" data-slots="5">${shorts}</ol>`;
+ const shortsBlock=`<h3 class="lu-step" id="shorts">Shorts</h3><p class="lu-muted">${esc(shortsNote)}</p><ol class="ep-shorts" data-slots="${slots.length}">${shorts}</ol>`;
  const summary=`<div class="lu-note" data-part="summary"><b>Summary</b><p>${esc(ep.summary||"")}</p></div>
 <p class="ep-tags"><span class="lu-chip">Games</span> ${esc((ep.games||[]).join(", "))}</p>
 <p class="ep-tags"><span class="lu-chip">Topics</span> ${esc((ep.topics||[]).join(", "))}</p>
@@ -150,7 +152,9 @@ function streamPanel(){const s=L.streamForToday(site.streams||[]);if(!s)return `
  const link=s.url?`<p><a class="lu-btn red" id="stream-link" href="${esc(s.url)}" rel="noopener">${esc(s.title||s.display||"Watch the stream")}</a></p>`:"";
  return `<section class="lu-panel" id="stream-panel"><div class="lu-tabhead">Tonight's Stream</div><p id="stream-text">${esc(s.display||"")}</p>${link}<p class="lu-muted" id="stream-count"></p></section>`}
 const afterShorts=`<section class="lu-panel" id="front-today"><p><a class="lu-btn gold" id="today-link" href="day/${today}/">Today's page &middot; ${esc(fmt(today))}</a></p></section>${streamPanel()}`;
-const LEP=loadEpisodes()[0],latestBlock=LEP?'<div id="latest-episode">'+episodeHtml(LEP,"",{anchor:true,front:true,afterShorts})+'</div>':"";
+const homeShorts=(site.homeShorts||[]).filter(s=>s&&/^[A-Za-z0-9_-]{11}$/.test(String(s.id||"")));
+const frontOpts={anchor:true,front:true,afterShorts};if(homeShorts.length){frontOpts.shorts=homeShorts;frontOpts.shortsNote="Newest Shorts on the channel.";}
+const LEP=loadEpisodes()[0],latestBlock=LEP?'<div id="latest-episode">'+episodeHtml(LEP,"",frontOpts)+'</div>':"";
 fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`${latestBlock}<section class="lu-panel lu-hero">${slidesHtml()}<div class="lu-hero-text"><div class="lu-kicker">Welcome, Lost Sheep</div><h1>Pio's Lost Sheep</h1><p>Pray, read Scripture one chapter a day, and gather with us live.</p>
 <p><a class="lu-btn" href="novena/">54 Day Rosary Novena</a></p></div></section>
 <section class="lu-panel" id="channels"><div class="lu-tabhead">Channels</div><div class="lu-channels">
