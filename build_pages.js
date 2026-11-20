@@ -1,11 +1,13 @@
-// Pio's Lost Sheep static page generator. Usage: node build_pages.js [--from YYYY-MM-DD] [--days 7]
-// Builds /day/YYYY-MM-DD/index.html for today (America/New_York) through +7 days, the home page (/index.html)
-// and /day/index.html. Idempotent: pages are fully rewritten each run; older day pages are kept.
+// Pio's Lost Sheep static page generator. Usage: node build_pages.js [--from YYYY-MM-DD] [--days 21]
+// Builds /day/YYYY-MM-DD/index.html from --from (default: today, America/New_York, 6 AM rollover)
+// through that many days ahead, the home page (/index.html) and /day/index.html.
+// Idempotent: pages are fully rewritten each run; older day pages are kept.
+// Default runway is 21 days so a plain rebuild does not stop a week out.
 const fs=require("fs"),path=require("path"),L=require("./js/logic.js");
 const R=__dirname,J=f=>JSON.parse(fs.readFileSync(path.join(R,f)));
 const site=J("data/site.json"),C=J("data/content.json"),SC=J("data/scenes.json").scenes,ART=J("data/art_meta.json"),CR=J("data/art_credits.json"),NT=J("data/novena_traditional.json");
 const a=process.argv.slice(2),arg=(k,d)=>{const i=a.indexOf(k);return i>=0?a[i+1]:d};
-const from=arg("--from",L.todayNY()),ahead=+arg("--days",7);
+const from=arg("--from",L.todayNY()),ahead=+arg("--days",21);
 const GV=(()=>{try{return require("child_process").execSync("git rev-parse --short HEAD",{cwd:R}).toString().trim()}catch(e){return "dev"}})(); // commit short hash for cache busting
 const VA_=require("crypto").createHash("sha1").update(["css/lu.css","css/style.css","js/logic.js","js/app.js","js/compline.js"].map(f=>fs.readFileSync(path.join(R,f))).join("")).digest("hex").slice(0,10),VA=GV; // asset cache-bust = commit hash
 const byId={};C.books.forEach(b=>byId[b.id]=b);

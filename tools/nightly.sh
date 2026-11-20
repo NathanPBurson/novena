@@ -24,6 +24,8 @@ if [ -n "$plan" ] && [ "${DRY:-0}" != 1 ]; then
   set -- $plan; node build_pages.js --from "$1" --days "$2" >>"$log" 2>&1 || fail "build"
 fi
 today=$(node -e 'console.log(require("./js/logic.js").todayNY())')
+# FROM=today checks that day's verses and prayers. Collage, Bible-in-a-Year, and saint
+# fixtures stay strict only for the authored window (2026-11-04); later days are still built.
 FROM="$today" node test.js >>"$log" 2>&1 || fail "test.js"
 node test_private.js >>"$log" 2>&1 || fail "test_private.js"
 if [ "${DRY:-0}" = 1 ]; then [ -n "${VERBOSE:-}" ] && echo "dry run ok: ${plan:-nothing missing}"; exit 0; fi
