@@ -233,12 +233,24 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(/id="today-flag" hidden/.test(oh),other+" is not marked today");
  let onlyToday=true;for(const d of days){const marked=/id="today-flag"(?! hidden)/.test(fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"));if(marked!==(d===ny))onlyToday=false;}
  t(onlyToday,"only "+ny+" is marked Today");
- let tr=true;for(let d=ny;d<=lastBuilt;d=L.addDays(d,1)){const p=path.join(__dirname,"day",d,"index.html");
-  if(!fs.existsSync(p)){tr=false;continue;}
-  const h=fs.readFileSync(p,"utf8"),r=L.compute(d,site,books);
-  const items=(require("./data/trivia.json").chapters[r.reading.book+":"+r.reading.chapter]||{}).items||[];
-  if(!(h.indexOf('id="trivia"')>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&items.length>=2&&items.every(x=>h.includes(esc(x)))))tr=false;}
- t(tr,"trivia section is last content on each prebuilt day from "+ny+" through "+lastBuilt+" and matches that day's chapter");
+ const TF=require("./tools/trivia_format.js"),chapters=require("./data/trivia.json").chapters;
+ const block=(name,ch,entry)=>{const p=TF.ready(entry);if(!p)return "";
+  return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><div class="lu-note" data-part="background"><b>Background</b><ul>${p.background.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></div><div class="lu-note" data-part="questions"><b>Discussion Questions</b><ol>${p.questions.map(x=>"<li>"+esc(x)+"</li>").join("")}</ol></div></section>`;};
+ const sample={background:["One detail.","Two detail.","Three detail."],questions:["What do you see?","Where does this lead?"]};
+ t(TF.ready({items:["a","b","c"]})===null&&TF.ready({background:["a","b"],questions:["Q?","Q?"]})===null&&TF.html(sample,"Exodus",13,esc)===block("Exodus",13,sample),"trivia generator accepts only background details plus discussion questions");
+ let tr=true,seen=0,quoted=true;for(const d of days){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
+  const entry=chapters[r.reading.book+":"+r.reading.chapter],html=block(r.reading.name,r.reading.chapter,entry);
+  const at=h.indexOf('id="trivia"'),sec=at<0?"":h.slice(at,h.indexOf("</section>",at)),after=at<0?"":h.slice(h.indexOf("</section>",at)+10).split("<script")[0];
+  const cpdv=fs.readFileSync(path.join(__dirname,"bible/cpdv",r.reading.book+".json"),"utf8");
+  const verses=JSON.parse(cpdv).chapters[r.reading.chapter-1].join("\n");
+  if(entry&&entry.background) for(const q of [...entry.background.join("\n").matchAll(/“([^”]+)”/g)].map(m=>m[1])) if(!verses.includes(q)) quoted=false;
+  if(!(TF.ready(entry)&&h.includes(html)&&sec.includes('data-part="background"')&&sec.includes('data-part="questions"')&&at>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&!/<section[\s>]/.test(after)&&(h.match(/<section class="lu-panel" id="trivia">/g)||[]).length===1&&!sec.includes('<ul class="lu-list">')))tr=false;else seen++;}
+ t(tr&&quoted&&seen>=1,"trivia on every day page is background (3–4) plus discussion questions (2–3), last, headed Trivia · book chapter, with CPDV quotes ("+seen+" pages)");
+ let windowOk=true;for(let d=ny;d<=lastBuilt;d=L.addDays(d,1)){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
+  if(!h.includes(block(r.reading.name,r.reading.chapter,chapters[r.reading.book+":"+r.reading.chapter])))windowOk=false;}
+ t(windowOk,"trivia section is last content on each prebuilt day from "+ny+" through "+lastBuilt+" and matches that day's chapter");
+ const nf=fs.readFileSync(path.join(__dirname,"tools/nightly_fill.js"),"utf8");
+ t(/MIN_AHEAD=21/.test(nf)&&/triviaReady\(/.test(nf)&&/break/.test(nf),"nightly fill keeps a 21-day runway and will not plan a day that lacks background plus discussion questions");
  const ep=require("./data/episodes.json").episodes[0],eh=fs.readFileSync(path.join(__dirname,"episodes/169/index.html"),"utf8"),home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dayh=fs.readFileSync(path.join(__dirname,"day/2026-11-07/index.html"),"utf8"),epi=fs.readFileSync(path.join(__dirname,"episodes/index.html"),"utf8");
  const embed='src="https://www.youtube.com/embed/3A509tCcfCw"';
  const posted=(ep.shorts||[]).filter(s=>/^[A-Za-z0-9_-]{11}$/.test(String(s.id||"")));

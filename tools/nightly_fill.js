@@ -1,8 +1,10 @@
 // Plain nightly helper (no model, no network). Usage: node tools/nightly_fill.js [--low] [--dry]
 // Prints "FROM DAYS" for missing day pages through the next Tuesday refill, and at least MIN_AHEAD days past today
-// (or just tomorrow with --low). Stops before the first chapter that does not yet have trivia, so a page is never
-// planned without it. Gives any missing chapter a reused collage by cloning an existing scene (same painting, same credits, image already in the repo).
+// (or just tomorrow with --low). Stops before a chapter that lacks the trivia shape: 3–4 background details and
+// 2–3 discussion questions (tools/trivia_format.js), so a page is never planned without it.
+// Gives any missing chapter a reused collage by cloning an existing scene (same painting, same credits, image already in the repo).
 const fs=require("fs"),path=require("path"),R=path.join(__dirname,".."),L=require(R+"/js/logic.js"),J=f=>JSON.parse(fs.readFileSync(path.join(R,f)));
+const triviaReady=require("./trivia_format.js").ready;
 const MIN_AHEAD=21;
 const low=process.argv.includes("--low"),dry=process.argv.includes("--dry"),site=J("data/site.json"),C=J("data/content.json"),SCf=path.join(R,"data/scenes.json"),SCJ=J("data/scenes.json");
 const TR=J("data/trivia.json").chapters;
@@ -10,8 +12,8 @@ const today=L.todayNY(),dow=new Date(today+"T12:00:00Z").getUTCDay(),toTue=((2-d
 const missing=[];
 for(let d=today;d<=last;d=L.addDays(d,1)){
  if(fs.existsSync(path.join(R,"day",d,"index.html")))continue;
- const r=L.compute(d,site,C.books).reading,items=(TR[r.book+":"+r.chapter]&&TR[r.book+":"+r.chapter].items)||[];
- if(items.length<2)break;
+ const r=L.compute(d,site,C.books).reading;
+ if(!triviaReady(TR[r.book+":"+r.chapter]))break;
  missing.push(d);
 }
 if(!missing.length){process.exit(0)}
