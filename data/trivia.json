@@ -1,235 +1,659 @@
 {
- "_comment": "Short facts taken from the chapter the day page reads (CPDV). Keyed by book:chapter so the section stays with the reading, not a stale date.",
+ "_comment": "Trivia on the day page (Nathan, Nov 20): a Background of 3 or 4 details and 2 or 3 Discussion Questions. Background adds history, custom, geography, or a Catholic reading (typology, the Mass, the sacraments). Quoted scripture is the CPDV. Keyed by book:chapter.",
  "chapters": {
   "gen:48": {
-   "items": [
-    "Joseph brings his sons Manasseh and Ephraim to Jacob when he hears that his father is sick.",
-    "Jacob crosses his hands: the right hand rests on Ephraim, the younger, and the left on Manasseh, the elder.",
-    "Joseph tries to move the right hand onto the firstborn. Jacob refuses, and he sets Ephraim ahead of Manasseh."
+   "background": [
+    "Jacob is in Egypt, near death, when Joseph brings Manasseh and Ephraim. Jacob adopts them: “Ephraim and Manasseh will be treated by me just like Reuben and Simeon” so Joseph’s line receives a double portion among the tribes.",
+    "The blessing is given with crossed hands. Jacob “placed it over the head of Ephraim, the younger brother, but the left hand was on the head of Manasseh,” and “his hands were crossed.” Catholic preaching has long seen in that crossing a quiet figure of the Cross, by which the lesser is set ahead.",
+    "Joseph tries to correct his father. Jacob refuses: “I know, my son, I know” and says “his younger brother will be greater than he.” God often chooses the younger, as with Jacob himself, and the Church reads that pattern toward Christ, who is first by being the servant of all."
+   ],
+   "questions": [
+    "Jacob says “I know, my son, I know,” and will not uncross his hands. Where have you tried to correct God’s order, and what would it mean to trust him instead?",
+    "Ephraim is placed before the firstborn. How does the Gospel treat the one who seems lesser, and where do we still insist on being first?",
+    "Israel blesses two boys born in Egypt as his own sons. Who has God grafted into your family of faith that you did not expect?"
    ]
   },
   "gen:49": {
-   "items": [
-    "Jacob calls his sons and speaks a word over each of the twelve.",
-    "Reuben, the firstborn, is called the beginning of his sorrow. Simeon and Levi are divided because of their violence.",
-    "Of Judah he says the scepter will not be taken away until the one who will be sent arrives, the expectation of the Gentiles."
+   "background": [
+    "Jacob gathers his sons to “announce what will happen to you in the last days.” The Church reads this chapter as more than a family farewell: it is a prophecy over the twelve tribes, spoken at the edge of the grave.",
+    "Reuben, the firstborn, is called “the beginning of my sorrow”. Simeon and Levi are divided because they are “vessels of iniquity waging war.” Privilege and violence do not secure the blessing.",
+    "The heart of the chapter is Judah: “The scepter from Judah and the leader from his thigh will not be taken away, until he who will be sent arrives, and he will be the expectation of Gentiles.” Christian tradition, following the wording of the Latin Bible, hears this of Christ, the son of Judah and the hope of the nations.",
+    "Joseph is called “a pastor, the stone of Israel.” The Church knows Christ as the Good Shepherd and the cornerstone, and she hears those titles already stirring in Israel’s blessing of the son who suffered and then fed the people."
+   ],
+   "questions": [
+    "Jacob blesses and he also judges. How can a father’s last words be both honest about sin and full of hope?",
+    "“The expectation of Gentiles” is said of the one who comes from Judah. Where do you see Christ drawing people who were never part of Israel’s family?",
+    "If you were in that room, which brother’s word would you most need to hear, and why?"
    ]
   },
   "gen:50": {
-   "items": [
-    "Jacob is carried to Canaan and buried in the double cave Abraham bought from Ephron the Hittite, opposite Mamre.",
-    "Joseph tells his brothers, “You devised evil against me. But God turned it into good,” so that many peoples would be saved.",
-    "Before he dies, Joseph makes the sons of Israel swear to carry his bones with them when God visits them."
+   "background": [
+    "Joseph buries Jacob in Canaan, “in the double cave, which Abraham had bought” from Ephron the Hittite, opposite Mamre. The patriarchs die still clinging to the promise of the land, even while the family lives in Egypt.",
+    "The brothers fear revenge once their father is dead. Joseph says, “You devised evil against me. But God turned it into good,” so that many peoples would be saved. The Catechism teaches that God is never the cause of moral evil, yet he knows how to draw good from the evil he permits.",
+    "Before Joseph dies at one hundred and ten, he makes Israel swear, “God will visit you; carry my bones with you from this place”. Hebrews later remembers this oath as faith: Joseph looked ahead to the exodus God would work."
+   ],
+   "questions": [
+    "Joseph does not say the evil was not evil. He says God turned it into good. How is that different from pretending a wound never happened?",
+    "What would it look like, in your own family, to forgive without denying the truth of what was done?",
+    "Joseph wants his bones carried out when God visits Israel. What promise are you holding that you may not see fulfilled in your lifetime?"
    ]
   },
   "exo:1": {
-   "items": [
-    "A new king arises over Egypt who is ignorant of Joseph.",
-    "The Hebrew midwives are named Shiphrah and Puah. They fear God and let the boys live.",
-    "Pharaoh then orders every newborn Hebrew son to be thrown into the river."
+   "background": [
+    "A new king “who was ignorant of Joseph” turns the guest-people into slaves. Forgetting the one who saved Egypt becomes the start of the oppression.",
+    "The midwives are named, Shiphrah and Puah, while Pharaoh is not. Scripture names the choice: “the midwives feared God, and so they did not act according to the precept of the king of Egypt, but they kept the males safe”. The Church has always taught that an unjust law commanding the killing of the innocent must not be obeyed.",
+    "Pharaoh then instructs all his people: “Whatever will be born of the male sex, cast it into the river”. The order is aimed at the boys. He is trying to stop a people God is about to raise up."
+   ],
+   "questions": [
+    "The midwives fear God more than Pharaoh. Where are you tempted to call a command “just following orders” when a life is at stake?",
+    "Why do you think Scripture records the midwives’ names and leaves this Pharaoh unnamed?",
+    "Israel grows under the whip. How have you seen God increase what someone meant to crush?"
    ]
   },
   "exo:2": {
-   "items": [
-    "When his mother can no longer hide him, she lays Moses in a basket of bulrushes smeared with pitch and tar.",
-    "Pharaoh’s daughter finds the basket among the papyruses. Moses later flees to Midian and marries Zipporah.",
-    "Their son is named Gershom, “for I have been a newcomer in a foreign land.”"
+   "background": [
+    "When his mother can no longer hide him, she lays him in “a small basket woven of bulrushes,” smeared with pitch and tar, among the reeds of the Nile. The river that was ordered to drown the boys becomes the way this boy is saved.",
+    "Pharaoh’s daughter finds him and names him Moses, “Because I took him from the water.” Acts 7 retells this so the Church will see Moses as the deliverer God prepared, a pattern fulfilled in Christ.",
+    "Moses flees to Midian, sits by a well, and names his son Gershom: “I have been a newcomer in a foreign land.” The future lawgiver spends years as a stranger and a shepherd before God sends him back."
+   ],
+   "questions": [
+    "Moses is saved by the daughter of the man who ordered his death. Where have you seen God use an unexpected person as a protector?",
+    "Gershom’s name means Moses still feels like a foreigner. Where do you feel like a newcomer, and what might God be doing with that?",
+    "Moses acts in anger, then runs. What is the difference between zeal for justice and a zeal you have to repent of?"
    ]
   },
   "exo:3": {
-   "items": [
-    "The Lord appears to Moses in a flame of fire from the midst of a bush that burns and is not burnt.",
-    "He calls, “Moses, Moses,” and says he is the God of Abraham, Isaac, and Jacob. Moses hides his face.",
-    "When Moses asks his name, God says, “I AM WHO AM,” and tells him to say, “HE WHO IS has sent me to you.”"
+   "background": [
+    "At Horeb, “the bush was burning and was not burnt.” God calls, “Moses, Moses” and says, “remove the shoes from your feet. For the place on which you stand is holy ground.” Catholic piety has long taken that bush as a figure of the Virgin Mary, who bore the Son of God and was not consumed.",
+    "God names himself by the patriarchs, “the God of Abraham, the God of Isaac, and the God of Jacob,” and then gives the name Israel will carry forever: “I AM WHO AM” and “HE WHO IS has sent me to you.” The Church confesses that this is the one God, not a local god of the mountain.",
+    "The same God who says “I AM” also says he has seen the affliction of his people and has come down to free them. The divine name and the exodus belong together: the One who simply is, is the One who saves."
+   ],
+   "questions": [
+    "Moses hides his face. What would it mean for you to treat prayer as holy ground, and not as a place you rush into with your shoes still on?",
+    "God says both “I AM WHO AM” and “I have seen my people’s misery.” How do those two truths keep you from making God either distant or small?",
+    "Where is a “bush” in your life that you need to turn aside to see, instead of walking past?"
    ]
   },
   "exo:4": {
-   "items": [
-    "Moses says he is not eloquent. The Lord gives him Aaron, his brother, to speak for him.",
-    "On the way, Zipporah circumcises their son with a sharp stone and says, “You are a bloody spouse to me.”",
-    "Aaron meets Moses. They gather the elders, Aaron speaks the words of the Lord, and the people believe."
+   "background": [
+    "Moses objects, “I was not eloquent” and “I have a greater impediment and slowness of tongue.” God does not deny the weakness. He gives Aaron, “I know that he is eloquent” to speak for his brother. The Church’s mission has always used both the hesitant and the gifted.",
+    "On the road, Zipporah circumcises their son with a sharp stone and says, “You are a bloody spouse to me.” Circumcision was the sign of Abraham’s covenant. St. Paul teaches that this cutting of the flesh is fulfilled in the circumcision of Christ, which Baptism applies to the believer.",
+    "Aaron meets Moses at the mountain of God. They gather the elders, Aaron speaks, “and the people believed” and they worship because the Lord has visited them. Faith here begins as believing that God has seen their affliction."
+   ],
+   "questions": [
+    "Moses argues with God about his mouth. What weakness do you keep offering as a reason not to obey, and what help might God already have placed beside you?",
+    "The covenant sign in this chapter is blood. Why does belonging to God cost something, and how does Baptism tell the truth about that cost without repeating it?",
+    "The people believe and fall down in worship. What would it take for you to move from hearing a promise to actually worshiping?"
    ]
   },
   "exo:5": {
-   "items": [
-    "Moses and Aaron tell Pharaoh that the Lord says, “Release my people.” Pharaoh answers that he does not know the Lord.",
-    "The king stops giving chaff for the bricks and still demands the same quota. The people have to gather straw themselves.",
-    "The foremen are scourged for missing the quota. They tell Moses and Aaron, “You have caused our odor to become foul before Pharaoh.”"
+   "background": [
+    "Moses and Aaron speak in the Lord’s name: “Release my people, so that they may sacrifice to me in the desert.” Pharaoh answers, “I do not know the Lord, and I will not release Israel.” The fight is about worship before it is about labor.",
+    "The king stops the chaff and still demands the same bricks: “You shall no longer give chaff to the people to form bricks, as before.” Oppression tightens the moment freedom is asked for. The foremen are scourged for missing the quota.",
+    "The foremen tell Moses and Aaron, “you have caused our odor to become foul before Pharaoh”. The first act of obedience makes life harder. Scripture does not hide that. Deliverance is not instant."
+   ],
+   "questions": [
+    "Pharaoh says “I do not know the Lord.” What does it look like when a person, or a culture, refuses the true God and then calls the believers the problem?",
+    "Have you ever obeyed God and found that things got worse before they got better? What kept you, or what made you want to quit?",
+    "The people want to worship, and Pharaoh wants bricks. Where does the demand for output crowd out prayer in your week?"
    ]
   },
   "exo:6": {
-   "items": [
-    "The Lord tells Moses, “I am the Lord,” and says he has remembered his covenant with Abraham, Isaac, and Jacob.",
-    "He promises to lead Israel out from the work house of the Egyptians and to take them as his people.",
-    "Moses explains this to the sons of Israel. They do not agree with him, because of their anguish of spirit and very difficult work."
+   "background": [
+    "God answers the setback by giving his name again: “I am the Lord who will lead you away from the work house of the Egyptians,” and “I will take you to myself as my people, and I will be your God.” That covenant sentence runs through the prophets and is fulfilled when God dwells with his people in Christ.",
+    "Moses explains this, and the sons of Israel “did not agree with him, because of their anguish of spirit and very difficult work.” Crushing labor can make a true promise sound impossible. The chapter is honest about that.",
+    "Moses then says he is “of uncircumcised lips”. He still does not see how Pharaoh will listen. God does not replace him. He sends the man who knows he cannot speak."
+   ],
+   "questions": [
+    "“I will be your God” is said to people who cannot hear it yet. How do you speak a promise to someone who is too tired to believe it?",
+    "Where has “anguish of spirit and very difficult work” made it hard for you to trust God?",
+    "Moses calls his own lips uncircumcised, unfit for the covenant. What part of you feels unfit for the work God has named?"
    ]
   },
   "exo:7": {
-   "items": [
-    "Aaron’s staff becomes a serpent and devours the staffs of Pharaoh’s sorcerers.",
-    "The water of the river is struck and turned into blood. The fish die, and the Egyptians cannot drink it.",
-    "The sorcerers do the same by their incantations. Seven days pass after the Lord strikes the river."
+   "background": [
+    "Aaron’s staff becomes a serpent “in the sight of Pharaoh” and “the staff of Aaron devoured their staffs.” Egypt’s magicians can imitate the sign. They cannot survive it. God’s power is not one trick among others.",
+    "The Nile, which Egypt worshiped as the source of life, “was turned into blood.” The fish die and the people cannot drink. The Lord strikes the thing the nation trusted in place of him.",
+    "“the sorcerers of the Egyptians, with their incantations, did similarly” and Pharaoh’s heart stays hard. A copied miracle does not produce repentance. The Church reads the plagues as the true God judging the gods of Egypt, as he later says in the Passover chapter."
+   ],
+   "questions": [
+    "The magicians can mimic the sign and still not know God. Where do you see a counterfeit that looks religious and is not?",
+    "God strikes the Nile. What “river” do people around you trust for life, and what happens when it fails?",
+    "Pharaoh sees the staff swallowed and does not yield. What evidence have you explained away instead of obeying?"
    ]
   },
   "exo:8": {
-   "items": [
-    "Frogs come up into the houses, bedrooms, beds, and ovens. Pharaoh begs for them to be taken away, then hardens his heart.",
-    "The sorcerers cannot bring forth the gnats and say, “This is the finger of God.”",
-    "Flies fill Egypt, but the land of Goshen, where the Lord’s people live, is spared."
+   "background": [
+    "Frogs fill the houses, beds, and ovens. Pharaoh asks Moses to pray and promises to let the people go, then hardens again when the relief comes. A prayer said only to end the pain does not yet turn the heart.",
+    "The gnats are the sign the magicians cannot copy. They tell Pharaoh, “This is the finger of God.” In Luke 11 the Lord Jesus uses that same phrase for the kingdom of God driving out demons. What Egypt’s magicians confessed in fear, Christ claims in authority.",
+    "God sets “a miracle in the land of Goshen, where my people are, so that flies will not be there” so Egypt will know “that I am the Lord in the midst of the earth.” Goshen is the region where Israel lived. The distinction is not favoritism of race. It is the Lord marking his own."
+   ],
+   "questions": [
+    "Pharaoh bargains as soon as the frogs die. When have you promised God something in a crisis and gone back on it once the crisis passed?",
+    "“This is the finger of God” is said by men who had been opposing him. What would it take for you to admit that God is at work in a place you had resisted?",
+    "Goshen is spared while Egypt is not. How should a Christian receive protection without looking down on the people who suffer beside us?"
    ]
   },
   "exo:9": {
-   "items": [
-    "Hail and fire fall on Egypt, greater than any since the nation was formed. Goshen is left untouched.",
-    "Moses stretches out his hands and the thunder and hail cease.",
-    "When Pharaoh sees that they have stopped, he adds to his sin and will not let the people go."
+   "background": [
+    "The Lord tells Pharaoh, “it was for this reason that I appointed you, so that I may reveal my strength by you, and so that my name may be described throughout all the earth.” St. Paul quotes this in Romans. The Church does not teach that God authors Pharaoh’s sin. She teaches that God reveals his name even through a ruler who refuses him.",
+    "Moses stretches out his staff and “the Lord rained down hail upon the land of Egypt” with fire running through it. Goshen is spared again. The hail is worse than any since Egypt became a nation.",
+    "Pharaoh says, “I have sinned even until now. The Lord is just. I and my people are impious.” When the thunder stops, “Pharaoh, seeing that the rain, and the hail, and the thunders had ceased, added to his sin.” Confession without perseverance is not conversion."
+   ],
+   "questions": [
+    "Pharaoh can say “The Lord is just” and still add to his sin. What is the difference between admitting guilt and actually turning?",
+    "God says his name will be described in all the earth through this stubborn king. How does that change the way you pray about rulers who oppose the Church?",
+    "Where do you treat relief as permission to go back to the old life?"
    ]
   },
   "exo:10": {
-   "items": [
-    "Locusts eat whatever the hail left. A west wind then casts them into the Red Sea, and not one remains.",
-    "Moses stretches out his hand and a darkness that can be felt covers Egypt for three days.",
-    "The sons of Israel have light where they live. Moses says not one hoof of the flocks will stay behind, because the animals are needed for the worship of the Lord."
+   "background": [
+    "The Lord sends locusts to “devour every plant which remains from the hail.” A west wind later casts them into the Red Sea. The plagues stack. Each one leaves a remainder that the next one takes, until Egypt’s pride is stripped.",
+    "Moses stretches out his hand and there is “a darkness over the land of Egypt, so dense that they may be able to feel it” for three days. Israel has light in their dwellings. The Church has often set this palpable darkness beside the darkness that covered the land when Christ was crucified.",
+    "Moses refuses to leave the flocks behind: “Not one hoof of them shall remain behind. For they are necessary for the worship of the Lord our God”. Worship, not comfort, decides what goes with them. They do not yet know “what ought to be immolated,”"
+   ],
+   "questions": [
+    "Egypt sits in a darkness that can be felt, and Israel has light at home. Where do you see that contrast now, and how should the people who have light behave toward those who do not?",
+    "Moses will not leave “one hoof” behind because the animals are for worship. What have you tried to keep back from God because you thought you might need it?",
+    "Pharaoh keeps offering a smaller obedience. Where are you negotiating a partial yes?"
    ]
   },
   "exo:11": {
-   "items": [
-    "There is one plague left. After it, Pharaoh will not merely let the people go. He will drive them out.",
-    "Every firstborn in Egypt will die, from Pharaoh’s firstborn on the throne to the firstborn of the handmaid at the millstone, and the firstborn of the cattle.",
-    "Moses goes out from Pharaoh exceedingly angry. Among the sons of Israel, not even a dog will mutter."
+   "background": [
+    "One plague remains. After it, Pharaoh will not merely let them go. “he will compel you to go out.” Judgment, not a softer negotiation, ends the captivity.",
+    "“every firstborn in the land of the Egyptians shall die,” from Pharaoh’s heir on the throne to “the firstborn of the handmaid, who is at the millstone,” and the firstborn of the cattle. Death reaches the palace and the mill. No rank hides from it.",
+    "Among Israel “there shall not be even a mutter from a dog”. The quiet in Goshen is itself a sign that the Lord divides Egypt from Israel. Moses “went out from Pharaoh exceedingly angry.” Holy anger, in the text, stands on the side of the threatened children."
+   ],
+   "questions": [
+    "The last plague falls on the firstborn of the powerful and of the slave alike. What does that say about the judgment of God and about human rank?",
+    "Moses leaves “exceedingly angry.” When is anger a share in God’s hatred of cruelty, and when is it only our own?",
+    "Israel is told that not even a dog will mutter. How do you recognize the protection of God when it looks like an ordinary quiet night?"
    ]
   },
   "exo:12": {
-   "items": [
-    "The Passover lamb is eaten in haste, with waist girded, shoes on, and a staff in hand. It is the Lord’s Passover.",
-    "At midnight the Lord strikes every firstborn in Egypt, from Pharaoh’s heir to the captive in prison, and every firstborn of the cattle.",
-    "Israel had lived in Egypt four hundred and thirty years. On that same day the army of the Lord departs."
+   "background": [
+    "On the tenth day each household takes a lamb, and they eat it “in haste” belts girded and staves in hand, “For it is the Passover (that is, the Crossing) of the Lord.” The blood on the houses is the sign: “I will see the blood, and I will pass over you.”",
+    "The lamb’s bones are not broken: “nor shall you break its bone.” St. John points to that line when the soldiers do not break the legs of Jesus. St. Paul says Christ our Passover has been sacrificed. The Church reads this night as the figure of the Cross and of the Eucharist.",
+    "They are to keep the day “as a memorial” and “an everlasting devotion.” At the Last Supper the Lord Jesus takes the Passover and gives his own Body and Blood, and the Mass is the Church’s memorial of that one sacrifice.",
+    "At midnight the Lord strikes every firstborn in Egypt, and Israel sets out from Rameses to Soccoth. Salvation here is a meal and a departure. You eat the lamb, and then you leave."
+   ],
+   "questions": [
+    "The angel sees the blood, not how impressive the family inside has been. How does that prepare you to understand the Cross?",
+    "The lamb is eaten in haste, ready to go. What would it mean to receive Communion as people who are actually leaving Egypt?",
+    "“Nor shall you break its bone” is fulfilled on Calvary. Where else in the Mass do you hear the Passover still speaking?"
    ]
   },
   "exo:13": {
-   "items": [
-    "Every firstborn that opens the womb, of men and of cattle, is to be sanctified to the Lord.",
-    "God does not lead them by the way of the Philistines. He leads them around by the desert next to the Red Sea.",
-    "Moses carries the bones of Joseph, as Joseph had made Israel swear. The Lord goes before them in a pillar of cloud by day and a pillar of fire by night."
+   "background": [
+    "The Lord claims “every firstborn which opens the womb” of men and of cattle: “For they are all mine.” Luke’s Gospel shows Mary and Joseph bringing Jesus to the Temple under this law. The Presentation of the Lord is Israel’s firstborn law fulfilled in the Son.",
+    "God does not take the short road, “the way of the land of the Philistines, which is nearby,” because the people might turn back at the first war. He leads them the long way. Providence sometimes looks like a delay.",
+    "Moses carries the bones of Joseph, as Joseph had bound them to swear. And “the Lord preceded them” “by day with a pillar of cloud, and by night with a pillar of fire”. The Church reads that pillar as the sign of God’s own presence guiding his people, the same presence that will overshadow Mary and fill the Church."
+   ],
+   "questions": [
+    "God refuses the nearby road so Israel will not run back. Where might a slower path be his mercy toward you?",
+    "The firstborn belong to the Lord, and Mary presents her Son. What have you been given that is still his, not yours to keep?",
+    "They walk by a cloud they can see and a fire they can see. How do you discern the lead of God when the sign is quieter than a pillar of fire?"
    ]
   },
   "exo:14": {
-   "items": [
-    "Moses tells the people, “The Lord will fight on your behalf, and you will remain silent.”",
-    "Israel goes through the midst of the dried sea, with the water like a wall on the right and on the left.",
-    "The waters return over Pharaoh’s chariots and horsemen. Not one of the army that followed them into the sea is left."
+   "background": [
+    "Hemmed between Pharaoh’s chariots and the sea, Moses says, “Do not be afraid. Stand firm and see the great wonders of the Lord”. The command is to stand still before it is to move.",
+    "Moses stretches out his hand, “the water was divided” and “the water was like a wall at their right hand and at their left hand.” St. Paul writes that our fathers were baptized into Moses in the cloud and in the sea. The Easter Vigil still reads this crossing as a figure of Baptism.",
+    "At dawn the sea returns and “the Lord immersed them in the midst of the waves.” “the Lord freed Israel on that day from the hand of the Egyptians”. The font and the victory belong together: God drowns the pursuer and brings his people through on dry ground."
+   ],
+   "questions": [
+    "“Stand firm and see” comes before the sea opens. What are you trying to fix that God is asking you to watch him do?",
+    "St. Paul calls this crossing a baptism. What did you leave on the other side of the font, and what still chases you as if it had a claim?",
+    "Israel fears, cries out, and then walks between walls of water. Where do you need courage that is mostly obedience?"
    ]
   },
   "exo:15": {
-   "items": [
-    "Moses and the sons of Israel sing, “The horse and the rider he has cast into the sea.” Miriam takes a timbrel and leads the women.",
-    "At Marah the water is bitter. The Lord shows Moses a tree, and the water becomes sweet.",
-    "At Elim there are twelve fountains of water and seventy palm trees, and they camp beside the waters."
+   "background": [
+    "The first act on the far side of the sea is a song: “Let us sing to the Lord, for he has been gloriously magnified: the horse and the rider he has cast into the sea.” The Easter Vigil still sings the canticle of Moses beside the canticle of the Lamb.",
+    "“Miriam, the prophetess, the sister of Aaron,” leads the women with timbrels and dancing. Deliverance is public praise, not only private relief. Women and men both answer the victory.",
+    "At Marah the water is bitter, and the Lord “showed him a tree.” Moses casts it in, “they were turned into sweetness”. Early Christian writers saw that tree as a figure of the Cross, which does not deny bitterness but transforms it.",
+    "They camp at Elim, where there were “twelve fountains of water and seventy palm trees.” After the bitter water, God gives a measured abundance. The wilderness is not only trial. It is also a place of rest he prepared."
+   ],
+   "questions": [
+    "They sing before they have reached Sinai. What would it look like to praise God in the middle of the journey, not only at the end?",
+    "The tree makes Marah sweet. Where has the Cross changed a bitterness in your life instead of simply removing it?",
+    "Miriam takes up a timbrel. How do you let joy become something the whole group can hear?"
    ]
   },
   "exo:16": {
-   "items": [
-    "The Lord rains bread from heaven and tells them to gather only enough for each day, as a test.",
-    "On the sixth day they collect a double portion, two omers for each man, because the next day is the Sabbath rest.",
-    "Aaron stores one omer of manna in a vessel, kept in the sight of the Lord for the generations to come."
+   "background": [
+    "In the wilderness of Sin the Lord says, “I will rain down bread from heaven for you” enough for each day, “so that I may test them”. Daily bread is a test of trust, which is why the Our Father asks for this day and not for a hoard.",
+    "Israel asks “Manhu?” which means “What is this?” Moses answers, “This is the bread that the Lord has given you to eat.” In John 6 the Lord Jesus says the fathers ate manna and died, and that he himself is the true bread from heaven. The Church reads the manna as a figure of the Eucharist.",
+    "On the sixth day they gather twice as much, because “Tomorrow, the rest day of the Sabbath, has been sanctified to the Lord.” The manna teaches the Sabbath. It will not appear on the seventh day.",
+    "Aaron stores one omer “in the sight of the Lord, to keep for your generations”. Hebrews remembers a golden jar of manna beside the ark. The Church keeps the Eucharist reserved, a living memorial rather than a museum of bread."
+   ],
+   "questions": [
+    "They may gather only enough for the day. Where do you hoard because you do not trust tomorrow’s bread?",
+    "“What is this?” becomes the name of the food. What gift from God have you been slow to recognize because it did not look like what you expected?",
+    "Jesus says he is the bread Moses’ generation ate only in figure. How should that change the way you approach Mass?"
    ]
   },
   "exo:17": {
-   "items": [
-    "At Rephidim there is no water. Moses strikes the rock at Horeb and water comes out for the people to drink.",
-    "Amalek fights Israel there. When Moses lifts his hands, Israel prevails. When he lowers them, Amalek prevails.",
-    "Aaron and Hur hold up his hands until sunset. Moses builds an altar and names it “The Lord, my Exaltation.”"
+   "background": [
+    "At Horeb the Lord says, “you shall strike the rock, and water will go forth from it”. St. Paul tells the Corinthians that the people drank from a spiritual rock that followed them, and that rock was Christ. The Church reads this water as a figure of the grace that flows from the pierced Christ.",
+    "Then Amalek attacks. “when Moses lifted up his hands, Israel prevailed”. When his hands grow heavy, Aaron and Hur hold them up until sunset, and Joshua overcomes Amalek. Christian tradition has long seen the outstretched hands as a figure of Christ on the Cross, and Aaron and Hur as the Church holding prayer up when the one who prays is tired.",
+    "Moses builds an altar and names it “The Lord, my Exaltation.” The war with Amalek, he says, belongs to the Lord “from generation to generation.” Victory is ascribed to God, not to the cleverness of the camp."
+   ],
+   "questions": [
+    "Paul says the rock was Christ. How does that keep you from treating the Old Testament as a book that is over?",
+    "Moses cannot keep his hands up alone. Who holds your arms when prayer gets heavy, and whose arms are you holding?",
+    "The altar is named for the Lord’s exaltation, not for Moses. Where do you take credit for a victory that was given to you?"
    ]
   },
   "exo:18": {
-   "items": [
-    "Jethro, the priest of Midian and kinsman of Moses, brings Zipporah and their two sons, Gershom and Eliezer, to the wilderness.",
-    "Jethro rejoices over all the good the Lord has done for Israel, and he offers holocausts and sacrifices to God.",
-    "He tells Moses to appoint capable men who fear God, love truth, and hate avarice, as tribunes and leaders of hundreds, fifties, and tens."
+   "background": [
+    "“Jethro, the priest of Midian, the kinsman of Moses,” hears what God has done and comes with Zipporah and the two sons, Gershom and Eliezer. The CPDV calls him Moses’ kinsman. He is a priest outside Israel who rejoices in the Lord’s work.",
+    "Jethro “offered holocausts and sacrifices to God” and Aaron and the elders “eat bread with him in the sight of God.” A meal before God seals the recognition. The Church knows that a sacrifice and a shared table belong together, which the Eucharist fulfills.",
+    "He tells Moses to appoint “men capable and fearing God, in whom there is truth and who hate avarice,” as tribunes and leaders of hundreds, fifties, and tens. Moses “did everything that he had suggested”. Authority in Israel is shared, and the standard for a judge is the fear of God, truth, and freedom from greed. The Church’s own law still expects pastors to share the burden and to reject avarice."
+   ],
+   "questions": [
+    "A Midianite priest teaches Moses how to judge. Whose counsel outside your usual circle have you been too proud to hear?",
+    "The judges must fear God, love truth, and hate avarice. Which of those three is weakest in the leaders you trust, and in you?",
+    "They eat bread “in the sight of God” after the sacrifices. How is a meal different when you remember that God is at the table?"
    ]
   },
   "exo:19": {
-   "items": [
-    "In the third month after leaving Egypt, Israel camps in the wilderness of Sinai, and Moses goes up to God.",
-    "The Lord says that if they keep his covenant they will be “a priestly kingdom and a holy nation.” The people answer, “Everything that the Lord has spoken, we shall do.”",
-    "On the third day the Lord descends on Mount Sinai in fire. The mountain smokes like a furnace, and the trumpet grows louder while Moses speaks and God answers."
+   "background": [
+    "“In the third month” after leaving Egypt, Israel camps in the wilderness of Sinai. Geography matters: the covenant is given in the desert, not in Pharaoh’s cities, at the mountain where God had called Moses from the bush.",
+    "The Lord offers a covenant: if they keep his voice, they will be “a particular possession out of all people” “a priestly kingdom and a holy nation.” The First Letter of Peter takes those words and lays them on the Church, a royal priesthood in Christ.",
+    "The people answer together, “Everything that the Lord has spoken, we shall do.” On the third day the mountain smokes “as from a furnace” because “the Lord had descended over it with fire,” and the trumpet grows louder. The covenant begins with God’s descent, not with Israel’s climb."
+   ],
+   "questions": [
+    "They promise “Everything that the Lord has spoken, we shall do,” before they have heard the ten words. What is the difference between a generous vow and a vow you are ready to keep?",
+    "Peter calls the Church a priestly kingdom. What does it mean that your baptism gives you a share in priesthood, and what does it not mean?",
+    "God descends in fire and the people tremble. Where have you tried to make God safe and small?"
    ]
   },
   "exo:20": {
-   "items": [
-    "The Lord says, “I am the Lord your God, who led you away from the land of Egypt, out of the house of servitude,” and “You shall not have strange gods before me.”",
-    "He tells them to sanctify the Sabbath, because in six days the Lord made heaven and earth and the sea, and he rested on the seventh day.",
-    "The people stand far off in fear and ask Moses to speak to them. Moses draws near to the mist where God is."
+   "background": [
+    "The ten words begin with a rescue, not a threat: “I am the Lord your God, who led you away from the land of Egypt, out of the house of servitude.” The Catechism teaches the commandments as the gift of the covenant, the path of a people already freed.",
+    "“You shall not have strange gods before me” and “Remember that you are to sanctify the day of the Sabbath” because “in six days the Lord made heaven and earth, and the sea,” and rested on the seventh. The Sabbath is grounded in creation. The Church keeps the Lord’s Day, the day of the Resurrection, as the fulfillment of that rest.",
+    "The people stand far off, “terrified and struck with fear,” and ask Moses to speak to them. Moses draws near to the mist where God is. Israel already needs a mediator. The Letter to the Hebrews says Christ is the mediator of a better covenant.",
+    "God also commands an altar of earth for holocausts and peace offerings, “in every place where the memory of my name shall be.” Worship is not a feeling left at the foot of the mountain. It is sacrifice offered where he sets his name."
+   ],
+   "questions": [
+    "The commandments start with “I led you out,” not with “try harder.” How does that change the way you hear “you shall not”?",
+    "The people are afraid and ask for a mediator. How does Christ stand between you and the holiness of God without keeping you away from the Father?",
+    "Which commandment are you most tempted to treat as advice rather than as the word of the God who saved you?"
    ]
   },
   "exo:21": {
-   "items": [
-    "A Hebrew servant serves six years and departs free in the seventh. If he says he loves his lord, his wife, and his children, his ear is pierced with an awl and he remains.",
-    "Whoever strikes a man intending to murder, or strikes his father or mother, or steals a man and sells him, shall be put to death.",
-    "If a quarrel ends in the death of a pregnant woman, the judgment is a life for a life, an eye for an eye, a tooth for a tooth, a hand for a hand, and a foot for a foot."
+   "background": [
+    "A Hebrew servant serves six years, and “in the seventh, he shall depart freely, without charge.” If he says, “I love my lord, and my wife and children, I will not depart freely,” then “he will pierce his ear with an awl.” He stays. The law puts a limit on the years of service. The Church teaches that no human being may be reduced to someone else’s property.",
+    "The chapter guards life inside the household. “Whoever strikes a man, intending to murder, shall be put to death” and “Whoever strikes his father or mother shall die a death.” Parents and neighbors are not outside the protection of God.",
+    "If a pregnant woman dies in a fight, the law demands “an eye for an eye, a tooth for a tooth, a hand for a hand, a foot for a foot”. This measure stops revenge from running past the harm. In the Sermon on the Mount, Christ does not cancel justice. He calls his disciples past retaliation, to a righteousness that fulfills the law."
+   ],
+   "questions": [
+    "The seventh year sets a servant free. Where do you hold someone, or hold a grudge, past the day God said to release it?",
+    "“An eye for an eye” limits revenge. Jesus tells you not to resist the evildoer that way. How do justice and mercy both stay intact in him?",
+    "The law treats a blow against father or mother as a capital matter. What does that say about the weight of the fourth commandment in a culture that shrugs at it?"
    ]
   },
   "exo:22": {
-   "items": [
-    "Someone who steals an ox or a sheep and then kills or sells it restores five oxen for the ox and four sheep for the sheep. If the animal is found alive, he repays double.",
-    "“You shall not harass the newcomer, nor shall you afflict him,” because Israel was once newcomers in Egypt, and “You shall not harm a widow or an orphan.”",
-    "A garment taken as a pledge is returned before sunset, because it is the neighbor’s only covering for the night. Tithes and first-fruits are not to be delayed."
+   "background": [
+    "A thief who kills or sells an ox or a sheep “will restore five oxen for one ox, and four sheep for one sheep.” If the animal is found alive, “he shall repay double.” Restitution, not a vague apology, is what the law requires. The sacrament of Penance likewise asks for reparation where we can make it.",
+    "“You shall not harass the newcomer, nor shall you afflict him. For you yourselves were once newcomers in the land of Egypt.” And “You shall not harm a widow or an orphan.” Israel’s memory of slavery is the reason for her mercy. The Church’s social teaching stands on this same memory: the people God rescued do not get to become oppressors.",
+    "A cloak taken in pledge is returned “before the setting of the sun” because it may be the neighbor’s only covering for the night. The law notices the poor person’s night, not only the creditor’s right."
+   ],
+   "questions": [
+    "Restitution here is concrete, five oxen or double. What repair do you still owe someone that an apology has not covered?",
+    "God ties the command about the stranger to “you were newcomers in Egypt.” Which mercy do you withhold from people whose weakness you used to share?",
+    "The pledged cloak goes back by sunset. What small, timely act of justice is in front of you today?"
    ]
   },
   "exo:23": {
-   "items": [
-    "“You shall not follow the crowd in doing evil,” nor agree with the majority apart from the truth, and you shall not take bribes, which blind even the prudent.",
-    "An enemy’s stray ox or donkey is led back to him. If the donkey of someone who hates you has fallen under its burden, you lift it up with him.",
-    "Three times a year every male appears before the Lord. The Lord will send his Angel ahead, and he says, “You shall not cook a young goat in the milk of its mother.”"
+   "background": [
+    "“You shall not follow the crowd in doing evil.” You shall not go astray “by agreeing with the majority opinion, apart from the truth.” Bribes are forbidden because they “blind even the prudent” and twist the words of the just. The Church has always required Catholics to prefer the truth to the group.",
+    "The law reaches the enemy’s property: lead back his stray ox, and if you see “the donkey of one who hates you” fallen under its load, “you shall not pass by without lifting it up with him.” Love of enemy is not invented in the New Testament. It is already required on the road.",
+    "Three times a year the men appear before the Lord: the solemnity of unleavened bread, the harvest of the first-fruits, and the feast at the end of the season when the crops are gathered. And “You shall not cook a young goat in the milk of its mother.” Israel’s later custom of separating meat and milk grew from this verse. The Church does not bind Christians to that kosher rule. She does bind us to the reverence for life and for worship that the verse was teaching.",
+    "God promises, “I will send my Angel, who will go before you”. The wilderness is not empty. A messenger of God leads them to the place he has prepared. Catholic faith keeps that truth: Providence uses the holy angels, and we are not walking unaccompanied."
+   ],
+   "questions": [
+    "“You shall not follow the crowd in doing evil.” Where is the crowd, online or in the room, pulling you off the truth?",
+    "You are told to lift the donkey of someone who hates you. Who is that person for you, and what would “lifting” look like this week?",
+    "Three feasts set the year before God. What actually sets your calendar, and where would you have to move something so worship comes first?"
    ]
   },
   "exo:24": {
-   "items": [
-    "Moses reads the book of the covenant. The people answer, “All that the Lord has spoken, we will do, and we will be obedient.” He sprinkles the blood and says, “This is the blood of the covenant.”",
-    "Moses, Aaron, Nadab, Abihu, and seventy elders go up. They see the God of Israel, and under his feet is something like a work of sapphire stone. They eat and drink.",
-    "A cloud covers Sinai for six days. On the seventh day the Lord calls Moses from the middle of the mist. Moses stays on the mountain forty days and forty nights."
+   "background": [
+    "Moses reads “the book of the covenant,” and the people answer, “All that the Lord has spoken, we will do, and we will be obedient.” He sprinkles the blood and says, “This is the blood of the covenant, which the Lord has formed with you concerning all these words.” At the Last Supper the Lord Jesus takes up these words and speaks them over the chalice. Hebrews says Moses sprinkled the people with blood, and that without the shedding of blood there is no remission.",
+    "Moses, Aaron, Nadab, Abihu, and seventy elders go up. “they saw the God of Israel” and “under his feet was something like a work of sapphire stone,” and “they saw God, and they ate and drank.” A covenant meal in God’s presence is the pattern the Eucharist fulfills, not as a casual supper but as communion with the living God.",
+    "The glory covers Sinai for six days. On the seventh, God calls Moses out of the mist, and Moses stays “forty days and forty nights.” Christ will take up those forty days in the desert before he preaches the kingdom. The fast of Lent walks in that same number."
+   ],
+   "questions": [
+    "Jesus says “this is my blood of the covenant” over the cup. What do you think the apostles, who knew this chapter, heard in that sentence?",
+    "They “saw God, and they ate and drank.” How should that shape the way you receive Holy Communion, fear and nearness together?",
+    "The people promise obedience and then, in the next chapters, will fail. What promise have you made to God that you need his blood, and not your resolve, to keep?"
    ]
   },
   "exo:25": {
-   "items": [
-    "The ark of setim wood is two and one half cubits long, and one and one half cubits wide and high. It is overlaid with gold. The bars stay in the rings and are never drawn out.",
-    "Two cherubim of formed gold spread their wings over the propitiatory, faces turned toward it. The Lord says he will speak from there, between the two cherubim.",
-    "The lampstand is formed from the finest gold, with six branches and seven lamps. Its whole weight is one talent of gold, made according to the example shown on the mountain."
+   "background": [
+    "The Lord asks them to make a sanctuary, “and I will live in their midst.” They are to make it “according to the example that was shown to you on the mountain.” Hebrews says the earthly tabernacle was a copy of the heavenly one. Catholic churches are not that tent, but they stand in the same desire: God dwelling with his people.",
+    "The ark of setim wood is overlaid with gold, and above it is the propitiatory, the mercy seat, with “two Cherubim of formed gold”. God will speak “from the middle of the two Cherubim”. St. Paul calls Christ the propitiation for our sins. Catholic tradition also honors Mary as the Ark, because she bore the Word in her body as the ark bore the signs of God’s presence.",
+    "The table holds “the bread of the presence,” “in my sight always.” The Church reads that continual bread as a figure of the Eucharist reserved in the tabernacle, the Lord present and not put away when Mass is ended.",
+    "The lampstand is one piece of pure gold, with six branches and seven lamps, its whole weight a talent, copied from the pattern on the mountain. Nothing in the sanctuary is left to private taste. Holiness has a form God gives."
+   ],
+   "questions": [
+    "God says he will live in their midst, and then he describes wood and gold. Why does the true God bother with a tent?",
+    "Mary is honored as the Ark, and Christ is the mercy seat. How do those two titles keep you from separating Mary from her Son?",
+    "The bread of the presence stays “in my sight always.” What does a tabernacle lamp ask of you when you walk into a church?"
    ]
   },
   "exo:26": {
-   "items": [
-    "Ten curtains of fine twisted linen, hyacinth, purple, and twice-dyed scarlet are coupled five and five. Fifty gold rings join them so that it is one tabernacle.",
-    "Eleven haircloth canopies cover the roof, then skins of rams dyed red, and above those violet-colored skins. The standing panels are setim wood, overlaid with gold.",
-    "A veil before four columns divides the Sanctuary from the Sanctuary of Sanctuaries. The ark and the propitiatory are beyond the veil. The table stands outside it, and the lampstand stands opposite the table."
+   "background": [
+    "The tabernacle is a careful tent: linen curtains joined by gold rings, haircloth canopies, ram skins dyed red, and violet skins over them, with boards of setim wood set in silver bases. Worship, for Israel, was something you could walk through. Every layer taught approach to God.",
+    "A veil of hyacinth, purple, scarlet, and linen hangs before the Holy of Holies, “where both the Sanctuary and the Sanctuary of Sanctuaries shall be divided.” The ark and the propitiatory are beyond it. Hebrews says the veil is a figure of the flesh of Christ, and that by his blood we enter the true sanctuary.",
+    "Outside the veil, “the table shall stand at the north side” and the lampstand stands opposite it. Bread and light face each other in the holy place. The Church still sets the altar and the light together, because Christ is both the bread and the light of the world."
+   ],
+   "questions": [
+    "Only what is beyond the veil is called the Holy of Holies. What does that teach you about drawing near to God, and about the access Christ has opened?",
+    "Hebrews says the veil is his flesh. How does the Incarnation change the way you think about God’s hiddenness?",
+    "The tent is beautiful and exact, not improvised. Where have you treated worship as something you can redesign to suit yourself?"
    ]
   },
   "exo:27": {
-   "items": [
-    "The altar of setim wood is five cubits on each side and three cubits high, with horns at the four corners, and it is covered with brass. It is empty and hollow inside, as it was shown on the mountain.",
-    "The atrium is one hundred cubits long and fifty wide, hung with fine twisted linen. Its columns have bases of brass, and the embroidered hanging at the entrance is twenty cubits.",
-    "The sons of Israel bring the purest oil of the olive trees, crushed with a pestle, so that a lamp may always burn outside the veil. Aaron and his sons arrange it until morning."
+   "background": [
+    "The altar of holocaust is setim wood covered with brass, five cubits square and three cubits high, with horns at the corners. It is “empty and hollow at the interior, just as it was shown to you on the mountain.” The altar is for burning the gifts, not for storing them. Sacrifice goes up. It is not kept back.",
+    "The court around the tabernacle is a hundred cubits by fifty, hung with fine linen, with a gate toward the east. There is a way in, and there is a boundary. Holiness is approached, not wandered into.",
+    "Israel must bring “the purest oil of the olive trees, crushed with a pestle, so that a lamp may always burn” outside the veil, tended by Aaron and his sons “until morning.” Catholic churches keep a lamp before the tabernacle for the same reason: a light that says the Lord is here, and someone is appointed to tend it."
+   ],
+   "questions": [
+    "The altar is hollow, made to have a fire on it. What in your life is built to look holy and is not actually offered?",
+    "The lamp is entrusted to Aaron’s sons “until morning.” What prayer or duty has God assigned you to keep when you would rather sleep?",
+    "There is one gate into the court. How does that sit with Jesus saying he is the way, and with the Church’s real doors?"
    ]
   },
   "exo:28": {
-   "items": [
-    "Aaron, with Nadab, Abihu, Eleazar, and Ithamar, is set apart to exercise the priesthood. The holy vestments are a breastplate, an ephod, a tunic, a close-fit linen garment, a headdress, and a wide belt.",
-    "Two onyx stones are engraved with the names of the sons of Israel, six on each, and Aaron carries them on both shoulders. The breastplate of judgment has twelve stones, one name for each tribe, and Doctrine and Truth are placed in it.",
-    "The tunic’s hem has pomegranates and golden bells, so the sound is heard when Aaron enters and leaves the Sanctuary. A plate of gold on the headdress is engraved, “Holy to the Lord.”"
+   "background": [
+    "Aaron and his sons, Nadab, Abihu, Eleazar, and Ithamar, are set apart “so that they may exercise the priesthood for me.” Priesthood here is God’s choice for the sake of the people, not a personal career. The Letter to the Hebrews says Christ is the one high priest, and that the priests of the Church act in his person, not in their own name.",
+    "The holy vestments are named: breastplate, ephod, tunic, linen garment, headdress, and belt. Two onyx stones on the shoulders are engraved with the names of the sons of Israel, and the breastplate carries twelve stones, “each stone with one name from the twelve tribes.” Aaron “shall wear the judgment of the sons of Israel on his chest, in the sight of the Lord always.” A priest carries the people when he goes before God.",
+    "In the breastplate are placed “Doctrine and Truth,” the CPDV’s names for the sacred lots. And a plate of gold on the forehead is engraved “Holy to the Lord.” The vestment preaches before the man speaks: what is set apart for God must say so."
+   ],
+   "questions": [
+    "Aaron carries the tribal names on his shoulders and on his heart. How do you pray for people by name, and who is missing from your list?",
+    "The plate says “Holy to the Lord” on the forehead. What would change if you remembered that your baptism marked you as belonging to God before you say a word?",
+    "Priesthood is “for me,” God says, for the people’s sake. How should we pray for priests, and what should we refuse to turn them into?"
    ]
   },
   "exo:29": {
-   "items": [
-    "Aaron and his sons lay their hands on the ram of consecration. Its blood is put on the tip of the right ear and on the thumbs and big toes of the right hand and the right foot.",
-    "They eat its flesh and the unleavened bread in the vestibule of the tabernacle. A stranger shall not eat from these. Whatever remains until morning is burned with fire.",
-    "Their hands are consecrated for seven days. One lamb is offered in the morning and another in the evening. The Lord says, “I will live in the midst of the sons of Israel, and I will be their God.”"
+   "background": [
+    "Aaron and his sons lay their hands on the ram of consecration, and its blood is put “on the tip of the right ear” and on the thumb and the big toe of the right hand and foot. Ear, hand, and foot: the man is consecrated in what he hears, what he does, and where he goes.",
+    "“For seven days shall you consecrate their hands”. They eat the ram and the unleavened bread at the entrance of the tent, and a stranger may not eat of it. What is left until morning is burned. Holy things are not leftovers and they are not common food.",
+    "Each day, two year-old lambs are offered, one in the morning and one in the evening, a continual sacrifice. The Church reads that daily lamb as a figure fulfilled in Christ, the Lamb of God, whose one sacrifice the Mass makes present. The chapter ends with the promise, “I will live in the midst of the sons of Israel, and I will be their God.”"
+   ],
+   "questions": [
+    "Blood marks the ear, the hand, and the foot. Which of those three most needs to be given back to God in your life?",
+    "A stranger may not eat the ram of consecration. How does the Church’s care about who receives Holy Communion echo that seriousness, and how is the invitation of the Gospel wider?",
+    "The promise is “I will live in the midst” of you. Where do you still treat God as a visitor instead of as the one who stays?"
    ]
   },
   "exo:30": {
-   "items": [
-    "The altar for burning incense is one cubit square and two cubits high, set opposite the veil. Aaron burns incense on it morning and evening. Once a year he makes atonement on its horns with the blood of the sin offering.",
-    "Everyone numbered from twenty years and above gives half a shekel as a price for their souls. A shekel is twenty obols. The rich do not add to the half shekel, and the poor do not give less.",
-    "The holy oil of unction is the best myrrh, cinnamon, sweet flag, cassia, and olive oil. The incense is stacte, onycha, galbanum, and frankincense in equal weight. Neither one is to be copied for ordinary use."
+   "background": [
+    "The altar of incense stands before the veil. Aaron burns “a sweet fragrance” on it morning and evening, when he tends the lamps. Once a year he makes atonement on its horns with the blood of the sin offering. The book of Revelation shows incense rising with the prayers of the saints, which is why the Church still uses incense: prayer made visible.",
+    "Everyone numbered from twenty years and above gives “one half shekel,” and “The rich shall not add to the half shekel, and the poor shall diminish nothing.” The price of a soul is the same. The census ransom teaches equal dignity before God, not a rate set by income.",
+    "The holy oil of unction is a perfumer’s blend of myrrh, cinnamon, cane, cassia, and olive oil, poured on the tent, the ark, and the priests. The incense is stacte, onycha, galbanum, and frankincense in equal weight. “You shall not make such a compound for your own uses, because it is holy to the Lord.” The Church’s holy oils, used in Baptism, Confirmation, Holy Orders, and the Anointing of the Sick, stand in this line: oil and fragrance set apart for God, not copied for ordinary perfume."
+   ],
+   "questions": [
+    "Incense goes up when the lamps are lit, morning and evening. What fixed time of prayer would make your day smell like that altar?",
+    "Rich and poor give the same half-shekel. Where do you act as if your soul, or someone else’s, were worth more because of money?",
+    "The oil may not be copied for private use. What holy thing in your life have you been treating as ordinary?"
+   ]
+  },
+  "exo:31": {
+   "background": [
+    "The Lord names the craftsman himself: “I have called by name Bezalel the son of Uri, the son of Hur, from the tribe of Judah,” and “I have filled him with the Spirit of God, with wisdom, and understanding, and knowledge in every craft”. Oholiab, of Dan, is given as his associate. The Church receives skill in sacred art as a gift of the Spirit for the worship of God, not as ornament for its own sake.",
+    "The Sabbath is “a sign between me and you among your generations, so that you may know that I am the Lord, who sanctifies you.” It is called an everlasting covenant. The Church keeps the Lord’s Day, the day of the Resurrection, as the fulfillment of that rest: God sanctifies his people by giving them a day that is his.",
+    "When the Lord finishes speaking on Sinai, he gives Moses “two stone tablets of testimony, written with the finger of God.” The same phrase, the finger of God, is what Egypt’s magicians confessed and what the Lord Jesus claims when he drives out demons. The law and the kingdom come from one hand."
+   ],
+   "questions": [
+    "Bezalel is filled with the Spirit for craft, not only for prophecy. How should a Catholic treat beauty that is made for the altar?",
+    "The Sabbath is a sign that the Lord sanctifies you. What would you have to stop doing for a day in order to let God be the one who makes you holy?",
+    "The tablets are written by the finger of God. Where do you treat God’s law as a human opinion you may edit?"
+   ]
+  },
+  "exo:32": {
+   "background": [
+    "Moses delays on the mountain, and the people say, “Rise up, make us gods, who may go before us.” Aaron casts a calf, and they say, “These are your gods, O Israel, who led you away from the land of Egypt.” The sentence contradicts the first commandment, which had just named the Lord as the one who led them out. Idolatry here is impatience with the true God.",
+    "Moses comes down, sees the calf and the dances, and “he threw down the tablets from his hand, and he broke them at the base of the mountain.” The covenant document is shattered because the covenant has already been broken in the camp. The Church has never treated images of the true God, or of his saints, as a license to worship a god we invent.",
+    "He stands at the gate: “If anyone is for the Lord, let him join with me.” The sons of Levi gather to him. Then Moses asks that if the people are not forgiven, God would “delete me from the book that you have written.” Christian tradition reads Moses in that breach as a figure of Christ the mediator, who intercedes for sinners and will not save himself at their expense."
+   ],
+   "questions": [
+    "The calf is made because Moses is slow to come down. Where does your impatience turn into a god you can manage?",
+    "“If anyone is for the Lord, let him join with me.” What would it cost you, in your actual circle, to step to that gate?",
+    "Moses would rather be blotted out than see the people lost. How does that prayer train you to understand the Cross?"
+   ]
+  },
+  "exo:33": {
+   "background": [
+    "After the calf, the Lord speaks with Moses “face to face, just as a man is used to speaking to his friend.” Joshua, a young man, does not leave the tent. Friendship with God is real in this chapter, and it is also fenced.",
+    "Moses asks, “Show me your glory.” The Lord answers, “You are not able to see my face. For man shall not see me and live” and then, “you shall see my back. But my face you are not able to see.” The Gospel of John says that no one has ever seen God, and that the only-begotten Son has made him known. The face Moses may not see is the face the Church beholds in Christ.",
+    "The Lord also promises, “My face will precede you, and I will give you rest.” Presence and rest belong together. Israel will not be led by an angel in God’s place and then left. The one who goes ahead is the one who gives rest."
+   ],
+   "questions": [
+    "Moses is called God’s friend and is still told he cannot see God’s face. How do you hold both nearness and holy fear?",
+    "He asks to see glory and is shown the back. Where have you demanded a sight of God that he answered with a slower mercy?",
+    "“My face will precede you, and I will give you rest.” What rest are you trying to find by running ahead of him?"
+   ]
+  },
+  "exo:34": {
+   "background": [
+    "The Lord passes before Moses and proclaims, “The Ruler, the Lord God, merciful and lenient, patient and full of compassion and also truthful”. This is the name Israel will pray back for centuries. Mercy is not a mood added later. It is how God names himself on the mountain after the calf.",
+    "He also says, “The jealous Lord is his name. God is a rival.” The compassion does not cancel the first commandment. Catholic faith holds both: God is rich in mercy, and he will not share his people with an idol.",
+    "Moses is with the Lord “forty days and forty nights” without bread or water, and he writes the ten words again. When he comes down, “he did not know that his face was radiant” and “he placed a veil over his face.” St. Paul says that veil is taken away in Christ, so that the Church looks on the unveiled glory of the Lord and is changed."
+   ],
+   "questions": [
+    "God calls himself merciful and jealous in the same meeting. Which of those two do you quietly drop when it inconveniences you?",
+    "Moses does not know his own face is shining. What grace might be visible on you that you are the last to notice?",
+    "Paul says the veil comes off when a heart turns to the Lord. What reading of Scripture is still veiled for you, and what would conversion change?"
+   ]
+  },
+  "exo:35": {
+   "background": [
+    "Before the building starts again, Moses repeats the rest: “the seventh day, the Sabbath and the rest of the Lord, will be holy to you”. The sanctuary is not an excuse to skip the sign of the covenant. Work for God does not replace the day that belongs to God.",
+    "The materials are not a tax on the unwilling. “all who are willing and have a ready soul offer these to the Lord” and the people bring first-fruits “with a most ready and devout mind”. The Church still asks for the support of worship as a free offering, not as a purchase of holiness.",
+    "Moses tells them again that “the Lord has called by name Bezalel” and filled him with the Spirit of God. The same Spirit who gives the law gives the hands that will build the tent. Craft and commandment are not rivals."
+   ],
+   "questions": [
+    "They are told to keep the Sabbath before they are told to build. Where does holy work crowd out the day God claimed?",
+    "The gift has to come from a ready soul. What would change if your offering this week were willing instead of extracted?",
+    "Bezalel is called by name for a craft. What work of your hands might actually be a calling and not only a job?"
+   ]
+  },
+  "exo:36": {
+   "background": [
+    "The workmen tell Moses, “The people offer more than is needed.” Moses has it proclaimed: “Let neither man nor woman offer anything further for the work of the Sanctuary.” They stop, “because what was offered was sufficient and was more than an abundance.”",
+    "The sanctuary is not a project that expands to absorb every gift. There is a point of enough. Catholic stewardship learns from this: generosity for the house of God, and also the humility to say the work is supplied.",
+    "Men and women both brought the offering, and both are told to stop. The tent is the work of the whole people, not of a few who can afford to be seen giving."
+   ],
+   "questions": [
+    "When have you kept giving to a holy project past the point of enough, because stopping felt less pious?",
+    "Moses tells them to cease. What would obedience look like if God said your offering was already sufficient?",
+    "The whole camp supplies the sanctuary. Where do you leave the work of the Church to someone else who seems more gifted?"
+   ]
+  },
+  "exo:37": {
+   "background": [
+    "The commands of Exodus 25 are now carried out by hand. “Bezalel also made the ark from setim wood,” overlaid with gold, and “He also made the propitiatory, that is, the oracle, from the finest gold”. The mercy seat is not an idea. It is built, measured, and set where God said he would speak.",
+    "“He also made the lampstand, formed from the finest gold” with its branches and lilies from one piece. The table of the bread is made too. What the mountain showed, the craftsman repeats. The Church treats the forms of the liturgy the same way: they are received and made, not invented each week.",
+    "The CPDV calls the propitiatory “the oracle”. God will speak from above it. Catholic faith hears in that mercy seat the foreshadowing of Christ, whom St. Paul calls the propitiation, the place where God meets the sinner without ceasing to be holy."
+   ],
+   "questions": [
+    "The mercy seat has to be built before anyone can stand before it. What holy thing are you waiting to feel before you will actually make it?",
+    "Bezalel copies a pattern he was shown. Where are you redesigning worship to suit your taste instead of receiving the form the Church was given?",
+    "Gold covers setim wood. How does that picture sit with a Savior who is both truly God and truly man?"
+   ]
+  },
+  "exo:38": {
+   "background": [
+    "Bezalel makes “the altar of holocaust from setim wood” five cubits square, the place where the gifts will be burned. The altar is large enough for a people’s sacrifice and still only a copy of what was shown on the mountain.",
+    "“He also made the washtub of brass, with its base made from the mirrors of the women who kept watch at the door of the tabernacle.” The women give up their mirrors so the priests can wash. The Church still has the priest wash his hands at Mass, a small sign that the one who approaches the altar does not come as he is.",
+    "The silver of the bases comes from the census: “six hundred and three thousand, five hundred and fifty men able to bear arms” each with the same half-shekel. The house of God rests, literally, on the equal offering of the numbered people."
+   ],
+   "questions": [
+    "The mirrors become a basin for washing. What vanity would you hand over if it could serve the altar?",
+    "Every counted man gives the same silver. How does that confront the way we rank people by what they can afford to give?",
+    "The women “kept watch at the door.” Who is quietly keeping watch over the house of God in your parish, and have you noticed them?"
+   ]
+  },
+  "exo:39": {
+   "background": [
+    "The vestments are made “just as the Lord instructed Moses” in hyacinth, purple, vermillion, and fine linen, for Aaron when he ministers in the holy places. The phrase returns again and again: they did it as they were told. Obedience is the beauty of this chapter.",
+    "The gold plate is fastened to the headdress, the plate that says the priest is holy to the Lord. What a man wears at the altar is supposed to preach before he speaks. The Church’s vestments still do that work: the minister stands in an office, not in his own name.",
+    "“when Moses saw that everything was completed, he blessed them”. The blessing comes after the obedience, not instead of it. A finished work, done as the Lord instructed, is something a priest may bless."
+   ],
+   "questions": [
+    "The refrain of the chapter is that they did as the Lord instructed. Where are you still improvising a part of the faith you were told plainly?",
+    "Moses blesses them only when he sees the work completed. What obedience are you asking God to bless before you have done it?",
+    "The vestments are for ministry in the holy places. How should we pray for the men who wear them, and what should we refuse to make them into?"
+   ]
+  },
+  "exo:40": {
+   "background": [
+    "Moses raises the tabernacle as the Lord decreed, sets the table at the north side beyond the veil, and has Aaron and his sons wash before they approach the altar. The tent is no longer a set of instructions. It is a place.",
+    "Then “the cloud covered the tabernacle of the testimony, and the glory of the Lord filled it.” “Neither could Moses enter” because the majesty of the Lord was flashing there. The goal of the exodus is not freedom in the abstract. It is God dwelling with his people, a presence so real that even Moses stands outside.",
+    "“the cloud of the Lord lay over the tabernacle by day, and the fire by night” and Israel moves only when the cloud moves. The Gospel says the Word pitched his tent among us. The Church knows that presence now in the Eucharist, and she still lets God, not her own hurry, decide when to go."
+   ],
+   "questions": [
+    "The glory fills the tent so completely that Moses cannot go in. How should that change the way you walk into a church?",
+    "Israel moves when the cloud moves and stays when it stays. Where are you breaking camp before God has moved?",
+    "The whole book has been leading to God dwelling in the midst. What would it mean to arrange your house, not only your Sunday, around that?"
+   ]
+  },
+  "lev:1": {
+   "background": [
+    "The Lord calls Moses and speaks “from the tabernacle of the testimony”. The God who filled the tent now teaches Israel how to approach him. The first instruction is the holocaust: “an immaculate male at the door of the tabernacle” wholly burned.",
+    "The one who offers “shall place his hand on the head of the sacrifice, and so it shall be acceptable and effective, in its expiation.” The offerer is joined to the victim. The Church reads this toward Christ, who is both the priest and the immaculate victim, and toward the faithful who place their lives on his sacrifice.",
+    "If the offering is a bird, it may be “turtledoves, or young pigeons”. The poor are not shut out of the altar. Luke’s Gospel shows Mary bringing that offering of the poor when she presents Jesus. The law already made room for the household that could not bring a bull."
+   ],
+   "questions": [
+    "You lay your hand on the head of the victim. What are you still trying to offer to God without actually identifying yourself with it?",
+    "The victim has to be immaculate, and Christ is that victim. How does that keep you from thinking your own goodness is the sacrifice?",
+    "Turtledoves are enough. Where do you stay away from God because you cannot bring what the rich bring?"
+   ]
+  },
+  "lev:2": {
+   "background": [
+    "The grain offering is “fine wheat flour,” with oil poured over it and frankincense set on it. Part is burned as a memorial, and the rest belongs to the priests. It is the offering of the field, the ordinary food of a household, given to God.",
+    "“Every oblation that is offered to the Lord shall be made without leaven” and honey is not burned on the altar. The Roman Church offers unleavened bread at Mass, in this line: what is placed before God is not the bread of ordinary fermentation.",
+    "“you shall season it with salt” and “neither shall you take away the salt of the covenant of your God from your sacrifice.” Salt preserves and seasons. The Lord Jesus will call his disciples the salt of the earth. The covenant offering is not insipid."
+   ],
+   "questions": [
+    "This offering is flour, oil, and incense, the stuff of an ordinary kitchen. What ordinary thing are you withholding as if it were too plain for God?",
+    "No leaven on the altar. Where has a little corruption been worked into something you still want to call a gift?",
+    "Salt is “the salt of the covenant.” How does Jesus’ word about salt change the way you hear this chapter?"
+   ]
+  },
+  "lev:3": {
+   "background": [
+    "The peace offering may be a male or a female, so long as it is “immaculate, in the sight of the Lord.” Unlike the holocaust, this sacrifice is shared: the fat is burned to God, and the rest is eaten as a communion meal. Peace here is not a feeling. It is a table with God.",
+    "“All the fat shall be for the Lord” and “neither blood nor fat shall you eat at all” a perpetual statute. The life and the richest part belong to God. The Church does not bind Christians to that food law. She does teach that life is his, and that the Blood received in the Eucharist is the life Christ gives, not a meal we invent.",
+    "The priest burns the fat “as a most sweet odor.” Scripture’s way of saying that God accepts the gift is the language of fragrance. The Church’s incense still borrows that sign: prayer and sacrifice rising as something sweet before the Lord."
+   ],
+   "questions": [
+    "A peace offering is a shared meal, not a private performance. How is that closer to Mass than to a spirituality you keep to yourself?",
+    "Fat and blood are reserved for God. What part of your life do you keep eating, so to speak, instead of handing it over?",
+    "The animal still has to be immaculate. Where are you offering God a fellowship that you have already compromised?"
+   ]
+  },
+  "lev:4": {
+   "background": [
+    "The chapter is about the soul who has “sinned through ignorance,” doing what the Lord commanded not to be done. Hidden sin and unintentional sin still need expiation. The sacrament of Penance is for the sins we come to see, not only for the ones we planned.",
+    "If “the priest, who is anointed, will have sinned, causing the people to commit a transgression,” he brings an immaculate calf. The leader and the ordinary “soul from the people of the land” bring their own victims. Sin has a different weight when the one who sins is the one who leads, but no state of life is excused.",
+    "The blood is brought into the sanctuary when the priest or the whole congregation has sinned. The more public the fault, the nearer the blood must come to the holy place. The Church reads every one of these offerings toward the one sacrifice of Christ, which covers both the sin we knew and the sin we did not."
+   ],
+   "questions": [
+    "Ignorance does not make the chapter shrug. When you discover a sin you did not notice at the time, what do you do with it?",
+    "The anointed priest’s sin involves the people. How should we pray for priests and bishops without either excusing them or despairing of the Church?",
+    "There is a sacrifice even for the person who “understands his iniquity” only afterward. How is that a mercy, and how is it a warning?"
+   ]
+  },
+  "lev:5": {
+   "background": [
+    "If someone hears a public oath and is a witness, “if he does not reveal it, he shall carry his iniquity.” Silence can be a sin. The Church’s moral teaching agrees: we owe the truth when our silence would hide a grave wrong, and we also owe discretion when speech would only wound.",
+    "The guilty person shall “do penance for his sin” and bring a guilt offering. When someone realizes he has trespassed against the holy things, he brings a ram. Realization is not the end of the matter. It is the start of reparation.",
+    "The chapter keeps returning to the person who “understands his iniquity”. Catholic confession depends on that moment: the conscience wakes up, and the penitent does not wait to feel innocent before he asks to be forgiven."
+   ],
+   "questions": [
+    "Where is your silence protecting you instead of the truth?",
+    "The offering comes after the person understands his guilt. What are you waiting to feel before you will go to confession?",
+    "Reparation here is a real ram, not only a feeling. What concrete repair is still sitting undone after an apology?"
+   ]
+  },
+  "lev:6": {
+   "background": [
+    "“This is the law of a holocaust. It shall be burned upon the altar, all night until morning.” The priest lays wood each morning, and “the fire on the altar shall burn always” “This is the perpetual fire which shall never fail upon the altar.”",
+    "The Church hears in that fire a figure of the sacrifice that does not go out. Christ offered himself once. The Mass makes that one offering present, morning after morning, rather than starting a new religion of repeated killings.",
+    "The ashes are carried to a clean place outside the camp, and the priest who handles the offering changes his garments. Holiness is careful about what it touches. The liturgy still teaches ministers to handle the Eucharist with a care the chapter would recognize."
+   ],
+   "questions": [
+    "The fire is tended every morning so it never fails. What daily practice keeps your prayer from going out overnight?",
+    "The Mass does not invent a new sacrifice. How does that change the way you hear “we offer” at the altar?",
+    "Even the ashes are carried to a clean place. Where have you treated holy things casually because they seemed like leftovers?"
+   ]
+  },
+  "lev:7": {
+   "background": [
+    "“This is the law of the victim of peace offerings, which is offered to the Lord.” The meat is holy. A person who is unclean and eats it “shall perish from his people.” Communion with God is not casual access. The Church asks the same seriousness of those who approach Holy Communion: the state of grace is not a technicality.",
+    "“The fat of a sheep, and of an ox, and of a goat you shall not eat” and “you shall not take as food the blood of any animals at all”. Life and the richest portion are God’s. Christians are not under the kosher table, but they are under the truth that table was teaching.",
+    "The chapter also distinguishes a thanksgiving peace offering from a votive one, and it tells what may be eaten on the first day and what must be burned after. Holy food has a time. It is not stored up as leftovers of the altar."
+   ],
+   "questions": [
+    "Unclean people may not eat the peace offering. How does that help you understand why the Church speaks about the state of grace before Communion?",
+    "Thanksgiving and a vow are not the same offering. Which of those two is your prayer usually missing?",
+    "What holy thing have you been treating as leftovers?"
+   ]
+  },
+  "lev:8": {
+   "background": [
+    "Moses now does what Exodus 29 commanded. He washes Aaron and his sons, clothes them, and, “pouring the oil over Aaron’s head, he anointed and consecrated him.” The oil marks a man for God in front of the whole assembly. Holy Orders in the Church is that kind of act: a consecration for the altar, not a private promotion.",
+    "Moses takes the blood of the ram and touches “the tip of Aaron’s right ear, and the thumb of his right hand, and similarly also his foot.” Hearing, work, and walking are claimed. A priest is not consecrated in his opinions. He is consecrated in what he listens to, what his hands do, and where his feet go.",
+    "Then Moses takes the oil and the blood together and “sprinkled it over Aaron and his vestments, and over his sons and their vestments.” The clothes of the office are consecrated with the man. The Church still treats vestments as set apart, because the man at the altar does not stand there as a private person."
+   ],
+   "questions": [
+    "Oil is poured on Aaron’s head in front of everyone. Why does a calling need to be public, and what goes wrong when it stays a private feeling?",
+    "Ear, thumb, and foot. Which of those three is least given over to God in the way you serve?",
+    "How should this chapter change the way you pray for the men who have been ordained?"
+   ]
+  },
+  "lev:9": {
+   "background": [
+    "Moses tells Aaron, “This is the word, which the Lord has instructed. Accomplish it, and his glory will appear to you.” The glory is promised on the far side of obedience, not as a spectacle Aaron can schedule.",
+    "Aaron offers the sin offering, the holocaust, and the peace offerings, lifts his hands and blesses the people, and then he and Moses enter the tent and come out and bless them again. “the glory of the Lord appeared to the entire multitude”. Blessing the people and the appearance of glory belong together.",
+    "“a fire from the Lord devoured the holocaust” and the crowd “praised the Lord, falling on their faces.” The right answer to a real appearance of God is praise and prostration. The Church still bows and kneels because she believes the Lord is actually there."
+   ],
+   "questions": [
+    "Glory appears after they accomplish what was instructed. Where are you asking for a spiritual experience while leaving the instruction undone?",
+    "Aaron blesses the people with lifted hands. What does a blessing actually give, and who are you slow to bless?",
+    "They fall on their faces. When was the last time worship put you on your knees, and what were you protecting by staying upright?"
+   ]
+  },
+  "lev:10": {
+   "background": [
+    "Nadab and Abihu, Aaron’s sons, offer “a strange fire, such as was not instructed of them.” “fire coming out from the Lord destroyed them, and they died in the sight of the Lord”. The same fire that accepted the sacrifice in the previous chapter refuses a worship the Lord did not command.",
+    "Moses says, “I will be sanctified in those who approach me, and I will be glorified in the sight of all the people.” “Aaron was silent.” The Church reads this with fear: nearness to God is not familiarity. Those who approach the altar are the first who must let God be holy.",
+    "The priests are told, “You shall not drink wine, nor anything that is able to inebriate you” when they enter the tent, “so may you have the knowledge to discern between holy and profane”. Sobriety here is for judgment. A minister who cannot tell holy from common is a danger to the people."
+   ],
+   "questions": [
+    "What worship in your life is “strange fire,” sincere and still not what God asked?",
+    "Aaron is silent. When is silence the faithful answer to a judgment of God, and when is it only shock?",
+    "They must discern holy from profane. Where have you blurred that line because the blurring was more comfortable?"
+   ]
+  },
+  "lev:11": {
+   "background": [
+    "Israel may eat what “has a divided hoof, and that chews over again,” and what has “little fins and scales”. The camel, the rock rabbit, the hare, and the swine are named as unclean, and certain birds and swarming things with them. The menu is a daily lesson in making distinctions.",
+    "The point of the distinctions is holiness: “Be holy, for I am Holy” and “I am the Lord, who led you away from the land of Egypt”. The food law is tied to the exodus. A redeemed people do not eat like a people with no God. St. Peter’s vision and the Lord’s teaching will later show that these food laws do not bind Christians. The call to be holy does.",
+    "The chapter trains Israel to tell what may be eaten from what defiles. The Church does not keep the kosher table. She does keep the duty to tell the difference between what forms a Christian and what defiles a conscience."
+   ],
+   "questions": [
+    "God ties the menu to “I led you out of Egypt.” How does being redeemed change ordinary choices, even the ones that are no longer a food law?",
+    "“Be holy, for I am Holy” outlives the list of animals. Where are you asking for a short rule instead of that likeness?",
+    "Discerning clean from polluted was a household skill. What are you letting into your home that you have stopped judging?"
    ]
   }
  }

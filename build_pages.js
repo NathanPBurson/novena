@@ -1,11 +1,13 @@
-// Pio's Lost Sheep static page generator. Usage: node build_pages.js [--from YYYY-MM-DD] [--days 7]
-// Builds /day/YYYY-MM-DD/index.html for today (America/New_York) through +7 days, the home page (/index.html)
-// and /day/index.html. Idempotent: pages are fully rewritten each run; older day pages are kept.
+// Pio's Lost Sheep static page generator. Usage: node build_pages.js [--from YYYY-MM-DD] [--days 21]
+// Builds /day/YYYY-MM-DD/index.html from --from (default: today, America/New_York, 6 AM rollover)
+// through that many days ahead, the home page (/index.html) and /day/index.html.
+// Idempotent: pages are fully rewritten each run; older day pages are kept.
+// Default runway is 21 days so a plain rebuild does not stop a week out.
 const fs=require("fs"),path=require("path"),L=require("./js/logic.js");
 const R=__dirname,J=f=>JSON.parse(fs.readFileSync(path.join(R,f)));
 const site=J("data/site.json"),C=J("data/content.json"),SC=J("data/scenes.json").scenes,ART=J("data/art_meta.json"),CR=J("data/art_credits.json"),NT=J("data/novena_traditional.json");
 const a=process.argv.slice(2),arg=(k,d)=>{const i=a.indexOf(k);return i>=0?a[i+1]:d};
-const from=arg("--from",L.todayNY()),ahead=+arg("--days",7);
+const from=arg("--from",L.todayNY()),ahead=+arg("--days",21);
 const GV=(()=>{try{return require("child_process").execSync("git rev-parse --short HEAD",{cwd:R}).toString().trim()}catch(e){return "dev"}})(); // commit short hash for cache busting
 const VA_=require("crypto").createHash("sha1").update(["css/lu.css","css/style.css","js/logic.js","js/app.js","js/compline.js"].map(f=>fs.readFileSync(path.join(R,f))).join("")).digest("hex").slice(0,10),VA=GV; // asset cache-bust = commit hash
 const byId={};C.books.forEach(b=>byId[b.id]=b);
@@ -39,8 +41,9 @@ function biay(key){const b=BY.chapters[key];if(!b)return "";const a=(u,t)=>`<a h
  `<div class="lu-note" data-part="prayer"><b>For prayer</b><p>${esc(b.question)}</p></div>`+
  `<p class="lu-muted" data-part="sources">${esc(BY.credit)} Links: ${a(b.episode,"Episode")} &middot; ${a(BY.plan,"Reading plan")} &middot; ${a("https://www.vatican.va/archive/ENG0015/_INDEX.HTM","Catechism")} &middot; ${a(b.father.url,b.father.who)} &middot; ${b.haydock.map(h=>a(h.url,"Haydock "+h.ref)).join(" &middot; ")}${more}</p></section>`}
 const TR=fs.existsSync(path.join(R,"data/trivia.json"))?J("data/trivia.json"):{chapters:{}};
-function trivia(key,name,ch){const t=TR.chapters[key];if(!t||!t.items||!t.items.length)return "";
- return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><ul class="lu-list">${t.items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></section>`}
+// Trivia stays last: Background (3–4 details) and Discussion Questions (2–3). tools/trivia_format.js
+const triviaFormat=require("./tools/trivia_format.js");
+function trivia(key,name,ch){return triviaFormat.html(TR.chapters[key],name,ch,esc)}
 function loadEpisodes(){const p=path.join(R,"data/episodes.json");if(!fs.existsSync(p))return [];return (J("data/episodes.json").episodes||[]).filter(e=>e&&e.id&&e.title).slice().sort((a,b)=>(b.number||0)-(a.number||0));}
 function tsSec(t){const p=String(t||"0").split(":").map(n=>+n||0);return p.length>=3?p[0]*3600+p[1]*60+p[2]:p.length===2?p[0]*60+p[1]:p[0];}
 function episodeHtml(ep,root,opts){opts=opts||{};const id=String(ep.id).trim(),watch="https://www.youtube.com/watch?v="+id;
