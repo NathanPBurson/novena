@@ -1,5 +1,5 @@
 {
- "_comment": "Short facts taken from the chapter the day page reads (CPDV). Keyed by book:chapter so the section stays with the reading, not a stale date.",
+ "_comment": "Original trivia format from 1c0b2fb (2026-11-08): exactly three fact lines taken from the chapter the day page reads (CPDV). Not questions, answers, or a reveal. Keyed by book:chapter so the section stays with the reading, not a stale date.",
  "chapters": {
   "gen:48": {
    "items": [

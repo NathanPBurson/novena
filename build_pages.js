@@ -39,8 +39,8 @@ function biay(key){const b=BY.chapters[key];if(!b)return "";const a=(u,t)=>`<a h
  `<div class="lu-note" data-part="prayer"><b>For prayer</b><p>${esc(b.question)}</p></div>`+
  `<p class="lu-muted" data-part="sources">${esc(BY.credit)} Links: ${a(b.episode,"Episode")} &middot; ${a(BY.plan,"Reading plan")} &middot; ${a("https://www.vatican.va/archive/ENG0015/_INDEX.HTM","Catechism")} &middot; ${a(b.father.url,b.father.who)} &middot; ${b.haydock.map(h=>a(h.url,"Haydock "+h.ref)).join(" &middot; ")}${more}</p></section>`}
 const TR=fs.existsSync(path.join(R,"data/trivia.json"))?J("data/trivia.json"):{chapters:{}};
-function trivia(key,name,ch){const t=TR.chapters[key];if(!t||!t.items||!t.items.length)return "";
- return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><ul class="lu-list">${t.items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></section>`}
+const triviaFormat=require("./tools/trivia_format.js");
+function trivia(key,name,ch){return triviaFormat.html(TR.chapters[key],name,ch,esc)}
 function loadEpisodes(){const p=path.join(R,"data/episodes.json");if(!fs.existsSync(p))return [];return (J("data/episodes.json").episodes||[]).filter(e=>e&&e.id&&e.title).slice().sort((a,b)=>(b.number||0)-(a.number||0));}
 function tsSec(t){const p=String(t||"0").split(":").map(n=>+n||0);return p.length>=3?p[0]*3600+p[1]*60+p[2]:p.length===2?p[0]*60+p[1]:p[0];}
 function episodeHtml(ep,root,opts){opts=opts||{};const id=String(ep.id).trim(),watch="https://www.youtube.com/watch?v="+id;

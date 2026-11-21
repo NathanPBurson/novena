@@ -224,10 +224,19 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  t(/id="today-flag" hidden/.test(oh),other+" is not marked today");
  let onlyToday=true;for(const d of fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x))){const marked=/id="today-flag"(?! hidden)/.test(fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"));if(marked!==(d===ny))onlyToday=false;}
  t(onlyToday,"only "+ny+" is marked Today");
- let tr=true;for(let d=ny;d<=last;d=L.addDays(d,1)){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
-  const items=(require("./data/trivia.json").chapters[r.reading.book+":"+r.reading.chapter]||{}).items||[];
-  if(!(h.indexOf('id="trivia"')>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&items.length>=2&&items.every(x=>h.includes(esc(x)))))tr=false;}
- t(tr,"trivia section is last content on each day through the Tuesday refill ("+ny+" to "+last+") and matches that day's chapter");
+ const TF=require("./tools/trivia_format.js"),chapters=require("./data/trivia.json").chapters;
+ const original=(name,ch,items)=>`<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><ul class="lu-list">${items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></section>`;
+ t(TF.facts({items:["a","b"]})===null&&TF.facts({items:[{q:"Q",a:"A"},{q:"Q",a:"A"},{q:"Q",a:"A"}]})===null&&TF.html({items:["one","two","three"]},"Exodus",13,esc)===original("Exodus",13,["one","two","three"]),"trivia generator keeps the original three fact lines, not a question or reveal");
+ let tr=true,seen=0;for(const d of fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x))){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
+  const entry=chapters[r.reading.book+":"+r.reading.chapter],items=TF.facts(entry),block=items?original(r.reading.name,r.reading.chapter,items):"";
+  const at=h.indexOf('id="trivia"'),after=at<0?"":h.slice(h.indexOf("</section>",at)+10).split("<script")[0];
+  if(!(items&&h.includes(block)&&at>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&!/<section[\s>]/.test(after)&&(h.match(/<section class="lu-panel" id="trivia">/g)||[]).length===1))tr=false;else seen++;}
+ t(tr&&seen>=1,"trivia on every day page is the original format: last section, heading Trivia · book chapter, exactly three CPDV fact lines ("+seen+" pages)");
+ let windowOk=true;for(let d=ny;d<=last;d=L.addDays(d,1)){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books),items=TF.facts(chapters[r.reading.book+":"+r.reading.chapter]);
+  if(!items||!h.includes(original(r.reading.name,r.reading.chapter,items)))windowOk=false;}
+ t(windowOk,"trivia section is last content on each day through the Tuesday refill ("+ny+" to "+last+") and matches that day's chapter");
+ const nf=fs.readFileSync(path.join(__dirname,"tools/nightly_fill.js"),"utf8");
+ t(/trivia_format/.test(nf)&&/triviaFacts\(/.test(nf)&&/break/.test(nf),"nightly fill will not plan a day that lacks the original three fact lines");
  const ep=require("./data/episodes.json").episodes[0],eh=fs.readFileSync(path.join(__dirname,"episodes/169/index.html"),"utf8"),home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dayh=fs.readFileSync(path.join(__dirname,"day/2026-11-07/index.html"),"utf8"),epi=fs.readFileSync(path.join(__dirname,"episodes/index.html"),"utf8");
  const embed='src="https://www.youtube.com/embed/3A509tCcfCw"';
  const posted=(ep.shorts||[]).filter(s=>/^[A-Za-z0-9_-]{11}$/.test(String(s.id||"")));
