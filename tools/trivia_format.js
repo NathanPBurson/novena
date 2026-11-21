@@ -1,17 +1,24 @@
-// Original day-page trivia, first shipped in 1c0b2fb (2026-11-08, "Mark Nov 7 as today").
-// Placement: last section on the day page, after Scripture and after Bible in a Year.
+// Day-page trivia (Nathan, Nov 20, 11:32 PM ET): last section on the page.
 // Heading: "Trivia · {book} {chapter}".
-// Body: exactly three fact lines from that chapter's CPDV text, in ul.lu-list.
-// Not a question/answer pair and not a click-to-reveal. Keyed by book:chapter.
-function facts(entry){
-  const items=entry&&entry.items;
-  if(!Array.isArray(items)||items.length!==3)return null;
-  if(!items.every(x=>typeof x==="string"&&x.trim()))return null;
-  return items;
+// Body: a short Background of 3 or 4 extra details (history, custom, geography,
+// or Catholic reading: the Fathers' received sense, typology, the Mass or the
+// sacraments), then 2 or 3 Discussion Questions for a stream or a small group.
+// Scripture quoted inside the background is the CPDV. The old three fact-lines
+// shape is not accepted.
+function ready(entry){
+  if(!entry||entry.items)return null;
+  const background=entry.background,questions=entry.questions;
+  if(!Array.isArray(background)||background.length<3||background.length>4)return null;
+  if(!Array.isArray(questions)||questions.length<2||questions.length>3)return null;
+  if(!background.every(x=>typeof x==="string"&&x.trim()))return null;
+  if(!questions.every(x=>typeof x==="string"&&x.trim()&&x.includes("?")))return null;
+  return {background,questions};
 }
 function html(entry,name,ch,esc){
-  const items=facts(entry);
-  if(!items)return "";
-  return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><ul class="lu-list">${items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></section>`;
+  const p=ready(entry);
+  if(!p)return "";
+  const bg=p.background.map(x=>"<li>"+esc(x)+"</li>").join("");
+  const qs=p.questions.map(x=>"<li>"+esc(x)+"</li>").join("");
+  return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><div class="lu-note" data-part="background"><b>Background</b><ul>${bg}</ul></div><div class="lu-note" data-part="questions"><b>Discussion Questions</b><ol>${qs}</ol></div></section>`;
 }
-module.exports={facts,html};
+module.exports={ready,html};

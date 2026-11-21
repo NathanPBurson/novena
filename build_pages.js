@@ -39,6 +39,7 @@ function biay(key){const b=BY.chapters[key];if(!b)return "";const a=(u,t)=>`<a h
  `<div class="lu-note" data-part="prayer"><b>For prayer</b><p>${esc(b.question)}</p></div>`+
  `<p class="lu-muted" data-part="sources">${esc(BY.credit)} Links: ${a(b.episode,"Episode")} &middot; ${a(BY.plan,"Reading plan")} &middot; ${a("https://www.vatican.va/archive/ENG0015/_INDEX.HTM","Catechism")} &middot; ${a(b.father.url,b.father.who)} &middot; ${b.haydock.map(h=>a(h.url,"Haydock "+h.ref)).join(" &middot; ")}${more}</p></section>`}
 const TR=fs.existsSync(path.join(R,"data/trivia.json"))?J("data/trivia.json"):{chapters:{}};
+// Trivia stays last: Background (3–4 details) and Discussion Questions (2–3). tools/trivia_format.js
 const triviaFormat=require("./tools/trivia_format.js");
 function trivia(key,name,ch){return triviaFormat.html(TR.chapters[key],name,ch,esc)}
 function loadEpisodes(){const p=path.join(R,"data/episodes.json");if(!fs.existsSync(p))return [];return (J("data/episodes.json").episodes||[]).filter(e=>e&&e.id&&e.title).slice().sort((a,b)=>(b.number||0)-(a.number||0));}

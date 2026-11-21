@@ -225,18 +225,23 @@ t(/href="https:\/\/nathanpburson.github.io\/novena\/rewind\/\?obs=1"/.test(fs.re
  let onlyToday=true;for(const d of fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x))){const marked=/id="today-flag"(?! hidden)/.test(fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"));if(marked!==(d===ny))onlyToday=false;}
  t(onlyToday,"only "+ny+" is marked Today");
  const TF=require("./tools/trivia_format.js"),chapters=require("./data/trivia.json").chapters;
- const original=(name,ch,items)=>`<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><ul class="lu-list">${items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></section>`;
- t(TF.facts({items:["a","b"]})===null&&TF.facts({items:[{q:"Q",a:"A"},{q:"Q",a:"A"},{q:"Q",a:"A"}]})===null&&TF.html({items:["one","two","three"]},"Exodus",13,esc)===original("Exodus",13,["one","two","three"]),"trivia generator keeps the original three fact lines, not a question or reveal");
- let tr=true,seen=0;for(const d of fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x))){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
-  const entry=chapters[r.reading.book+":"+r.reading.chapter],items=TF.facts(entry),block=items?original(r.reading.name,r.reading.chapter,items):"";
-  const at=h.indexOf('id="trivia"'),after=at<0?"":h.slice(h.indexOf("</section>",at)+10).split("<script")[0];
-  if(!(items&&h.includes(block)&&at>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&!/<section[\s>]/.test(after)&&(h.match(/<section class="lu-panel" id="trivia">/g)||[]).length===1))tr=false;else seen++;}
- t(tr&&seen>=1,"trivia on every day page is the original format: last section, heading Trivia · book chapter, exactly three CPDV fact lines ("+seen+" pages)");
- let windowOk=true;for(let d=ny;d<=last;d=L.addDays(d,1)){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books),items=TF.facts(chapters[r.reading.book+":"+r.reading.chapter]);
-  if(!items||!h.includes(original(r.reading.name,r.reading.chapter,items)))windowOk=false;}
+ const block=(name,ch,entry)=>{const p=TF.ready(entry);if(!p)return "";
+  return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><div class="lu-note" data-part="background"><b>Background</b><ul>${p.background.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></div><div class="lu-note" data-part="questions"><b>Discussion Questions</b><ol>${p.questions.map(x=>"<li>"+esc(x)+"</li>").join("")}</ol></div></section>`;};
+ const sample={background:["One detail.","Two detail.","Three detail."],questions:["What do you see?","Where does this lead?"]};
+ t(TF.ready({items:["a","b","c"]})===null&&TF.ready({background:["a","b"],questions:["Q?","Q?"]})===null&&TF.html(sample,"Exodus",13,esc)===block("Exodus",13,sample),"trivia generator accepts only background details plus discussion questions");
+ let tr=true,seen=0,quoted=true;for(const d of fs.readdirSync(path.join(__dirname,"day")).filter(x=>/^\d{4}-\d\d-\d\d$/.test(x))){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
+  const entry=chapters[r.reading.book+":"+r.reading.chapter],html=block(r.reading.name,r.reading.chapter,entry);
+  const at=h.indexOf('id="trivia"'),sec=at<0?"":h.slice(at,h.indexOf("</section>",at)),after=at<0?"":h.slice(h.indexOf("</section>",at)+10).split("<script")[0];
+  const cpdv=fs.readFileSync(path.join(__dirname,"bible/cpdv",r.reading.book+".json"),"utf8");
+  const verses=JSON.parse(cpdv).chapters[r.reading.chapter-1].join("\n");
+  if(entry) for(const q of [...entry.background.join("\n").matchAll(/“([^”]+)”/g)].map(m=>m[1])) if(!verses.includes(q)) quoted=false;
+  if(!(TF.ready(entry)&&h.includes(html)&&sec.includes('data-part="background"')&&sec.includes('data-part="questions"')&&at>h.indexOf('id="scripture"')&&h.lastIndexOf('id="trivia"')>h.lastIndexOf('id="biay"')&&!/<section[\s>]/.test(after)&&(h.match(/<section class="lu-panel" id="trivia">/g)||[]).length===1&&!sec.includes('<ul class="lu-list">')))tr=false;else seen++;}
+ t(tr&&quoted&&seen>=1,"trivia on every day page is background (3–4) plus discussion questions (2–3), last, headed Trivia · book chapter, with CPDV quotes ("+seen+" pages)");
+ let windowOk=true;for(let d=ny;d<=last;d=L.addDays(d,1)){const h=fs.readFileSync(path.join(__dirname,"day",d,"index.html"),"utf8"),r=L.compute(d,site,books);
+  if(!h.includes(block(r.reading.name,r.reading.chapter,chapters[r.reading.book+":"+r.reading.chapter])))windowOk=false;}
  t(windowOk,"trivia section is last content on each day through the Tuesday refill ("+ny+" to "+last+") and matches that day's chapter");
  const nf=fs.readFileSync(path.join(__dirname,"tools/nightly_fill.js"),"utf8");
- t(/trivia_format/.test(nf)&&/triviaFacts\(/.test(nf)&&/break/.test(nf),"nightly fill will not plan a day that lacks the original three fact lines");
+ t(/trivia_format/.test(nf)&&/triviaReady\(/.test(nf)&&/break/.test(nf),"nightly fill will not plan a day that lacks background plus discussion questions");
  const ep=require("./data/episodes.json").episodes[0],eh=fs.readFileSync(path.join(__dirname,"episodes/169/index.html"),"utf8"),home=fs.readFileSync(path.join(__dirname,"index.html"),"utf8"),dayh=fs.readFileSync(path.join(__dirname,"day/2026-11-07/index.html"),"utf8"),epi=fs.readFileSync(path.join(__dirname,"episodes/index.html"),"utf8");
  const embed='src="https://www.youtube.com/embed/3A509tCcfCw"';
  const posted=(ep.shorts||[]).filter(s=>/^[A-Za-z0-9_-]{11}$/.test(String(s.id||"")));
