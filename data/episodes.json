@@ -1,38 +1,470 @@
 {
-  "_comment": "Public episodes only. shorts[].id stays empty until a Short is posted. Do not store unlisted source links here.",
+  "_comment": "Public uploads only. Home leads with site.featured. onDay pins a video to that date's prayer page. Do not store private, scheduled, or unlisted ids here.",
   "episodes": [
+    {
+      "seq": 1,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "SUPpXR7ciFg",
+      "date": "2026-11-20",
+      "published": "2026-11-20T18:21:13Z",
+      "duration": "2:23:27",
+      "title": "From the Shire to the Bionis | Xenoblade Chronicles: Definitive Edition LIVE",
+      "summary": "Tales of the Shire on Switch 2, then Xenoblade Chronicles: Definitive Edition. Streamed live November 20, 2026.",
+      "games": [
+        "Tales of the Shire",
+        "Xenoblade Chronicles: Definitive Edition"
+      ],
+      "topics": [
+        "Live"
+      ],
+      "thumb": "https://i.ytimg.com/vi/SUPpXR7ciFg/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 2,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "OpCGDKfWIy8",
+      "date": "2026-11-20",
+      "published": "2026-11-21T02:21:22Z",
+      "duration": "2:40:20",
+      "title": "Does God Live Atop the World Tree? | Xenoblade Chronicles 2: Torna – The Golden Country LIVE",
+      "summary": "Xenoblade Chronicles 2: Torna – The Golden Country, streamed live. Lora, Jin, and the World Tree.",
+      "games": [
+        "Xenoblade Chronicles 2: Torna – The Golden Country"
+      ],
+      "topics": [
+        "Live",
+        "World Tree"
+      ],
+      "thumb": "https://i.ytimg.com/vi/OpCGDKfWIy8/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 3,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "eG8U8Kvt5uA",
+      "date": "2026-11-20",
+      "published": "2026-11-20T00:00:00Z",
+      "duration": "31:30",
+      "title": "Skywalker Is Dead | Episode 2 (LEGO Star Wars, Mario Kart World, Originally Filmed Mon Sep 22, 2025)",
+      "summary": "Public upload of the September 22, 2025 recording. A test stream that turns to LEGO Star Wars: The Skywalker Saga, with a look at Mario Kart World.",
+      "games": [
+        "LEGO Star Wars: The Skywalker Saga",
+        "Mario Kart World"
+      ],
+      "topics": [
+        "Faith",
+        "First confession"
+      ],
+      "thumb": "https://i.ytimg.com/vi/eG8U8Kvt5uA/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep (Episode 1)"
+        },
+        {
+          "t": "0:23",
+          "title": "Would You Look at That, I'm Live (Going Live)"
+        },
+        {
+          "t": "1:05",
+          "title": "Papa Dippers (Papa John's)"
+        },
+        {
+          "t": "1:36",
+          "title": "This Is Just a Test Stream (Setup)"
+        },
+        {
+          "t": "2:37",
+          "title": "Mario Kart, Then I Close It (Mario Kart World)"
+        },
+        {
+          "t": "3:06",
+          "title": "You Can't Play Star Wars on Stream (LEGO Star Wars)"
+        },
+        {
+          "t": "3:43",
+          "title": "Baron Trump, Future of the Galaxy (Banter)"
+        },
+        {
+          "t": "4:44",
+          "title": "Skywalker Is Dead (Sequels Talk)"
+        },
+        {
+          "t": "5:26",
+          "title": "The Last Jedi Pulled Me Out of a Funk (The Last Jedi)"
+        },
+        {
+          "t": "6:35",
+          "title": "Thrown Out of Church for a Year (Faith)"
+        },
+        {
+          "t": "7:55",
+          "title": "I Have Faith in God (Faith)"
+        },
+        {
+          "t": "8:20",
+          "title": "When I Was a Protestant (Conversion)"
+        },
+        {
+          "t": "8:52",
+          "title": "First Confession (Catholicism)"
+        },
+        {
+          "t": "10:34",
+          "title": "I Look Like Anakin (LEGO Star Wars)"
+        },
+        {
+          "t": "12:11",
+          "title": "Ahsoka Hyped Something for Years (Ahsoka / Rebels)"
+        },
+        {
+          "t": "12:49",
+          "title": "I Started Going to Church for Real (Faith)"
+        },
+        {
+          "t": "15:40",
+          "title": "How This Government Stuff Works (Banter)"
+        },
+        {
+          "t": "16:29",
+          "title": "How Do I Do This? (LEGO Star Wars)"
+        },
+        {
+          "t": "19:15",
+          "title": "I Like The Force Awakens (Sequels)"
+        },
+        {
+          "t": "20:30",
+          "title": "Ezra's Dead, Everybody (Rebels)"
+        },
+        {
+          "t": "24:30",
+          "title": "Trump's a Sith Lord (Banter)"
+        },
+        {
+          "t": "25:39",
+          "title": "Almost My 25th Birthday (Faith)"
+        },
+        {
+          "t": "28:55",
+          "title": "Are There Straight Reylo Fans? (Banter)"
+        },
+        {
+          "t": "31:05",
+          "title": "I'm Getting a Call (Stream End)"
+        }
+      ]
+    },
+    {
+      "seq": 4,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "GKKqO-IESWg",
+      "date": "2026-11-20",
+      "published": "2026-11-20T00:00:00Z",
+      "duration": "1:22",
+      "title": "A Ghosted App | 23 Silent Seconds | Episode 1 (Originally Filmed Sat Sep 20, 2025)",
+      "summary": "Public upload of the September 20, 2025 recording. Twenty-three silent seconds, and the first time the channel went live.",
+      "games": [],
+      "topics": [
+        "First stream"
+      ],
+      "thumb": "https://i.ytimg.com/vi/GKKqO-IESWg/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Pio's Lost Sheep Intro (Channel Intro)"
+        },
+        {
+          "t": "0:48",
+          "title": "Episode 1 (Title)"
+        },
+        {
+          "t": "0:58",
+          "title": "A Ghosted App (First Stream)"
+        }
+      ]
+    },
+    {
+      "seq": 5,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "1AGBP5Xbzvo",
+      "date": "2026-11-19",
+      "published": "2026-11-19T00:00:00Z",
+      "duration": "2:48:14",
+      "title": "I Am QAnon | Skyward Sword HD LIVE",
+      "summary": "Skyward Sword HD, streamed live November 19, 2026.",
+      "games": [
+        "The Legend of Zelda: Skyward Sword HD"
+      ],
+      "topics": [
+        "Live"
+      ],
+      "thumb": "https://i.ytimg.com/vi/1AGBP5Xbzvo/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 6,
+      "number": 176,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "l5zEnuqjBjA",
+      "date": "2026-11-20",
+      "published": "2026-11-20T00:00:00Z",
+      "duration": "1:34:20",
+      "title": "Episode 176: Paradise Loaned? Shakespeare, Milton & Loan Sharks (Pokémon Legends: Z-A)",
+      "summary": "Pokémon Legends: Z-A, with Shakespeare, Beowulf, and Milton's Paradise Lost, then the Rosary, Compline, the Surrender Novena, and a reading from Exodus.",
+      "games": [
+        "Pokémon Legends: Z-A"
+      ],
+      "topics": [
+        "Rosary",
+        "Compline",
+        "Surrender Novena",
+        "Exodus",
+        "Shakespeare",
+        "Milton"
+      ],
+      "thumb": "https://i.ytimg.com/vi/l5zEnuqjBjA/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep"
+        },
+        {
+          "t": "0:45",
+          "title": "Mini Golf on a Haunted Hill (Neighborhood Ghost Stories)"
+        },
+        {
+          "t": "7:39",
+          "title": "Can't Pick a Game, Picks Pokémon (Game Selection)"
+        },
+        {
+          "t": "9:04",
+          "title": "Powered by the Fat Reactor (Discord Banter)"
+        },
+        {
+          "t": "11:21",
+          "title": "Agent Donald Pulls the File (TVA / Pokémon Legends: Z-A)"
+        },
+        {
+          "t": "13:37",
+          "title": "My Charizard's No Longer Mega (Pokémon Legends: Z-A)"
+        },
+        {
+          "t": "14:26",
+          "title": "If You Want More Ultron (Ultron Talk)"
+        },
+        {
+          "t": "16:09",
+          "title": "Tom Clancy Did Nothing Wrong (Tom Clancy)"
+        },
+        {
+          "t": "18:11",
+          "title": "Anyone Can Be Redeemed (Redemption)"
+        },
+        {
+          "t": "20:08",
+          "title": "Shakespeare Is Just Family Drama (Romeo & Juliet)"
+        },
+        {
+          "t": "28:03",
+          "title": "Beowulf, Straight From Old English (Epic Poetry)"
+        },
+        {
+          "t": "29:06",
+          "title": "Paradise Lost, Snake Found (John Milton)"
+        },
+        {
+          "t": "31:58",
+          "title": "Chants vs. Demons (Spiritual Warfare)"
+        },
+        {
+          "t": "40:37",
+          "title": "Bamboo Maze Couples Counseling (Relationships)"
+        },
+        {
+          "t": "44:44",
+          "title": "Look How Slow They Make Me Walk (Pokémon Legends: Z-A)"
+        },
+        {
+          "t": "46:19",
+          "title": "Paradise Loaned: The Rust Syndicate (Hotel Z Loan Sharks)"
+        },
+        {
+          "t": "51:33",
+          "title": "This Stream Really Helped (Pokémon Legends: Z-A)"
+        },
+        {
+          "t": "55:58",
+          "title": "Wait, Is That Matthew? (Pokémon Legends: Z-A)"
+        },
+        {
+          "t": "58:22",
+          "title": "Crocs Finally Gets Rain (Feraligatr)"
+        },
+        {
+          "t": "59:06",
+          "title": "That Mega Symbol Drip (Pokémon Legends: Z-A)"
+        },
+        {
+          "t": "1:00:13",
+          "title": "No Linking Cable to Arceus (Pokémon Legends: Z-A)"
+        },
+        {
+          "t": "1:00:37",
+          "title": "Sammy Yang Joins the Server (Discord)"
+        },
+        {
+          "t": "1:03:06",
+          "title": "In the Name of the Father (Rosary)"
+        },
+        {
+          "t": "1:24:21",
+          "title": "Lord, Come to My Aid (Compline)"
+        },
+        {
+          "t": "1:29:54",
+          "title": "Surrender to Me (Surrender Novena)"
+        },
+        {
+          "t": "1:33:48",
+          "title": "Sheep, Oxen & Peace Offerings (Scripture Reading)"
+        }
+      ]
+    },
+    {
+      "seq": 7,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "N-u4LYBxWhk",
+      "date": "2026-11-19",
+      "published": "2026-11-19T00:00:00Z",
+      "duration": "2:56:35",
+      "title": "I Had Strings and Now I'm Free | Skyward Sword",
+      "summary": "Skyward Sword, streamed live November 19, 2026.",
+      "games": [
+        "The Legend of Zelda: Skyward Sword"
+      ],
+      "topics": [
+        "Live"
+      ],
+      "thumb": "https://i.ytimg.com/vi/N-u4LYBxWhk/maxresdefault.jpg",
+      "chapters": []
+    },
     {
       "number": 169,
       "id": "3A509tCcfCw",
       "date": "2026-11-07",
       "title": "Episode 169: Blood, Sweat & Stigmata (Stigmata Scare, Exodus 12, Rosary, Pokémon Violet, Zelda, XC2)",
       "summary": "The Rosary and Exodus 12, then Xenoblade Chronicles 2, Pokémon Violet and Zelda: Ocarina of Time, with a stigmata scare, heresies, philosophy and politics along the way.",
-      "games": ["Xenoblade Chronicles 2", "Pokémon Violet", "Zelda: Ocarina of Time"],
-      "topics": ["Rosary", "Exodus 12", "Stigmata scare", "Heresies", "Philosophy", "Politics"],
+      "games": [
+        "Xenoblade Chronicles 2",
+        "Pokémon Violet",
+        "Zelda: Ocarina of Time"
+      ],
+      "topics": [
+        "Rosary",
+        "Exodus 12",
+        "Stigmata scare",
+        "Heresies",
+        "Philosophy",
+        "Politics"
+      ],
       "thumb": "images/episodes/3A509tCcfCw.jpg",
       "chapters": [
-        {"t": "0:00", "title": "Previously on Pio's Lost Sheep"},
-        {"t": "3:11", "title": "Coming Up Roses (Rosary)"},
-        {"t": "43:27", "title": "Doorframe or Die (Exodus 12)"},
-        {"t": "50:55", "title": "Daredevil's Running Mate (Picking Games)"},
-        {"t": "54:45", "title": "Post Malone, Pre-K (Xenoblade Chronicles 2)"},
-        {"t": "1:04:28", "title": "No Party Left Untrolled (Pokémon Violet)"},
-        {"t": "1:16:04", "title": "Dude, Where's My Cat? (Pokémon Violet)"},
-        {"t": "1:26:04", "title": "No Refunds on Redemption (Pokémon Violet)"},
-        {"t": "1:41:59", "title": "Pascal's Betting Problem (Pokémon Violet)"},
-        {"t": "1:49:14", "title": "Mother of All Technicalities (Pokémon Violet)"},
-        {"t": "2:06:35", "title": "Wrong Track Record (Pokémon Violet)"},
-        {"t": "2:23:47", "title": "Stigmata or False Alarm? (Pokémon Violet)"},
-        {"t": "2:32:06", "title": "Executive Disorder (Pokémon Violet)"},
-        {"t": "2:37:49", "title": "The Key to Losing (Pokémon Violet)"},
-        {"t": "2:41:00", "title": "Grave Expectations (Zelda: Ocarina of Time)"}
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep"
+        },
+        {
+          "t": "3:11",
+          "title": "Coming Up Roses (Rosary)"
+        },
+        {
+          "t": "43:27",
+          "title": "Doorframe or Die (Exodus 12)"
+        },
+        {
+          "t": "50:55",
+          "title": "Daredevil's Running Mate (Picking Games)"
+        },
+        {
+          "t": "54:45",
+          "title": "Post Malone, Pre-K (Xenoblade Chronicles 2)"
+        },
+        {
+          "t": "1:04:28",
+          "title": "No Party Left Untrolled (Pokémon Violet)"
+        },
+        {
+          "t": "1:16:04",
+          "title": "Dude, Where's My Cat? (Pokémon Violet)"
+        },
+        {
+          "t": "1:26:04",
+          "title": "No Refunds on Redemption (Pokémon Violet)"
+        },
+        {
+          "t": "1:41:59",
+          "title": "Pascal's Betting Problem (Pokémon Violet)"
+        },
+        {
+          "t": "1:49:14",
+          "title": "Mother of All Technicalities (Pokémon Violet)"
+        },
+        {
+          "t": "2:06:35",
+          "title": "Wrong Track Record (Pokémon Violet)"
+        },
+        {
+          "t": "2:23:47",
+          "title": "Stigmata or False Alarm? (Pokémon Violet)"
+        },
+        {
+          "t": "2:32:06",
+          "title": "Executive Disorder (Pokémon Violet)"
+        },
+        {
+          "t": "2:37:49",
+          "title": "The Key to Losing (Pokémon Violet)"
+        },
+        {
+          "t": "2:41:00",
+          "title": "Grave Expectations (Zelda: Ocarina of Time)"
+        }
       ],
       "shorts": [
-        {"n": 1, "id": "TOEhUTqr72M", "title": "JESUS — CEO of CEOs"},
-        {"n": 2, "id": "OjtYTj55CtE", "title": "NINTENDO — The Storage Boss Has Entered"},
-        {"n": 3, "id": "oJChtC1nzao", "title": "COMMUNISM — The Trolley Took a Wrong Turn"},
-        {"n": 4, "id": "", "title": ""},
-        {"n": 5, "id": "", "title": ""}
+        {
+          "n": 1,
+          "id": "TOEhUTqr72M",
+          "title": "JESUS — CEO of CEOs"
+        },
+        {
+          "n": 2,
+          "id": "OjtYTj55CtE",
+          "title": "NINTENDO — The Storage Boss Has Entered"
+        },
+        {
+          "n": 3,
+          "id": "oJChtC1nzao",
+          "title": "COMMUNISM — The Trolley Took a Wrong Turn"
+        },
+        {
+          "n": 4,
+          "id": "",
+          "title": ""
+        },
+        {
+          "n": 5,
+          "id": "",
+          "title": ""
+        }
       ]
     }
   ]

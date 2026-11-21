@@ -39,31 +39,34 @@ function biay(key){const b=BY.chapters[key];if(!b)return "";const a=(u,t)=>`<a h
  `<div class="lu-note" data-part="prayer"><b>For prayer</b><p>${esc(b.question)}</p></div>`+
  `<p class="lu-muted" data-part="sources">${esc(BY.credit)} Links: ${a(b.episode,"Episode")} &middot; ${a(BY.plan,"Reading plan")} &middot; ${a("https://www.vatican.va/archive/ENG0015/_INDEX.HTM","Catechism")} &middot; ${a(b.father.url,b.father.who)} &middot; ${b.haydock.map(h=>a(h.url,"Haydock "+h.ref)).join(" &middot; ")}${more}</p></section>`}
 const TR=fs.existsSync(path.join(R,"data/trivia.json"))?J("data/trivia.json"):{chapters:{}};
-function trivia(key,name,ch){const t=TR.chapters[key];if(!t||!t.items||!t.items.length)return "";
- return `<section class="lu-panel" id="trivia"><div class="lu-tabhead">Trivia &middot; ${esc(name)} ${ch}</div><ul class="lu-list">${t.items.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></section>`}
-function loadEpisodes(){const p=path.join(R,"data/episodes.json");if(!fs.existsSync(p))return [];return (J("data/episodes.json").episodes||[]).filter(e=>e&&e.id&&e.title).slice().sort((a,b)=>(b.number||0)-(a.number||0));}
+// Trivia stays last: Background (3–4 details) and Discussion Questions (2–3). tools/trivia_format.js
+const triviaFormat=require("./tools/trivia_format.js");
+function trivia(key,name,ch){return triviaFormat.html(TR.chapters[key],name,ch,esc)}
+function loadEpisodes(){const p=path.join(R,"data/episodes.json");if(!fs.existsSync(p))return [];return (J("data/episodes.json").episodes||[]).filter(e=>e&&e.id&&e.title).slice().sort((a,b)=>(a.seq??999)-(b.seq??999)||String(b.published||b.date||"").localeCompare(String(a.published||a.date||""))||(b.number||0)-(a.number||0));}
+function epSlug(ep){return ep.number?String(ep.number):ep.id}
 function tsSec(t){const p=String(t||"0").split(":").map(n=>+n||0);return p.length>=3?p[0]*3600+p[1]*60+p[2]:p.length===2?p[0]*60+p[1]:p[0];}
 function episodeHtml(ep,root,opts){opts=opts||{};const id=String(ep.id).trim(),watch="https://www.youtube.com/watch?v="+id;
  const ch=(ep.chapters||[]).map(c=>`<li><a href="${watch}&amp;t=${tsSec(c.t)}s" rel="noopener"><time datetime="PT${tsSec(c.t)}S">${esc(c.t)}</time> ${esc(c.title)}</a></li>`).join("");
  const override=Array.isArray(opts.shorts)?opts.shorts.slice():null;
- let slots=override||(Array.isArray(ep.shorts)?ep.shorts.slice():[]);if(!override)while(slots.length<5)slots.push({n:slots.length+1});
- const shortsNote=override?(opts.shortsNote||"Newest Shorts on the channel."):"Five Shorts from this episode will go in these slots.";
+ let slots=override||(Array.isArray(ep.shorts)?ep.shorts.slice():[]);if(!override&&ep.shortSlots!==false)while(slots.length<5)slots.push({n:slots.length+1});
+ const shortsNote=override?(opts.shortsNote||"Newest Shorts on the channel."):(slots.length?"Five Shorts from this episode will go in these slots.":"");
  const shorts=slots.map((s,i)=>{const n=s.n||i+1,sid=String(s.id||"").trim();
   if(!/^[A-Za-z0-9_-]{11}$/.test(sid))return `<li class="ep-short empty" data-short="${n}"><span class="ep-short-slot" aria-hidden="true"></span><b>Short ${n}</b><span class="lu-muted">Empty — add later</span></li>`;
   return `<li class="ep-short" data-short="${n}"><div class="ep-player ep-short-player"><iframe src="https://www.youtube.com/embed/${sid}" title="${esc(s.title||"Short "+n)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><b>${esc(s.title||"Short "+n)}</b></li>`;}).join("");
- const thumb=ep.thumb?`<figure class="ep-thumb"><img src="${root}${imgv(ep.thumb)}" alt="${esc(ep.title)}" width="1280" height="720"></figure>`:"";
- const more=opts.permalink?"":`<a class="lu-btn" href="${root}episodes/${ep.number}/">Episode page</a>`;
- const shortsBlock=`<h3 class="lu-step" id="shorts">Shorts</h3><p class="lu-muted">${esc(shortsNote)}</p><ol class="ep-shorts" data-slots="${slots.length}">${shorts}</ol>`;
+ const thumbUrl=ep.thumb?(/^https?:\/\//.test(ep.thumb)?ep.thumb:root+imgv(ep.thumb)):"";
+ const thumb=thumbUrl?`<figure class="ep-thumb"><img src="${thumbUrl}" alt="${esc(ep.title)}" width="1280" height="720"></figure>`:"";
+ const more=opts.permalink?"":`<a class="lu-btn" href="${root}episodes/${epSlug(ep)}/">Episode page</a>`;
+ const shortsBlock=slots.length?`<h3 class="lu-step" id="shorts">Shorts</h3><p class="lu-muted">${esc(shortsNote)}</p><ol class="ep-shorts" data-slots="${slots.length}">${shorts}</ol>`:"";
+ const games=(ep.games||[]).filter(Boolean),topics=(ep.topics||[]).filter(Boolean);
  const summary=`<div class="lu-note" data-part="summary"><b>Summary</b><p>${esc(ep.summary||"")}</p></div>
-<p class="ep-tags"><span class="lu-chip">Games</span> ${esc((ep.games||[]).join(", "))}</p>
-<p class="ep-tags"><span class="lu-chip">Topics</span> ${esc((ep.topics||[]).join(", "))}</p>
-<h3 class="lu-step">Chapters</h3><ol class="ep-chapters">${ch}</ol>`;
+${games.length?`<p class="ep-tags"><span class="lu-chip">Games</span> ${esc(games.join(", "))}</p>\n`:""}${topics.length?`<p class="ep-tags"><span class="lu-chip">Topics</span> ${esc(topics.join(", "))}</p>\n`:""}${ch?`<h3 class="lu-step">Chapters</h3><ol class="ep-chapters">${ch}</ol>`:""}`;
  const funnel=`<p class="ep-funnel"><a class="lu-btn blue" href="${esc(site.links.discord)}" rel="noopener">Join our Pio's Lost Sheep Discord Server: ${esc(site.links.discord)}</a>
 <a class="lu-btn gold" href="${esc(site.links.kofi)}" rel="noopener">Tithe Your Shekels: ${esc(site.links.kofi)}</a>
 <a class="lu-btn red" href="${watch}" rel="noopener">Watch on YouTube</a>
 ${more}</p>`;
- return `<section class="lu-panel" id="${opts.anchor?"episode":"ep-"+ep.number}" data-episode="${esc(ep.number)}"><div class="lu-tabhead">Episode ${esc(ep.number)}</div>
-<p class="lu-kicker">${esc(wk(ep.date))} &middot; ${esc(fmt(ep.date))}</p>
+ const label=ep.number?`Episode ${ep.number}`:(/\bLIVE\b/.test(ep.title)?"Live":"Video");
+ return `<section class="lu-panel" id="${opts.anchor?"episode":"ep-"+epSlug(ep)}" data-episode="${esc(ep.number||ep.id)}"><div class="lu-tabhead">${esc(label)}</div>
+<p class="lu-kicker">${esc(wk(ep.date))} &middot; ${esc(fmt(ep.date))}${ep.duration?" &middot; "+esc(ep.duration):""}</p>
 <h2>${esc(ep.title)}</h2>
 <div class="ep-player"><iframe src="https://www.youtube.com/embed/${id}" title="${esc(ep.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 ${thumb}
@@ -91,7 +94,7 @@ function dayPage(date){
 <div class="lu-stats">${active?`<div class="lu-stat"><b>Day ${T.day}</b><span>of 54</span><i class="lu-bar"><em style="width:${(T.day/54*100).toFixed(1)}%"></em></i></div><div class="lu-stat"><b>${pet?"Petition":"Thanksgiving"}</b><span>${pet?"Prayer in petition":"Prayer in thanksgiving"}</span></div>`:`<div class="lu-stat"><b>${T.status==="done"?"Novena complete":"Before the novena"}</b><span>${T.status==="done"?"The 54 days ended "+fmt(T.endDate)+". Daily Scripture continues.":"Day 1 is "+fmt(T.startDate)}</span></div>`}
 <div class="lu-stat"><b class="m-${T.mystery}">${MN[T.mystery]}</b><span>Mysteries</span></div><div class="lu-stat"><b>${esc(r.name)} ${r.chapter}</b><span>Today's chapter</span></div></div>
 ${active?`<p class="lu-intent"><span class="lu-chip">Intention</span> <i>${esc(intention())}</i></p>`:""}
-<p class="lu-pager"><a class="lu-btn" href="../${prev}/">&laquo; ${esc(fmt(prev))}</a> <a class="lu-btn gold" href="#pray">Pray</a> <a class="lu-btn" href="../${next}/">${esc(fmt(next))} &raquo;</a></p></section>`+loadEpisodes().filter(e=>e.date===date).map(e=>episodeHtml(e,root,{anchor:true})).join("");
+<p class="lu-pager"><a class="lu-btn" href="../${prev}/">&laquo; ${esc(fmt(prev))}</a> <a class="lu-btn gold" href="#pray">Pray</a> <a class="lu-btn" href="../${next}/">${esc(fmt(next))} &raquo;</a></p></section>`+loadEpisodes().filter(e=>e.onDay!==false&&e.date===date).map(e=>episodeHtml(e,root,{anchor:true})).join("");
   // ---- 1. PRAYERS FIRST: the full Rosary with the 54 Day Novena prayers in their traditional places ----
   const fill=x=>x.replace("{request}",intention()).replace("{bouquet}",NT.bouquet[T.mystery]);
   const hm10=pr("Hail Mary (ten times)",P.hailMary),tail=pr("Glory Be",P.glory)+pr("Fatima Prayer",P.fatima);
@@ -154,7 +157,7 @@ function streamPanel(){const s=L.streamForToday(site.streams||[]);if(!s)return `
 const afterShorts=`<section class="lu-panel" id="front-today"><p><a class="lu-btn gold" id="today-link" href="day/${today}/">Today's page &middot; ${esc(fmt(today))}</a></p></section>${streamPanel()}`;
 const homeShorts=(site.homeShorts||[]).filter(s=>s&&/^[A-Za-z0-9_-]{11}$/.test(String(s.id||"")));
 const frontOpts={anchor:true,front:true,afterShorts};if(homeShorts.length){frontOpts.shorts=homeShorts;frontOpts.shortsNote="Newest Shorts on the channel.";}
-const LEP=loadEpisodes()[0],latestBlock=LEP?'<div id="latest-episode">'+episodeHtml(LEP,"",frontOpts)+'</div>':"";
+const epsAll=loadEpisodes(),LEP=(site.featured&&epsAll.find(e=>e.id===site.featured))||epsAll[0],latestBlock=LEP?'<div id="latest-episode">'+episodeHtml(LEP,"",frontOpts)+'</div>':"";
 fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`${latestBlock}<section class="lu-panel lu-hero">${slidesHtml()}<div class="lu-hero-text"><div class="lu-kicker">Welcome, Lost Sheep</div><h1>Pio's Lost Sheep</h1><p>Pray, read Scripture one chapter a day, and gather with us live.</p>
 <p><a class="lu-btn" href="novena/">54 Day Rosary Novena</a></p></div></section>
 <section class="lu-panel" id="channels"><div class="lu-tabhead">Channels</div><div class="lu-channels">
@@ -179,9 +182,9 @@ fs.writeFileSync(path.join(R,"index.html"),shell("Pio's Lost Sheep","",`${latest
 {const nf=path.join(R,"novena/index.html");fs.writeFileSync(nf,fs.readFileSync(nf,"utf8").replace(/(\.\.\/(?:css|js)\/[\w.-]+\.(?:css|js))(\?v=[0-9a-f]+)?"/g,"$1?v="+VA+'"'));}
 console.log("built",dates[0],"to",dates[dates.length-1],"+ rebuilt",toBuild.length,"pages total");
 {const eps=loadEpisodes();fs.mkdirSync(path.join(R,"episodes"),{recursive:true});
- const list=`<section class="lu-panel" id="episodes"><div class="lu-tabhead">Episodes</div><ul class="lu-list">${eps.map(e=>`<li><a href="${e.number}/">${esc(e.title)}</a> &middot; ${esc(fmt(e.date))}</li>`).join("")}</ul></section>`;
+ const list=`<section class="lu-panel" id="episodes"><div class="lu-tabhead">Episodes</div><ul class="lu-list">${eps.map(e=>`<li><a href="${epSlug(e)}/">${esc(e.title)}</a> &middot; ${esc(fmt(e.date))}</li>`).join("")}</ul></section>`;
  fs.writeFileSync(path.join(R,"episodes","index.html"),shell("Episodes · Pio's Lost Sheep","../",list+eps.map((e,i)=>episodeHtml(e,"../",{anchor:i===0})).join("")));
- for(const e of eps){const dir=path.join(R,"episodes",String(e.number));fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,"index.html"),shell(e.title+" · Pio's Lost Sheep","../../",`<p class="lu-pager"><a class="lu-btn" href="../">All episodes</a></p>`+episodeHtml(e,"../../",{anchor:true,permalink:true})));}
+ for(const e of eps){const dir=path.join(R,"episodes",epSlug(e));fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,"index.html"),shell(e.title+" · Pio's Lost Sheep","../../",`<p class="lu-pager"><a class="lu-btn" href="../">All episodes</a></p>`+episodeHtml(e,"../../",{anchor:true,permalink:true})));}
  console.log("episodes",eps.length);}
 // /rewind/ — OBS Browser Source playlist player. Playlist: /workspace/ops/rewind/playlist.json (or $REWIND_MANIFEST)
 // is copied to data/rewind_playlist.json on every build. Fallback YouTube ID: data/rewind.json videoId. Not linked anywhere.
