@@ -52,7 +52,8 @@ function episodeHtml(ep,root,opts){opts=opts||{};const id=String(ep.id).trim(),w
  const shortsNote=override?(opts.shortsNote||"Newest Shorts on the channel."):(slots.length?"Five Shorts from this episode will go in these slots.":"");
  const shorts=slots.map((s,i)=>{const n=s.n||i+1,sid=String(s.id||"").trim();
   if(!/^[A-Za-z0-9_-]{11}$/.test(sid))return `<li class="ep-short empty" data-short="${n}"><span class="ep-short-slot" aria-hidden="true"></span><b>Short ${n}</b><span class="lu-muted">Empty — add later</span></li>`;
-  return `<li class="ep-short" data-short="${n}"><div class="ep-player ep-short-player"><iframe src="https://www.youtube.com/embed/${sid}" title="${esc(s.title||"Short "+n)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><b>${esc(s.title||"Short "+n)}</b></li>`;}).join("");
+  const detail=[s.duration,s.summary].filter(Boolean).map(x=>esc(x)).join(" · ");
+  return `<li class="ep-short" data-short="${n}"><div class="ep-player ep-short-player"><iframe src="https://www.youtube.com/embed/${sid}" title="${esc(s.title||"Short "+n)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><b>${esc(s.title||"Short "+n)}</b>${detail?`<span class="lu-muted">${detail}</span>`:""}</li>`;}).join("");
  const thumbUrl=ep.thumb?(/^https?:\/\//.test(ep.thumb)?ep.thumb:root+imgv(ep.thumb)):"";
  const thumb=thumbUrl?`<figure class="ep-thumb"><img src="${thumbUrl}" alt="${esc(ep.title)}" width="1280" height="720"></figure>`:"";
  const more=opts.permalink?"":`<a class="lu-btn" href="${root}episodes/${epSlug(ep)}/">Episode page</a>`;

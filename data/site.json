@@ -22,41 +22,53 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-11-21",
-  "featured": "SUPpXR7ciFg",
+  "updated": "2026-11-22",
+  "featured": "rD8PjUklLDg",
   "homeShorts": [
     {
-      "id": "5hxCDER0iAQ",
-      "title": "FORGIVENESS: HEAVEN OR HELL, IT'S A WIN-WIN"
+      "id": "4HJ7Ft_bnOE",
+      "title": "I'm Starting to Feel for the Monsters",
+      "duration": "0:30",
+      "summary": "From the Torna live stream."
     },
     {
-      "id": "9MPqcZXgNIk",
-      "title": "SKYWARD SWORD: WHY CAN'T I PAUSE TO SWITCH ITEMS?!"
+      "id": "hlrJlBVSAbc",
+      "title": "Black Hobbits Are Book Canon",
+      "duration": "0:34",
+      "summary": "Tolkien wrote it himself, from the Shire-to-Bionis live stream."
     },
     {
-      "id": "vL-3cz8vKWo",
-      "title": "PIO'S LOST SHEEP: WHY THIS CHANNEL EXISTS (OUR OWN JUDAS ISCARIOT)"
+      "id": "EmmF8ODXNs4",
+      "title": "The Bionis Has a Beating Heart",
+      "duration": "0:45",
+      "summary": "The Bionis has a beating heart, and that is why it is called the Bionis."
     },
     {
-      "id": "KfcUSBOkIDw",
-      "title": "TROLLS: WE'LL TURN THE OTHER CHEEK AND UTTERLY HUMILIATE THEM"
+      "id": "J1imqFR32eM",
+      "title": "CAN ANYONE BE REDEEMED? | POKÉMON Z-A #shorts",
+      "duration": "0:39",
+      "summary": "From the Nov 15 Pokémon Legends: Z-A stream."
     },
     {
-      "id": "3BLc7rJUOd0",
-      "title": "pirating is fine if the game isn't still being made"
+      "id": "aYRtO2G0BSY",
+      "title": "I'm a Freakin' Hobbit",
+      "duration": "1:07",
+      "summary": "Skyward Sword, a Smash Bros idea, and a hobbit, from the Shire live stream."
     },
     {
-      "id": "kPh_ywckKDE",
-      "title": "MARIO: BRING BACK CHARLES MARTINET, I'D GIVE IT BACK TO DADDY"
+      "id": "sDd3vppCGL4",
+      "title": "JIM CARREY: TRUMP AI SAYS HE PRAYED TO MARY FOR A BANANA BIKE",
+      "duration": "0:59",
+      "summary": "The Trump AI tells the banana-seat bike story."
     }
   ],
   "streams": [
     {
-      "startUtc": "2026-11-22T02:00:00Z",
-      "label": "Tonight's stream (Sat Nov 21)",
-      "display": "Saturday night, Nov 21 · 9:00 PM ET · Excellence in Broadcasting | Skyward Sword HD LIVE",
+      "startUtc": "2026-11-23T02:00:00Z",
+      "label": "Tonight's stream (Sun Nov 22)",
+      "display": "Sunday night, Nov 22 · 9:00 PM ET · Xenoblade Chronicles: Definitive Edition | Pio's Lost Sheep LIVE",
       "title": "Watch live on YouTube",
-      "url": "https://www.youtube.com/watch?v=pKWn-HJwKeI"
+      "url": "https://www.youtube.com/watch?v=NAHX0_jZOvw"
     }
   ]
 }
