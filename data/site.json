@@ -22,8 +22,8 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-11-22",
-  "featured": "rD8PjUklLDg",
+  "updated": "2026-11-23",
+  "featured": "jmi5gM7c8d4",
   "homeShorts": [
     {
       "id": "4HJ7Ft_bnOE",
@@ -62,13 +62,5 @@
       "summary": "The Trump AI tells the banana-seat bike story."
     }
   ],
-  "streams": [
-    {
-      "startUtc": "2026-11-23T02:00:00Z",
-      "label": "Tonight's stream (Sun Nov 22)",
-      "display": "Sunday night, Nov 22 · 9:00 PM ET · Xenoblade Chronicles: Definitive Edition | Pio's Lost Sheep LIVE",
-      "title": "Watch live on YouTube",
-      "url": "https://www.youtube.com/watch?v=NAHX0_jZOvw"
-    }
-  ]
+  "streams": []
 }

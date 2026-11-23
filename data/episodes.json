@@ -5,11 +5,153 @@
       "seq": 1,
       "onDay": false,
       "shortSlots": false,
+      "id": "jmi5gM7c8d4",
+      "date": "2026-11-23",
+      "published": "2026-11-23T05:37:01Z",
+      "duration": "2:21:45",
+      "title": "Catholic Gamer Enters Hisui | Pokémon Legends: Arceus LIVE",
+      "summary": "Finished live stream published November 23, 2026. The title is Pokémon Legends: Arceus. The public description does not describe the gameplay.",
+      "games": [
+        "Pokémon Legends: Arceus"
+      ],
+      "topics": [
+        "Live"
+      ],
+      "thumb": "https://i.ytimg.com/vi/jmi5gM7c8d4/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 2,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "RxLtoBqupLY",
+      "date": "2026-11-23",
+      "published": "2026-11-23T05:21:00Z",
+      "duration": "12:52",
+      "title": "Rosary + Prayers for Every Lost Sheep, Then Games | Pio's Lost Sheep LIVE",
+      "summary": "Finished live stream published November 23, 2026. The title says a rosary and prayers for every lost sheep, then games. The public description does not name the game.",
+      "games": [],
+      "topics": [
+        "Rosary",
+        "Live"
+      ],
+      "thumb": "https://i.ytimg.com/vi/RxLtoBqupLY/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 3,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "84VmotIK0vM",
+      "date": "2026-11-22",
+      "published": "2026-11-23T02:41:11Z",
+      "duration": "3:17:24",
+      "title": "Is This Thing On? | Episode 7 (Test Broadcast, LEGO, Xenoblade, SS HD, Filmed Mon Aug 17, 2026)",
+      "summary": "Public upload of the August 17, 2026 test broadcast. It runs from a no-signal capture-card screen through Xenoblade Chronicles and Skyward Sword HD.",
+      "games": [
+        "Xenoblade Chronicles",
+        "The Legend of Zelda: Skyward Sword HD"
+      ],
+      "topics": [
+        "Test broadcast"
+      ],
+      "thumb": "https://i.ytimg.com/vi/84VmotIK0vM/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 4,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "Yhpr9W5c-5A",
+      "date": "2026-11-22",
+      "published": "2026-11-22T22:07:00Z",
+      "duration": "27:16",
+      "title": "How Onix-pected! | Pilot Ep. 6 (Pokémon Shining Pearl, Filmed Wed Sep 24, 2025)",
+      "summary": "Public upload of the September 24, 2025 Shining Pearl recording. After a silent stretch and a sound check, Hiker Nicholas sends out Onix, then the route continues through Floaroma, a honey tree, and Route 205.",
+      "games": [
+        "Pokémon Shining Pearl"
+      ],
+      "topics": [
+        "Onix",
+        "Floaroma Town"
+      ],
+      "thumb": "https://i.ytimg.com/vi/Yhpr9W5c-5A/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep (Pilot Ep. 5)"
+        },
+        {
+          "t": "1:06",
+          "title": "Funky Sound Problems (Unmutes Me)"
+        },
+        {
+          "t": "8:56",
+          "title": "Playing More Pokemans (Shining Pearl)"
+        },
+        {
+          "t": "10:01",
+          "title": "How Onix-pected! (Hiker Nicholas)"
+        },
+        {
+          "t": "12:49",
+          "title": "Let Me Rest in Your Bed (Floaroma)"
+        },
+        {
+          "t": "17:35",
+          "title": "No Honey, Great (Honey Tree)"
+        },
+        {
+          "t": "20:22",
+          "title": "Hello, My Name Is Joe Biden (Cheryl)"
+        },
+        {
+          "t": "22:21",
+          "title": "Luxio Divina (Route 205)"
+        },
+        {
+          "t": "26:58",
+          "title": "Sorry, Chat (Granted, There's No Chat)"
+        }
+      ]
+    },
+    {
+      "seq": 5,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "fhyoXKYnkLs",
+      "date": "2026-11-22",
+      "published": "2026-11-22T21:59:13Z",
+      "duration": "2:10",
+      "title": "A Ghosted Mic | 63 Silent Seconds | Pilot Ep. 5 (Pokémon Shining Pearl, Filmed Wed Sep 24, 2025)",
+      "summary": "Public upload of the September 24, 2025 Shining Pearl recording. The game is opened, then the console home screen stays up for 63 silent seconds.",
+      "games": [
+        "Pokémon Shining Pearl"
+      ],
+      "topics": [
+        "First minutes"
+      ],
+      "thumb": "https://i.ytimg.com/vi/fhyoXKYnkLs/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep (Pilot Ep. 4)"
+        },
+        {
+          "t": "1:06",
+          "title": "63 Silent Seconds (Switch Home Screen)"
+        }
+      ]
+    },
+    {
+      "seq": 6,
+      "onDay": false,
+      "shortSlots": false,
       "id": "rD8PjUklLDg",
       "date": "2026-11-22",
       "published": "2026-11-22T09:22:31Z",
       "duration": "2:45:36",
-      "title": "Hello There | Episode 3 (Pokémon Shining Pearl, Chimchar, Originally Filmed Mon Sep 22, 2025)",
+      "title": "Hello There | Pilot Ep. 3 (Pokémon Shining Pearl, Chimchar, Filmed Mon Sep 22, 2025)",
       "summary": "Public upload of the September 22, 2025 recording. Nathan boots Shining Pearl the same night as Episode 2, meets Professor Rowan, picks Chimchar, and walks Route 201.",
       "games": [
         "Pokémon Shining Pearl"
@@ -25,84 +167,84 @@
           "title": "Previously on Pio's Lost Sheep (Episode 2)"
         },
         {
-          "t": "1:02",
+          "t": "0:44",
           "title": "We're Live Now (Mario Kart World)"
         },
         {
-          "t": "3:15",
+          "t": "2:57",
           "title": "Hello There (Shining Pearl Intro)"
         },
         {
-          "t": "4:05",
+          "t": "3:47",
           "title": "My Name Is Rowan (Professor Rowan)"
         },
         {
-          "t": "14:03",
+          "t": "13:45",
           "title": "We'll Go Find a Pokémon Like That (Route 201)"
         },
         {
-          "t": "16:51",
+          "t": "16:33",
           "title": "Huh? Joe Biden! (Route 201)"
         },
         {
-          "t": "18:15",
+          "t": "17:57",
           "title": "I Choose Chimchar (Starter)"
         },
         {
-          "t": "18:28",
+          "t": "18:10",
           "title": "Starly in the Tall Grass (First Fight)"
         },
         {
-          "t": "38:30",
+          "t": "38:12",
           "title": "Gym Spoilers Already (Jubilife)"
         },
         {
-          "t": "42:19",
+          "t": "42:01",
           "title": "Richard, Go Cryptocurrency! (Banter)"
         },
         {
-          "t": "1:13:51",
+          "t": "1:13:33",
           "title": "I Technically Got to Graduate (Class of 2020)"
         },
         {
-          "t": "1:26:29",
+          "t": "1:26:11",
           "title": "College Is for 10-Year-Olds (Pokémon World)"
         },
         {
-          "t": "1:40:49",
+          "t": "1:40:31",
           "title": "More Faithful Remakes (BDSP)"
         },
         {
-          "t": "1:53:03",
+          "t": "1:52:45",
           "title": "They Look So Silly They're Cute (Cats)"
         },
         {
-          "t": "2:19:36",
+          "t": "2:19:18",
           "title": "I Named Him Anthony (Nicknames)"
         },
         {
-          "t": "2:27:41",
+          "t": "2:27:23",
           "title": "Goodbye, Zubat (Cave)"
         },
         {
-          "t": "2:30:11",
+          "t": "2:29:53",
           "title": "Video Games Are 40 (Banter)"
         },
         {
-          "t": "2:42:55",
+          "t": "2:42:37",
           "title": "The Abrupt End of Family Guy (Banter)"
         }
       ]
     },
     {
-      "seq": 2,
+      "seq": 7,
       "onDay": false,
       "shortSlots": false,
       "id": "qqfKw6Ynq7s",
       "date": "2026-11-22",
       "published": "2026-11-22T08:08:22Z",
       "duration": "1:26",
-      "title": "A Ghosted App | 23 Silent Seconds | Episode 1 (Originally Filmed Sat Sep 20, 2025)",
+      "title": "A Ghosted App | 23 Silent Seconds | Pilot Ep. 1 (Filmed Sat Sep 20, 2025)",
       "summary": "Public upload of the September 20, 2025 recording. Twenty-three silent seconds and a ghosted screen, the first time the channel went live.",
       "games": [],
       "topics": [
@@ -112,27 +254,23 @@
       "chapters": [
         {
           "t": "0:00",
-          "title": "Pio's Lost Sheep Intro (Channel Intro)"
-        },
-        {
-          "t": "0:48",
           "title": "Episode 1 (Title)"
         },
         {
-          "t": "1:02",
+          "t": "0:10",
           "title": "A Ghosted App (First Stream)"
         }
       ]
     },
     {
-      "seq": 3,
+      "seq": 8,
       "onDay": false,
       "shortSlots": false,
       "id": "74DUgJZPa98",
       "date": "2026-11-22",
       "published": "2026-11-22T08:07:46Z",
       "duration": "51:49",
-      "title": "The Shining Pearl | Episode 4 (Floaroma Town, Team Galactic, Originally Filmed Wed Sep 24, 2025)",
+      "title": "The Shining Pearl | Pilot Ep. 4 (Floaroma Town, Team Galactic, Filmed Wed Sep 24, 2025)",
       "summary": "Public upload of the September 24, 2025 recording. Back in Floaroma Town, Team Galactic stands in the flowers, on St. Padre Pio's feast day.",
       "games": [
         "Pokémon Shining Pearl"
@@ -149,72 +287,72 @@
           "title": "Previously on Pio's Lost Sheep (Episode 3)"
         },
         {
-          "t": "1:02",
+          "t": "0:46",
           "title": "We're Live Now (Sound Check)"
         },
         {
-          "t": "4:39",
+          "t": "4:22",
           "title": "The Shining Pearl (It's Shining)"
         },
         {
-          "t": "5:19",
+          "t": "5:03",
           "title": "Flower Town (Floaroma Town)"
         },
         {
-          "t": "6:01",
+          "t": "5:45",
           "title": "Emotionally Healed by You, Honey (Floaroma)"
         },
         {
-          "t": "6:25",
+          "t": "6:08",
           "title": "St. Padre Pio Day (Banter)"
         },
         {
-          "t": "8:05",
+          "t": "7:48",
           "title": "I Got the Spray Duck (Sprayduck)"
         },
         {
-          "t": "9:17",
+          "t": "9:00",
           "title": "It's a Faithful Remake, How Dare They (BDSP)"
         },
         {
-          "t": "13:30",
+          "t": "13:14",
           "title": "I Want More Faithful Remakes (X and Y)"
         },
         {
-          "t": "20:02",
+          "t": "19:45",
           "title": "We Will Have That Honey (Team Galactic)"
         },
         {
-          "t": "24:17",
+          "t": "24:00",
           "title": "Easier to Catch Munchlax (Honey Tree)"
         },
         {
-          "t": "29:59",
+          "t": "29:43",
           "title": "Just Port the Old Games (Banter)"
         },
         {
-          "t": "36:18",
+          "t": "36:01",
           "title": "Zubat (Route)"
         },
         {
-          "t": "47:23",
+          "t": "47:06",
           "title": "It's 1:00 a.m. (Logging Off)"
         },
         {
-          "t": "51:15",
+          "t": "50:59",
           "title": "Joe's Adventures End Tonight (Banter)"
         }
       ]
     },
     {
-      "seq": 4,
+      "seq": 9,
       "onDay": false,
       "shortSlots": false,
       "id": "MUvgudrfIjc",
       "date": "2026-11-22",
       "published": "2026-11-22T08:05:52Z",
       "duration": "32:08",
-      "title": "Skywalker Is Dead | Episode 2 (LEGO Star Wars, Mario Kart World, Originally Filmed Mon Sep 22, 2025)",
+      "title": "Skywalker Is Dead | Pilot Ep. 2 (LEGO Star Wars, Mario Kart World, Filmed Mon Sep 22, 2025)",
       "summary": "Public upload of the September 22, 2025 recording. A test stream turns to LEGO Star Wars: The Skywalker Saga, with a look at Mario Kart World, faith, and a first confession.",
       "games": [
         "LEGO Star Wars: The Skywalker Saga",
@@ -231,101 +369,101 @@
           "title": "Previously on Pio's Lost Sheep (Episode 1)"
         },
         {
-          "t": "1:02",
+          "t": "0:23",
           "title": "Would You Look at That, I'm Live (Going Live)"
         },
         {
-          "t": "1:44",
+          "t": "1:04",
           "title": "Papa Dippers (Papa John's)"
         },
         {
-          "t": "2:15",
+          "t": "1:35",
           "title": "This Is Just a Test Stream (Setup)"
         },
         {
-          "t": "3:16",
+          "t": "2:36",
           "title": "Mario Kart, Then I Close It (Mario Kart World)"
         },
         {
-          "t": "3:45",
+          "t": "3:05",
           "title": "You Can't Play Star Wars on Stream (LEGO Star Wars)"
         },
         {
-          "t": "4:22",
+          "t": "3:42",
           "title": "Baron Trump, Future of the Galaxy (Banter)"
         },
         {
-          "t": "5:23",
+          "t": "4:44",
           "title": "Skywalker Is Dead (Sequels Talk)"
         },
         {
-          "t": "6:05",
+          "t": "5:25",
           "title": "The Last Jedi Pulled Me Out of a Funk (The Last Jedi)"
         },
         {
-          "t": "7:14",
+          "t": "6:34",
           "title": "Thrown Out of Church for a Year (Faith)"
         },
         {
-          "t": "8:34",
+          "t": "7:54",
           "title": "I Have Faith in God (Faith)"
         },
         {
-          "t": "8:59",
+          "t": "8:19",
           "title": "When I Was a Protestant (Conversion)"
         },
         {
-          "t": "9:31",
+          "t": "8:51",
           "title": "First Confession (Catholicism)"
         },
         {
-          "t": "11:13",
+          "t": "10:33",
           "title": "I Look Like Anakin (LEGO Star Wars)"
         },
         {
-          "t": "12:50",
+          "t": "12:10",
           "title": "Ahsoka Hyped Something for Years (Ahsoka / Rebels)"
         },
         {
-          "t": "13:28",
+          "t": "12:48",
           "title": "I Started Going to Church for Real (Faith)"
         },
         {
-          "t": "16:19",
+          "t": "15:39",
           "title": "How This Government Stuff Works (Banter)"
         },
         {
-          "t": "17:08",
+          "t": "16:28",
           "title": "How Do I Do This? (LEGO Star Wars)"
         },
         {
-          "t": "19:54",
+          "t": "19:14",
           "title": "I Like The Force Awakens (Sequels)"
         },
         {
-          "t": "21:09",
+          "t": "20:29",
           "title": "Ezra's Dead, Everybody (Rebels)"
         },
         {
-          "t": "25:10",
+          "t": "24:30",
           "title": "Trump's a Sith Lord (Banter)"
         },
         {
-          "t": "26:18",
+          "t": "25:39",
           "title": "Almost My 25th Birthday (Faith)"
         },
         {
-          "t": "29:34",
+          "t": "28:55",
           "title": "Are There Straight Reylo Fans? (Banter)"
         },
         {
-          "t": "31:44",
+          "t": "31:04",
           "title": "I'm Getting a Call (Stream End)"
         }
       ]
     },
     {
-      "seq": 5,
+      "seq": 10,
       "onDay": false,
       "shortSlots": false,
       "id": "pKWn-HJwKeI",
@@ -347,7 +485,7 @@
       "chapters": []
     },
     {
-      "seq": 6,
+      "seq": 11,
       "onDay": false,
       "shortSlots": false,
       "id": "OpCGDKfWIy8",
@@ -367,7 +505,7 @@
       "chapters": []
     },
     {
-      "seq": 7,
+      "seq": 12,
       "onDay": false,
       "shortSlots": false,
       "id": "SUPpXR7ciFg",
@@ -387,7 +525,7 @@
       "chapters": []
     },
     {
-      "seq": 8,
+      "seq": 13,
       "onDay": false,
       "shortSlots": false,
       "id": "1AGBP5Xbzvo",
@@ -406,7 +544,7 @@
       "chapters": []
     },
     {
-      "seq": 9,
+      "seq": 14,
       "number": 176,
       "onDay": false,
       "shortSlots": false,
@@ -536,7 +674,7 @@
       ]
     },
     {
-      "seq": 10,
+      "seq": 15,
       "onDay": false,
       "shortSlots": false,
       "id": "N-u4LYBxWhk",
