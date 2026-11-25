@@ -22,9 +22,27 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-11-24",
-  "featured": "6ZorEdcbMIg",
+  "updated": "2026-11-25",
+  "featured": "fSJJWrzqf3M",
   "homeShorts": [
+    {
+      "id": "9Bx0x7lUfVg",
+      "title": "Xenoblade: Is His Name John Cena?",
+      "duration": "0:28",
+      "summary": "The cutscene asks who Alvis is, and Pio names him John Cena, then The Rock."
+    },
+    {
+      "id": "IT7iQvywuKc",
+      "title": "Xenoblade: Who Are You? Obama?",
+      "duration": "0:08",
+      "summary": "A Xenoblade figure asks how Shulk knows the Monado, and Pio answers, Obama."
+    },
+    {
+      "id": "EhXLK0IdZpA",
+      "title": "Tales of the Shire: Is This What Heaven Looks Like?",
+      "duration": "0:18",
+      "summary": "Pio walks out of a hobbit-hole, calls the place heaven, then says the game feels like shovelware."
+    },
     {
       "id": "4HJ7Ft_bnOE",
       "title": "I'm Starting to Feel for the Monsters",
@@ -42,24 +60,6 @@
       "title": "The Bionis Has a Beating Heart",
       "duration": "0:45",
       "summary": "The Bionis has a beating heart, and that is why it is called the Bionis."
-    },
-    {
-      "id": "J1imqFR32eM",
-      "title": "CAN ANYONE BE REDEEMED? | POKÉMON Z-A #shorts",
-      "duration": "0:39",
-      "summary": "From the Nov 15 Pokémon Legends: Z-A stream."
-    },
-    {
-      "id": "aYRtO2G0BSY",
-      "title": "I'm a Freakin' Hobbit",
-      "duration": "1:07",
-      "summary": "Skyward Sword, a Smash Bros idea, and a hobbit, from the Shire live stream."
-    },
-    {
-      "id": "sDd3vppCGL4",
-      "title": "JIM CARREY: TRUMP AI SAYS HE PRAYED TO MARY FOR A BANANA BIKE",
-      "duration": "0:59",
-      "summary": "The Trump AI tells the banana-seat bike story."
     }
   ],
   "streams": []
