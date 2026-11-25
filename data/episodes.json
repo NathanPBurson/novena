@@ -5,12 +5,288 @@
       "seq": 1,
       "onDay": false,
       "shortSlots": false,
+      "id": "c9blw2sjsk8",
+      "date": "2026-11-25",
+      "published": "2026-11-25T10:18:27Z",
+      "duration": "7:35",
+      "title": "Pio's Lost Sheep is live!",
+      "summary": "Finished public stream published 2026-11-25T10:18:27Z. The streams tab lists it at 7:35. The description says it is Pokémon FireRed, picking up where Slots, or Rosary? left off, and that the next FireRed stream will be announced on Discord. It does not give a clock time.",
+      "games": [
+        "Pokémon FireRed"
+      ],
+      "topics": [
+        "Live"
+      ],
+      "thumb": "https://i.ytimg.com/vi/c9blw2sjsk8/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 2,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "fSJJWrzqf3M",
+      "date": "2026-11-25",
+      "published": "2026-11-25T09:17:33Z",
+      "duration": "53:07",
+      "title": "The Fan Tim Menace | Episode 9 (LEGO Star Wars: The Skywalker Saga, Orig. Filmed Tue Aug 18, 2026)",
+      "summary": "Public upload published 2026-11-25T09:17:33Z. The title calls it Episode 9, The Fan Tim Menace, from LEGO Star Wars: The Skywalker Saga, originally filmed Tuesday, August 18, 2026. The description says Nathan starts The Phantom Menace, talks about Daily Mass at 6:30, remembers Tom Kane, and follows Jar Jar into Gungan City.",
+      "games": [
+        "LEGO Star Wars: The Skywalker Saga"
+      ],
+      "topics": [
+        "Episode 9"
+      ],
+      "thumb": "https://i.ytimg.com/vi/fSJJWrzqf3M/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep (Episode 8)"
+        },
+        {
+          "t": "1:06",
+          "title": "We're Live (Switch Home, 5:42 PM)"
+        },
+        {
+          "t": "1:27",
+          "title": "Seizure Warning (Get Ready, Batman)"
+        },
+        {
+          "t": "2:56",
+          "title": "Daily Mass at 6:30 (LEGO Star Wars Tonight)"
+        },
+        {
+          "t": "4:24",
+          "title": "My Creation, Kathy (The Intro)"
+        },
+        {
+          "t": "9:52",
+          "title": "Qui-Gon Jinn (Tom Kane, Rest in Peace)"
+        },
+        {
+          "t": "11:11",
+          "title": "What Disney Has Done (Clone Wars and Lego)"
+        },
+        {
+          "t": "13:13",
+          "title": "TC-14, I'll Follow You (Trade Federation Hangar)"
+        },
+        {
+          "t": "15:05",
+          "title": "We're Gonna Bomb That Baby (The Cow)"
+        },
+        {
+          "t": "16:05",
+          "title": "Impatient Obi-Wan (Two Seconds)"
+        },
+        {
+          "t": "20:05",
+          "title": "The Skywalker Problem (Three Characters)"
+        },
+        {
+          "t": "39:36",
+          "title": "Heaven Will Be Wonderful (C.S. Lewis)"
+        },
+        {
+          "t": "44:17",
+          "title": "Meesa Don't Wanna Go to Church (But I Do)"
+        },
+        {
+          "t": "51:12",
+          "title": "Naboo's Planet Core (Passanah)"
+        }
+      ]
+    },
+    {
+      "seq": 3,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "vooV9bIqMjY",
+      "date": "2026-11-25",
+      "published": "2026-11-25T05:32:46Z",
+      "duration": "1:19:58",
+      "title": "The Legend of Zolda | Episode 8 (Skyward Sword HD, Originally Filmed Mon Aug 17, 2026)",
+      "summary": "Public upload published 2026-11-25T05:32:46Z. The title calls it Episode 8, Skyward Sword HD, originally filmed Monday, August 17, 2026. The description says Nathan starts after a thought from Mass, plays a minigame, talks about Oriel and Zelda in the bazaar, and spends the night on whether the games share one lore.",
+      "games": [
+        "The Legend of Zelda: Skyward Sword HD"
+      ],
+      "topics": [
+        "Episode 8"
+      ],
+      "thumb": "https://i.ytimg.com/vi/vooV9bIqMjY/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep (Episode 7)"
+        },
+        {
+          "t": "1:06",
+          "title": "We're Live (Switch Home, 10:37 PM)"
+        },
+        {
+          "t": "3:34",
+          "title": "Skyward Sword Tonight (Skyloft)"
+        },
+        {
+          "t": "4:34",
+          "title": "Live for Tomorrow (A Thought from Mass)"
+        },
+        {
+          "t": "5:34",
+          "title": "I Hate This Mini Game (Heart Piece)"
+        },
+        {
+          "t": "11:43",
+          "title": "Not Legend of Oriel (The Bazaar)"
+        },
+        {
+          "t": "15:00",
+          "title": "Into the Sky (Loftwing)"
+        },
+        {
+          "t": "18:54",
+          "title": "Is There a Connected Lore?"
+        },
+        {
+          "t": "22:39",
+          "title": "Can You Hear Me? (Yeti Mic)"
+        },
+        {
+          "t": "28:14",
+          "title": "I'm Like a Mermaid, Bro (Water Dragon Scale)"
+        },
+        {
+          "t": "38:26",
+          "title": "Shut Up, Fi (The Companion)"
+        },
+        {
+          "t": "51:38",
+          "title": "Why Bird Statues? (Saving)"
+        },
+        {
+          "t": "57:09",
+          "title": "The Water Dragon (Hero Mode)"
+        },
+        {
+          "t": "1:15:04",
+          "title": "I'll Deal With This Tomorrow (Logging Off)"
+        }
+      ]
+    },
+    {
+      "seq": 4,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "6ZdAOQZKm9g",
+      "date": "2026-11-25",
+      "published": "2026-11-25T05:32:30Z",
+      "duration": "3:17:45",
+      "title": "Is This Thing On? | Episode 7 (Test Broadcast, LEGO, Xenoblade, SS HD, Filmed Mon Aug 17, 2026)",
+      "summary": "Public upload published 2026-11-25T05:32:30Z. The title calls it Episode 7, a test broadcast filmed Monday, August 17, 2026. The description says it runs from a no-signal capture-card screen through Xenoblade Chronicles, Torna, and Skyward Sword HD.",
+      "games": [
+        "Xenoblade Chronicles",
+        "The Legend of Zelda: Skyward Sword HD"
+      ],
+      "topics": [
+        "Test broadcast",
+        "Episode 7"
+      ],
+      "thumb": "https://i.ytimg.com/vi/6ZdAOQZKm9g/maxresdefault.jpg",
+      "chapters": [
+        {
+          "t": "0:00",
+          "title": "Previously on Pio's Lost Sheep (Pilot Ep. 6)"
+        },
+        {
+          "t": "1:06",
+          "title": "Is This Thing On? (Test Broadcast, No Signal)"
+        },
+        {
+          "t": "6:34",
+          "title": "Signal! (Skywalker Saga)"
+        },
+        {
+          "t": "8:26",
+          "title": "Xenoblade Chronicles 2 (Fonsett Arch)"
+        },
+        {
+          "t": "16:39",
+          "title": "Back to Xenoblade 1 (amiibo)"
+        },
+        {
+          "t": "32:00",
+          "title": "Disconnected (Capture Card)"
+        },
+        {
+          "t": "56:26",
+          "title": "Torna, the Golden Country (Xenoblade 2)"
+        },
+        {
+          "t": "57:18",
+          "title": "What Happened to My Save? (Torna)"
+        },
+        {
+          "t": "2:16:33",
+          "title": "They're Just a Driver and Blade (Torna)"
+        },
+        {
+          "t": "2:48:18",
+          "title": "Skyward Sword HD (Hero Mode)"
+        },
+        {
+          "t": "3:17:24",
+          "title": "Time to Log Off (Bye Guys)"
+        }
+      ]
+    },
+    {
+      "seq": 5,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "ygb6QTpfvtg",
+      "date": "2026-11-25",
+      "published": "2026-11-25T05:18:37Z",
+      "duration": "3:31:00",
+      "title": "Catholic Gamer in the Fire Temple? Ocarina of Time LIVE + Yoshi's Island, Torna & Late-Night Rosary",
+      "summary": "Finished public stream published 2026-11-25T05:18:37Z. The streams tab lists it at 3:31:00. The description says the night opens with a short stretch of Xenoblade Chronicles 2: Torna – The Golden Country, then the Fire Temple in Ocarina of Time, Super Mario Advance 3: Yoshi's Island, a return to Torna, and a late-night Rosary of the Glorious Mysteries.",
+      "games": [
+        "The Legend of Zelda: Ocarina of Time",
+        "Super Mario Advance 3: Yoshi's Island",
+        "Xenoblade Chronicles 2: Torna – The Golden Country"
+      ],
+      "topics": [
+        "Live",
+        "Rosary"
+      ],
+      "thumb": "https://i.ytimg.com/vi/ygb6QTpfvtg/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 6,
+      "onDay": false,
+      "shortSlots": false,
+      "id": "0T3Tb-2O2nE",
+      "date": "2026-11-25",
+      "published": "2026-11-25T05:18:06Z",
+      "duration": "0:15",
+      "title": "Pio's Lost Sheep LIVE!",
+      "summary": "Public upload published 2026-11-25T05:18:06Z. The title is Pio's Lost Sheep LIVE! The streams tab lists it as a completed stream, 0:15. The description is the word boo, then links to the channel Discord, Ko-fi, and live page, and then hashtags.",
+      "games": [],
+      "topics": [
+        "Live"
+      ],
+      "thumb": "https://i.ytimg.com/vi/0T3Tb-2O2nE/maxresdefault.jpg",
+      "chapters": []
+    },
+    {
+      "seq": 8,
+      "onDay": false,
+      "shortSlots": false,
       "id": "6ZorEdcbMIg",
       "date": "2026-11-24",
       "published": "2026-11-24T08:52:07Z",
       "duration": "39:30",
       "title": "Avengers: Doomsday Trailer Reaction + Did AI Prove the Riemann Hypothesis? | Pio's Lost Sheep",
-      "summary": "Public upload published 2026-11-24T08:52:07Z. The title calls it an Avengers: Doomsday trailer reaction and asks whether AI proved the Riemann hypothesis. The description is the word boo, then links to the channel Discord, Ko-fi, and live page, and then hashtags. It does not describe the trailer or the hypothesis.",
+      "summary": "Public upload published 2026-11-24T08:52:07Z. The description says Nathan reacts to the Avengers: Doomsday trailer and talks through a claim that an AI researcher has proved the Riemann hypothesis. It names incursion shots, Old Man Steve, Daredevil Born Again, and Kate Bishop.",
       "games": [],
       "topics": [
         "Trailer reaction"
@@ -19,7 +295,7 @@
       "chapters": []
     },
     {
-      "seq": 2,
+      "seq": 9,
       "onDay": false,
       "shortSlots": false,
       "id": "JGsvTjC5vUk",
@@ -27,7 +303,7 @@
       "published": "2026-11-24T07:44:16Z",
       "duration": "20:20",
       "title": "Avengers: Doomsday Trailer LIVE Reaction | Catholic Gamer Reacts | Pio's Lost Sheep",
-      "summary": "Public upload published 2026-11-24T07:44:16Z. The title calls it a live reaction to the Avengers: Doomsday trailer. The description is the word boo, then links to the channel Discord, Ko-fi, and live page, and then hashtags. It does not describe the trailer.",
+      "summary": "Public upload published 2026-11-24T07:44:16Z. The description says Nathan reacts to the Avengers: Doomsday trailer, including incursion shots set beside the falling moon in Majora's Mask, and that he rewatches the Steve and Peggy opening.",
       "games": [],
       "topics": [
         "Trailer reaction",
@@ -37,7 +313,7 @@
       "chapters": []
     },
     {
-      "seq": 3,
+      "seq": 10,
       "onDay": false,
       "shortSlots": false,
       "id": "CTvBVNSCZko",
@@ -54,7 +330,7 @@
       "chapters": []
     },
     {
-      "seq": 4,
+      "seq": 11,
       "onDay": false,
       "shortSlots": false,
       "id": "NAHX0_jZOvw",
@@ -73,7 +349,7 @@
       "chapters": []
     },
     {
-      "seq": 5,
+      "seq": 12,
       "onDay": false,
       "shortSlots": false,
       "id": "trojZcP3Wnk",
@@ -92,7 +368,7 @@
       "chapters": []
     },
     {
-      "seq": 6,
+      "seq": 13,
       "onDay": false,
       "shortSlots": false,
       "id": "jmi5gM7c8d4",
@@ -111,7 +387,7 @@
       "chapters": []
     },
     {
-      "seq": 7,
+      "seq": 14,
       "onDay": false,
       "shortSlots": false,
       "id": "RxLtoBqupLY",
@@ -129,27 +405,7 @@
       "chapters": []
     },
     {
-      "seq": 8,
-      "onDay": false,
-      "shortSlots": false,
-      "id": "84VmotIK0vM",
-      "date": "2026-11-22",
-      "published": "2026-11-23T02:41:11Z",
-      "duration": "3:17:24",
-      "title": "Is This Thing On? | Episode 7 (Test Broadcast, LEGO, Xenoblade, SS HD, Filmed Mon Aug 17, 2026)",
-      "summary": "Public upload of the August 17, 2026 test broadcast. It runs from a no-signal capture-card screen through Xenoblade Chronicles and Skyward Sword HD.",
-      "games": [
-        "Xenoblade Chronicles",
-        "The Legend of Zelda: Skyward Sword HD"
-      ],
-      "topics": [
-        "Test broadcast"
-      ],
-      "thumb": "https://i.ytimg.com/vi/84VmotIK0vM/maxresdefault.jpg",
-      "chapters": []
-    },
-    {
-      "seq": 9,
+      "seq": 16,
       "onDay": false,
       "shortSlots": false,
       "id": "Yhpr9W5c-5A",
@@ -206,7 +462,7 @@
       ]
     },
     {
-      "seq": 10,
+      "seq": 17,
       "onDay": false,
       "shortSlots": false,
       "id": "fhyoXKYnkLs",
@@ -234,7 +490,7 @@
       ]
     },
     {
-      "seq": 11,
+      "seq": 18,
       "onDay": false,
       "shortSlots": false,
       "id": "rD8PjUklLDg",
@@ -327,7 +583,7 @@
       ]
     },
     {
-      "seq": 12,
+      "seq": 19,
       "onDay": false,
       "shortSlots": false,
       "id": "qqfKw6Ynq7s",
@@ -353,7 +609,7 @@
       ]
     },
     {
-      "seq": 13,
+      "seq": 20,
       "onDay": false,
       "shortSlots": false,
       "id": "74DUgJZPa98",
@@ -435,7 +691,7 @@
       ]
     },
     {
-      "seq": 14,
+      "seq": 21,
       "onDay": false,
       "shortSlots": false,
       "id": "MUvgudrfIjc",
@@ -553,7 +809,7 @@
       ]
     },
     {
-      "seq": 15,
+      "seq": 22,
       "onDay": false,
       "shortSlots": false,
       "id": "pKWn-HJwKeI",
@@ -575,7 +831,7 @@
       "chapters": []
     },
     {
-      "seq": 16,
+      "seq": 23,
       "onDay": false,
       "shortSlots": false,
       "id": "OpCGDKfWIy8",
@@ -595,7 +851,7 @@
       "chapters": []
     },
     {
-      "seq": 17,
+      "seq": 24,
       "onDay": false,
       "shortSlots": false,
       "id": "SUPpXR7ciFg",
@@ -615,7 +871,7 @@
       "chapters": []
     },
     {
-      "seq": 18,
+      "seq": 25,
       "onDay": false,
       "shortSlots": false,
       "id": "1AGBP5Xbzvo",
@@ -634,7 +890,7 @@
       "chapters": []
     },
     {
-      "seq": 19,
+      "seq": 26,
       "number": 176,
       "onDay": false,
       "shortSlots": false,
@@ -764,7 +1020,7 @@
       ]
     },
     {
-      "seq": 20,
+      "seq": 27,
       "onDay": false,
       "shortSlots": false,
       "id": "N-u4LYBxWhk",
@@ -891,7 +1147,7 @@
           "title": ""
         }
       ],
-      "seq": 5
+      "seq": 12
     }
   ]
 }
