@@ -22,8 +22,8 @@
     "discord": "https://discord.gg/HqXPUEd5JQ",
     "kofi": "https://ko-fi.com/pioslostsheep"
   },
-  "updated": "2026-11-25",
-  "featured": "fSJJWrzqf3M",
+  "updated": "2026-11-26",
+  "featured": "OtNOZkLn5-s",
   "homeShorts": [
     {
       "id": "9Bx0x7lUfVg",
@@ -62,5 +62,12 @@
       "summary": "The Bionis has a beating heart, and that is why it is called the Bionis."
     }
   ],
-  "streams": []
+  "streams": [
+    {
+      "startUtc": "2026-11-27T02:00:00Z",
+      "url": "https://www.youtube.com/watch?v=XKEvAki40b0",
+      "title": "Catholic Gamer, Who Says Grace in a Falling Kingdom? | Xenoblade 2: Torna Thanksgiving LIVE",
+      "display": "Thursday night, Nov 26 · 9:00 PM ET"
+    }
+  ]
 }
